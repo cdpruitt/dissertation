@@ -1,0 +1,38 @@
+SAMPLE PREPARATION
+
+The isotopic Sn samples were prepared by melting isotopically-enriched foils to
+800 C in a tube furnace, cooling to ambient temperature, and pressing to the
+desired shape in a tempered die. To reduce formation of tin
+oxide during melting, the samples were placed in a vitreous carbon crucible
+and kept under a reducing atmosphere (90% Argon/ 10%H2) while at elevated
+temperatures [\cite photo]. Of the 4.9 grams of Sn112 used to prepare the sample,
+3.5 grams were from
+semi-permanent loan from the [INSERT GROUP NAME] from LBNL and the remaining
+Sn112 purchased from [ISOTOPE MANUFACTURER]. All of the 5.8 grams of Sn124 were purchased from
+[ISOTOPE MANUFACTURER]. The natural Sn sample was prepared by melting and
+pressing pellets [MANUFACTURER]. Loss of isotopic material during the
+manufacturing process was minimal [insert table citation] and the final 
+shapes and densities of the samples are within [X%] of the desired values.
+
+To conduct the total cross section measurements on oxygen isotopes,
+isotopically-enriched water samples were prepared (a technique also used by
+\cite{previous O18 results}; cf.  with ZnO and BeO results of \cite{Finlay}).
+Because the natural abundance of O16 in H2O is >99%, a sample of
+ordinary distilled water was used to make the O16 measurement. For the O18
+measurement, we used distilled water enriched to >99% in O18 from
+[manufacturer]. Both samples were enclosed in brass vessels with very thin
+(~0.001") brass endcaps, to minimize attenuation. At the temperature and
+pressure of the experimental facility, the amount of dissolved gas and ions
+in the water samples were small enough to have no effect on the measurement.
+
+The natural and isotopic Ni samples were prepared by [insert name] at Oak Ridge National Lab 
+(ORNL) to match the diameter of our Sn samples.
+
+In addition, two natural-abundance graphite samples of different lengths and one
+natural Pb sample, all with the same diameter as the Sn and Ni samples, were
+prepared by the Washington University Machine Shop. These
+samples were used to benchmark the total cross sections measured at LANSCE by
+comparison with previous measurements of the C and Pb total cross sections
+available in the literature (\cite Abfalterer and Finlay). Before use any
+measurement, the C samples were baked in an oven for several
+hours to remove residual machining oil and water.

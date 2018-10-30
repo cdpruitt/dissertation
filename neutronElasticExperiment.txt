@@ -1,0 +1,94 @@
+Experimental apparatus
+
+We conducted our neutron elastic cross section measurements at the neutron TOF
+beamline of the Triangle Universities Nuclear Laboratory (TUNL) facility [insert
+image]. Incident deuterons, supplied by the facility's variable-energy tandem
+Van De Graaf accelerator, impinged on a deuterium gas cell to produce a
+forward-focused neutron beam via the d(d,n)3He reaction. Given the beam profile,
+the neutron energy distribution was calculated as X (Y) MeV with a FWHM of x (y)
+MeV for the 11 MeV and 17 MeV experiments, respectively. The gas cell was
+equipped with a tantalum beam stop to prevent unreacted beam from reaching
+the samples. 
+
+Samples were suspended in a vertically-aligned wire basket [INSERT DISTANCE] cm
+downstream of the gas cell and were rotated in and out of beam between
+runs with a hand-actuated pulley. Neutron scattering off
+the in-beam samples were recorded by one of the two main detectors, labeled "4M"
+and "6M". These detectors were mounted on large, movable carriages, or "arms",
+each of which was independently movable so that two angular cross section
+measurements could be conducted simultaneously. By recessing them deep within
+the arms' heavy shielding, the detectors were only accessible to neutrons
+entering the arm at a precise angle. The distance of the 4M (6M) angular
+detector from the sample was X (Y) cm, which, for an elastically-scattered
+11 MeV neutron, corresponds to a [insert time] ([insert time) ns time-of-flight.
+
+To further reduce room background and prevent neutrons from entering the arms directly
+from the gas cell, an ensemble of "shadow bars" (wedge-shaped tungsten bricks)
+were used to adjust the aperture at the entrance to the arms. After an arm's
+angle was changed, the shadow bars were aligned by hand so that the
+detector buried deep within the arm had no line-of-sight to the gas cell or the
+shielding of the other arm, but its line-of-sight to the entire sample volume was
+maintained. Any configuration in which the arms were in opposition (i.e., the
+angle between the arms was 180+-20 degrees) would allow neutrons scattered
+from one arm direct access to the detector of the other arm, so these
+configurations were avoided.
+
+Signal timing and pulse shape data were collected from four [liquid scintillator]
+detectors: one in each of the angular arms, one in a ceiling monitor
+(CMON), and one at zero degrees with respect to the beam (ZDEG). In addition,
+an RF pulse from the accelerator was collected to serve as a time-of-flight
+(TOF) stop signal any time an event was recorded on one of the four neutron
+detectors. Detectors were calibrated with standard 137Cs and 22Na sources. For
+the 4M (6M) detector, a time resolution of X (Y) ns was established.
+
+Data Analysis
+
+Neutron energy was determined by TOF, and neutron-gamma differentiation
+determined by combining pulse shape discrimination (PSD) using [MODULE NAME] with
+a gate on pulse height (PH). Neutron events were histogrammed by energy and the
+number of counts in each bin was corrected for energy-dependent detector
+efficiency [figure reference].
+
+Initial runs were taken using (in series) a graphite, a polyethylene, and a blank
+sample. A comparison of the spectra for these samples shows a peak for elastic
+scattering on protons easily identifiable in the polyethylene spectrum but
+absent in the graphite and blank spectra. Given the well-established n(p,p)n
+cross section [cite reference] and the physical characteristics of the samples,
+the ratio of incident neutron flux to the number of CMON counts can be calculated
+(see [insert equation], [figure reference]). This flux-to-monitor ratio was used to normalize the
+subsequent Sn sample measurements so absolute cross sections could be reported.
+
+During data production, runs were taken in batches of three: one using 112Sn,
+one using 124Sn, and one with a blank. For each angle of a given angular arm, the
+efficiency-corrected histograms were normalized by the run's CMON counts,
+and the relevant blank-run histogram subtracted from the isotopic-run
+histograms. The major background contribution, visible in blank-run histograms
+([INSERT FIGURE]), is from elastic scattering on atmospheric nitrogen
+in the immediate vicinity of the sample. To calculate the cross section, the
+Sn elastic peak must be integrated and the N elastic and Sn first-inelastic
+peaks must be excluded. At forward angles and high neutron energies, the
+difference in energy between Sn-elastic, Sn-inelastic, and N-elastic neutron
+decreases and the separation between the peaks is reduced. Measurements in this
+kinematic regime are the most challenging as the increased overlap between
+these peaks increases the uncertainty in the Sn-elastic integral.
+
+Because the samples and angular detectors are not point-like, the exact
+path of elastically-scattered neutrons is subject to a small degree of angular
+uncertainty. The effect of this uncertainty is a "washing out" of measured cross
+section maxima and minima with respect to the true cross section, especially in
+regions where the cross section varies rapidly compared to the degree of
+uncertainty. To assess the magnitude of this effect, a finite-size
+simulation was prepared in which our measured cross section was assumed
+to be the true cross section. In the simulation, a uniform beam of neutrons
+impinged on the sample volume and was scattered into angular detectors where
+hits were recorded. The resulting cross section [insert figure reference] is
+thus a weighted convolution of the input cross section with the size uncertainty
+of the samples and detectors. A comparison between the input and output cross
+sections shows the finite-size effect is quite small in our case, much smaller
+than statistical and other systematic errors. Still, to offset this effect, an
+angle-dependent finite-size correction has been calculated and applied in all
+results presented below.
+
+Absolute cross sections 
+
+

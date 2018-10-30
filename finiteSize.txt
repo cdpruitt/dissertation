@@ -1,0 +1,66 @@
+EXPERIMENTAL CORRECTIONS DURING ANALYSIS
+
+In an ideal scattering experiment, the particle trajectories
+and energies under study can be known to arbitrary precision. Real laboratory
+conditions complicate this simple picture and require the experimenter to
+navigate the tradeoffs between experimental variables. For example, in an
+idealized version of our differential cross
+section measurement, the smaller the sample and neutron detectors are, the more precisely
+the angle of scattering of an incident neutron can be determined. Unfortunately,
+smaller samples also reduce the rate of scattering and smaller detectors
+reduce the solid angle in which scattered neutrons can be measured, both of
+which reduce the number of detected neutrons and increase the statistical
+uncertainty of the measurement. The experimentaler is thus responsible for applying
+appropriate corrections so that reported results are apparatus-independent.
+
+In the case of our differential cross section measurement at TUNL, the detectors'
+composition, the geometry of the TOF room, and beam characteristics were
+determined by the default configuration of the TUNL facility. Our samples were already
+appropriately shaped for the TUNL TOF room sample suspension system and were
+used for the measurement without modification. Given this configuration, we
+identified two areas of concern requiring correction: the energy-dependence of
+the detector efficiency ("efficiency correction") and the uncertainty in the
+scattering angle due to the finite size of our sample and detectors ("finite
+size correction").
+
+Efficiency correction was straightforward: the detector response with respect to
+neutron energy had already been tabulated by TUNL staff. Accordingly, we
+adjusted the number of counts in each bin of our detector histograms according
+to the bin's energy (shown in Fig. [X]). To understand finite-size effects, a
+Monte Carlo simulation was developed in which the sample and detector geometry
+could be varied and the effect on the cross section visualized. As illustrated
+in Fig. [X], in an experiment with point-like detectors and
+samples, the scattering angle for a given configuration can be exactly
+determined. In a realistic experiment, however, the finite size of the sample
+introduces uncertainty in the location of the scattering vertex and the finite size of the
+detector introduces uncertainty in the location of the detection vertex. Consequently, the cross
+section calculated for a given angle also includes unwanted contributions
+from nearby angles; correcting for this effect is essentially a "deconvolution"
+of the scattering trajectories with respect to the sample and detector geometry.
+
+For simplicity, the simulation was purely geometric - no nuclear physics or
+energy-dependence was included. For each Monte Carlo iteration, the beam was
+assumed to uniformly illuminate
+the sample from one direction so that the scattering vertex was randomly
+distributed within the sample volume. At the scattering vertex, a neutron
+trajectory was selected by randomly sampling an "input cross section" as a
+probability mass function, thus weighting the neutron scattering angles by the
+input cross section.  Once the trajectory was known, each detector's location
+and orientation was used to calculate the point of intersection in the plane of each detector. If the
+intersection fell within the detector's face, the detector registered a hit.
+Finally, the "output cross section" (that is, the result of the simulation)
+was calculated by normalizing the number of counts registered in each detector
+over the total number of iterations and the fraction of the total solid angle
+subtended by said detector.
+
+The results of the simulation are visible in Fig. [X]. For the sample and
+detector sizes actually used in the experiment, the deviation between the input
+and output cross sections is <1% over all angles. When exaggerated sizes for the
+sample and detectors are used, the finite-size effect is visible as a "washing
+out" of minima and maxima in regions where the cross section varies rapidly with
+angle. To calculate a correction factor for our results, we divided the simulation's
+input cross section by the output cross section for each angle and multiplied our
+experimental results by this factor. In principle, this procedure to generate
+the correction should be repeated iteratively because the correction changes the input distribution 
+used for the simulation itself, but in practice the correction is so small
+that no further iteration is required.

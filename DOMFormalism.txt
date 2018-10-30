@@ -1,0 +1,24 @@
+The Dispersive Optical Model (DOM) is a phenomenological framework useful for 
+extracting information about nuclear properties and structure from experimental
+data.
+
+The fundamental object of interest in the DOM is the *optical potential*, or
+*self-energy*. This quantity represents thei nuclear environment experienced
+by a nucleon as it traverses the nucleus under investigation. In general, the
+potential is both non-local and complex, possessing both real (flux-conserving)
+and imaginary (flux-removing) parts. The functions used to parameterize the optical potential
+are selected to conform with general physical intuition about the nuclear
+many-body problem and past experience with optical potentials throughout the
+field. For example, the most important term, the Hartree-Fock (HF) potential
+that binds the nucleus together, is defined by a classic Woods-Saxon form to
+which non-locality has been added: [insert volume term formula]. The imaginary
+potential is separated into a Woods-Saxon volume component and a
+Woods-Saxon-derivative surface component. Each of these subcomponents has
+a non-linear energy dependence reflecting our expectation that surface-like
+behaviors should arise around 10-50 MeV and volume-like behavior should arise
+above around 100 MeV, with a mixture of the two in the intermediate region.
+
+Beyond these basic considerations, several additional features make the current
+DOM advanced by our group a uniquely useful tool. First is the enforcement of a
+dispersion relation between the real and imaginary halves of the potential,
+the Kramers-Kronig relation. 

@@ -1,0 +1,23 @@
+As with any high-dimensional optimization problem, the fitter must be vigilant
+against the overfitting of data. In practice, this requires:
+
+parsimony with the number of parameters used in the model
+
+common-sense checking "under the hood" of the optimization to verify that
+parameter values make sense given the assumptions that undergird the model
+
+understanding of what the value function is (that is, the function being
+minimized/maximized) and whether it needs to be changed
+
+cross-correlation between parameters to understand the relationship between
+parameters and the effect that each has on predictions made using the model
+
+
+TCS affected by HF parameters, spin orbit, imaginary above
+RCS affected by imaginary above, HF parameters
+ECS affected by HF parameters, spin orbit, imaginary above
+APower affected by HF parameters, spin orbit,  imaginary above
+Charge Density affected by HF parameters, imaginary below
+Levels affected by HF parameters, spin orbit,
+Spectral functions affected by HF parameters, imaginary below
+RMSRadii affected by HF parameters, imaginary below
