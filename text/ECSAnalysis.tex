@@ -1,4 +1,50 @@
-EXPERIMENTAL CORRECTIONS DURING ANALYSIS
+Neutron energy was determined by TOF, and neutron-gamma differentiation
+determined by combining pulse shape discrimination (PSD) using [MODULE NAME] with
+a gate on pulse height (PH). Neutron events were histogrammed by energy and the
+number of counts in each bin was corrected for energy-dependent detector
+efficiency [figure reference].
+
+Initial runs were taken using (in series) a graphite, a polyethylene, and a blank
+sample. A comparison of the spectra for these samples shows a peak for elastic
+scattering on protons easily identifiable in the polyethylene spectrum but
+absent in the graphite and blank spectra. Given the well-established n(p,p)n
+cross section [cite reference] and the physical characteristics of the samples,
+the ratio of incident neutron flux to the number of CMON counts can be calculated
+(see [insert equation], [figure reference]). This flux-to-monitor ratio was used to normalize the
+subsequent Sn sample measurements so absolute cross sections could be reported.
+
+During data production, runs were taken in batches of three: one using 112Sn,
+one using 124Sn, and one with a blank. For each angle of a given angular arm, the
+efficiency-corrected histograms were normalized by the run's CMON counts,
+and the relevant blank-run histogram subtracted from the isotopic-run
+histograms. The major background contribution, visible in blank-run histograms
+([INSERT FIGURE]), is from elastic scattering on atmospheric nitrogen
+in the immediate vicinity of the sample. To calculate the cross section, the
+Sn elastic peak must be integrated and the N elastic and Sn first-inelastic
+peaks must be excluded. At forward angles and high neutron energies, the
+difference in energy between Sn-elastic, Sn-inelastic, and N-elastic neutron
+decreases and the separation between the peaks is reduced. Measurements in this
+kinematic regime are the most challenging as the increased overlap between
+these peaks increases the uncertainty in the Sn-elastic integral.
+
+Because the samples and angular detectors are not point-like, the exact
+path of elastically-scattered neutrons is subject to a small degree of angular
+uncertainty. The effect of this uncertainty is a "washing out" of measured cross
+section maxima and minima with respect to the true cross section, especially in
+regions where the cross section varies rapidly compared to the degree of
+uncertainty. To assess the magnitude of this effect, a finite-size
+simulation was prepared in which our measured cross section was assumed
+to be the true cross section. In the simulation, a uniform beam of neutrons
+impinged on the sample volume and was scattered into angular detectors where
+hits were recorded. The resulting cross section [insert figure reference] is
+thus a weighted convolution of the input cross section with the size uncertainty
+of the samples and detectors. A comparison between the input and output cross
+sections shows the finite-size effect is quite small in our case, much smaller
+than statistical and other systematic errors. Still, to offset this effect, an
+angle-dependent finite-size correction has been calculated and applied in all
+results presented below.
+
+\section{Corrections Applied During Analysis}
 
 In an ideal scattering experiment, the particle trajectories
 and energies under study can be known to arbitrary precision. Real laboratory
@@ -55,7 +101,7 @@ subtended by said detector.
 
 The results of the simulation are visible in Fig. [X]. For the sample and
 detector sizes actually used in the experiment, the deviation between the input
-and output cross sections is <1% over all angles. When exaggerated sizes for the
+and output cross sections is <1\% over all angles. When exaggerated sizes for the
 sample and detectors are used, the finite-size effect is visible as a "washing
 out" of minima and maxima in regions where the cross section varies rapidly with
 angle. To calculate a correction factor for our results, we divided the simulation's
@@ -64,3 +110,37 @@ experimental results by this factor. In principle, this procedure to generate
 the correction should be repeated iteratively because the correction changes the input distribution 
 used for the simulation itself, but in practice the correction is so small
 that no further iteration is required.
+
+Absolute cross sections 
+
+%\begin{figure}
+%  \begin{center}
+%\includegraphics[width = 0.9\textwidth]{CAD_RUSS2.pdf}
+%\caption{A 3D CAD model of the two annular Si detectors used in the experiment.} \label{RUSS2}
+%\end{center}
+%\end{figure}
+
+%\begin{table}
+%  \begin{center}
+%    \caption{Calibration beams and the energies generated with the degraders.}\label{CBeams}
+%  \begin{tabular}{ccccc}
+%    \hline \hline
+%    Species & Energy & Target & Thickness & Degraded Energy  \\ 
+%            & [MeV/A] & &[mg/cm$^2$] & [MeV/A] \\
+%     \hline
+%    $p$ & 24.2 &  Au & 20.0 & 24.0   \\
+%           &  & Al & 429 & 15.8 \\
+%    \hline
+%    $d$ & 24.2 &  Au &20.0 & 24.1 \\
+%            & & Al & 429 &20.3 \\
+%    & &  Al & 858 & 15.8 \\
+%            & 12.0 &  Au & 20.0 & 11.9 \\
+%    \hline
+%    $\alpha$ & 24.0 &  Au & 20.0 & 23.8 \\
+%     & & Al & 429 &15.6 \\
+%    \hline \hline
+%  \end{tabular}
+%\end{center}
+%\end{table}
+
+\afterpage{\clearpage}

@@ -4,35 +4,33 @@
 \usepackage{amsmath} % lots of math functions
 \usepackage{epigraph} % lets me write an epigraph obviously...
 \usepackage{graphicx} % putting in figures, if one might ask..
-\usepackage{braket} % Dirac notatin
+\usepackage{braket} % Dirac notation
 \usepackage{geometry}
 \geometry{
     margin = 1in  % give 1in margins
 }
-\usepackage[font = small]{caption} % why? but I love it
-\usepackage{verbatim} % forgot what this does
-\usepackage{appendix} % 
-\usepackage{adjustbox} % adjust my crazy figures
-\usepackage{tabularx} % actually... probably don't need this
-\usepackage{indentfirst} % WAT?
-\usepackage[utf8]{inputenc} % WAT?
-\usepackage[english]{babel} % WAT? I know this does something...
-\usepackage{amssymb} % maths stuff, what did I get a degree in?
-\usepackage{amsthm}  % maths stuff, what did I get a degree in?
-\newtheorem{theorem}{Theorem}[section]  % maths stuff, what did I get a degree in?
-\newtheorem{corollary}{Corollary}[theorem]  % maths stuff, what did I get a degree in?
-\newtheorem{lemma}[theorem]{Lemma}  %maths stuff
+\usepackage[font = small]{caption}
+\usepackage{verbatim}
+\usepackage{appendix}
+\usepackage{adjustbox} % adjust figures
+\usepackage{tabularx}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amssymb} % AMS symbol package
+\usepackage{amsthm}  % AMS symbol package
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
 \usepackage[toc]{glossaries} % makeglossaries thesis
-\usepackage{afterpage} % very usefull for formating...
-\usepackage{setspace} % don't know what this does
-\doublespacing % double spaces whole document except for captions, just like I want
-%\pagestyle{plain} % this should make a difference... but I choose fancy style below
-\usepackage{notoccite} %
-%\usepackage{sectsty} % lets me screw with the section style but has never worked... because I had competing packagae titlesec in use
-\usepackage[symbol]{footmisc} % gimme those footnotes with weird characters!
+\usepackage{afterpage} % very useful for formating...
+\usepackage{setspace}
+\doublespacing % double spaces whole document except for captions
+\usepackage{notoccite}
+\usepackage[symbol]{footmisc} % for footnotes with weird characters
 \usepackage{afterpage} % needed this for putting things back on track, outlined below
-\usepackage{textcomp} % have I literally written someting for everything? I have no idead what this does...
-\usepackage{fancyhdr} % allows me to make fancy headers
+\usepackage{textcomp}
+\usepackage{fancyhdr} % allows for fancy headers
 \pagestyle{fancy} % uses fancy page styling for headers and such --> change to "plain" if have to get rid of headers
 \usepackage{mathtools} % for making NR= sign
 
@@ -97,14 +95,15 @@
 }
 \makeatother
 
-%want to input gloassary file so I can "makeglossaries"  later, works just like bibtex
-\input{glossary}
+\newcommand{\textDirectory}{text}
+
+\input{\textDirectory/glossary}
 
 \begin{document}
 
 \frontmatter
 
-\input{titlepage}
+\input{\textDirectory/titlepage}
 
 \begingroup
 \let\cleardoublepage\clearpage
@@ -139,11 +138,11 @@
 \begingroup
 \let\cleardoublepage\clearpage
 \chapter*{Acknowledgements}
-\input{Acknowledgements}
+\input{\textDirectory/acknowledgements}
 \endgroup
 
 %\clearpage
-\input{Abstract}
+\input{\textDirectory/abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
 \afterpage{\blankpage}
@@ -156,31 +155,31 @@
 \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
 \chapter{Introduction} \label{introduction}
-\input{Introduction}
-
-\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
-\input{DOMFormalism}
+\input{\textDirectory/introduction}
 
 \chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
-\input{Techniques}
+\input{\textDirectory/techniques}
 
 \chapter{Neutron Total Cross Sections: Experiment} \label{TCSExperiment}
-\input{TCSExperiment}
+\input{\textDirectory/TCSExperiment}
 
-\chapter{Neutron Total Cross Sections: Analysis} \label{TCSAnalysis}
-\input{TCSAnalysis}
+\chapter{Neutron Total Cross Sections: Analysis and Results} \label{TCSAnalysis}
+\input{\textDirectory/TCSAnalysis}
 
 \chapter{Neutron Elastic Cross Sections: Experiment} \label{ECSExperiment}
-\input{ECSAnalysis}
+\input{\textDirectory/ECSExperiment}
 
-\chapter{Neutron Elastic Cross Sections: Analysis} \label{ECSAnalysis}
-\input{ECSAnalysis}
+\chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
+\input{\textDirectory/ECSAnalysis}
+
+\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
+\input{\textDirectory/DOMFormalism}
 
 \chapter{Dispersive Optical Model Results}\label{DOMResults}
-\input{DOMResults}
+\input{\textDirectory/DOMResults}
 
 \chapter{Conclusion}
-\input{conclusion}
+\input{\textDirectory/conclusion}
 
 \clearpage %needed this or for some reason the header writes appendix for the last chapter...
 
@@ -221,7 +220,7 @@
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
 
     \chapter*{Physical Constants}
-    \input{units}
+    \input{\textDirectory/units}
     \addcontentsline{toc}{chapter}{Physical Constants}
 
 \end{appendices}
