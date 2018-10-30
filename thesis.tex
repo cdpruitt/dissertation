@@ -1,0 +1,234 @@
+\documentclass[twosided, 12pt]{book} %twosided is nice requires (sometimes) introduces blank pagestyle, which is cool because it looks nice and lets me make fancy headers
+\usepackage{emptypage} % should remove blank page headers and footers, i.e., works beautifully
+\usepackage{titlesec} % modify title and section(<-doesn't work?)
+\usepackage{amsmath} % lots of math functions
+\usepackage{epigraph} % lets me write an epigraph obviously...
+\usepackage{graphicx} % putting in figures, if one might ask..
+\usepackage{braket} % Dirac notatin
+\usepackage{geometry}
+\geometry{
+    margin = 1in  % give 1in margins
+}
+\usepackage[font = small]{caption} % why? but I love it
+\usepackage{verbatim} % forgot what this does
+\usepackage{appendix} % 
+\usepackage{adjustbox} % adjust my crazy figures
+\usepackage{tabularx} % actually... probably don't need this
+\usepackage{indentfirst} % WAT?
+\usepackage[utf8]{inputenc} % WAT?
+\usepackage[english]{babel} % WAT? I know this does something...
+\usepackage{amssymb} % maths stuff, what did I get a degree in?
+\usepackage{amsthm}  % maths stuff, what did I get a degree in?
+\newtheorem{theorem}{Theorem}[section]  % maths stuff, what did I get a degree in?
+\newtheorem{corollary}{Corollary}[theorem]  % maths stuff, what did I get a degree in?
+\newtheorem{lemma}[theorem]{Lemma}  %maths stuff
+\usepackage[toc]{glossaries} % makeglossaries thesis
+\usepackage{afterpage} % very usefull for formating...
+\usepackage{setspace} % don't know what this does
+\doublespacing % double spaces whole document except for captions, just like I want
+%\pagestyle{plain} % this should make a difference... but I choose fancy style below
+\usepackage{notoccite} %
+%\usepackage{sectsty} % lets me screw with the section style but has never worked... because I had competing packagae titlesec in use
+\usepackage[symbol]{footmisc} % gimme those footnotes with weird characters!
+\usepackage{afterpage} % needed this for putting things back on track, outlined below
+\usepackage{textcomp} % have I literally written someting for everything? I have no idead what this does...
+\usepackage{fancyhdr} % allows me to make fancy headers
+\pagestyle{fancy} % uses fancy page styling for headers and such --> change to "plain" if have to get rid of headers
+\usepackage{mathtools} % for making NR= sign
+
+\interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
+
+\setlength{\textfloatsep}{15pt} % might fix gap between text and figures, and it does!
+\setlength{\parskip}{0pt} % might fix gap between paragraphs, and it does!
+% now there are some weird gaps between section headings and text
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} %still don't understand how this grabs chapterName but it does...
+\renewcommand{\sectionmark}[1]{\markright{#1}} %still don't understand how this grabs sectionName but it does...
+\fancyhead{} %clears the fancy header
+\fancyhead[LO]{\MakeUppercase{\leftmark}} %Left even header for just saying chaptername
+
+% code below lets me add a blankpage with \afterpage{\blankpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+\newpage}
+
+  % lets me change the type of footnote
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\allsectionsfont{\singlespacing} 
+
+\setlength\epigraphwidth{.8\textwidth}
+\setlength\epigraphrule{0pt}
+
+\setlength\headheight{15pt} %fixed fancyhdr problems
+
+% Stuff below manually adjusts chapter titles
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries \Large} % format
+{Chapter \ \thechapter} % label
+{0.1 in} % sep
+{
+    \rule{\textwidth}{1pt}
+    \vspace{0.2in}
+    % \centering
+    \raggedleft
+} % before-code
+[
+    \vspace{-0.25in}%
+    \rule{\textwidth}{1pt}
+] % after-code
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+
+%gives me a lambdabar command below
+\makeatletter
+\newcommand{\lambdabar}{{\mathchoice
+    {\smash@bar\textfont\displaystyle{0.25}{1.2}\lambda}
+    {\smash@bar\textfont\textstyle{0.25}{1.2}\lambda}
+    {\smash@bar\scriptfont\scriptstyle{0.25}{1.2}\lambda}
+    {\smash@bar\scriptscriptfont\scriptscriptstyle{0.25}{1.2}\lambda}
+}}
+\newcommand{\smash@bar}[4]{%
+    \smash{\rlap{\raisebox{-#3\fontdimen5#10}{$\m@th#2\mkern#4mu\mathchar'26$}}}%
+}
+\makeatother
+
+%want to input gloassary file so I can "makeglossaries"  later, works just like bibtex
+\input{glossary}
+
+\begin{document}
+
+\frontmatter
+
+\input{titlepage}
+
+\begingroup
+\let\cleardoublepage\clearpage
+\tableofcontents
+\endgroup
+
+\fancyhead{}
+\fancyhead[LO]{\MakeUppercase{\leftmark}}
+
+\begingroup
+\let\cleardoublepage\clearpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\endgroup
+
+\clearpage
+
+\fancyhead{}
+\fancyhead[LO]{\MakeUppercase{\leftmark}}
+
+\begingroup
+\let\cleardoublepage\clearpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\endgroup
+
+\clearpage
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\fancyhead{}
+\fancyhead[LO]{\MakeUppercase{Acknowledgements}} %Left even header
+
+\begingroup
+\let\cleardoublepage\clearpage
+\chapter*{Acknowledgements}
+\input{Acknowledgements}
+\endgroup
+
+%\clearpage
+\input{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\afterpage{\blankpage}
+\clearpage
+
+\mainmatter
+
+\fancyhead{} %clears the header
+\fancyhead[RO]{\MakeUppercase{chapter \thechapter \ \leftmark}} %Right odd header
+\fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
+
+\chapter{Introduction} \label{introduction}
+\input{Introduction}
+
+\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
+\input{DOMFormalism}
+
+\chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
+\input{Techniques}
+
+\chapter{Neutron Total Cross Sections: Experiment} \label{TCSExperiment}
+\input{TCSExperiment}
+
+\chapter{Neutron Total Cross Sections: Analysis} \label{TCSAnalysis}
+\input{TCSAnalysis}
+
+\chapter{Neutron Elastic Cross Sections: Experiment} \label{ECSExperiment}
+\input{ECSAnalysis}
+
+\chapter{Neutron Elastic Cross Sections: Analysis} \label{ECSAnalysis}
+\input{ECSAnalysis}
+
+\chapter{Dispersive Optical Model Results}\label{DOMResults}
+\input{DOMResults}
+
+\chapter{Conclusion}
+\input{conclusion}
+
+\clearpage %needed this or for some reason the header writes appendix for the last chapter...
+
+\fancyhead{} %clears the header
+\fancyhead[LE]{\MakeUppercase{ \leftmark}} %rewrite fancy header to just label chapter name
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\singlespacing
+\bibliographystyle{unsrt}
+\bibliography{text}
+\doublespacing
+
+\clearpage
+
+\begin{appendices}
+
+  %Reformat chapter titles so that they say appendix in the appendices
+    \titleformat
+    {\chapter} % command
+    [display] % shape
+    {\bfseries \Large} % format
+    {Appendix \ \thechapter} % label %Here is where I write appendix, also \ moves you a space or two
+    {0.1 in} % sep
+    {
+        \rule{\textwidth}{1pt}
+        \vspace{0.2in}
+    % \centering
+        \raggedleft
+    } % before-code
+    [
+        \vspace{-0.2in}%
+        \rule{\textwidth}{1pt}
+    ] % after-code
+
+    \fancyhead{} %clears the header
+    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+
+    \chapter*{Physical Constants}
+    \input{units}
+    \addcontentsline{toc}{chapter}{Physical Constants}
+
+\end{appendices}
+
+\fancyhead{} %clears the header
+\fancyhead[LE]{\MakeUppercase{ \leftmark}} %rewrite fancy header to say appendix
+
+\printglossary
+
+\end{document}
