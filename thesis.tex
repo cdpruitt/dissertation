@@ -33,6 +33,7 @@
 \usepackage{fancyhdr} % allows for fancy headers
 \pagestyle{fancy} % uses fancy page styling for headers and such --> change to "plain" if have to get rid of headers
 \usepackage{mathtools} % for making NR= sign
+\usepackage{upgreek} % for non-italicized Greek letters
 
 \interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
 
@@ -55,6 +56,15 @@
   % lets me change the type of footnote
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 %\allsectionsfont{\singlespacing} 
+
+% defines shortcuts for common physics symbols
+\newcommand{\tot}{\ensuremath{\sigma_{tot}}}
+\newcommand{\tots}{\ensuremath{\sigma_{tot}}\,\,}
+\newcommand{\totE}{\ensuremath{\sigma_{tot}}(E)}
+\newcommand{\totEs}{\ensuremath{\sigma_{tot}}(E)\,\,}
+\newcommand{\totRDs}{\ensuremath{\sigma_{A,A'}}(E)\,}
+\newcommand{\reactE}{\ensuremath{\sigma_{react}}(E)}
+\newcommand{\reactEs}{\ensuremath{\sigma_{react}}(E)\,\,}
 
 \setlength\epigraphwidth{.8\textwidth}
 \setlength\epigraphrule{0pt}
@@ -191,7 +201,7 @@
 
 \singlespacing
 \bibliographystyle{unsrt}
-\bibliography{text}
+\bibliography{references}
 \doublespacing
 
 \clearpage
@@ -218,6 +228,9 @@
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    \chapter{DOM Fit Parameters}
+    \input{\textDirectory/parameters}
+    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
     \chapter*{Physical Constants}
     \input{\textDirectory/units}

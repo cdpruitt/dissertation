@@ -6,4 +6,6 @@
 *.lot
 *.pdf
 *.toc
+*.bbl
+*.blg
 DHoffThesis/
