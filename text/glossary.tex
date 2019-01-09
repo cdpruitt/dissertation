@@ -2,8 +2,35 @@
 
 \newglossaryentry{DOM}
 {
-    name=DOM,
+    name={DOM},
     description={The \textbf{D}ispersive \textbf{O}ptical \textbf{M}odel, a phenomenological
-framework for extracting nuclear structure and reaction information from experimental data.},
+optical-model framework for extracting nuclear structure and reaction information from experimental data.},
+    sort={DOM}
+}
+
+\newglossaryentry{optical potential}
+{
+    name={optical potential},
+    description={A complex potential used to approximate the microscopic nuclear
+    many-body problem. Incident nucleons scatter off the potential in analogy
+    to the refraction and absorption of light in optical media.
+    In both cases, the real component of the potential determines
+    elastic scattering, and the imaginary component determines inelastic
+    scattering.},
+    sort={DOM}
+}
+
+\newglossaryentry{nucleon self-energy}
+{
+    name={nucleon self-energy},
+    description={A complex, non-local mathematical object that describes the 
+    the interaction of a nucleon with another body (typically a nucleus) with an
+    infinite sum of relevant Feynman diagrams. If the nucleon self-energy is known in a
+    given system, a multitude of other important physics quantities
+    (scattering amplitudes, the mean free path, the level density) can be
+    extracted. The DOM asserts that the optical
+    potential and the nucleon self-energy are the same object, enabling a
+    phenomenological approach to solving the nuclear many-body problem.
+    See \Gls{Dyson Equation}, \Gls{optical potential}, \Gls{DOM}},
     sort={DOM}
 }

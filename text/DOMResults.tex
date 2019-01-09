@@ -21,6 +21,14 @@ Levels affected by HF parameters, spin orbit,
 Spectral functions affected by HF parameters, imaginary below
 RMSRadii affected by HF parameters, imaginary below
 
+\subsection{Fitting procedure}
+The powell method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
+was used to minimize the RMS difference between experimental data points and the
+values calculated by the DOM. A weighting scheme was assigned to the data points
+according to their importance, guiding the fit to reproduce the most essential
+data points. From fit to fit, the weighting scheme was adjusted as necessary to
+escape local minima in the multidimensional fit.
+
 \begin{figure}
 \begin{center}
 \includegraphics[width = 0.9\textwidth]{figures/o16_chargeDensity.png}
