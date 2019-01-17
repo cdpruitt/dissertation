@@ -21,6 +21,38 @@ Levels affected by HF parameters, spin orbit,
 Spectral functions affected by HF parameters, imaginary below
 RMSRadii affected by HF parameters, imaginary below
 
+Physical intuition about scattering data:
+- the low-angle ECS/APower data are sensitive to the imaginary strength above
+the Fermi surface. The high-angle ECS/APower data are sensitive to the imaginary
+strength below the Fermi surface, with the highest angles of elastic scattering
+probing the imaginary strength deepest in the core (see high-energy, high-angle
+data in Pb)
+- the NM correction to the imaginary volume strength is required in all cases to
+have the very high/very low energy imaginary strength have the correct trend
+(linearly increasing above 100 MeV above, decreasing to 0 below 100 MeV below).
+Seen in spectral functions and total cross section data at high energies, where
+the pion production channel enters the picture as it goes from virtual->real
+- the general trend of the elastic scattering data (not wiggles, but averaged
+over wiggles) depends on the imaginary strength at the given energy. If the
+minima in the elastic cross sections are too sharp/deep, the imaginary strength
+is too large at that energy
+- the spin-orbit strength has dramatic effects on the total cross section at low
+energies (<20 MeV)
+- above the Fermi surface, the imaginary strength is dominated by surface from
+0-50 MeV and by volume from 50 MeV up. Below the Fermi surface, the surface
+imaginary strength is dependent on A; for low A, where the level density is very
+low below the Fermi surface and there's almost no contribution from high LJ
+levels, there is virtually no surface imaginary strength below (cf. with charge
+density distribution tail, at the surface of the nucleus). As A increases, 
+imaginary surface strength below increases gradually but never reaches the
+imaginary surface strength above. A consequence of the asymmetry of the
+operators that contribute: below 0 MeV, the removal operator LJs
+must recouple to the ground state, so high LJ operators have virtually no
+contribution; above 0 MeV, addition operators can have arbitrary LJs because
+free scattering is possible, adding significantly to the collective strength and
+thus is imaginary strength peaked at the surface in the 20-30 MeV range (giant
+dipole resonance, for example, surface phonons).
+
 \subsection{Fitting procedure}
 The powell method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
 was used to minimize the RMS difference between experimental data points and the
