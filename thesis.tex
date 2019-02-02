@@ -35,6 +35,8 @@
 \pagestyle{fancy} % uses fancy page styling for headers and such --> change to "plain" if have to get rid of headers
 \usepackage{mathtools} % for making NR= sign
 \usepackage{upgreek} % for non-italicized Greek letters
+\usepackage{pgffor}
+\usepackage{float}
 
 \interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
 
@@ -64,6 +66,7 @@
 \newcommand{\totE}{\ensuremath{\sigma_{tot}}(E)}
 \newcommand{\totEs}{\ensuremath{\sigma_{tot}}(E)\,\,}
 \newcommand{\totRDs}{\ensuremath{\sigma_{A,A'}}(E)\,}
+\newcommand{\rxn}{\ensuremath{\sigma_{react}}}
 \newcommand{\rxnE}{\ensuremath{\sigma_{react}}(E)}
 \newcommand{\rxnEs}{\ensuremath{\sigma_{react}}(E)\,\,}
 
@@ -81,7 +84,7 @@
 {0.1 in} % sep
 {
     \rule{\textwidth}{1pt}
-    \vspace{0.2in}
+    \vspace{0.1in}
     % \centering
     \raggedleft
 } % before-code
@@ -165,32 +168,32 @@
 \fancyhead[RO]{\MakeUppercase{chapter \thechapter \ \leftmark}} %Right odd header
 \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
-\chapter{Introduction} \label{introduction}
-\input{\textDirectory/introduction}
-
-\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
-\input{\textDirectory/DOMFormalism}
-
-\chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
-\input{\textDirectory/techniques}
-
-\chapter{Neutron Total Cross Sections: Experiment} \label{TCSExperiment}
-\input{\textDirectory/TCSExperiment}
-
-\chapter{Neutron Total Cross Sections: Analysis and Results} \label{TCSAnalysis}
-\input{\textDirectory/TCSAnalysis}
-
-\chapter{Neutron Elastic Cross Sections: Experiment} \label{ECSExperiment}
-\input{\textDirectory/ECSExperiment}
-
-\chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
-\input{\textDirectory/ECSAnalysis}
-
-\chapter{Dispersive Optical Model Results}\label{DOMResults}
-\input{\textDirectory/DOMResults}
-
-\chapter{Conclusion}
-\input{\textDirectory/conclusion}
+%\chapter{Introduction} \label{introduction}
+%\input{\textDirectory/introduction}
+%
+%\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
+%\input{\textDirectory/DOMFormalism}
+%
+%\chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
+%\input{\textDirectory/techniques}
+%
+%\chapter{Neutron Total Cross Sections: Experiment} \label{TCSExperiment}
+%\input{\textDirectory/TCSExperiment}
+%
+%\chapter{Neutron Total Cross Sections: Analysis and Results} \label{TCSAnalysis}
+%\input{\textDirectory/TCSAnalysis}
+%
+%\chapter{Neutron Elastic Cross Sections: Experiment} \label{ECSExperiment}
+%\input{\textDirectory/ECSExperiment}
+%
+%\chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
+%\input{\textDirectory/ECSAnalysis}
+%
+%\chapter{Dispersive Optical Model Results}\label{DOMResults}
+%\input{\textDirectory/DOMResults}
+%
+%\chapter{Conclusion}
+%\input{\textDirectory/conclusion}
 
 \clearpage %needed this or for some reason the header writes appendix for the last chapter...
 
@@ -226,6 +229,13 @@
         \vspace{-0.2in}%
         \rule{\textwidth}{1pt}
     ] % after-code
+    \titlespacing*{\chapter}{0pt}{-19pt}{0pt}
+
+    \fancyhead{} %clears the header
+    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    \chapter{DOM Fit Results}
+    \input{\textDirectory/fits}
+    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix

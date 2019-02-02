@@ -1,0 +1,119 @@
+\def\isotopeList{
+o16}
+
+\foreach \isotope in {o16}
+{
+    \section{Data used to constrain DOM fit of \isotope}
+    \subsection{Positive-energy data}
+
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonElastic.png}
+            \caption{$^{16}O$ proton elastic scattering data}
+        \end{minipage}\hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronElastic.png}
+            \caption{$^{16}O$ neutron elastic scattering data}
+        \end{minipage}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonInelastic.png}
+            \caption{$^{16}O$ proton \rxn data}
+        \end{minipage}\hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronInelastic.png}
+            \caption{$^{16}O$ neutron \rxn and \tot data}
+        \end{minipage}
+    \end{figure}
+
+    \afterpage{\clearpage}
+
+    \subsection{Negative-energy data}
+
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_chargeDensity.png}
+            \caption{$^{16}O$ proton \rxn data}
+        \end{minipage}\hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_SPLevels.png}
+            \caption{$^{16}O$ neutron \rxn and \tot data}
+        \end{minipage}
+    \end{figure}
+
+    \afterpage{\clearpage}
+
+    \subsection{Visualization of extracted potential}
+
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonPotentials.png}
+            \caption{$^{16}O$ proton \rxn data}
+        \end{minipage}\hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronPotentials.png}
+            \caption{$^{16}O$ neutron \rxn and \tot data}
+        \end{minipage}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonVolumeIntegrals.png}
+            \caption{$^{16}O$ proton \rxn data}
+        \end{minipage}\hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronVolumeIntegrals.png}
+            \caption{$^{16}O$ neutron \rxn and \tot data}
+        \end{minipage}
+    \end{figure}
+
+    \afterpage{\clearpage}
+
+    \subsection{Quantities of interest extracted from potential}
+
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonSpectralFunctions.png}
+            \caption{$^{16}O$ proton \rxn data}
+        \end{minipage}\hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronSpectralFunctions.png}
+            \caption{$^{16}O$ neutron \rxn and \tot data}
+        \end{minipage}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+            \includegraphics[width = 0.9\textwidth]{figures/\isotope_matterDensity.png}
+            \caption{DOM prediction of $^{16}O$ matter density}
+                %\label{\isotopeMatterDensity}
+    \end{figure}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width = 0.9\textwidth]{figures/\isotope_eep.png}
+            \caption{DOM prediction of $^{16}O$ (e,e'p) cross sections}
+                %\label{\isotopeeep}
+        \end{center}
+    \end{figure}
+}
