@@ -1,8 +1,37 @@
 \begin{table*}[ht]
-    \label{tab:title}
-    \label{FitParameters}
-    \begin{center}
-        \footnotesize
-        \makebox[\textwidth][c]{\input{parameters/parameterValuesTable.tex}}
-    \end{center}
+    \label{FirstParametersTable}
+    \centering
+    \footnotesize
+    \caption{Hartree-Fock parameters (isoscalar)}
+    \makebox[\textwidth][c]{\input{parameters/HFParametersTable.tex}}
+
+    \vspace{2em}
+    \footnotesize
+    \caption{Hartree-Fock parameters (isovector)}
+    \makebox[\textwidth][c]{\input{parameters/HFAsymmParametersTable.tex}}
+
+    \vspace{2em}
+    \footnotesize
+    \caption{Imaginary parameters (volume-like, isoscalar)}
+    \makebox[\textwidth][c]{\input{parameters/ImVolumeParametersTable.tex}}
+
+    \vspace{2em}
+    \footnotesize
+    \caption{Imaginary parameters (volume-like, isovector)}
+    \makebox[\textwidth][c]{\input{parameters/ImVolumeAsymmParametersTable.tex}}
+
+    \vspace{2em}
+    \footnotesize
+    \caption{Imaginary parameters (surface-like, isoscalar)}
+    \makebox[\textwidth][c]{\input{parameters/ImSurfaceParametersTable.tex}}
+
+    \vspace{2em}
+    \footnotesize
+    \caption{Imaginary parameters (surface-like, isovector)}
+    \makebox[\textwidth][c]{\input{parameters/ImSurfaceAsymmParametersTable.tex}}
+
+    \vspace{2em}
+    \footnotesize
+    \caption{Spin-orbit parameters}
+    \makebox[\textwidth][c]{\input{parameters/SpinOrbitParametersTable.tex}}
 \end{table*}
