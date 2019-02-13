@@ -1,119 +1,127 @@
-\def\isotopeList{
-o16}
+% O16 plots
 
-\foreach \isotope in {o16}
-{
-    \section{Data used to constrain DOM fit of \isotope}
-    \subsection{Positive-energy data}
+\section{Data used to constrain DOM fit of \oSix}
+\subsection{Positive-energy data}
 
-    \begin{figure}[H]
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
         \centering
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonElastic.png}
-            \caption{$^{16}O$ proton elastic scattering data}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronElastic.png}
-            \caption{$^{16}O$ neutron elastic scattering data}
-        \end{minipage}
-    \end{figure}
-
-    \begin{figure}[H]
+        \includegraphics[width=1.0\textwidth]{figures/o16_protonElastic.png}
+        \caption{Proton elastic scattering data}
+        \label{DOMFitData_o16_proton_elastic}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
         \centering
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonInelastic.png}
-            \caption{$^{16}O$ proton \rxn data}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronInelastic.png}
-            \caption{$^{16}O$ neutron \rxn and \tot data}
-        \end{minipage}
-    \end{figure}
+        \includegraphics[width=1.0\textwidth]{figures/o16_neutronElastic.png}
+        \caption{Neutron elastic scattering data}
+        \label{DOMFitData_o16_neutron_elastic}
+    \end{minipage}
+\end{figure}
 
-    \afterpage{\clearpage}
-
-    \subsection{Negative-energy data}
-
-    \begin{figure}[H]
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
         \centering
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_chargeDensity.png}
-            \caption{$^{16}O$ proton \rxn data}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_SPLevels.png}
-            \caption{$^{16}O$ neutron \rxn and \tot data}
-        \end{minipage}
-    \end{figure}
-
-    \afterpage{\clearpage}
-
-    \subsection{Visualization of extracted potential}
-
-    \begin{figure}[H]
+        \includegraphics[width=1.0\textwidth]{figures/o16_protonInelastic.png}
+        \caption{Proton \rxn data}
+        \label{DOMFitData_o16_proton_inelastic}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
         \centering
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonPotentials.png}
-            \caption{$^{16}O$ proton \rxn data}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronPotentials.png}
-            \caption{$^{16}O$ neutron \rxn and \tot data}
-        \end{minipage}
-    \end{figure}
+        \includegraphics[width=1.0\textwidth]{figures/o16_neutronInelastic.png}
+        \caption{Neutron \rxn and \tot data}
+        \label{DOMFitData_o16_neutron_inelastic}
+    \end{minipage}
+\end{figure}
 
-    \begin{figure}[H]
+\afterpage{\clearpage}
+
+\subsection{Negative-energy data}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
         \centering
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonVolumeIntegrals.png}
-            \caption{$^{16}O$ proton \rxn data}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronVolumeIntegrals.png}
-            \caption{$^{16}O$ neutron \rxn and \tot data}
-        \end{minipage}
-    \end{figure}
-
-    \afterpage{\clearpage}
-
-    \subsection{Quantities of interest extracted from potential}
-
-    \begin{figure}[H]
+        \includegraphics[width=1.0\textwidth]{figures/o16_chargeDensity.png}
+        \caption{Charge density data}
+        \label{DOMFitData_o16_chargeDensity}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
         \centering
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_protonSpectralFunctions.png}
-            \caption{$^{16}O$ proton \rxn data}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.9\textwidth]{figures/\isotope_neutronSpectralFunctions.png}
-            \caption{$^{16}O$ neutron \rxn and \tot data}
-        \end{minipage}
-    \end{figure}
+        \includegraphics[width=1.0\textwidth]{figures/o16_SPLevels.png}
+        \caption{Single-particle levels}
+        \label{DOMFitData_o16_SPLevels}
+    \end{minipage}
+\end{figure}
 
-    \begin{figure}[H]
+\afterpage{\clearpage}
+
+\subsection{Visualization of extracted potential}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
         \centering
-            \includegraphics[width = 0.9\textwidth]{figures/\isotope_matterDensity.png}
-            \caption{DOM prediction of $^{16}O$ matter density}
-                %\label{\isotopeMatterDensity}
-    \end{figure}
+        \includegraphics[width=1.0\textwidth]{figures/o16_protonPotentials.png}
+        \caption{Energy-dependence of optical potential components for protons
+        on \oSix}
+        \label{DOMFitData_o16_proton_potentialComponent_energy}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/o16_neutronPotentials.png}
+        \caption{Neutron potential energy-dependent component}
+        \label{DOMFitData_o16_neutron_potentialComponent_energy}
+    \end{minipage}
+\end{figure}
 
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[width = 0.9\textwidth]{figures/\isotope_eep.png}
-            \caption{DOM prediction of $^{16}O$ (e,e'p) cross sections}
-                %\label{\isotopeeep}
-        \end{center}
-    \end{figure}
-}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/o16_protonVolumeIntegrals.png}
+        \caption{Proton potential, integrated over r-space}
+        \label{DOMFitData_o16_proton_potentialIntegral}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/o16_neutronVolumeIntegrals.png}
+        \caption{Neutron potential, integrated over r-space}
+        \label{DOMFitData_o16_neutron_potentialIntegral}
+    \end{minipage}
+\end{figure}
+
+\afterpage{\clearpage}
+
+\subsection{Quantities of interest extracted from potential}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/o16_protonSpectralFunctions.png}
+        \caption{Proton spectral functions}
+        \label{DOMFitData_o16_proton_spectralFunctions}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/o16_neutronSpectralFunctions.png}
+        \caption{Neutron spectral functions}
+        \label{DOMFitData_o16_neutron_spectralFunctions}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figures/o16_matterDensity.png}
+    \caption{Matter density distribution}
+    \label{DOMFitData_o16_matterDensity}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 1.0\textwidth]{figures/o16_eep.png}
+    \caption{(e,e'p) cross sections}
+    \label{DOMFitData_o16_eep}
+\end{figure}

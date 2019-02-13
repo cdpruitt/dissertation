@@ -66,9 +66,19 @@
 \newcommand{\totE}{\ensuremath{\sigma_{tot}}(E)}
 \newcommand{\totEs}{\ensuremath{\sigma_{tot}}(E)\,\,}
 \newcommand{\totRDs}{\ensuremath{\sigma_{A,A'}}(E)\,}
-\newcommand{\rxn}{\ensuremath{\sigma_{react}}}
-\newcommand{\rxnE}{\ensuremath{\sigma_{react}}(E)}
-\newcommand{\rxnEs}{\ensuremath{\sigma_{react}}(E)\,\,}
+\newcommand{\rxn}{\ensuremath{\sigma_{rxn}}}
+\newcommand{\rxnE}{\ensuremath{\sigma_{rxn}}(E)}
+\newcommand{\rxnEs}{\ensuremath{\sigma_{rxn}}(E)\,\,}
+
+\newcommand{\oSix}{\ensuremath{^{16}}O}
+\newcommand{\oEight}{\ensuremath{^{18}}O}
+\newcommand{\caForty}{\ensuremath{^{40}}Ca}
+\newcommand{\caEight}{\ensuremath{^{48}}Ca}
+\newcommand{\niEight}{\ensuremath{^{58}}Ni}
+\newcommand{\niFour}{\ensuremath{^{64}}Ni}
+\newcommand{\snTwelve}{\ensuremath{^{112}}Sn}
+\newcommand{\snFour}{\ensuremath{^{124}}Sn}
+\newcommand{\pbEight}{\ensuremath{^{208}}Pb}
 
 \setlength\epigraphwidth{.8\textwidth}
 \setlength\epigraphrule{0pt}
@@ -231,11 +241,11 @@
     ] % after-code
     \titlespacing*{\chapter}{0pt}{-22pt}{0pt}
 
-    %\fancyhead{} %clears the header
-    %\fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    %\chapter{DOM Fit Results}
-    %\input{\textDirectory/fits}
-    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    \fancyhead{} %clears the header
+    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    \chapter{DOM Fit Results}
+    \input{\textDirectory/fits}
+    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
