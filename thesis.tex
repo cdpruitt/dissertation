@@ -61,6 +61,7 @@
 %\allsectionsfont{\singlespacing} 
 
 % defines shortcuts for common physics symbols
+% scattering cross sections
 \newcommand{\tot}{\ensuremath{\sigma_{tot}}}
 \newcommand{\tots}{\ensuremath{\sigma_{tot}}\,\,}
 \newcommand{\totE}{\ensuremath{\sigma_{tot}}(E)}
@@ -71,6 +72,7 @@
 \newcommand{\rxnEs}{\ensuremath{\sigma_{rxn}}(E)\,\,}
 \newcommand{\el}{\ensuremath{\frac{d\sigma}{d\Omega}}\,}
 
+% nuclides
 \newcommand{\oSix}{\ensuremath{^{16}}O}
 \newcommand{\oEight}{\ensuremath{^{18}}O}
 \newcommand{\neEight}{\ensuremath{^{18}}O}
@@ -81,6 +83,15 @@
 \newcommand{\snTwelve}{\ensuremath{^{112}}Sn}
 \newcommand{\snFour}{\ensuremath{^{124}}Sn}
 \newcommand{\pbEight}{\ensuremath{^{208}}Pb}
+
+% shell labels
+\newcommand{\sOne}{s\ensuremath{\frac{1}{2}}}
+\newcommand{\pThree}{p\ensuremath{\frac{3}{2}}}
+\newcommand{\pOne}{p\ensuremath{\frac{1}{2}}}
+\newcommand{\dFive}{d\ensuremath{\frac{5}{2}}}
+\newcommand{\dThree}{d\ensuremath{\frac{3}{2}}}
+\newcommand{\fSeven}{f\ensuremath{\frac{7}{2}}}
+\newcommand{\fFive}{f\ensuremath{\frac{5}{2}}}
 
 \setlength\epigraphwidth{.8\textwidth}
 \setlength\epigraphrule{0pt}
@@ -243,25 +254,25 @@
     ] % after-code
     \titlespacing*{\chapter}{0pt}{-22pt}{0pt}
 
-    \fancyhead{} %clears the header
-    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    \chapter{DOM Fit Results}
-    \input{\textDirectory/fits}
-    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    %\fancyhead{} %clears the header
+    %\fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    %\chapter{DOM Fit Results}
+    %\input{\textDirectory/fits}
+    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
-    \fancyhead{} %clears the header
-    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    \chapter{DOM Fit Parameters}
-    \input{\textDirectory/parameters}
-    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    %\fancyhead{} %clears the header
+    %\fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    %\chapter{DOM Fit Parameters}
+    %\input{\textDirectory/parameters}
+    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
-    \chapter{Literature data used in DOM Fits}
-    \input{\textDirectory/dataSets}
-    \addcontentsline{toc}{chapter}{Literature Data used in DOM Fits}
+    %\chapter{Literature data used in DOM Fits}
+    %\input{\textDirectory/dataSets}
+    %\addcontentsline{toc}{chapter}{Literature Data used in DOM Fits}
 
-    \chapter*{Physical Constants}
-    \input{\textDirectory/units}
-    \addcontentsline{toc}{chapter}{Physical Constants}
+    %\chapter*{Physical Constants}
+    %\input{\textDirectory/units}
+    %\addcontentsline{toc}{chapter}{Physical Constants}
 
 \end{appendices}
 

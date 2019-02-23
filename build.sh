@@ -2,4 +2,3 @@
 
 pdflatex thesis.tex
 #evince thesis.pdf &
-
