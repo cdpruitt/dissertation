@@ -1,4 +1,4 @@
-\documentclass[twosided, 12pt]{book} %twosided is nice requires (sometimes) introduces blank pagestyle, which is cool because it looks nice and lets me make fancy headers
+\documentclass[twosided, 12pt, draft]{book} %twosided is nice requires (sometimes) introduces blank pagestyle, which is cool because it looks nice and lets me make fancy headers
 \usepackage{emptypage} % should remove blank page headers and footers, i.e., works beautifully
 \usepackage{titlesec} % modify title and section(<-doesn't work?)
 \usepackage{amsmath} % lots of math functions
@@ -69,9 +69,11 @@
 \newcommand{\rxn}{\ensuremath{\sigma_{rxn}}}
 \newcommand{\rxnE}{\ensuremath{\sigma_{rxn}}(E)}
 \newcommand{\rxnEs}{\ensuremath{\sigma_{rxn}}(E)\,\,}
+\newcommand{\el}{\ensuremath{\frac{d\sigma}{d\Omega}}\,}
 
 \newcommand{\oSix}{\ensuremath{^{16}}O}
 \newcommand{\oEight}{\ensuremath{^{18}}O}
+\newcommand{\neEight}{\ensuremath{^{18}}O}
 \newcommand{\caForty}{\ensuremath{^{40}}Ca}
 \newcommand{\caEight}{\ensuremath{^{48}}Ca}
 \newcommand{\niEight}{\ensuremath{^{58}}Ni}
@@ -178,32 +180,32 @@
 \fancyhead[RO]{\MakeUppercase{chapter \thechapter \ \leftmark}} %Right odd header
 \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
-%\chapter{Introduction} \label{introduction}
-%\input{\textDirectory/introduction}
-%
-%\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
-%\input{\textDirectory/DOMFormalism}
-%
-%\chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
-%\input{\textDirectory/techniques}
-%
-%\chapter{Neutron Total Cross Sections: Experiment} \label{TCSExperiment}
-%\input{\textDirectory/TCSExperiment}
-%
-%\chapter{Neutron Total Cross Sections: Analysis and Results} \label{TCSAnalysis}
-%\input{\textDirectory/TCSAnalysis}
-%
-%\chapter{Neutron Elastic Cross Sections: Experiment} \label{ECSExperiment}
-%\input{\textDirectory/ECSExperiment}
-%
-%\chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
-%\input{\textDirectory/ECSAnalysis}
-%
-%\chapter{Dispersive Optical Model Results}\label{DOMResults}
-%\input{\textDirectory/DOMResults}
-%
-%\chapter{Conclusion}
-%\input{\textDirectory/conclusion}
+\chapter{Introduction} \label{introduction}
+\input{\textDirectory/introduction}
+
+\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
+\input{\textDirectory/DOMFormalism}
+
+\chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
+\input{\textDirectory/techniques}
+
+\chapter{Neutron Total Cross Sections: Experiment} \label{TCSExperiment}
+\input{\textDirectory/TCSExperiment}
+
+\chapter{Neutron Total Cross Sections: Analysis and Results} \label{TCSAnalysis}
+\input{\textDirectory/TCSAnalysis}
+
+\chapter{Neutron Elastic Cross Sections: Experiment} \label{ECSExperiment}
+\input{\textDirectory/ECSExperiment}
+
+\chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
+\input{\textDirectory/ECSAnalysis}
+
+\chapter{Dispersive Optical Model Results}\label{DOMResults}
+\input{\textDirectory/DOMResults}
+
+\chapter{Conclusion}
+\input{\textDirectory/conclusion}
 
 \clearpage %needed this or for some reason the header writes appendix for the last chapter...
 
