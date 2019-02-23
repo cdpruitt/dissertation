@@ -25,6 +25,33 @@ dispersion relation (the Kramers-Kronig relations) between the real and imaginar
 halves of the potential, ensuring that the potential is causal (i.e., the
 time-ordering of the operator representation of the self-energy is maintained).
 
+\section{Definition of the single-particle propagator}
+The central project of the Dispersive Optical Model (like any optical model) is
+to understand how nucleons move about in a nuclear many-body system. Specifically,
+we wish to know
+how a nucleon with energy $E$ and quantum numbers $\alpha$
+at time $t_{0}$ will be measured at a
+later time $t$ with quantum numbers $\beta$ after its interaction with the
+nuclear environment, which is modeled with an optical potential. Given the
+Hamiltonian that incorporates this interaction, the Schr\"odinger equation
+relates the Hamiltonian to the time evolution of this state:
+
+\begin{equation}
+    i\hbar\frac{\partial}{\partial t}\ket{\alpha, t_{0};t} = H\ket{\alpha,
+    t_{0}; t}
+\end{equation}
+
+where $\ket{\alpha, t_{0},t}$ is the state at time $t$, given an initial state
+$\ket{\alpha, t_{0}}$. Simple substitution shows that this initial state
+propagates in time according to:
+
+\begin{equation}
+    \ket{\alpha, t_{0}, t} = e^{-\frac{i}{\hbar}H(t-t_{0})}\ket{\alpha, t_{0}}
+\end{equation}
+
+Concretely, given initial position quantum numbers $\boldmath{r}$, the wavefunction
+of a state $\psi(\boldmath{r},t)$ is the sum of the contributions of 
+
 DOM Parameterization
 
 To parameterize the DOM's optical potential, we rely on standard functional
@@ -63,8 +90,7 @@ nuclear surface:
 
 \begin{equation}
     V_{so}(r,r') =
-    \frac{d}{dr}\left\dfrac{-V}{1+e^{(r-R)/a}}\right\cdot\dfrac{1}{\pi^{\frac{3}{2}}\beta^{3}}
-\exp{\frac{|r-r'|^{2}}{\beta^{2}}}
+    \frac{d}{dr} \frac{-V}{1+e^{\frac{(r-R)}{a}}}\cdot\frac{1}{\pi^{\frac{3}{2}}\beta^{3}} \exp{\frac{|r-r'|^{2}}{\beta^{2}}}
 \end{equation}
 
 The imaginary part of the potential is comprised of independent surface and volume terms
@@ -74,29 +100,45 @@ both above and below the Fermi surface, plus an imaginary spin-orbit term:
     V_{HF}(r,r') = V_{vol}(r,r') + V_{WB}(r)
 \end{equation}
 
+The occupation number of nucleons with quantum numbers $\alpha$ can be
+calculated directly from the imaginary component of the single-particle
+propagator:
 
-For nuclei with open subshells (e.g., $^{18}$O, $^{58}$Ni), an additional
+\begin{eqnarray}
+    n(\alpha)
+    & = & \braket{\Psi^{N}_{0}|a^{\dagger}_{\alpha}a_{\alpha}|\Psi^{N}_{0}}\\
+    & = & \sum_{n}|\braket{\Psi^{N-1}_{n}|a_{\alpha}|\Psi^{N}_{0}}|^{2}\\
+    & = & \int_{-\infty}^{\epsilon_{F}^{-}} dE
+\sum_{n}|\braket{\Psi^{N-1}_{n}|a_{\alpha}|\Psi^{N}_{0}}|^{2}
+\delta(E-(E^{N}_{0}-E^{N-1}_{n}))\\
+& = & \int_{-\infty}^{\epsilon_{F}^{-}} dE \frac{1}{\pi}\operatorname{Im}G(\alpha,\alpha;E)
+\end{eqnarray}
+
+
+
+For nuclei with open subshells (e.g., the $\upnu$ 0\dFive in $^{18}$O and
+$\upnu$ 0\fFive in $^{58}$Ni), an additional
 pairing parameter $\Delta$ was added to
-account for fractional occupation $n_{\pm}$ of the open subshells due to pairing
-effects. This parameter splits open subshells further into upper and lower sublevels
-with energies $E_{\pm}$:
+account for these subshells' fractional occupatio $n_{\pm}$ of the open subshells. due to pairing
+effects. This parameter splits partially-occupied subshells (e.g., the $\upnu$\dFive
+for \oEight) into upper and lower sublevels with energies $E_{\pm}$:
 
 \begin{equation}
     E_{\pm} = \mu \pm ((\epsilon_{F}-\mu)^{2} + \Delta^{2})^{frac{1}{2}}
 \end{equation}
 
-where $\mu$ is the energy of the open subshell, $\epsilon_{F}$ is the Fermi
-energy. This energy splitting corresponds to the energy difference between
-adding/removing a nucleon to/from that subshell. Occupation in the open subshell
-$n_{pm}$ is split between the upper and lower sublevels:
+where $\mu$ is the energy of the open subshell before pairing is considered and
+$\epsilon_{F}$ is the Fermi
+energy. The magnitude of $\Delta$ corresponds to the energy difference between
+adding/removing a nucleon to/from that subshell. The subshell's particle
+capacity is split between the upper and lower sublevels, and only the :
 
 \begin{equation}
-    n_{\pm}(\mu_{\pm},\Delta) = \frac{1}{2}\left
-    1-\frac{\chi}{E_{\pm}}\right
+    n_{\pm} = \frac{1}{2}\left( 1-\frac{\chi}{E_{\pm}}\right)
 \end{equation}
 
-where $\chi = \abs(E_{\pm}-\mu) - (\epsilon_{F} - \mu)$. Only occupation in the
-lower sublevel contributes to the total particle number. For each open-shell
+where $\chi = |E_{\pm}-\mu| - (\epsilon_{F} - \mu)$. Only occupation in the
+lower sublevel is counted toward the total particle number. For each open-shell
 nucleus with nucleon numbers $N, Z$ , the pairing gap $\Delta$ was fixed according to:
 
 \begin{equation}

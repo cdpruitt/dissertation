@@ -1,5 +1,4 @@
 #!/bin/bash
 
 pdflatex thesis.tex
-evince thesis.pdf &
-
+#evince thesis.pdf &
