@@ -37,6 +37,7 @@
 \usepackage{upgreek} % for non-italicized Greek letters
 \usepackage{pgffor}
 \usepackage{float}
+\usepackage{bm}
 
 \interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
 
@@ -75,13 +76,24 @@
 % nuclides
 \newcommand{\oSix}{\ensuremath{^{16}}O}
 \newcommand{\oEight}{\ensuremath{^{18}}O}
+\newcommand{\oSixEight}{\ensuremath{^{16,18}}O}
+
 \newcommand{\neEight}{\ensuremath{^{18}}O}
+
 \newcommand{\caForty}{\ensuremath{^{40}}Ca}
 \newcommand{\caEight}{\ensuremath{^{48}}Ca}
+\newcommand{\caAughtEight}{\ensuremath{^{40,48}}Ca}
+
 \newcommand{\niEight}{\ensuremath{^{58}}Ni}
 \newcommand{\niFour}{\ensuremath{^{64}}Ni}
+\newcommand{\niEightFour}{\ensuremath{^{58,64}}Ni}
+
+\newcommand{\rhThree}{\ensuremath{^{103}}Rh}
+
 \newcommand{\snTwelve}{\ensuremath{^{112}}Sn}
 \newcommand{\snFour}{\ensuremath{^{124}}Sn}
+\newcommand{\snTwelveFour}{\ensuremath{^{112,124}}Sn}
+
 \newcommand{\pbEight}{\ensuremath{^{208}}Pb}
 
 % shell labels
@@ -194,11 +206,8 @@
 \chapter{Introduction} \label{introduction}
 \input{\textDirectory/introduction}
 
-\chapter{Dispersive Optical Model Formalism} \label{DOMFormalism}
-\input{\textDirectory/DOMFormalism}
-
-\chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
-\input{\textDirectory/techniques}
+%\chapter{Neutron Scattering And Detection Techniques} \label{Techniques}
+%\input{\textDirectory/techniques}
 
 \chapter{Neutron Total Cross Sections: Experiment} \label{TCSExperiment}
 \input{\textDirectory/TCSExperiment}
@@ -211,6 +220,9 @@
 
 \chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
 \input{\textDirectory/ECSAnalysis}
+
+\chapter{The Dispersive Optical Model Formalism} \label{DOMFormalism}
+\input{\textDirectory/DOMFormalism}
 
 \chapter{Dispersive Optical Model Results}\label{DOMResults}
 \input{\textDirectory/DOMResults}
@@ -254,25 +266,25 @@
     ] % after-code
     \titlespacing*{\chapter}{0pt}{-22pt}{0pt}
 
-    %\fancyhead{} %clears the header
-    %\fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    %\chapter{DOM Fit Results}
-    %\input{\textDirectory/fits}
-    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    \fancyhead{} %clears the header
+    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    \chapter{DOM Fit Results}
+    \input{\textDirectory/fits}
+    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
-    %\fancyhead{} %clears the header
-    %\fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    %\chapter{DOM Fit Parameters}
-    %\input{\textDirectory/parameters}
-    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    \fancyhead{} %clears the header
+    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    \chapter{DOM Fit Parameters}
+    \input{\textDirectory/parameters}
+    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
-    %\chapter{Literature data used in DOM Fits}
-    %\input{\textDirectory/dataSets}
-    %\addcontentsline{toc}{chapter}{Literature Data used in DOM Fits}
+    \chapter{Literature data used in DOM Fits}
+    \input{\textDirectory/dataSets}
+    \addcontentsline{toc}{chapter}{Literature Data used in DOM Fits}
 
-    %\chapter*{Physical Constants}
-    %\input{\textDirectory/units}
-    %\addcontentsline{toc}{chapter}{Physical Constants}
+    \chapter*{Physical Constants}
+    \input{\textDirectory/units}
+    \addcontentsline{toc}{chapter}{Physical Constants}
 
 \end{appendices}
 
