@@ -12,7 +12,7 @@
 }
 \usepackage[font = small]{caption}
 \usepackage{verbatim}
-\usepackage{appendix}
+\usepackage[titletoc]{appendix}
 \usepackage{adjustbox} % adjust figures
 \usepackage{tabularx}
 \usepackage{indentfirst}
@@ -63,18 +63,15 @@
 
 % defines shortcuts for common physics symbols
 % scattering cross sections
-\newcommand{\tot}{\ensuremath{\sigma_{tot}}}
-\newcommand{\tots}{\ensuremath{\sigma_{tot}}\,\,}
-\newcommand{\totE}{\ensuremath{\sigma_{tot}}(E)}
-\newcommand{\totEs}{\ensuremath{\sigma_{tot}}(E)\,\,}
-\newcommand{\totRDs}{\ensuremath{\sigma_{A,A'}}(E)\,}
-\newcommand{\rxn}{\ensuremath{\sigma_{rxn}}}
-\newcommand{\rxnE}{\ensuremath{\sigma_{rxn}}(E)}
-\newcommand{\rxnEs}{\ensuremath{\sigma_{rxn}}(E)\,\,}
-\newcommand{\el}{\ensuremath{\frac{d\sigma_{el}}{d\Omega}}\,}
+\newcommand{\tot}{\ensuremath{\upsigma_{\text{tot}}}}
+\newcommand{\totE}{\ensuremath{\upsigma_{\text{tot}}}(E)}
+\newcommand{\totRD}{\ensuremath{\upsigma_{A,A'}}(E)}
+\newcommand{\rxn}{\ensuremath{\upsigma_{\text{rxn}}}}
+\newcommand{\rxnE}{\ensuremath{\upsigma_{\text{rxn}}}(E)}
+\newcommand{\el}{\ensuremath{\frac{d\upsigma_{\text{el}}}{d\Omega}}}
 
 % nuclides
-\newcommand{\cNat}{\ensuremath{^{nat}}C}
+\newcommand{\cNat}{\ensuremath{^{\text{nat}}}C}
 
 \newcommand{\oSix}{\ensuremath{^{16}}O}
 \newcommand{\oEight}{\ensuremath{^{18}}O}
@@ -89,17 +86,17 @@
 \newcommand{\niEight}{\ensuremath{^{58}}Ni}
 \newcommand{\niFour}{\ensuremath{^{64}}Ni}
 \newcommand{\niEightFour}{\ensuremath{^{58,64}}Ni}
-\newcommand{\niNat}{\ensuremath{^{nat}}Ni}
+\newcommand{\niNat}{\ensuremath{^{\text{nat}}}Ni}
 
 \newcommand{\rhThree}{\ensuremath{^{103}}Rh}
 
 \newcommand{\snTwelve}{\ensuremath{^{112}}Sn}
 \newcommand{\snFour}{\ensuremath{^{124}}Sn}
 \newcommand{\snTwelveFour}{\ensuremath{^{112,124}}Sn}
-\newcommand{\snNat}{\ensuremath{^{nat}}Sn}
+\newcommand{\snNat}{\ensuremath{^{\text{nat}}}Sn}
 
 \newcommand{\pbEight}{\ensuremath{^{208}}Pb}
-\newcommand{\pbNat}{\ensuremath{^{nat}}Pb}
+\newcommand{\pbNat}{\ensuremath{^{\text{nat}}}Pb}
 
 % shell labels
 \newcommand{\sOne}{s\ensuremath{\frac{1}{2}}}
@@ -252,7 +249,6 @@
 
 \begin{appendices}
 
-  %Reformat chapter titles so that they say appendix in the appendices
     \titleformat
     {\chapter} % command
     [display] % shape
@@ -273,17 +269,18 @@
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    \chapter{Experimental Data Used to Constrain DOM Potential}
+    \chapter{Experimental Data Used to Constrain DOM Potentials}
     \input{\textDirectory/dataSets}
     %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+
     \chapter{DOM Potential Parameter Values}
     \input{\textDirectory/parameters}
     %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
-    \chapter{Visualization of DOM Potentials and Comparison to Experiment}
+    \chapter{Comparison of DOM Potentials to Experimental Data}
     \input{\textDirectory/fits}
 
     \chapter*{Physical Constants}

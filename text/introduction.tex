@@ -2,7 +2,7 @@
     accurate measurement and patient long-continued labour in the minute
 sifting of numerical results.''}{William Thompson, \nth{1} Baron Kelvin}
 
-\section{Models of the Atomic Nucleus}
+\section{Models of the Atomic Nucleus: Overview}
 
 To unravel the nuclear many-body problem, we can
 employ models that incorporate essential details while ignoring specifics with
@@ -113,7 +113,7 @@ Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.
 Connect to FRIB/study of extremely neutron-rich systems relevant for r-process
 and astrophysical nucleosynthesis.
 
-\section{Nuclear Experimental Data}
+\section{Overview of Relevant Experimental Nuclear Data}
 \subsection{Elastic nucleon scattering}
 \subsection{Inelastic nucleon scattering}
 
@@ -122,9 +122,9 @@ central result of this dissertation, are presented in Chapters \ref{TCSAnalysis,
 
 Neutron scattering is a direct, Coulomb-insensitive tool for probing the nuclear
 environment. The simplest measurement of neutron interaction with a nucleus,
-the neutron total cross section \totE, provides fundamental information about
+the neutron total cross section \tot, provides fundamental information about
 nuclear size and the ratio of elastic-to-inelastic components of nucleon 
-scattering. Additionally, \tots data are sensitive to a variey of nuclear
+scattering. Additionally, \tot\ data are sensitive to a variey of nuclear
 properties of great interest including the neutron skin of neutron-rich nuclei
 \cite{Mahzoon2017} and thus the density dependence of the symmetry energy $L$,
 essential for an accurate neutron star equation-of-state (EOS)
@@ -133,18 +133,18 @@ essential for an accurate neutron star equation-of-state (EOS)
 The earliest model for neutron scattering (a ``strongly-absorbing sphere"
 picture) describes the nucleus as a constant-density sphere that interacts
 strongly with incident neutrons approaching within a nuclear radius
-\cite{Feshbach1949}. In this picture devoid of nuclear structure, \totEs depends
+\cite{Feshbach1949}. In this picture devoid of nuclear structure, \tot\ depends
 only on size scaling of the interacting bodies:
 \begin{equation} \label{SASAbsolute}
     \sigma_{tot}(E) = 2\pi(R + \lambdabar)^{2}
 \end{equation}
 where $R=r_{0}A^{\frac{1}{3}}$ and $\lambdabar$ is the reduced wavelength
 of the incident neutron in the center of mass \cite{Fernbach1949, Satchler1980}. 
-To compare \totEs for two different targets of masses A and A', the relative
-difference \totRDs is useful:
+To compare \tot\ for two different targets of masses A and A', the relative
+difference \totRD\ is useful:
 \begin{equation} \label{SASRelDiff}
     \begin{split}
-        \totRDs & \equiv
+        \totRD & \equiv
     \frac{\sigma_{A}-\sigma_{A'}}{\sigma_{A}+\sigma_{A'}} \\
     & =
     \frac{r_{0}^{2}(A^{\frac{2}{3}}-A'^{\frac{2}{3}}) +
@@ -154,7 +154,7 @@ difference \totRDs is useful:
     \end{split}
 \end{equation}
 While on \textit{average}, experimental data comport with this naive
-model, the key feature of \totEs data is the obvious oscillatory
+model, the key feature of \tot\ data is the obvious oscillatory
 behavior centered about the average (visible in Fig.
 \ref{SASphereVsExperiment}).
 
@@ -164,10 +164,10 @@ behavior centered about the average (visible in Fig.
     \label{SASphereVsExperiment}
 \end{figure*}
 
-Experimental \totEs data are shown from 2-500
+Experimental \tot\ data are shown from 2-500
 MeV for nuclides from A=12 to A=208
 \cite{Finlay1993, Schwartz1974, Poenitz1983, Abfalterer2000, Abfalterer2001}.
-Predictions for \totEs given by the ``strongly-absorbing sphere" (SAS)
+Predictions for \tot\ given by the ``strongly-absorbing sphere" (SAS)
 model, Eq. \ref{SASAbsolute}, are shown as thin dashed lines for each nucleus.
 Regular oscillations about the SAS model are clearly visible
 as is the trend for the oscillation
@@ -214,13 +214,13 @@ potential) and all other scattering removing flux from the elastic channel (the 
             calculate the phase shift for each step. In this figure, the neutron
             energy $E_{n}$ = 14 MeV and nuclear mass $A$ = 25. For the Woods-Saxon potential,
             we used a potential depth $U$ = 42.8 MeV (following Angeli's analysis
-            of \tots data at 14 MeV \cite{Angeli1970}), with nuclear radius $R = 
+            of \tot\ data at 14 MeV \cite{Angeli1970}), with nuclear radius $R = 
             r_{0}A^{\frac{1}{3}}$, $r_{0}$ = 1.4 fm, and a diffuseness parameter
         $a$ of 0.5 fm.
 Following Angeli \cite{Angeli1970}, these considerations can be incorporated by
 imbuing the strongly-absorbing sphere relations (equation \ref{SASAbsolute}) with an additional sinusoidal term:
 \begin{equation} \label{OscillatoryModel}
-    \totE = 2\pi (R+\lambdabar)[1 - \rho \cos(\delta)]
+    \tot = 2\pi (R+\lambdabar)[1 - \rho \cos(\delta)]
 \end{equation}
 where $\rho = e^{-\operatorname{Im}(\Delta)}$, and $\delta =
 \operatorname{Re}(\Delta)$, with $\Delta$ the phase difference between the wave traveling
@@ -249,7 +249,7 @@ This form reveals an important relation: as A is increased, to maintain constant
 phase $\delta$, E must also increase \cite{Satchler1980, Peterson1962}. 
 This is contrary to a typical resonance condition where an integer number of wavelengths
 are fit inside a potential; in that case, to maintain constant phase as A is increased,
-E must be decreased. Thus these \tots oscillations have been referred to as
+E must be decreased. Thus these \tot\ oscillations have been referred to as
 ``anti-resonances" or ``echoes" \cite{Satchler1980, McVoy1967}.
 
 By including additional surface, spin-orbit, and other terms, optical models (OMs) have been 
@@ -264,33 +264,33 @@ By scattering secondary radioactive beams off of hydrogen targets in inverse
 kinematics, proton-scattering experiments are possible even on highly unstable
 nuclides. In contrast, because neutrons themselves must be generated as a
 secondary radioactive beam, neutron-scattering experiments are restricted to
-normal kinematics and \tots measurements are possible only for relatively stable
-nuclides that can be formed into a target. At present, \tots measurements above
+normal kinematics and \tot\ measurements are possible only for relatively stable
+nuclides that can be formed into a target. At present, \tot\ measurements above
 the resonance region on nuclides with short half-lives (shorter than the timescale of
 days) are technically infeasible for this reason, though a handful have been carried out on
 samples with half-lives in the tens to thousands of years \cite{Poenitz1983,
 Phillips1980, Foster1971}.
 
-Traditionally, \tots measurements have relied on analog techniques for recording
+Traditionally, \tot\ measurements have relied on analog techniques for recording
 events, techniques that suffer from a large per-event deadtime of
-up to several $\upmu$s. Thus for a typical intermediate-energy \totEs measurement
+up to several $\upmu$s. Thus for a typical intermediate-energy \tot\ measurement
 with dozens or hundreds of energy bins, achieving statistical uncertainty at the
 level of 1\% requires a thick sample to attenuate a sizable fraction of the
 incident neutron flux. For cross sections in the 1-10 barn range, this means
 sample masses of tens of grams \cite{Finlay1993, Abfalterer2001}.
 Producing an isotopically-enriched sample of this size is often
 prohibitively expensive; indeed, a literature search for isotopically-resolved
-\tots measurements reveals a paucity of data from 1-300 MeV, even for
+\tot\ measurements reveals a paucity of data from 1-300 MeV, even for
 closed-shell isotopes of special importance like $^{3,4}$He, $^{64}$Ni, and
 $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 
 \begin{table}[ht]
     \caption{A selection of results from a literature study of isotopically-
-    resolved \totEs data using the EXFOR database \cite{EXFORDatabase}. For the
+    resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}. For the
     heaviest and lightest stable nuclides in each closed shell in Z, all
     datasets falling at least partially within 1-500 MeV are shown. For elements
     whose natural abundance is $>$90\% of a single isotope (e.g.,
-    96.9\% of $^{\text{nat}}$Ca is $^{40}$Ca), \totEs data on the natural
+    96.9\% of $^{\text{nat}}$Ca is $^{40}$Ca), \tot\ data on the natural
     target was included as ``isotopic".} \label{tab:title}
     \label{IsotopicCrossSectionTable}
     \begin{center}
@@ -354,7 +354,7 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 \subsection{Quasi-free scattering}
 Louk Lapikas
 
-\subsection{Masses and Radii}
+\subsection{Nuclear Masses and Charge Radii}
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/SnIsotopeRMSRadii.png}
@@ -389,7 +389,7 @@ At end of section, familiar with:
 - a variety of neutron detection techniques: liquid/plastic scintillators,
 means of energy detection and background rejection, PSD
 
-\section{Motivation and Dissertation Overview}
+\section{Motivation, Scope, and Dissertation Outline}
 With the need for improved neutron scattering data established and an overview of neutron
 detection technology provided, the results of our neutron scattering measurement campaign can be
 presented. The experimental layout and analysis for our isotopically-resolved \tot\ measurements are 
