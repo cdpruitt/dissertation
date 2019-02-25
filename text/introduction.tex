@@ -16,14 +16,17 @@ jeopardize predictive power if new parameters are not connected to the underlyin
 
 \subsection{Liquid Drop Model}
 
-An especially simple and
-effective model, the Liquid Drop Model (LDM), describes nuclei as drops of
-an ideal nuclear fluid and has been successfully employed for many decades to
-describe nuclear masses. The binding forces of each nucleus are modeled by five
-physically-intuitive terms appropriate for such a fluid:
+The Liquid Drop Model (LDM) describes nuclei as drops of ideal nuclear fluid and
+has been successfully employed since the earliest days of nuclear science to
+describe nuclear masses and other ground-state properties. The binding of each nucleus are
+approximated by five physically-intuitive terms appropriate for a droplet of nuclear matter:
+
+\begin{equation} \label{LDM}
+    BE(Z, N) = Vol + Surface + Coulomb + Asymmetry + Spin-Orbit
+\end{equation}
 
 a volume term that describes "bulk" binding that would be experienced in an
-infinite sea of nuclear matter, or  by completely surrounded nucleons in the core of the nucleus,
+infinite sea of nuclear matter, or by completely surrounded nucleons in the core of the nucleus,
 
 a surface term that incorporates the finite size of a nucleus (i.e., it is a
 drop, not an ocean), equivalent to surface tension,
@@ -39,10 +42,28 @@ and a spin-orbit term responsible for modeling the interaction of the intrinsic 
 of a nucleus and its constituent nucleons' angular orbital momentum, which is
 a much stronger effect in nuclear binding than in the atomic case
 
-In this model, each term is parameterized and the ensemble can be fitted to
-well-measured nuclear masses across the chart of nuclides. Happily, though the detailed
-quantum structure is completely ignored, these five terms are quite successful
-in describing nuclear masses.
+The free parameters in each term can be fitted to the hundreds of well-measured nuclear masses
+across the chart of nuclides. Though the LDM completes ignores the detailed
+quantum structure of the nuclear many-body problem, these five terms are quite successful
+in describing nuclear masses [and what other properties?]
+
+Many extensions to the LDM have been developed by introducing second-order terms in the equation
+above, allowing for coupling between the five sectors. In the seminal Droplet Model of Atomic Nuclei
+\cite{MyersAndSwiatecki}, [insert number of terms] terms are deployed to fit nuclear masses, [other
+quantities]
+
+\begin{equation} \label{MyersAndSwiateckiLDM}
+    BE(Z, N) = terms
+\end{equation}
+
+Discussion of RMS Charge Radii in Sn isotopes: Droplet model success,
+Berdichevsky et al (Z. Phys. A - Atomic Nuclei 329, 393-405 (1988)) connect
+slope of isotope shift to J, Q, and L of Droplet Model, Myers/Swiatecky basic
+Droplet Model has L=100 and a great match to isotope shift
+Isotope shift measured w/ laser spectroscopy by Anselment et al, PRC 34 p 1052,
+review article by Otten (see references folder)
+
+This advanced Droplet Model was used to predict neutron skins for [insert detail] \cite{Myers1980}
 
 \cite{MyersAndSwiatecki}
 
@@ -108,8 +129,6 @@ The Dispersive Optical Model, the model used in this thesis to analyze experimen
 and extract structural information, is the subject of Chapter \ref{DOMFormalism}, where a brief
 formal treatment is given.
 
-Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.
-
 Connect to FRIB/study of extremely neutron-rich systems relevant for r-process
 and astrophysical nucleosynthesis.
 
@@ -160,7 +179,7 @@ behavior centered about the average (visible in Fig.
 
 \begin{figure*}
     \includegraphics[scale=0.3]{../analysis/plots/theory/SASphereVsExperiment.png}
-    \caption{Experimental neutron \tot\ data and strongly-absorbing-sphere predictions for \cNat, \niNat, \snNat, \pbNat}
+    \caption{Experimental neutron \tot\ data and strongly-absorbing-sphere predictions}
     \label{SASphereVsExperiment}
 \end{figure*}
 
@@ -195,7 +214,7 @@ potential) and all other scattering removing flux from the elastic channel (the 
 \begin{figure}
     \hfill\begin{minipage}{0.5\textwidth}\centering
         \includegraphics[scale=0.2]{figures/phaseShiftStillsFigure.png}
-        \caption{A simplified illustration of the nuclear Ramsauer effect}
+        \caption{A illustration of the nuclear Ramsauer effect}
         \label{RamsauerPhaseShiftFigure}
     \end{minipage}
 \end{figure}
@@ -340,34 +359,31 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/TCSChart.png}
-    \caption{Landscape of existing neutron \tot\ data, per the EXFOR database}
+    \caption{Landscape of existing neutron \tot\ data (per the EXFOR database)}
     \label{TCSChart}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/RCSChart.png}
-    \caption{Landscape of existing proton \rxn\ data, per the EXFOR database}
+    \caption{Landscape of existing proton \rxn\ data (per the EXFOR database)}
     \label{RCSChart}
 \end{figure}
 
 \subsection{Electron scattering}
+K. Minamisono
+
+
 \subsection{Quasi-free scattering}
 Louk Lapikas
 
-\subsection{Nuclear Masses and Charge Radii}
+\subsection{Nuclear Masses, Matter Radii, and Charge Radii}
+Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/SnIsotopeRMSRadii.png}
-    \caption{RMS charge radii in Sn nuclei, from \ref{Anselment1986}}
+    \caption{RMS charge radii in Sn nuclei, from \cite{Anselment1986}}
     \label{SnIsotopeShift}
 \end{figure}
-
-Discussion of RMS Charge Radii in Sn isotopes: Droplet model success,
-Berdichevsky et al (Z. Phys. A - Atomic Nuclei 329, 393-405 (1988)) connect
-slope of isotope shift to J, Q, and L of Droplet Model, Myers/Swiatecky basic
-Droplet Model has L=100 and a great match to isotope shift
-Isotope shift measured w/ laser spectroscopy by Anselment et al, PRC 34 p 1052,
-review article by Otten (see references folder)
 
 \section{Techniques for neutron scattering experiments}
 \subsection{Neutron beam production}
