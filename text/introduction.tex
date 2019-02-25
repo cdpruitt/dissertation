@@ -1,11 +1,3 @@
-%\begin{figure}
-%  \begin{center}
-%  \includegraphics[width=0.8\textwidth]{Chart_of_Nuclides.pdf}
-%  \caption{Figure caption}
-%  \label{chart}
-%  \end{center}
-%\end{figure}
-
 \epigraph{``The grandest discoveries of science have been but the rewards of
     accurate measurement and patient long-continued labour in the minute
 sifting of numerical results.''}{William Thompson, \nth{1} Baron Kelvin}
@@ -52,22 +44,7 @@ well-measured nuclear masses across the chart of nuclides. Happily, though the d
 quantum structure is completely ignored, these five terms are quite successful
 in describing nuclear masses.
 
-RMS Charge Radii in Sn isotopes
-
 \cite{MyersAndSwiatecki}
-
-\begin{figure}
-    \includegraphics[width=0.8\textwidth]{figures/SnIsotopeRMSRadii.png}
-    \caption{Figure caption}
-    \label{SnIsotopeShift}
-\end{figure}
-
-Discussion of RMS Charge Radii in Sn isotopes: Droplet model success,
-Berdichevsky et al (Z. Phys. A - Atomic Nuclei 329, 393-405 (1988)) connect
-slope of isotope shift to J, Q, and L of Droplet Model, Myers/Swiatecky basic
-Droplet Model has L=100 and a great match to isotope shift
-Isotope shift measured w/ laser spectroscopy by Anselment et al, PRC 34 p 1052,
-review article by Otten (see references folder)
 
 In the droplet model, the symmetry energy $J$, density dependence of the symmetry energy
 $L$, and surface stiffness coefficient $Q$ are the primary variables determining the formation of a 
@@ -183,21 +160,23 @@ behavior centered about the average (visible in Fig.
 
 \begin{figure*}
     \includegraphics[scale=0.3]{../analysis/plots/theory/SASphereVsExperiment.png}
-    \caption{(Color online) Experimental \totEs data are shown from 2-500
-        MeV for nuclides from A=12 to A=208
-        \cite{Finlay1993, Schwartz1974, Poenitz1983, Abfalterer2000, Abfalterer2001}.
-        Predictions for \totEs given by the ``strongly-absorbing sphere" (SAS)
-        model, Eq. \ref{SASAbsolute}, are shown as thin dashed lines for each nucleus.
-        Regular oscillations about the SAS model are clearly visible
-        as is the trend for the oscillation
-        maxima/minima to shift to \textit{higher} energies as A is increased. At low energies 
-        resonance structures are visible especially for light nuclides where the
-        density of states is smallest. Note that at higher energies, the experimental
-        cross sections drop below those predicted by the SAS model, illustrating
-    the failure of the SAS model to describe [surface physics accounted for in
-optical models?].}
+    \caption{Experimental neutron \tot\ data and strongly-absorbing-sphere predictions for \cNat, \niNat, \snNat, \pbNat}
     \label{SASphereVsExperiment}
 \end{figure*}
+
+Experimental \totEs data are shown from 2-500
+MeV for nuclides from A=12 to A=208
+\cite{Finlay1993, Schwartz1974, Poenitz1983, Abfalterer2000, Abfalterer2001}.
+Predictions for \totEs given by the ``strongly-absorbing sphere" (SAS)
+model, Eq. \ref{SASAbsolute}, are shown as thin dashed lines for each nucleus.
+Regular oscillations about the SAS model are clearly visible
+as is the trend for the oscillation
+maxima/minima to shift to \textit{higher} energies as A is increased. At low energies 
+resonance structures are visible especially for light nuclides where the
+density of states is smallest. Note that at higher energies, the experimental
+cross sections drop below those predicted by the SAS model, illustrating
+the failure of the SAS model to describe [surface physics accounted for in
+optical models?].
 
 These oscillations can be explained as the result of a phase shift between 
 neutron waves passing around the nucleus (unshifted) and waves passing
@@ -216,8 +195,12 @@ potential) and all other scattering removing flux from the elastic channel (the 
 \begin{figure}
     \hfill\begin{minipage}{0.5\textwidth}\centering
         \includegraphics[scale=0.2]{figures/phaseShiftStillsFigure.png}
-        \caption{(Color online) Frames taken from an simulation illustrating the nuclear 
-            Ramsauer effect. A neutron wave train (series of
+        \caption{A simplified illustration of the nuclear Ramsauer effect}
+        \label{RamsauerPhaseShiftFigure}
+    \end{minipage}
+\end{figure}
+
+ A neutron wave train (series of
             blue lines) impinges from the left on a real Woods-Saxon
             potential centered at the origin (diffuse red circle). The potential
             refracts the neutron wave,
@@ -233,12 +216,7 @@ potential) and all other scattering removing flux from the elastic channel (the 
             we used a potential depth $U$ = 42.8 MeV (following Angeli's analysis
             of \tots data at 14 MeV \cite{Angeli1970}), with nuclear radius $R = 
             r_{0}A^{\frac{1}{3}}$, $r_{0}$ = 1.4 fm, and a diffuseness parameter
-        $a$ of 0.5 fm.}
-        \label{RamsauerPhaseShiftFigure}
-    \end{minipage}
-\end{figure}
-
-
+        $a$ of 0.5 fm.
 Following Angeli \cite{Angeli1970}, these considerations can be incorporated by
 imbuing the strongly-absorbing sphere relations (equation \ref{SASAbsolute}) with an additional sinusoidal term:
 \begin{equation} \label{OscillatoryModel}
@@ -362,13 +340,13 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/TCSChart.png}
-    \caption{Figure caption}
+    \caption{Landscape of existing neutron \tot\ data, per the EXFOR database}
     \label{TCSChart}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/RCSChart.png}
-    \caption{Figure caption}
+    \caption{Landscape of existing proton \rxn\ data, per the EXFOR database}
     \label{RCSChart}
 \end{figure}
 
@@ -377,6 +355,19 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 Louk Lapikas
 
 \subsection{Masses and Radii}
+
+\begin{figure}
+    \includegraphics[width=0.8\textwidth]{figures/SnIsotopeRMSRadii.png}
+    \caption{RMS charge radii in Sn nuclei, from \ref{Anselment1986}}
+    \label{SnIsotopeShift}
+\end{figure}
+
+Discussion of RMS Charge Radii in Sn isotopes: Droplet model success,
+Berdichevsky et al (Z. Phys. A - Atomic Nuclei 329, 393-405 (1988)) connect
+slope of isotope shift to J, Q, and L of Droplet Model, Myers/Swiatecky basic
+Droplet Model has L=100 and a great match to isotope shift
+Isotope shift measured w/ laser spectroscopy by Anselment et al, PRC 34 p 1052,
+review article by Otten (see references folder)
 
 \section{Techniques for neutron scattering experiments}
 \subsection{Neutron beam production}
@@ -398,7 +389,7 @@ At end of section, familiar with:
 - a variety of neutron detection techniques: liquid/plastic scintillators,
 means of energy detection and background rejection, PSD
 
-\section{Outline and Central Questions}
+\section{Motivation and Dissertation Overview}
 With the need for improved neutron scattering data established and an overview of neutron
 detection technology provided, the results of our neutron scattering measurement campaign can be
 presented. The experimental layout and analysis for our isotopically-resolved \tot\ measurements are 

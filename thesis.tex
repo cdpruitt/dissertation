@@ -71,9 +71,11 @@
 \newcommand{\rxn}{\ensuremath{\sigma_{rxn}}}
 \newcommand{\rxnE}{\ensuremath{\sigma_{rxn}}(E)}
 \newcommand{\rxnEs}{\ensuremath{\sigma_{rxn}}(E)\,\,}
-\newcommand{\el}{\ensuremath{\frac{d\sigma}{d\Omega}}\,}
+\newcommand{\el}{\ensuremath{\frac{d\sigma_{el}}{d\Omega}}\,}
 
 % nuclides
+\newcommand{\cNat}{\ensuremath{^{nat}}C}
+
 \newcommand{\oSix}{\ensuremath{^{16}}O}
 \newcommand{\oEight}{\ensuremath{^{18}}O}
 \newcommand{\oSixEight}{\ensuremath{^{16,18}}O}
@@ -87,14 +89,17 @@
 \newcommand{\niEight}{\ensuremath{^{58}}Ni}
 \newcommand{\niFour}{\ensuremath{^{64}}Ni}
 \newcommand{\niEightFour}{\ensuremath{^{58,64}}Ni}
+\newcommand{\niNat}{\ensuremath{^{nat}}Ni}
 
 \newcommand{\rhThree}{\ensuremath{^{103}}Rh}
 
 \newcommand{\snTwelve}{\ensuremath{^{112}}Sn}
 \newcommand{\snFour}{\ensuremath{^{124}}Sn}
 \newcommand{\snTwelveFour}{\ensuremath{^{112,124}}Sn}
+\newcommand{\snNat}{\ensuremath{^{nat}}Sn}
 
 \newcommand{\pbEight}{\ensuremath{^{208}}Pb}
+\newcommand{\pbNat}{\ensuremath{^{nat}}Pb}
 
 % shell labels
 \newcommand{\sOne}{s\ensuremath{\frac{1}{2}}}
@@ -221,10 +226,10 @@
 \chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
 \input{\textDirectory/ECSAnalysis}
 
-\chapter{The Dispersive Optical Model Formalism} \label{DOMFormalism}
+\chapter{Dispersive Optical Model: Formalism} \label{DOMFormalism}
 \input{\textDirectory/DOMFormalism}
 
-\chapter{Dispersive Optical Model Results}\label{DOMResults}
+\chapter{Dispersive Optical Model: Fit Results}\label{DOMResults}
 \input{\textDirectory/DOMResults}
 
 \chapter{Conclusion}
@@ -268,23 +273,22 @@
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    \chapter{DOM Fit Results}
-    \input{\textDirectory/fits}
-    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    \chapter{Experimental Data Used to Constrain DOM Potential}
+    \input{\textDirectory/dataSets}
+    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
-    \chapter{DOM Fit Parameters}
+    \chapter{DOM Potential Parameter Values}
     \input{\textDirectory/parameters}
-    \addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
-    \chapter{Literature data used in DOM Fits}
-    \input{\textDirectory/dataSets}
-    \addcontentsline{toc}{chapter}{Literature Data used in DOM Fits}
+    \chapter{Visualization of DOM Potentials and Comparison to Experiment}
+    \input{\textDirectory/fits}
 
     \chapter*{Physical Constants}
     \input{\textDirectory/units}
-    \addcontentsline{toc}{chapter}{Physical Constants}
+    %\addcontentsline{toc}{chapter}{Physical Constants}
 
 \end{appendices}
 

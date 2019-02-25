@@ -1,31 +1,4 @@
-The Dispersive Optical Model (DOM) is a phenomenological framework useful for 
-extracting information about nuclear properties and structure from experimental
-data.
-
-The fundamental object of interest in the DOM is the \Gls{optical potential},
-which is identified as the \Gls{nucleon self-energy}. This potential represents
-the nuclear environment experienced
-by a nucleon as it traverses the nucleus being represented. In general, the
-potential is both non-local and complex, possessing both real (flux-conserving)
-and imaginary (flux-removing) parts. The functions used to parameterize the optical potential
-are selected to conform with general physical intuition about the nuclear
-many-body problem and past experience with optical potentials throughout the
-field. For example, the most important term, the Hartree-Fock (HF) potential
-that binds the nucleus together, is defined by a classic Woods-Saxon form to
-which non-locality has been added: [insert volume term formula]. The imaginary
-potential is separated into a Woods-Saxon volume component and a
-Woods-Saxon-derivative surface component. Each of these subcomponents has
-a non-linear energy dependence reflecting our expectation that surface-like
-behaviors should arise around 10-20 MeV and volume-like behavior should dominate
-above 50 MeV, with a mixture of the two in the intermediate region.
-
-Beyond these basic considerations, several additional features make the 
-DOM a useful tool. First is the enforcement of a
-dispersion relation (the Kramers-Kronig relations) between the real and imaginary
-halves of the potential, ensuring that the potential is causal (i.e., the
-time-ordering of the operator representation of the self-energy is maintained).
-
-\section{Definition of the single-particle propagator}
+\section{The Single-Particle Propagator}
 The central project of the Dispersive Optical Model (like any optical model) is
 to understand how nucleons move about in a nuclear many-body system. Specifically,
 we wish to know
@@ -52,7 +25,13 @@ propagates in time according to:
 Concretely, given initial position quantum numbers $\bm{r}$, the wavefunction
 of a state $\psi(\bm{r},t)$ is the sum of the contributions of 
 
-DOM Parameterization
+\section{Connection to Experimental Observables}
+Subtracted dispersion relation.
+
+\subsection{Elastic and inelastic nucleon scattering}
+\subsection{Bound-state properties}
+
+\section{Parameterization of the Potential}
 
 To parameterize the DOM's optical potential, we rely on standard functional
 forms common in nuclear theory calculations.
@@ -115,7 +94,6 @@ propagator:
 \end{eqnarray}
 
 
-
 For nuclei with open subshells (e.g., the $\upnu$ 0\dFive in $^{18}$O and
 $\upnu$ 0\fFive in $^{58}$Ni), an additional
 pairing parameter $\Delta$ was added to
@@ -147,36 +125,99 @@ nucleus with nucleon numbers $N, Z$ , the pairing gap $\Delta$ was fixed accordi
 
 where $B(N,Z)$ is the nuclear binding energy.
 
--> insert table for o18, ni58, ni64, sn112, sn124
+The Dispersive Optical Model (DOM) is a phenomenological framework useful for 
+extracting information about nuclear properties and structure from experimental
+data.
 
-%\begin{figure}
-%  \begin{center}
-%\includegraphics[width = 0.9\textwidth]{CAD_RUSS2.pdf}
-%\caption{A 3D CAD model of the two annular Si detectors used in the experiment.} \label{RUSS2}
-%\end{center}
-%\end{figure}
+The fundamental object of interest in the DOM is the \Gls{optical potential},
+which is identified as the \Gls{nucleon self-energy}. This potential represents
+the nuclear environment experienced
+by a nucleon as it traverses the nucleus being represented. In general, the
+potential is both non-local and complex, possessing both real (flux-conserving)
+and imaginary (flux-removing) parts. The functions used to parameterize the optical potential
+are selected to conform with general physical intuition about the nuclear
+many-body problem and past experience with optical potentials throughout the
+field. For example, the most important term, the Hartree-Fock (HF) potential
+that binds the nucleus together, is defined by a classic Woods-Saxon form to
+which non-locality has been added: [insert volume term formula]. The imaginary
+potential is separated into a Woods-Saxon volume component and a
+Woods-Saxon-derivative surface component. Each of these subcomponents has
+a non-linear energy dependence reflecting our expectation that surface-like
+behaviors should arise around 10-20 MeV and volume-like behavior should dominate
+above 50 MeV, with a mixture of the two in the intermediate region.
 
-%\begin{table}
-%  \begin{center}
-%    \caption{Calibration beams and the energies generated with the degraders.}\label{CBeams}
-%  \begin{tabular}{ccccc}
-%    \hline \hline
-%    Species & Energy & Target & Thickness & Degraded Energy  \\ 
-%            & [MeV/A] & &[mg/cm$^2$] & [MeV/A] \\
-%     \hline
-%    $p$ & 24.2 &  Au & 20.0 & 24.0   \\
-%           &  & Al & 429 & 15.8 \\
-%    \hline
-%    $d$ & 24.2 &  Au &20.0 & 24.1 \\
-%            & & Al & 429 &20.3 \\
-%    & &  Al & 858 & 15.8 \\
-%            & 12.0 &  Au & 20.0 & 11.9 \\
-%    \hline
-%    $\alpha$ & 24.0 &  Au & 20.0 & 23.8 \\
-%     & & Al & 429 &15.6 \\
-%    \hline \hline
-%  \end{tabular}
-%\end{center}
-%\end{table}
+Beyond these basic considerations, several additional features make the 
+DOM a useful tool. First is the enforcement of a
+dispersion relation (the Kramers-Kronig relations) between the real and imaginary
+halves of the potential, ensuring that the potential is causal (i.e., the
+time-ordering of the operator representation of the self-energy is maintained).
+
+\section{Computational Approach}
+As with any high-dimensional optimization problem, the fitter must be vigilant
+against the overfitting of data. In practice, this requires:
+
+parsimony with the number of parameters used in the model
+
+common-sense checking "under the hood" of the optimization to verify that
+parameter values make sense given the assumptions that undergird the model
+
+understanding of what the value function is (that is, the function being
+minimized/maximized) and whether it needs to be changed
+
+cross-correlation between parameters to understand the relationship between
+parameters and the effect that each has on predictions made using the model
+
+TCS affected by HF parameters, spin orbit, imaginary above
+RCS affected by imaginary above, HF parameters
+ECS affected by HF parameters, spin orbit, imaginary above
+APower affected by HF parameters, spin orbit,  imaginary above
+Charge Density affected by HF parameters, imaginary below
+Levels affected by HF parameters, spin orbit,
+Spectral functions affected by HF parameters, imaginary below
+RMSRadii affected by HF parameters, imaginary below
+
+Physical intuition about scattering data:
+- the low-angle ECS/APower data are sensitive to the imaginary strength above
+the Fermi surface. The high-angle ECS/APower data are sensitive to the imaginary
+strength below the Fermi surface, with the highest angles of elastic scattering
+probing the imaginary strength deepest in the core (see high-energy, high-angle
+data in Pb)
+- the NM correction to the imaginary volume strength is required in all cases to
+have the very high/very low energy imaginary strength have the correct trend
+(linearly increasing above 100 MeV above, decreasing to 0 below 100 MeV below).
+Seen in spectral functions and total cross section data at high energies, where
+the pion production channel enters the picture as it goes from virtual->real
+- the general trend of the elastic scattering data (not wiggles, but averaged
+over wiggles) depends on the imaginary strength at the given energy. If the
+minima in the elastic cross sections are too sharp/deep, the imaginary strength
+is too large at that energy
+- the spin-orbit strength has dramatic effects on the total cross section at low
+energies ($<$20 MeV)
+- above the Fermi surface, the imaginary strength is dominated by surface from
+0-50 MeV and by volume from 50 MeV up. Below the Fermi surface, the surface
+imaginary strength is dependent on A; for low A, where the level density is very
+low below the Fermi surface and there's almost no contribution from high LJ
+levels, there is virtually no surface imaginary strength below (cf. with charge
+density distribution tail, at the surface of the nucleus). As A increases, 
+imaginary surface strength below increases gradually but never reaches the
+imaginary surface strength above. A consequence of the asymmetry of the
+operators that contribute: below 0 MeV, the removal operator LJs
+must recouple to the ground state, so high LJ operators have virtually no
+contribution; above 0 MeV, addition operators can have arbitrary LJs because
+free scattering is possible, adding significantly to the collective strength and
+thus is imaginary strength peaked at the surface in the 20-30 MeV range (giant
+dipole resonance, for example, surface phonons).
+
+\subsection{Fitting procedure}
+The powell method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
+was used to minimize the RMS difference between experimental data points and the
+values calculated by the DOM. A weighting scheme was assigned to the data points
+according to their importance, guiding the fit to reproduce the most essential
+data points. From fit to fit, the weighting scheme was adjusted as necessary to
+escape local minima in the multidimensional fit.
+
+The radial grid, energy grid, size of the lagrange basis, partial wave angular momentum cutoff, and
+various integration cutoffs used in calculating the potential and
+observable quantities were varied to ensure that output was not distorted by numerical errors. 
 
 \afterpage{\clearpage}

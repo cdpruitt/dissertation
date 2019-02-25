@@ -2,14 +2,14 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{D}\relax \glsresetentrylist %
 \glossentry{DOM}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{12}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{93}}}%
+		\setentrycounter[]{page}\glsnumberformat{13}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{133}}}%
 \glossentry{Dyson Equation}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{93}}}%
+		\setentrycounter[]{page}\glsnumberformat{133}}}%
 \glossentry{nucleon self-energy}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{57}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{93}}}%
+		\setentrycounter[]{page}\glsnumberformat{64}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{133}}}%
 \glossentry{optical potential}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{57}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{93}}}%
+		\setentrycounter[]{page}\glsnumberformat{64}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{133}}}%
 \end{theglossary}\glossarypostamble
