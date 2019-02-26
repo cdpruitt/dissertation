@@ -14,6 +14,10 @@ with many tunable parameters, these criteria pull in oppositive directions: incr
 and acceptable range of model parameters often helps to reproduce experimental data but may
 jeopardize predictive power if new parameters are not connected to the underlying physics.
 
+Several classes of workhorse models are presented below. Their successes,
+failures, and regimes of validity are briefly discussed, with extra attention paid
+to each model's confrontation with challenging experimental data.
+
 \subsection{Liquid Drop Model}
 
 The Liquid Drop Model (LDM) describes nuclei as drops of ideal nuclear fluid and
@@ -43,42 +47,66 @@ of a nucleus and its constituent nucleons' angular orbital momentum, which is
 a much stronger effect in nuclear binding than in the atomic case
 
 The free parameters in each term can be fitted to the hundreds of well-measured nuclear masses
-across the chart of nuclides. Though the LDM completes ignores the detailed
-quantum structure of the nuclear many-body problem, these five terms are quite successful
-in describing nuclear masses [and what other properties?]
+across the chart of nuclides. Surprisingly, these five simple terms are quite successful
+in describing masses and radii of spherical nuclei. However, as the quantum
+nature of the nuclear many-body problem is completely ignored, the LDM is
+unsuitable for extracting wavefunction information or predicting scattering
+cross sections.
 
-Many extensions to the LDM have been developed by introducing second-order terms in the equation
-above, allowing for coupling between the five sectors. In the seminal Droplet Model of Atomic Nuclei
-\cite{MyersAndSwiatecki}, [insert number of terms] terms are deployed to fit nuclear masses, [other
-quantities]
+Extensions to the LDM introduce a series of higher-order terms allowing for coupling
+between the five components of \ref{LDM}, each of which that have been expanded about two
+fundamental independent quantities, the nucleon density excess $\epsilon$
+and neutron density excess $\delta$:
 
-\begin{equation} \label{MyersAndSwiateckiLDM}
-    BE(Z, N) = terms
+\begin{equation}
+    \epsilon = -\frac{1}{3}\frac{(\rho - \rho_{0})}{\rho_{0}}
 \end{equation}
 
-Discussion of RMS Charge Radii in Sn isotopes: Droplet model success,
+\begin{eqation}
+    \delta = \frac{\rho_{n}-\rho{z}}{\rho}
+\end{equation}
+
+where $\rho_{0}$ is the saturation density, 0.16 nucleons fm$^{-3}$. Relevant quantum
+effects, such as changes in level densities near shell closures
+that affect the observed masses, can be incorporated through a series of corrections
+that approximate shell effects, nucleon-nucleon pairing, and geometric deformation.
+One such model, presented in The Droplet Model of Atomic Nuclei
+\cite{MyersAndSwiatecki}, deploys 9 
+independent coefficients to describe spherical droplets and 6 additional
+coefficients to accommodate non-spherical effects. This expanded scope
+can successfully recover the degree of ground state deformation in non-spherical
+nuclei and fission barriers.
+
 Berdichevsky et al (Z. Phys. A - Atomic Nuclei 329, 393-405 (1988)) connect
-slope of isotope shift to J, Q, and L of Droplet Model, Myers/Swiatecky basic
 Droplet Model has L=100 and a great match to isotope shift
 Isotope shift measured w/ laser spectroscopy by Anselment et al, PRC 34 p 1052,
 review article by Otten (see references folder)
 
-This advanced Droplet Model was used to predict neutron skins for [insert detail] \cite{Myers1980}
+By the 1980s, it was clear that the isotope shift in the nuclear RMS
+charge radius, shown for the even-A Sn isotopes in Fig.
+\ref{SnIsotopeShift} \ref{Anselment1986, Otten1989},
+is critically connected to difference in RMS radius 
+between the neutron and proton distributions, commonly referred to as the "neutron skin".
+In a Droplet Model picture, the slope of the isotope shift is linked to the symmetry energy $J$, 
+density dependence of the symmetry energy
+$L$, and surface stiffness coefficient $Q$, the same variables that determine
+neutron skin thickness \cite{Myers1969, MyersAndSwiatecki, \Berdichevsky1988}.
+Without addition experimental constraints, the $J$, $L$, and $Q$ parameters form an
+underdetermined system from which unique values cannot be recovered, even if the
+consensus value of $J \approx$ 30 MeV is used to reduce the parameter space.
+As was already pointed out 50 years ago by Myers \cite{Myers1969},
+the single-particle configuration of a given nucleus may have a significant
+effect on the formation of the 
 
-\cite{MyersAndSwiatecki}
 
-In the droplet model, the symmetry energy $J$, density dependence of the symmetry energy
-$L$, and surface stiffness coefficient $Q$ are the primary variables determining the formation of a 
-neutron skin \ref{Myers1980}.
+\begin{figure}
+    \includegraphics[width=0.8\textwidth]{figures/SnIsotopeRMSRadii.png}
+    \caption{RMS charge radii in Sn nuclei, from \cite{Anselment1986}}
+    \label{SnIsotopeShift}
+\end{figure}
 
 \subsection{Mean Field Models}
-
-Independent Particle Model (IPM)
-HF
-BHF
-RPA
-
-The Independent Particle Model (IPM) provides a complementary approach expressly
+Mean field models The Independent Particle Model (IPM) provides a complementary approach expressly
 focused on the quantum details of the problem. The many-body problem is
 approximated by considering each nucleon as moving independently of all other
 nucleons in an potential generated by those nucleons. As in the atomic case,
@@ -92,10 +120,27 @@ also kneecaps its usefulness: in reality, nuclear systems are strongly
 correlated and exhibit clustering and collective motion, behaviors at odds with the
 the IPM picture.
 
-\subsection{Effective Field Theories}
+Independent Particle Model (IPM)
+HF
+BHF
+RPA
+
+Challenges: Adding coupling to the continuum to describe systems far from stability,
+astrophysical reactions.
+- failure to recover depletion/spectral peak broadening. In what regimes are nucleons the best
+choice of degree-of-freedom?
+
+\subsection{Microscopic and Effective Field Theories}
+
 Connect to chiral effective field theory work for calculating optical potentials
 and examining isovector component of potential, especially w/r/t to exotic
 nuclei near driplines.
+
+Nucleons are still degree of freedom, but allowed to exchange effective pions
+that include the quark-quark interactions that comprise the strong nuclear
+force.
+
+Lattice QCD.
 
 \subsection{Density Functional Theory}
 Fission
@@ -378,12 +423,6 @@ Louk Lapikas
 
 \subsection{Nuclear Masses, Matter Radii, and Charge Radii}
 Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.
-
-\begin{figure}
-    \includegraphics[width=0.8\textwidth]{figures/SnIsotopeRMSRadii.png}
-    \caption{RMS charge radii in Sn nuclei, from \cite{Anselment1986}}
-    \label{SnIsotopeShift}
-\end{figure}
 
 \section{Techniques for neutron scattering experiments}
 \subsection{Neutron beam production}
