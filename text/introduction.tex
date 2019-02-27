@@ -2,7 +2,18 @@
     accurate measurement and patient long-continued labour in the minute
 sifting of numerical results.''}{William Thompson, \nth{1} Baron Kelvin}
 
-\section{Models of the Atomic Nucleus: Overview}
+\section{Relevant Models of the Atomic Nucleus: Overview}
+What do the nucleons do in the nucleus? Where are the neutrons and the protons
+with respect to each other?
+- What is needed to expand beyond current workhorse models (Droplet Model,
+Shell Model, Optical Models) and connect nuclear reactions and structure
+
+- What are the neutron scattering data for cornerstone nuclides (magic Z,N) and
+what do they tell us about the isoscalar/isovector terms of the optical
+potential and where the nucleons go/what they do in the nucleus?
+
+- What types of experimental data are most essential for an improved understanding of nuclear
+reactions and structure?
 
 To unravel the nuclear many-body problem, we can
 employ models that incorporate essential details while ignoring specifics with
@@ -14,7 +25,7 @@ with many tunable parameters, these criteria pull in oppositive directions: incr
 and acceptable range of model parameters often helps to reproduce experimental data but may
 jeopardize predictive power if new parameters are not connected to the underlying physics.
 
-Several classes of workhorse models are presented below. Their successes,
+Several workhorse models relevant to this dissertation are presented below. Their successes,
 failures, and regimes of validity are briefly discussed, with extra attention paid
 to each model's confrontation with challenging experimental data.
 
@@ -22,8 +33,9 @@ to each model's confrontation with challenging experimental data.
 
 The Liquid Drop Model (LDM) describes nuclei as drops of ideal nuclear fluid and
 has been successfully employed since the earliest days of nuclear science to
-describe nuclear masses and other ground-state properties. The binding of each nucleus are
-approximated by five physically-intuitive terms appropriate for a droplet of nuclear matter:
+describe nuclear masses and other ground-state properties. The binding of each
+nucleus is approximated by five physically-intuitive terms appropriate for
+a droplet of nuclear matter:
 
 \begin{equation} \label{LDM}
     BE(Z, N) = Vol + Surface + Coulomb + Asymmetry + Spin-Orbit
@@ -47,9 +59,11 @@ of a nucleus and its constituent nucleons' angular orbital momentum, which is
 a much stronger effect in nuclear binding than in the atomic case
 
 The free parameters in each term can be fitted to the hundreds of well-measured nuclear masses
-across the chart of nuclides. Surprisingly, these five simple terms are quite successful
-in describing masses and radii of spherical nuclei. However, as the quantum
-nature of the nuclear many-body problem is completely ignored, the LDM is
+across the chart of nuclides. These five simple terms are quite successful
+in describing masses and radii of spherical nuclei, leading early nuclear
+scientists to expect that shell structure was less important in the nuclear
+many-body problem than in the atomic one. In this ansatz, the quantum
+nature of constituent nucleons is completely ignored, so the LDM is  
 unsuitable for extracting wavefunction information or predicting scattering
 cross sections.
 
@@ -62,7 +76,7 @@ and neutron density excess $\delta$:
     \epsilon = -\frac{1}{3}\frac{(\rho - \rho_{0})}{\rho_{0}}
 \end{equation}
 
-\begin{eqation}
+\begin{equation}
     \delta = \frac{\rho_{n}-\rho{z}}{\rho}
 \end{equation}
 
@@ -77,11 +91,6 @@ coefficients to accommodate non-spherical effects. This expanded scope
 can successfully recover the degree of ground state deformation in non-spherical
 nuclei and fission barriers.
 
-Berdichevsky et al (Z. Phys. A - Atomic Nuclei 329, 393-405 (1988)) connect
-Droplet Model has L=100 and a great match to isotope shift
-Isotope shift measured w/ laser spectroscopy by Anselment et al, PRC 34 p 1052,
-review article by Otten (see references folder)
-
 By the 1980s, it was clear that the isotope shift in the nuclear RMS
 charge radius, shown for the even-A Sn isotopes in Fig.
 \ref{SnIsotopeShift} \ref{Anselment1986, Otten1989},
@@ -90,7 +99,7 @@ between the neutron and proton distributions, commonly referred to as the "neutr
 In a Droplet Model picture, the slope of the isotope shift is linked to the symmetry energy $J$, 
 density dependence of the symmetry energy
 $L$, and surface stiffness coefficient $Q$, the same variables that determine
-neutron skin thickness \cite{Myers1969, MyersAndSwiatecki, \Berdichevsky1988}.
+neutron skin thickness \cite{Myers1969, MyersAndSwiatecki, Berdichevsky1988}.
 Without addition experimental constraints, the $J$, $L$, and $Q$ parameters form an
 underdetermined system from which unique values cannot be recovered, even if the
 consensus value of $J \approx$ 30 MeV is used to reduce the parameter space.
@@ -104,182 +113,119 @@ effect on the formation of the
     \label{SnIsotopeShift}
 \end{figure}
 
-\subsection{Mean Field Models}
-Mean field models The Independent Particle Model (IPM) provides a complementary approach expressly
-focused on the quantum details of the problem. The many-body problem is
-approximated by considering each nucleon as moving independently of all other
-nucleons in an potential generated by those nucleons. As in the atomic case,
-where electrons obey an aufbau principle and populate orbitals defined by the
-atomic potential, both protons and neutrons obey a nuclear aufbau, filling
-orthogonal states in the nuclear potential. In this model, many fundamental
-quantum properties of nuclei are easily understood, (for example, ground state spins and
-the appearance of shell closures in direct analogy to the atomic case).
-Unfortunately, the assumption of independent nucleon motion that defines the model
-also kneecaps its usefulness: in reality, nuclear systems are strongly
-correlated and exhibit clustering and collective motion, behaviors at odds with the
-the IPM picture.
+\subsection{Mean-field and beyond-mean-field models}
+Mean field models begin with a motivating assumption: that nucleons
+experience the nuclear environment independently, as an average
+potential generated by all other nucleons, smeared out over nuclear volume.
+The assumption of independent nucleon motion may seem dubious, given the
+crowded environment of the nucleus and immense strength of the nucleon-nucleon forces,
+but the Pauli exclusion principle provides some justification.
+Confined by this mean field, nucleons obey a nuclear aufbau, filling orthogonal states with
+quantum numbers N, L, and J, as electrons do in the atomic case, resulting in
+shell structure. From a mean field consisting of a central
+potential and a spin-orbit potential, as in the seminal work of Goeppert-Mayer
+and Jensen \cite{GoeppertMayer1955}, the basic ground-state quantum properties of most nuclei
+(spins, parities, magnetic moments) are recovered. In addition, nucleons can be
+excited into higher (but still bound) states and the low-lying excitation
+spectra predicted. The consequences of
+shell structure are clearly present in experimental data, including increased particle separation 
+energies and decreased nuclear radii at shell closures, directly analagous to
+the atomic ionization energies and radii in the noble gases. The independent
+treatment of nucleons is most valid near shell closures,
+where the level density is reduced, and near beta-stability, where coupling to
+the asymptotically-free states of the continuum is least important.
 
-Independent Particle Model (IPM)
-HF
-BHF
-RPA
+Typically, the central average potential is considered as only a starting point for a perturbative
+expansion that collects the residual nucleon-nucleon interactions associated with
+correlated behavior, such as clustering and oscillatory modes. Coupled excitations of
+two or more nucleons to higher orbitals and relativistic effects may be included to 
+accommodate the experimental phenomena under investigation.
+In light systems, where the number of nucleons is not too large, each nucleon is
+allowed to participate in excitations into the valence space of the model
+(``no-core shell model"). As the system size increases, the configuration space grows
+combinatorially until calculations become prohibitively expensive for a no-core
+shell model approach. To make these nuclei tractable, a variety of approaches
+are employed, including simply restricting the valence space and prohibiting deeply-bound nucleons 
+from participating in excitations, ideally with relevant physics still intact.
 
-Challenges: Adding coupling to the continuum to describe systems far from stability,
+\begin{figure}
+    \includegraphics[width=0.8\textwidth]{figures/ShellModel.png}
+    \caption{Nuclear shell model }
+    \label{ShellModel}
+\end{figure}
+
+Mean-field challenges: Adding coupling to the continuum to describe systems far from stability,
 astrophysical reactions.
 - failure to recover depletion/spectral peak broadening. In what regimes are nucleons the best
 choice of degree-of-freedom?
 
-\subsection{Microscopic and Effective Field Theories}
-
-Connect to chiral effective field theory work for calculating optical potentials
+Discuss beyond-the-mean field:
+- mention chiral-EFT
+- Av18 and microscopic potentials
+- Connect to chiral effective field theory work for calculating optical potentials
 and examining isovector component of potential, especially w/r/t to exotic
-nuclei near driplines.
-
-Nucleons are still degree of freedom, but allowed to exchange effective pions
-that include the quark-quark interactions that comprise the strong nuclear
-force.
-
-Lattice QCD.
+nuclei near driplines. Nucleons are still degree of freedom, but allowed to exchange effective pions
+that include the quark-quark interactions that comprise the strong nuclear force.
+- Lattice QCD: nucleons are no longer the degree of freedom, but nuclear physics
+is almost completely out of reach (going beyond He-4 currently impossible).
 
 \subsection{Density Functional Theory}
-Fission
-Heavy systems (no lighter than Ca40)
+- Fission
+- Heavy systems (no lighter than Ca40)
+- Omit this section entirely? Not relevant to DOM.
 
 \subsection{Optical Models}
-Hodgson's optical model review in 1971
+The initial motivation for all the models presented thus far has been recovery
+of structural observables like nuclear masses, radii, low-lying excitations, and magnetic moments. 
+A comprehensive understanding of the nucleus must also say something about what
+nuclei \textit{do}, as in nucleus-nucleon scattering experiments and astrophysical reactions.
+The nuclear optical model (OM) was developed to this end and continues to be an
+widely-used tool for generating nucleon, $\alpha$, and heavy ion scattering
+cross sections, though it has less to say about nuclear structure. Basic
+motivations for OMs, plus references to successful OM potential parameterizations,
+are summarized here.
 
-- Microscopic (folds interaction over nucleon density)
-- Phenomenological (no folding - use bulk)
-
-Optical Model description of the nucleus
--> can largely follow Bob and Wim's review paper
-- first formulated in 1949 to describe neutron cross section data
-- separate proton and neutron global optical potentials in the 60s (Becchetti
-and Greenlees)
-- CH89 includes additional neutron scattering data on isotopic targets
-
-Takeaway: neutron scattering data particularly valuable for constraining these
-models, but particularly challenging to access experimentally.
-
-"The magnitude and energy dependence of the real isovector part of the
-optical potential are poorly constrained by experiment." \cite{Holt16}
-
-Lane potential 
-
-Isovector versus isoscalar. Charged pion exchange mediates the isovector forces;
-other nucleon-nucleon interactions mediate the isoscalar forces.
-
-The Dispersive Optical Model, the model used in this thesis to analyze experimental scattering data
-and extract structural information, is the subject of Chapter \ref{DOMFormalism}, where a brief
-formal treatment is given.
-
-Connect to FRIB/study of extremely neutron-rich systems relevant for r-process
-and astrophysical nucleosynthesis.
-
-\section{Overview of Relevant Experimental Nuclear Data}
-\subsection{Elastic nucleon scattering}
-\subsection{Inelastic nucleon scattering}
-
-New neutron scattering data (both \tot and \el) on isotopic targets, grist for the DOM mill and the 
-central result of this dissertation, are presented in Chapters \ref{TCSAnalysis, ECSAnalysis}.
-
-Neutron scattering is a direct, Coulomb-insensitive tool for probing the nuclear
-environment. The simplest measurement of neutron interaction with a nucleus,
-the neutron total cross section \tot, provides fundamental information about
-nuclear size and the ratio of elastic-to-inelastic components of nucleon 
-scattering. Additionally, \tot\ data are sensitive to a variey of nuclear
-properties of great interest including the neutron skin of neutron-rich nuclei
-\cite{Mahzoon2017} and thus the density dependence of the symmetry energy $L$,
-essential for an accurate neutron star equation-of-state (EOS)
-\cite{Fattoyev2012, Vinas2014, Brown2000}.
-
-The earliest model for neutron scattering (a ``strongly-absorbing sphere"
-picture) describes the nucleus as a constant-density sphere that interacts
-strongly with incident neutrons approaching within a nuclear radius
-\cite{Feshbach1949}. In this picture devoid of nuclear structure, \tot\ depends
-only on size scaling of the interacting bodies:
+Due to the magnitude of the strong nuclear force, it might be expected that 
+the interaction of an incident neutron on a nucleus should be strongly
+absorptive, with only a small contribution from elastic scattering. Thus, the
+earliest model for neutron scattering describes the nucleus as a constant-density
+sphere that interacts strongly with incident neutrons approaching within a nuclear radius
+\cite{Feshbach1949}. In this ``strongly-absorbing sphere" (SAS) picture devoid of nuclear structure
+or shell effects, \tot\ depends only on size scaling of the interacting bodies:
 \begin{equation} \label{SASAbsolute}
     \sigma_{tot}(E) = 2\pi(R + \lambdabar)^{2}
 \end{equation}
 where $R=r_{0}A^{\frac{1}{3}}$ and $\lambdabar$ is the reduced wavelength
 of the incident neutron in the center of mass \cite{Fernbach1949, Satchler1980}. 
-To compare \tot\ for two different targets of masses A and A', the relative
-difference \totRD\ is useful:
-\begin{equation} \label{SASRelDiff}
-    \begin{split}
-        \totRD & \equiv
-    \frac{\sigma_{A}-\sigma_{A'}}{\sigma_{A}+\sigma_{A'}} \\
-    & =
-    \frac{r_{0}^{2}(A^{\frac{2}{3}}-A'^{\frac{2}{3}}) +
-    2\lambdabar r_{0}(A^{\frac{1}{3}}-A'^{\frac{1}{3}})}
-    {r_{0}^{2}(A^{\frac{2}{3}}+A'^{\frac{2}{3}}) +
-    2\lambdabar r_{0}(A^{\frac{1}{3}}+A'^{\frac{1}{3}}) + 2\lambdabar^{2}}
-    \end{split}
-\end{equation}
-While on \textit{average}, experimental data comport with this naive
-model, the key feature of \tot\ data is the obvious oscillatory
-behavior centered about the average (visible in Fig.
-\ref{SASphereVsExperiment}).
 
-\begin{figure*}
-    \includegraphics[scale=0.3]{figures/SASphereVsExperiment.png}
+As neutron scattering experiments expanded to higher energies in the 1950s, surprising 
+neutron \tot\ data emerged that challenged this picture. In Fig.
+\ref{SASphereVsExperiment}, experimental neutron \tot\ data are shown from 2-500
+MeV for nuclides from A=12 to A=208 \cite{Finlay1993, Schwartz1974, Poenitz1983, Abfalterer2000, 
+Abfalterer2001}. Predictions for \tot\ given by Eq. \ref{SASAbsolute} are shown as thin dashed 
+lines for each nucleus. Regular oscillations about the SAS model are clearly
+visible, as is the trend for the oscillation maxima/minima to shift to \textit{higher} energies as 
+A is increased. At low energies, resonance structures are visible especially for light nuclides 
+where the density of states is smallest. Note that at higher neutron energies, the experimental
+cross sections drop below those predicted by the SAS model, illustrating
+a relative increase in nuclear transparency.
+
+ \ref{SASphereVsExperiment}.
+
+\begin{figure}
+    \includegraphics[scale=0.4]{figures/SASphereVsExperiment.png}
     \caption{Experimental neutron \tot\ data and strongly-absorbing-sphere predictions}
     \label{SASphereVsExperiment}
-\end{figure*}
+\end{figure}
 
-Experimental \tot\ data are shown from 2-500
-MeV for nuclides from A=12 to A=208
-\cite{Finlay1993, Schwartz1974, Poenitz1983, Abfalterer2000, Abfalterer2001}.
-Predictions for \tot\ given by the ``strongly-absorbing sphere" (SAS)
-model, Eq. \ref{SASAbsolute}, are shown as thin dashed lines for each nucleus.
-Regular oscillations about the SAS model are clearly visible
-as is the trend for the oscillation
-maxima/minima to shift to \textit{higher} energies as A is increased. At low energies 
-resonance structures are visible especially for light nuclides where the
-density of states is smallest. Note that at higher energies, the experimental
-cross sections drop below those predicted by the SAS model, illustrating
-the failure of the SAS model to describe [surface physics accounted for in
-optical models?].
-
-These oscillations can be explained as the result of a phase shift between 
+These hallmark oscillations in the neutron \tot\ can be explained as the result
+of a phase shift between 
 neutron waves passing around the nucleus (unshifted) and waves passing
 through the the nucleus, where they experience refraction
 (illustrated in Fig. \ref{RamsauerPhaseShiftFigure}). This explanation was termed the ``nuclear 
 Ramsauer effect" by Peterson \cite{Peterson1962}, based on the analagous effect seen in 
 electron scattering on noble gases.
-In this picture, the intractable many-body
-problem of the target nucleus is replaced by a smooth potential (hence the
-``optical model" of the nucleus, \cite{Feshbach1958}) from which the refractive
-index is easily calculated. As in the optical case, a complex index of
-refraction can be used to neatly incorporate both elastic scattering (the real
-potential) and all other scattering removing flux from the elastic channel (the imaginary potential).
-%\cite{McVoy1967}. 
 
-\begin{figure}
-    \hfill\begin{minipage}{0.5\textwidth}\centering
-        \includegraphics[scale=0.2]{figures/phaseShiftStillsFigure.png}
-        \caption{A illustration of the nuclear Ramsauer effect}
-        \label{RamsauerPhaseShiftFigure}
-    \end{minipage}
-\end{figure}
-
- A neutron wave train (series of
-            blue lines) impinges from the left on a real Woods-Saxon
-            potential centered at the origin (diffuse red circle). The potential
-            refracts the neutron wave,
-            retarding the phase of the wavefront as it passes through the
-            potential. After escaping the potential, a phase difference $\Delta$ between
-            the wave component passing \textit{around} and \textit{through the center}
-            of the potential persists, resulting in scattering.
-            For the leading wavefront in the wave train, $\Delta$ is indicated in
-            the top right-hand corner of each panel. A differential version of
-            Eq. \ref{phaseShift} is used to
-            calculate the phase shift for each step. In this figure, the neutron
-            energy $E_{n}$ = 14 MeV and nuclear mass $A$ = 25. For the Woods-Saxon potential,
-            we used a potential depth $U$ = 42.8 MeV (following Angeli's analysis
-            of \tot\ data at 14 MeV \cite{Angeli1970}), with nuclear radius $R = 
-            r_{0}A^{\frac{1}{3}}$, $r_{0}$ = 1.4 fm, and a diffuseness parameter
-        $a$ of 0.5 fm.
 Following Angeli \cite{Angeli1970}, these considerations can be incorporated by
 imbuing the strongly-absorbing sphere relations (equation \ref{SASAbsolute}) with an additional sinusoidal term:
 \begin{equation} \label{OscillatoryModel}
@@ -289,12 +235,10 @@ where $\rho = e^{-\operatorname{Im}(\Delta)}$, and $\delta =
 \operatorname{Re}(\Delta)$, with $\Delta$ the phase difference between the wave traveling
 around and traveling through the nucleus. Thus, the amplitude of the oscillations provides the 
 inelastic phase shift and the period of oscillation provides the elastic phase shift.
-As can be seen from Eq. 
-\ref{OscillatoryModel}, the large magnitude of the oscillations means that inelastic
-scattering (from $\operatorname{Im}(\Delta)$) accounts for only a small fraction of the total cross section, in turn implying a 
-much larger mean free path for neutrons through the nucleus 
-than might otherwise be expected in the absence of Pauli blocking.
-\cite{Mohr1955}.
+As can be seen from Eq. \ref{OscillatoryModel}, the large magnitude of the oscillations means that 
+inelastic scattering (from $\operatorname{Im}(\Delta)$) accounts for only a small fraction of the 
+total cross section, in turn implying a much larger mean free path for neutrons through the nucleus 
+than might otherwise be expected in the absence of Pauli blocking \cite{Mohr1955}.
 
 If we approximate the nucleus with a
 spherical potential of radius $R$ and depth $U$, the total phase shift $\delta$ is:
@@ -315,13 +259,127 @@ are fit inside a potential; in that case, to maintain constant phase as A is inc
 E must be decreased. Thus these \tot\ oscillations have been referred to as
 ``anti-resonances" or ``echoes" \cite{Satchler1980, McVoy1967}.
 
-By including additional surface, spin-orbit, and other terms, optical models (OMs) have been 
-used to successfully reproduce the general features of all manner of single-nucleon scattering 
-data across the chart of nuclides up to several hundred MeV \cite{CH89}. 
-However, despite the excellent agreement with experiment, optical models
-involve the interaction of many partial waves with many sometimes-opaque terms
-in the potential, complicating intuitive understanding of the underlying
-physics at work.
+Thus a new type of nuclear model is at hand: by replacing the intractable many-body problem
+of the target nucleus by a complex, refractive potential, both elastic scattering (from the real 
+part of the potential) and inelastic scattering (from the imaginary part) could be neatly 
+explained. The existing mathematical machinery for calculating scattering of light from
+refractive materials could be repurposed for nuclear scattering, giving birth to
+the ``optical model" of the nucleus, \cite{Feshbach1958, McVoy1967}. In
+practice, the potential is typically parameterized with a series of
+terms centered on the nuclear surface and nuclear volume,
+corresponding to differing physics thought to be important for these areas (much
+as in the Droplet Model).
+
+\begin{figure}
+    \hfill\begin{minipage}{0.5\textwidth}\centering
+        \includegraphics[scale=0.2]{figures/phaseShiftStillsFigure.png}
+        \caption[A illustration of the nuclear Ramsauer effect]{
+            A neutron wave train (series of
+            blue lines) impinges from the left on a real Woods-Saxon
+            potential centered at the origin (diffuse red circle). The potential
+            refracts the neutron wave,
+            retarding the phase of the wavefront as it passes through the
+            potential. After escaping the potential, a phase difference $\Delta$ between
+            the wave component passing \textit{around} and \textit{through the center}
+            of the potential persists, resulting in scattering.
+            For the leading wavefront in the wave train, $\Delta$ is indicated in
+            the top right-hand corner of each panel. A differential version of
+            Eq. \ref{phaseShift} is used to
+            calculate the phase shift for each step. In this figure, the neutron
+            energy $E_{n}$ = 14 MeV and nuclear mass $A$ = 25. For the Woods-Saxon potential,
+            we used a potential depth $U$ = 42.8 MeV (following Angeli's analysis
+            of \tot\ data at 14 MeV \cite{Angeli1970}), with nuclear radius $R = 
+            r_{0}A^{\frac{1}{3}}$, $r_{0}$ = 1.4 fm, and a diffuseness parameter
+            $a$ of 0.5 fm.
+        }
+        \label{RamsauerPhaseShiftFigure}
+    \end{minipage}
+\end{figure}
+
+Global OMs have been developed to simultaneously reproduce single nucleon, heavy ion,
+and other hadron scattering data on targets across the chart of nuclides up to several
+hundred MeV \cite{CH89, KoningDelaroche}. In addition to isoscalar-dependent terms
+in OM potentials that treat protons
+and neutrons identically, isovector and isotensor terms that break isospin
+symmetry have been included to describe proton and neutron scattering with the
+same potential. However, despite the excellent agreement with experiment, OMs 
+involve the interaction of many sometimes-opaque parameters with many incident
+partial waves, complicating intuitive understanding of the underlying physics at work.
+OMs are unabashedly phenomenogical so a wide variety of
+experimental data types and energies are required to constrain the potential.
+Where data are absent, model predictions are poor. A long-standing issue has
+been a poor understanding of the isovector dependence of the real and
+imaginary parts of optical potentials \cite{Holt16}, a consequence of the
+difficulty of neutron scattering experiments. As experimental facilities like
+the Facility for Radioactive Isotope Beams (FRIB) come online and produce
+extremely asymmetric nuclei, knowing the asymmetry-dependence of optical
+potentials becomes paramount. Providing such experimental constraints for optical
+potentials, in particular for the Dispersive Optical Model (DOM), is a primary 
+motivation for the isotopically-resolved neutron \tot\ and \el\ work presented in this dissertation.
+In chapter \ref{DOMFormalism}, I present an overview of the DOM, a descendent of traditional OMs 
+that extends the potential to negative energies to generate nuclear structure.
+
+%"The magnitude and energy dependence of the real isovector part of the
+%optical potential are poorly constrained by experiment." \cite{Holt16}
+
+Other topics that could be included:
+- Hodgson's optical model review in 1971
+- Microscopic (folds interaction over nucleon density)
+- Phenomenological (no folding - use bulk)
+- can largely follow Bob and Wim's review paper
+- first formulated in 1949 to describe neutron cross section data
+- separate proton and neutron global optical potentials in the 60s (Becchetti
+and Greenlees)
+- CH89 includes additional neutron scattering data on isotopic targets
+- Lane potential 
+- Isovector versus isoscalar. Charged pion exchange mediates the isovector forces;
+other nucleon-nucleon interactions mediate the isoscalar forces.
+
+\section{The Landscape of Experimental Nuclear Data}
+
+\subsection{Elastic nucleon scattering}
+Elastic nucleon scattering cross sections comprise the most extensively-measured
+sector of experimental scattering data.
+
+\subsection{Inelastic nucleon scattering}
+
+\begin{figure}
+    \includegraphics[width=0.8\textwidth]{figures/TCSChart.png}
+    \caption{Landscape of existing neutron \tot\ data (per the EXFOR database)}
+    \label{TCSChart}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=0.8\textwidth]{figures/RCSChart.png}
+    \caption{Landscape of existing proton \rxn\ data (per the EXFOR database)}
+    \label{RCSChart}
+\end{figure}
+
+Neutron scattering is a direct, Coulomb-insensitive tool for probing the nuclear
+environment. The simplest measurement of neutron interaction with a nucleus,
+the neutron total cross section \tot, provides fundamental information about
+nuclear size and the ratio of elastic-to-inelastic components of nucleon 
+scattering. Additionally, \tot\ data are sensitive to a variey of nuclear
+properties of great interest including the neutron skin of neutron-rich nuclei
+\cite{Mahzoon2017} and thus the density dependence of the symmetry energy $L$,
+essential for an accurate neutron star equation-of-state (EOS)
+\cite{Fattoyev2012, Vinas2014, Brown2000}.
+
+To compare \tot\ for two different targets of masses A and A', the relative
+difference \totRD\ is useful:
+\begin{equation} \label{SASRelDiff}
+    \begin{split}
+        \totRD & \equiv
+    \frac{\sigma_{A}-\sigma_{A'}}{\sigma_{A}+\sigma_{A'}} \\
+    & =
+    \frac{r_{0}^{2}(A^{\frac{2}{3}}-A'^{\frac{2}{3}}) +
+    2\lambdabar r_{0}(A^{\frac{1}{3}}-A'^{\frac{1}{3}})}
+    {r_{0}^{2}(A^{\frac{2}{3}}+A'^{\frac{2}{3}}) +
+    2\lambdabar r_{0}(A^{\frac{1}{3}}+A'^{\frac{1}{3}}) + 2\lambdabar^{2}}
+    \end{split}
+\end{equation}
+
+ref{SASphereVsExperiment}).
 
 By scattering secondary radioactive beams off of hydrogen targets in inverse
 kinematics, proton-scattering experiments are possible even on highly unstable
@@ -348,8 +406,15 @@ closed-shell isotopes of special importance like $^{3,4}$He, $^{64}$Ni, and
 $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 
 \begin{table}[ht]
-    \caption{Selected results from a literature study of isotopically-
-        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}}
+    \caption[Selected results from a literature study of isotopically-
+        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}]
+        {Selected results from a literature study of isotopically-
+        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}
+        For the heaviest and lightest stable nuclides in each closed shell in Z, all
+        datasets falling at least partially within 1-500 MeV are shown. For elements
+        whose natural abundance is $>$90\% of a single isotope (e.g.,
+        96.9\% of $^{\text{nat}}$Ca is $^{40}$Ca), \tot\ data on the natural
+        target was included as ``isotopic".}
     \label{IsotopicCrossSectionTable}
     \begin{center}
         \begin{tabular}{ c c c c }
@@ -396,28 +461,11 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
     \end{center}
 \end{table}
 
- For the
-    heaviest and lightest stable nuclides in each closed shell in Z, all
-    datasets falling at least partially within 1-500 MeV are shown. For elements
-    whose natural abundance is $>$90\% of a single isotope (e.g.,
-    96.9\% of $^{\text{nat}}$Ca is $^{40}$Ca), \tot\ data on the natural
-    target was included as ``isotopic".
+New neutron scattering data (both \tot and \el) on isotopic targets, grist for the DOM mill and the 
+central result of this dissertation, are presented in Chapters \ref{TCSAnalysis, ECSAnalysis}.
 
-\begin{figure}
-    \includegraphics[width=0.8\textwidth]{figures/TCSChart.png}
-    \caption{Landscape of existing neutron \tot\ data (per the EXFOR database)}
-    \label{TCSChart}
-\end{figure}
-
-\begin{figure}
-    \includegraphics[width=0.8\textwidth]{figures/RCSChart.png}
-    \caption{Landscape of existing proton \rxn\ data (per the EXFOR database)}
-    \label{RCSChart}
-\end{figure}
-
-\subsection{Electron scattering}
+\subsection{Electron scattering and laser spectroscopy}
 K. Minamisono
-
 
 \subsection{Quasi-free scattering}
 Louk Lapikas
@@ -425,74 +473,25 @@ Louk Lapikas
 \subsection{Nuclear Masses, Matter Radii, and Charge Radii}
 Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.
 
-\section{Techniques for neutron scattering experiments}
-\subsection{Neutron beam production}
-Neutron production: monoenergetic (tandem, via d(d,n)3He, t(d,n)$\alpha$),
-or white (reactor and spallation sources)?. Includes description of
-collimation, beam production, room background issues, facilities where
-available, advantages and disadvantages of each production mechanism.
-
-\subsection{Neutron detection}
-Neutron detection: fast plastic, liquid scintillators, He3 counter, CLYC array, poly
-terphenyl. N-gamma discrimination by pulse shape discrimination. TOF techniques
-for energy determination. Charged particle rejection. MoNA, neutron wall at
-FRIB, VANDAL. Use of machine learning to distinguish gammas from neutrons.
-
-Analog vs. digital techniques (connect to LANSCE measurements from \ref{Abfalterer2001, Finlay1993}).
-
-At end of section, familiar with:
-- neutron beam production and facilities
-- a variety of neutron detection techniques: liquid/plastic scintillators,
-means of energy detection and background rejection, PSD
-
 \section{Motivation, Scope, and Dissertation Outline}
-With the need for improved neutron scattering data established and an overview of neutron
-detection technology provided, the results of our neutron scattering measurement campaign can be
-presented. The experimental layout and analysis for our isotopically-resolved \tot\ measurements are 
-detailed
-in Chapters \ref{TCSExperiment} and \ref{TCSAnalysis}, and for our elastic scattering measurements 
-on \snTwelveFour in Chapters \ref{ECSExperiment} and \ref{ECSAnalysis}. A brief summary of the 
-Dispersive Optical Model formalism is
-given in Chapter \ref{DOMFormalism} in preparation for the results from our DOM fits of \oSixEight, \caAughtEight, 
-\niEightFour, \snTwelveFour, and \pbEight presented in Chapter \ref{DOMResults}. Complete
-details on the experimental data sets used in the analysis and figures showing the quality of the
-fits are provided in Appendices \ref{DOMDataSets} and \ref{DOMFits}. 
+Improved isotopically-resolved neutron scattering data are an essential ingredient
+for better nuclear reaction models and to test the asymmetry-dependence of the
+nuclear potential. The results of our campaign to produce these valuable
+\tot\ and \el\ data sets on cornerstone nuclei form the backbone of this dissertation.
+In addition to these experimental results, a suite of Dispersive Optical Model (DOM) analyses that 
+incorporate these new data is presented. From the DOM potentials, a variety of asymmetry-dependent 
+nuclear-structure quantities, including neutron skins and relative momentum
+content, are extracted.
 
-At end of introduction:
-- familiar with value of neutron scattering data for optical models and also as
-fundamentally valuable for nuclear science; proton scattering data have been
-accumulated, but neutron scattering data are much scarcer
-- familiar with scarcity of certain types of difficult neutron and proton
-scattering data (\tot, \rxnE)
-- familiar with relevance to infinite nuclear matter equation of state and
-neutron star radii
-
-Questions posed:
-
-- What do the nucleons do in the nucleus? Where are the neutrons and the protons
-with respect to each other?
-
-- What is needed to expand beyond current workhorse models (Droplet Model,
-Shell Model, Optical Models) and connect nuclear reactions and structure
-
-- What are the neutron scattering data for cornerstone nuclides (magic Z,N) and
-what do they tell us about the isoscalar/isovector terms of the optical
-potential and where the nucleons go/what they do in the nucleus?
-
-- What types of experimental data are most essential for an improved understanding of nuclear
-reactions and structure?
-
-\gls{DOM}
-
-% \Gls{DOM} for glossary term
-% \noindent for no indent
-
-%\begin{comment}
-% Woods-Saxon potential 
-%\end{comment}
-%
-%\begin{equation}
-%V(r) = \dfrac{-V_0}{1+e^{(r-R)/a}},
-%\end{equation}
-
-%\mathbf{J} = math bold-font symbol 'J'
+An overview of neutron \tot\ experimental considerations, the details of our 
+\tot\ experiment, and analysis for our isotopically-resolved \tot\ measurements
+on \oSixEight, \niEightFour, \rhThree, and \snTwelveFour are detailed in 
+Chapters \ref{TCSExperiment} and \ref{TCSAnalysis}. Similarly, our elastic scattering measurements 
+on \snTwelveFour are presented in Chapters \ref{ECSExperiment} and \ref{ECSAnalysis}. A brief 
+summary of the Dispersive Optical Model formalism is
+given in Chapter \ref{DOMFormalism} to contextualize the results from our DOM fits of \oSixEight, 
+\caAughtEight, \niEightFour, \snTwelveFour, and \pbEight presented in Chapter \ref{DOMResults}. 
+A complete listing of the experimental data used in the DOM analyses, the
+parameter values of the DOM potentials, and figures showing the 
+results of the DOM fits are provided in Appendices \ref{DOMDataSets,
+DOMParameters, DOMFits}. 
