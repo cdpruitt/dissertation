@@ -3,31 +3,35 @@
 sifting of numerical results.''}{William Thompson, \nth{1} Baron Kelvin}
 
 \section{Relevant Models of the Atomic Nucleus: Overview}
-What do the nucleons do in the nucleus? Where are the neutrons and the protons
-with respect to each other?
-- What is needed to expand beyond current workhorse models (Droplet Model,
-Shell Model, Optical Models) and connect nuclear reactions and structure
+The nuclear many-body problem remains one of the most challenging problems in
+physical science despite a century of experimental and theoretical advances.
+Basic questions, including how nucleons are distributed throughout the nuclear
+volume and how they share the energy of binding, are still only qualitatively
+answered or known in insufficient detail. At the core of the issue is the short
+range and extremely strong nature of nuclear forces, which confine
+quarks to nucleons and cannot be treated perturbatively in the MeV-energy regime of
+nuclear physics. Rather than take a truly ab-initio approach where quarks and gluons
+possess the relevant degrees of freedom, a series of approximations must be made
+to make things tractable, the first of which is identifying protons and neutrons as
+the fundamental objects that form nuclei.
 
-- What are the neutron scattering data for cornerstone nuclides (magic Z,N) and
-what do they tell us about the isoscalar/isovector terms of the optical
-potential and where the nucleons go/what they do in the nucleus?
-
-- What types of experimental data are most essential for an improved understanding of nuclear
-reactions and structure?
-
-To unravel the nuclear many-body problem, we can
-employ models that incorporate essential details while ignoring specifics with
-little relevance to the observables we care about.
-
-Successful models possess both accuracy at reproducing extant experimental data
-and predictive power for as-yet unmeasured experimental data (far harder). For parametric models
-with many tunable parameters, these criteria pull in oppositive directions: increasing the number
+A wealth of nuclear models have been developed to describe existing nuclear
+experimental data, nucleon-nucleon interactions, bulk nuclear properties, and
+nuclear scattering. Successful models possess accuracy at reproducing existing experimental data
+and have predictive power for as-yet unmeasured experimental data. For parametric models
+with many tunable parameters, these may criteria pull in oppositive directions:
+increasing the number
 and acceptable range of model parameters often helps to reproduce experimental data but may
 jeopardize predictive power if new parameters are not connected to the underlying physics.
-
-Several workhorse models relevant to this dissertation are presented below. Their successes,
+I begin by presenting a few workhorse model families most relevant
+to this dissertation and omit many others (notably, Density Functional Theory
+and Lattice QCD). Each model's successes,
 failures, and regimes of validity are briefly discussed, with extra attention paid
-to each model's confrontation with challenging experimental data.
+to each model's confrontation with certain challenging experimental data.
+A central motivation for this work is to provide experimental data most useful for
+the optical model of the nucleus in an attempt to
+connect nuclear structure information with nuclear reactions, a longtime goal
+in nuclear physics. 
 
 \subsection{Liquid Drop Model}
 
@@ -91,21 +95,26 @@ coefficients to accommodate non-spherical effects. This expanded scope
 can successfully recover the degree of ground state deformation in non-spherical
 nuclei and fission barriers.
 
-By the 1980s, it was clear that the isotope shift in the nuclear RMS
-charge radius, shown for the even-A Sn isotopes in Fig.
+Because the LDM is not based upon shell structure, its utility has diminished
+compared to other models that reproduce additional experimental data collected
+over the last fifty years. However, the model still is a useful reference for providing 
+information about bulk properties of nuclear matter. For example, by the 1980s,
+it was clear that the isotope shift in the nuclear RMS
+charge radii, shown for the even-A Sn isotopes in Fig.
 \ref{SnIsotopeShift} \ref{Anselment1986, Otten1989},
 is critically connected to difference in RMS radius 
-between the neutron and proton distributions, commonly referred to as the "neutron skin".
+between the neutron and proton distributions, commonly referred to as the
+"neutron skin" \cite{Wilkinson1967}.
 In a Droplet Model picture, the slope of the isotope shift is linked to the symmetry energy $J$, 
 density dependence of the symmetry energy
-$L$, and surface stiffness coefficient $Q$, the same variables that determine
-neutron skin thickness \cite{Myers1969, MyersAndSwiatecki, Berdichevsky1988}.
+$L$, and surface stiffness coefficient $Q$, the same bulk quantities that determine
+neutron skin thickness in the LDM \cite{Myers1969, MyersAndSwiatecki, Berdichevsky1988}.
 Without addition experimental constraints, the $J$, $L$, and $Q$ parameters form an
 underdetermined system from which unique values cannot be recovered, even if the
 consensus value of $J \approx$ 30 MeV is used to reduce the parameter space.
 As was already pointed out 50 years ago by Myers \cite{Myers1969},
 the single-particle configuration of a given nucleus may have a significant
-effect on the formation of the 
+effect on the formation and size of such a skin.
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/SnIsotopeRMSRadii.png}
@@ -113,40 +122,43 @@ effect on the formation of the
     \label{SnIsotopeShift}
 \end{figure}
 
-\subsection{Mean-field and beyond-mean-field models}
-Mean field models begin with a motivating assumption: that nucleons
-experience the nuclear environment independently, as an average
+\subsection{Mean-field models}
+Mean field models begin with a simple motivation: that nucleons
+traverse the nuclear environment independently, in an average
 potential generated by all other nucleons, smeared out over nuclear volume.
 The assumption of independent nucleon motion may seem dubious, given the
-crowded environment of the nucleus and immense strength of the nucleon-nucleon forces,
+crowded environment of the nucleus and immense strength of nucleon-nucleon forces,
 but the Pauli exclusion principle provides some justification.
 Confined by this mean field, nucleons obey a nuclear aufbau, filling orthogonal states with
 quantum numbers N, L, and J, as electrons do in the atomic case, resulting in
 shell structure. From a mean field consisting of a central
-potential and a spin-orbit potential, as in the seminal work of Goeppert-Mayer
+potential and a spin-orbit potential, as in the seminal shell-model work of Goeppert-Mayer
 and Jensen \cite{GoeppertMayer1955}, the basic ground-state quantum properties of most nuclei
 (spins, parities, magnetic moments) are recovered. In addition, nucleons can be
 excited into higher (but still bound) states and the low-lying excitation
-spectra predicted. The consequences of
-shell structure are clearly present in experimental data, including increased particle separation 
+spectra predicted. The consequences of shell structure are obvious
+in the experimental record, including increased particle separation 
 energies and decreased nuclear radii at shell closures, directly analagous to
 the atomic ionization energies and radii in the noble gases. The independent
 treatment of nucleons is most valid near shell closures,
 where the level density is reduced, and near beta-stability, where coupling to
 the asymptotically-free states of the continuum is least important.
 
-Typically, the central average potential is considered as only a starting point for a perturbative
+In a modern mean-field approach, the central average potential is considered
+only as a starting point for a perturbative
 expansion that collects the residual nucleon-nucleon interactions associated with
 correlated behavior, such as clustering and oscillatory modes. Coupled excitations of
 two or more nucleons to higher orbitals and relativistic effects may be included to 
 accommodate the experimental phenomena under investigation.
-In light systems, where the number of nucleons is not too large, each nucleon is
+In light systems, where the number of nucleons is not too large, every nucleon is
 allowed to participate in excitations into the valence space of the model
-(``no-core shell model"). As the system size increases, the configuration space grows
+(a ``no-core shell model"). As the system size increases, the configuration space grows
 combinatorially until calculations become prohibitively expensive for a no-core
 shell model approach. To make these nuclei tractable, a variety of approaches
-are employed, including simply restricting the valence space and prohibiting deeply-bound nucleons 
-from participating in excitations, ideally with relevant physics still intact.
+are employed, including simply restricting the valence space and prohibiting deeply-bound 
+nucleons from participating in excitations, hopefully with relevant physics
+still intact. Of course, in very light nuclear systems (A<12), the concept of a
+mean field breaks down as nucleons become too granular to treat on average.
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/ShellModel.png}
@@ -154,34 +166,53 @@ from participating in excitations, ideally with relevant physics still intact.
     \label{ShellModel}
 \end{figure}
 
-Mean-field challenges: Adding coupling to the continuum to describe systems far from stability,
-astrophysical reactions.
-- failure to recover depletion/spectral peak broadening. In what regimes are nucleons the best
-choice of degree-of-freedom?
-
-Discuss beyond-the-mean field:
-- mention chiral-EFT
-- Av18 and microscopic potentials
+Beyond-mean-field approaches dispense with the assumption of an average
+potential and build up nuclear interactions from nucleon-nucleon potentials
+folded over the nucleon density profile. An advantage
+of this approach is the connection between fundamental nucleon data
+(for example, neutron-proton scattering phase shifts) and the many-body
+properties of light nuclear systems \cite{Wiringa}.
 - Connect to chiral effective field theory work for calculating optical potentials
 and examining isovector component of potential, especially w/r/t to exotic
-nuclei near driplines. Nucleons are still degree of freedom, but allowed to exchange effective pions
-that include the quark-quark interactions that comprise the strong nuclear force.
-- Lattice QCD: nucleons are no longer the degree of freedom, but nuclear physics
-is almost completely out of reach (going beyond He-4 currently impossible).
+nuclei near driplines. Nucleons are still degree of freedom, but allowed to exchange effective 
+pions that include the quark-quark interactions that comprise the strong nuclear force.
+- computational limitations to beyond-mean-field above A=12?
 
-\subsection{Density Functional Theory}
-- Fission
-- Heavy systems (no lighter than Ca40)
-- Omit this section entirely? Not relevant to DOM.
+In contrast to the LDM, both mean-field and beyond-mean-field models have
+something to say about nuclear reactions: incident nucleons or nuclei can
+transfer nucleons to/from the nucleus being modeled and standard
+techniques of scattering theory can be applied.
+At high excitation energies and near the continuum where states become
+unbound, accuracy declines.
+
+Cracks in the mean-field picture appear when the deeply-bound
+nucleons are investigated. In the mean-field picture, all subshells of
+ground-state nuclei below the Fermi energy are fully occupied, and all shells
+above are vacant. Experimental probes of deeply-bound nucleons, including
+(e,e'p) measurements \cite{eep1, eep2} and knockout reactions \cite{knockout1,
+knockout2} show a depletion of occupancy from ~10\% (near the Fermi surface) to
+over 30\% (in deeply bound orbitals). Further, the spectral functions of deeply-bound
+nucleons are seen to broaden considerably, violating the assumption that each
+nucleon resides a single subshell with a discrete energy. If mean-field
+potentials are used to generate charge density distributions, as measured in
+elastic electron scattering experiments \cite{DeVries}, the core is found to
+have far too high a charge density. When the momentum distribution of nucleons
+is measured with deep
+inelastic/knockout reactions, excess high-momentum content is found in the tails
+of the momentum distribution, indicating that a few \% of the time, nucleons are
+traveling far faster than expected. These issues have been a perennial problem
+in nuclear theory and motivate better frameworks that improve mean-field
+descriptions of behavior deep in the nucleus.
 
 \subsection{Optical Models}
-The initial motivation for all the models presented thus far has been recovery
+For the LDM and mean-field presented thus far, the primary motivation has been recovery
 of structural observables like nuclear masses, radii, low-lying excitations, and magnetic moments. 
 A comprehensive understanding of the nucleus must also say something about what
-nuclei \textit{do}, as in nucleus-nucleon scattering experiments and astrophysical reactions.
+nuclei \textit{do}, as in higher-energy nucleus-nucleon scattering experiments
+and in astrophysical reactions.
 The nuclear optical model (OM) was developed to this end and continues to be an
 widely-used tool for generating nucleon, $\alpha$, and heavy ion scattering
-cross sections, though it has less to say about nuclear structure. Basic
+cross sections, though it has had less to say about nuclear structure. Basic
 motivations for OMs, plus references to successful OM potential parameterizations,
 are summarized here.
 
@@ -315,17 +346,18 @@ the Facility for Radioactive Isotope Beams (FRIB) come online and produce
 extremely asymmetric nuclei, knowing the asymmetry-dependence of optical
 potentials becomes paramount. Providing such experimental constraints for optical
 potentials, in particular for the Dispersive Optical Model (DOM), is a primary 
-motivation for the isotopically-resolved neutron \tot\ and \el\ work presented in this dissertation.
-In chapter \ref{DOMFormalism}, I present an overview of the DOM, a descendent of traditional OMs 
-that extends the potential to negative energies to generate nuclear structure.
+motivation for the isotopically-resolved neutron \tot\ and \el\ work presented in this 
+dissertation. In chapter \ref{DOMFormalism}, I present an overview of the DOM, a descendent of 
+traditional OMs that extends the potential to the negative-energy domain, treating
+nuclear structure and reactions on equal footing. 
 
 %"The magnitude and energy dependence of the real isovector part of the
 %optical potential are poorly constrained by experiment." \cite{Holt16}
 
 Other topics that could be included:
 - Hodgson's optical model review in 1971
-- Microscopic (folds interaction over nucleon density)
-- Phenomenological (no folding - use bulk)
+- Microscopic OMs (folds interaction over nucleon density)
+- Phenomenological OMs (no folding - use bulk)
 - can largely follow Bob and Wim's review paper
 - first formulated in 1949 to describe neutron cross section data
 - separate proton and neutron global optical potentials in the 60s (Becchetti
@@ -337,11 +369,9 @@ other nucleon-nucleon interactions mediate the isoscalar forces.
 
 \section{The Landscape of Experimental Nuclear Data}
 
-\subsection{Elastic nucleon scattering}
+\subsection{Nucleon scattering data}
 Elastic nucleon scattering cross sections comprise the most extensively-measured
 sector of experimental scattering data.
-
-\subsection{Inelastic nucleon scattering}
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/TCSChart.png}
@@ -464,14 +494,14 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 New neutron scattering data (both \tot and \el) on isotopic targets, grist for the DOM mill and the 
 central result of this dissertation, are presented in Chapters \ref{TCSAnalysis, ECSAnalysis}.
 
-\subsection{Electron scattering and laser spectroscopy}
-K. Minamisono
-
 \subsection{Quasi-free scattering}
 Louk Lapikas
 
 \subsection{Nuclear Masses, Matter Radii, and Charge Radii}
 Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.
+
+Electron scattering and laser spectroscopy
+K. Minamisono
 
 \section{Motivation, Scope, and Dissertation Outline}
 Improved isotopically-resolved neutron scattering data are an essential ingredient

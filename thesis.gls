@@ -1,8 +1,13 @@
 \glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
 \begin{theglossary}\glossaryheader
 \glsgroupheading{D}\relax \glsresetentrylist %
+\glossentry{DOM}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{131}}}%
+\glossentry{Dyson Equation}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{131}}}%
 \glossentry{nucleon self-energy}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{69}}}%
 \glossentry{optical potential}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{69}}}%
+		\setentrycounter[]{page}\glsnumberformat{69}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{131}}}%
 \end{theglossary}\glossarypostamble
