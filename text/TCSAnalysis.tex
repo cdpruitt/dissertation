@@ -16,23 +16,34 @@ for TOF-detector events to 0.52 ns FWHM (see Figs. \ref{LRTimeDifferenceLinear}
 and \ref{DifferenceThresholdsFit}).
 
 \begin{figure*}
+    \includegraphics[scale=0.3]{figures/LRCorrelation.png}
+    \caption{Event times for left and right PMTs of time-of-flight detector}
+    \label{LRCorrelation}
+\end{figure*}
+
+\begin{figure*}
     \includegraphics[scale=0.3]{figures/Difference_Linear.png}
-    \caption{Time difference between left and right PMTs of time-of-flight detector}
+    \caption[Time difference between left and right PMTs of time-of-flight
+    detector] {
+        For all events in a diagnostic data run, the time difference   
+        between the left and right PMTs of the TOF detector is plotted.
+        A Gaussian fit (in red) to these events reveals an 85-ps delay of the right PMT with 
+        respect to the left PMT and a left-right time difference FWHM of 355 ps.
+    }
     \label{LRTimeDifferenceLinear}
 \end{figure*}
 
-(Color online) For all events in a diagnostic data run, the time difference   
-        between the left and right PMTs of the TOF detector is plotted.
-        A Gaussian fit (in red) to these events reveals an 85-ps delay of the right PMT with 
-    respect to the left PMT and a left-right time difference FWHM of 355 ps.
+\begin{figure*}
+    \includegraphics[scale=0.3]{figures/LRDifferenceByEnergy.png}
+    \caption{Effect of energy gating on left/right PMT time resolution}
+    \label{LRTimeDifferenceLinear}
+\end{figure*}
 
 \begin{figure*}
     \includegraphics[scale=0.3]{figures/DifferenceThresholdsFit.png}
-    \caption{Intrinsic time resolution of time-of-flight detector as a function of signal amplitude}
-    \label{DifferenceThresholdsFit}
-\end{figure*}
-
-(Color online) The time difference between the left and right PMTs
+    \caption[Intrinsic time resolution of time-of-flight detector as a function
+    of signal amplitude]{
+        The time difference between the left and right PMTs
         of the TOF detector was calculated for all events in a diagnostic run.
         The FWHM of these time differences as a function of
         neutron energy are shown (black points) and fitted with a hyperbolic
@@ -40,7 +51,9 @@ and \ref{DifferenceThresholdsFit}).
         events, the time resolution is poorer due to the lower signal amplitude and
         the larger traversal time for neutrons through the 1-inch detector. As energy
         increases, the FWHM time resolution approaches an asymptote of 0.34
-    ns (grey dashed line).
+        ns (grey dashed line).}
+        \label{DifferenceThresholdsFit}
+\end{figure*}
 
 To improve the micropulse time resolution and test the stability of the
 micropulse period during a macropulse, all $\gamma$ rays for a given macropulse
@@ -59,7 +72,25 @@ However, because the TOF of these neutrons is already several hundred ns or
 longer, the relative energy resolution ($\frac{\Delta E}{E}$) is
 superior at low energies: for a 5 MeV neutron with a 0.82 ns detector-traversal time and
 an inherent TOF resolution of 0.80 ns, $\Delta E$ is 13 keV. These energy uncertainties
-have been propagated through subsequent analysis into our \tot\ results below.
+have been propagated through subsequent analysis and appear in the systematic
+uncertainty.
+
+\begin{figure}
+    \includegraphics[scale=0.24]{figures/RFTimeStudy.png}
+    \caption[Stability of the beam pick-off (T$_{0}$) during the experiment]
+    {Results of a study of the micropulse frequency stability. The period of \tZero used
+        in the analysis was varied in 1-ps increments, changing the
+        calculated arrival time of events in each micropulse. For each period, the FWHM of
+        the time uncertainty in the $\gamma$-ray flash was tabulated, and the
+        overall trend fitted with a quadratic curve. The true micropulse
+        frequency was taken as the minimum of this curve. This procedure was
+        repeated on data throughout the experimental run, verifying that effects
+        of micropulse frequency drifting are negligible on the recovered
+        times-of-flight.
+    }
+    \label{RFTimeStudy}
+\end{figure}
+
 
 \begin{figure}
     \includegraphics[scale=0.24]{figures/TimeCorrections.png}
@@ -279,10 +310,10 @@ of counts will be required to determine the cross section to high
 precision.
 
 From these energy spectra, the raw cross sections were calculated, bin-wise, as follows:
-$$
-\tot = -\frac{1}{\ell\rho_{n}}
-\ln \left(\frac{I_{0}}{I_{s}}\times\frac{M_{s}}{M_{0}}\right)
-$$
+\begin{equation} \label{CSCalculation}
+    \tot = -\frac{1}{\ell\rho_{n}}
+    \ln \left(\frac{I_{0}}{I_{s}}\times\frac{M_{s}}{M_{0}}\right)
+\end{equation}
 where $\frac{I_{0}}{I_{s}}$ is the ratio of counts in the energy spectra between 
 the blank and sample, $\frac{M_{s}}{M_{0}}$ is the ratio of counts in the
 monitor detector between the sample and blank (for flux normalization), $\ell$ is the length 
@@ -340,6 +371,33 @@ was within 1\% throughout our energy domain, comparable to a similar test conduc
 al \cite{Abfalterer2001}. Resolution of this discrepancy may require a follow-up experiment with 
 parallel data acquisition systems, one analog, one digital, to compare the digital peak detection
 algorithm with the analog one.
+
+From Eq. \ref{CSCalculation}, it is clear that changes in flux ratio and sample areal
+density can shift the calculated cross section up or down across the entire
+energy range measured, but cannot change the \textit{slope} of the cross section
+in the energy domain. Thus, the high-energy discrepancy is unlikely to be
+related to 
+
+At neutron times-of-flight corresponding to energies $>$100 MeV, the number of
+counts in the spectrum rises sharply as one moves to higher energies. In this
+region, even a sub-nanosecond timing differences between the spectrum for the
+blank and for the sample of interest is amplified into large errors in the
+cross section calculation. Thus the event timing and data
+storage routines must be kept completely ignorant of which target is currently
+in-beam so as to avoid sample-dependent timing effects. In practice, this is
+difficult, as acquisition with the blank sample is naturally associated with
+a higher data rate as fewer neutrons are attenuated in-flight than during
+with the isotopic samples of interest. By reducing the rate of data acquisition
+by an order of magnitude or more, the analog-electronics approach reduces the
+absolute data rates of both the blank and the samples, mitigating this effect.
+However, because much larger samples are required with the overall reduced data
+rate, the relative data rate between the blank and samples is increased,
+amplifying any effect on the electronics. Without a study of digital and analog
+systems running simultaneously with input from the same detectors, it is not
+clear which approach suffers more from this effect. Such a follow-up, especially
+with multiple digitizers from differing manufacturers, would help
+resolve the high-energy discrepancy we see between all of our \tot\ data sets
+and literature data.
 
 \begin{figure*}
     \includegraphics[scale=0.5]{figures/literatureBenchmarking.png}
