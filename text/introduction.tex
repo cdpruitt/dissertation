@@ -160,11 +160,11 @@ nucleons from participating in excitations, hopefully with relevant physics
 still intact. Of course, in very light nuclear systems (A<12), the concept of a
 mean field breaks down as nucleons become too granular to treat on average.
 
-\begin{figure}
-    \includegraphics[width=0.8\textwidth]{figures/ShellModel.png}
-    \caption{Nuclear shell model }
-    \label{ShellModel}
-\end{figure}
+%\begin{figure}
+%    \includegraphics[width=0.8\textwidth]{figures/ShellModel.png}
+%    \caption{Nuclear shell model }
+%    \label{ShellModel}
+%\end{figure}
 
 Beyond-mean-field approaches dispense with the assumption of an average
 potential and build up nuclear interactions from nucleon-nucleon potentials
@@ -302,29 +302,27 @@ corresponding to differing physics thought to be important for these areas (much
 as in the Droplet Model).
 
 \begin{figure}
-    \hfill\begin{minipage}{0.5\textwidth}\centering
-        \includegraphics[scale=0.2]{figures/phaseShiftStillsFigure.png}
-        \caption[A illustration of the nuclear Ramsauer effect]{
-            A neutron wave train (series of
-            blue lines) impinges from the left on a real Woods-Saxon
-            potential centered at the origin (diffuse red circle). The potential
-            refracts the neutron wave,
-            retarding the phase of the wavefront as it passes through the
-            potential. After escaping the potential, a phase difference $\Delta$ between
-            the wave component passing \textit{around} and \textit{through the center}
-            of the potential persists, resulting in scattering.
-            For the leading wavefront in the wave train, $\Delta$ is indicated in
-            the top right-hand corner of each panel. A differential version of
-            Eq. \ref{phaseShift} is used to
-            calculate the phase shift for each step. In this figure, the neutron
-            energy $E_{n}$ = 14 MeV and nuclear mass $A$ = 25. For the Woods-Saxon potential,
-            we used a potential depth $U$ = 42.8 MeV (following Angeli's analysis
-            of \tot\ data at 14 MeV \cite{Angeli1970}), with nuclear radius $R = 
-            r_{0}A^{\frac{1}{3}}$, $r_{0}$ = 1.4 fm, and a diffuseness parameter
-            $a$ of 0.5 fm.
-        }
-        \label{RamsauerPhaseShiftFigure}
-    \end{minipage}
+    \includegraphics[scale=0.2]{figures/phaseShiftStillsFigure.png}
+    \caption[A illustration of the nuclear Ramsauer effect]{
+        A neutron wave train (series of
+        blue lines) impinges from the left on a real Woods-Saxon
+        potential centered at the origin (diffuse red circle). The potential
+        refracts the neutron wave,
+        retarding the phase of the wavefront as it passes through the
+        potential. After escaping the potential, a phase difference $\Delta$ between
+        the wave component passing \textit{around} and \textit{through the center}
+        of the potential persists, resulting in scattering.
+        For the leading wavefront in the wave train, $\Delta$ is indicated in
+        the top right-hand corner of each panel. A differential version of
+        Eq. \ref{phaseShift} is used to
+        calculate the phase shift for each step. In this figure, the neutron
+        energy $E_{n}$ = 14 MeV and nuclear mass $A$ = 25. For the Woods-Saxon potential,
+        we used a potential depth $U$ = 42.8 MeV (following Angeli's analysis
+        of \tot\ data at 14 MeV \cite{Angeli1970}), with nuclear radius $R = 
+        r_{0}A^{\frac{1}{3}}$, $r_{0}$ = 1.4 fm, and a diffuseness parameter
+        $a$ of 0.5 fm.
+    }
+    \label{RamsauerPhaseShiftFigure}
 \end{figure}
 
 Global OMs have been developed to simultaneously reproduce single nucleon, heavy ion,
@@ -370,129 +368,56 @@ other nucleon-nucleon interactions mediate the isoscalar forces.
 \section{The Landscape of Experimental Nuclear Data}
 
 \subsection{Nucleon scattering data}
-Elastic nucleon scattering cross sections comprise the most extensively-measured
-sector of experimental scattering data.
+Elastic nucleon scattering cross sections, especially with protons, comprise the most extensively-measured
+sector of experimental nucleon scattering data. The EXFOR experimental reaction database
+\ref{EXFOR} contains thousands of proton and neutron differential elastic scattering and analyzing
+power data sets between 1-300 MeV, the domain of low-energy nuclear physics. Optical model fits
+to these data, both regional and global \cite{CH89, KoningDelaroche}, have helped
+constrain nuclear radii \cite{radiusExample}, the strength of the spin-orbit coupling,
+and revealed the importance of an imaginary spin-orbit term.
+
+Inelastic nucleon scattering data is more difficult to collect experimentally and much sparser in
+the literature record. By helping fix the strenght and energy-dependence of the absorptive component
+of the nuclear potential, inelastic data serve a complementary role to elastic data.
+Isotopically-resolved data is particularly valuable for constraining nuclear
+models, as it avoids averaging over multiple isotopes naturally-abundant in many elemental samples.
+Unfortunately, many pure isotopes are extremely expensive ($>$\$10,000 per gram) to
+separate, putting them out of reach for all but the most well-funded experiments.
+
+Figs. \ref{TCSChart} and \ref{RCSChart} illustrate the status of isotopically-resolved inelastic
+nucleon scattering data in the literature. Except for light isotopes and a few security-related
+actinides, coverage is minimal.
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/TCSChart.png}
-    \caption{Landscape of existing neutron \tot\ data (per the EXFOR database)}
+    \caption[Landscape of existing neutron \tot\ data]
+    {Isotopes are color-coded by the amount of neutron \tot\ data available in the EXFOR nuclear
+        reaction database from 1-300 MeV. If data exists thoughout the 1-300 MeV range, the isotope
+        is colored blue. If no data exists, the isotope is colored red. Except for the lightest
+        isotopes (O and below), a few security-related actinides, there is almost no coverage
+        throughout the nuclear chart. Our newly-measured results on \oSixEight, \niEightFour,
+        \rhThree, and \snTwelveFour are included, as are a previous experiment on
+        \caAughtEight \cite{Shane2010}.
+    }
     \label{TCSChart}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/RCSChart.png}
-    \caption{Landscape of existing proton \rxn\ data (per the EXFOR database)}
+    \caption[Landscape of existing proton \rxn\ data (per the EXFOR database)]
+    { Isotopes are color-coded by the amount of neutron \tot\ data available in the EXFOR nuclear
+        reaction database from 1-300 MeV. If data exists thoughout the 1-300 MeV range, the isotope
+        is colored blue. If no data exists, the isotope is colored red. The story is similar to that
+        of Fig. \ref{TCSChart}: except for a few light nuclides and actinides, little data exists, a
+    testament to the difficulty of proton \rxn measurements.}
     \label{RCSChart}
 \end{figure}
 
-Neutron scattering is a direct, Coulomb-insensitive tool for probing the nuclear
-environment. The simplest measurement of neutron interaction with a nucleus,
-the neutron total cross section \tot, provides fundamental information about
-nuclear size and the ratio of elastic-to-inelastic components of nucleon 
-scattering. Additionally, \tot\ data are sensitive to a variey of nuclear
-properties of great interest including the neutron skin of neutron-rich nuclei
-\cite{Mahzoon2017} and thus the density dependence of the symmetry energy $L$,
-essential for an accurate neutron star equation-of-state (EOS)
-\cite{Fattoyev2012, Vinas2014, Brown2000}.
-
-To compare \tot\ for two different targets of masses A and A', the relative
-difference \totRD\ is useful:
-\begin{equation} \label{SASRelDiff}
-    \begin{split}
-        \totRD & \equiv
-    \frac{\sigma_{A}-\sigma_{A'}}{\sigma_{A}+\sigma_{A'}} \\
-    & =
-    \frac{r_{0}^{2}(A^{\frac{2}{3}}-A'^{\frac{2}{3}}) +
-    2\lambdabar r_{0}(A^{\frac{1}{3}}-A'^{\frac{1}{3}})}
-    {r_{0}^{2}(A^{\frac{2}{3}}+A'^{\frac{2}{3}}) +
-    2\lambdabar r_{0}(A^{\frac{1}{3}}+A'^{\frac{1}{3}}) + 2\lambdabar^{2}}
-    \end{split}
-\end{equation}
-
-ref{SASphereVsExperiment}).
-
-By scattering secondary radioactive beams off of hydrogen targets in inverse
-kinematics, proton-scattering experiments are possible even on highly unstable
-nuclides. In contrast, because neutrons themselves must be generated as a
-secondary radioactive beam, neutron-scattering experiments are restricted to
-normal kinematics and \tot\ measurements are possible only for relatively stable
-nuclides that can be formed into a target. At present, \tot\ measurements above
-the resonance region on nuclides with short half-lives (shorter than the timescale of
-days) are technically infeasible for this reason, though a handful have been carried out on
-samples with half-lives in the tens to thousands of years \cite{Poenitz1983,
-Phillips1980, Foster1971}.
-
-Traditionally, \tot\ measurements have relied on analog techniques for recording
-events, techniques that suffer from a large per-event deadtime of
-up to several $\upmu$s. Thus for a typical intermediate-energy \tot\ measurement
-with dozens or hundreds of energy bins, achieving statistical uncertainty at the
-level of 1\% requires a thick sample to attenuate a sizable fraction of the
-incident neutron flux. For cross sections in the 1-10 barn range, this means
-sample masses of tens of grams \cite{Finlay1993, Abfalterer2001}.
-Producing an isotopically-enriched sample of this size is often
-prohibitively expensive; indeed, a literature search for isotopically-resolved
-\tot\ measurements reveals a paucity of data from 1-300 MeV, even for
-closed-shell isotopes of special importance like $^{3,4}$He, $^{64}$Ni, and
-$^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
-
-\begin{table}[ht]
-    \caption[Selected results from a literature study of isotopically-
-        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}]
-        {Selected results from a literature study of isotopically-
-        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}
-        For the heaviest and lightest stable nuclides in each closed shell in Z, all
-        datasets falling at least partially within 1-500 MeV are shown. For elements
-        whose natural abundance is $>$90\% of a single isotope (e.g.,
-        96.9\% of $^{\text{nat}}$Ca is $^{40}$Ca), \tot\ data on the natural
-        target was included as ``isotopic".}
-    \label{IsotopicCrossSectionTable}
-    \begin{center}
-        \begin{tabular}{ c c c c }
-            \hline
-            Isotope & Nat. Abund. & Energy Range & Reference\\
-                    & [\%] & [MeV] & \\
-
-            \hline
-
-            $^{3}$He & $2\times 10^{-4}\%$ & $1.5 - 40$ & \cite{Haesner1983}\\
-            $^{4}$He & $>99.9\%$ & $0.7-30$ & \cite{Goulding1973}\\
-            & & $2-40$ & \cite{Haesner1983}\\
-            & & $77-151$ & \cite{Measday1966}\\
-
-            $^{16}$O & $99.8\%$ & $0.2-49$ & \cite{Perey1972}\\
-            & & $5-600$ & \cite{Finlay1993}\\
-
-            $^{18}$O & $0.20\%$ & $0.1-2.5$ & \cite{Vaughn1965}\\
-            & & $2.5-19$ & \cite{Salisbury1965}\\
-
-            $^{40}$Ca & $96.9\%$ & $<0.1-6.4$ & \cite{Johnson1973}\\
-            & & $5.3-560$ & \cite{Abfalterer2001}\\
-
-            $^{48}$Ca & $0.187\%$ & $0.6-5.2$ & \cite{Harvey1985}\\
-            & & $12-276$ & \cite{Shane2010}\\
-
-            $^{58}$Ni & $68.1\%$ & $<0.1-68$ & \cite{Perey1993}\\
-
-            $^{64}$Ni & $0.926\%$ & $14.1$ & \cite{Dukarevich1967}\\
-
-            $^{112}$Sn & $0.97\%$ & $<0.1-1.4$ & \cite{Timokhov1989}\\
-            & & $14.1$ & \cite{Dukarevich1967}\\
-
-            $^{124}$Sn & $5.79\%$ & $0.3-5.0$ & \cite{Harper1982}\\
-            & & $5.1-26$ & \cite{Rapaport1980}\\
-
-            $^{204}$Pb & $1.4\%$ & $<0.1-27$ & \cite{Carlton2003}\\
-
-            $^{208}$Pb & $52.4\%$ & $<0.1 - 695$ & \cite{Harvey1999}\\
-            & & $5-600$ & \cite{Finlay1993}\\
-
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-
-New neutron scattering data (both \tot and \el) on isotopic targets, grist for the DOM mill and the 
-central result of this dissertation, are presented in Chapters \ref{TCSAnalysis, ECSAnalysis}.
+By comparing with the wealth of literature proton elastic scattering data, neutron elastic and \tot\ data
+can be used to constrain the asymmetry-dependence of the nuclear potential, critical for
+understanding nuclear scattering on targets near the proton and neutron driplines. The new
+isotopically-resolved neutron scattering data given in \ref{TCSAnalysis, ECSAnalysis} are proferred
+for this purpose.
 
 \subsection{Quasi-free scattering}
 Louk Lapikas

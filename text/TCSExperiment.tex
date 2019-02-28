@@ -1,22 +1,136 @@
-\section{Overview of techniques for neutron \tot\ experiments}
-\subsection{Neutron beam production}
-Neutron production: monoenergetic (tandem, via d(d,n)3He, t(d,n)$\alpha$),
-or white (reactor and spallation sources)?. Includes description of
-collimation, beam production, room background issues, facilities where
-available, advantages and disadvantages of each production mechanism.
+\section{Overview of neutron \tot\ experiments}
 
-\subsection{Neutron detection}
-Neutron detection: fast plastic, liquid scintillators, He3 counter, CLYC array, poly
-terphenyl. N-gamma discrimination by pulse shape discrimination. TOF techniques
-for energy determination. Charged particle rejection. MoNA, neutron wall at
-FRIB, VANDAL. Use of machine learning to distinguish gammas from neutrons.
+Neutron scattering is a direct, Coulomb-insensitive tool for probing the nuclear
+environment. The simplest measurement of neutron interaction with a nucleus,
+the neutron total cross section \tot, provides fundamental information about
+nuclear size and the ratio of elastic-to-inelastic components of nucleon 
+scattering. Additionally, \tot\ data are connected to a variety of nuclear
+properties of great interest including the neutron skin of neutron-rich nuclei
+\cite{Mahzoon2017} and thus the density dependence of the symmetry energy $L$,
+essential for an accurate neutron star equation-of-state (EOS)
+\cite{Fattoyev2012, Vinas2014, Brown2000}.
 
-Analog vs. digital techniques (connect to LANSCE measurements from \ref{Abfalterer2001, Finlay1993}).
+By scattering secondary radioactive beams off of hydrogen targets in \gls{inverse
+kinematics}, proton-scattering experiments are possible even on highly unstable
+nuclides. In contrast, because neutrons themselves must be generated as a
+secondary radioactive beam, neutron-scattering experiments are restricted to
+normal kinematics and \tot\ measurements are possible only for relatively stable
+nuclides that can be formed into a target. At present, \tot\ measurements above
+the resonance region on nuclides with short half-lives (shorter than the timescale of
+days) are technically infeasible for this reason, though a handful have been carried out on
+samples with half-lives in the tens to thousands of years \cite{Poenitz1983,
+Phillips1980, Foster1971}.
 
-At end of section, familiar with:
-- neutron beam production and facilities
-- a variety of neutron detection techniques: liquid/plastic scintillators,
-means of energy detection and background rejection, PSD
+Traditionally, \tot\ measurements have relied on analog electronics for processing and
+recording events, techniques that suffer from a large per-event deadtime of
+up to several $\upmu$s. For a state-of-the-art intermediate-energy \tot\ measurement
+with dozens or hundreds of energy bins, achieving statistical uncertainty at the
+level of 1\% requires a thick sample to attenuate a sizable fraction of the
+incident neutron flux, generating the experimental signal.
+For cross sections in the 1-10 barn range, this means
+sample masses of tens of grams \cite{Finlay1993, Abfalterer2001}.
+Producing an isotopically-enriched sample of this size is often
+prohibitively expensive. Thus the lack of data for isotopically-resolved
+\tot\ measurements from 1-300 MeV, even for
+closed-shell isotopes of special importance like $^{3,4}$He, $^{64}$Ni, and
+$^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
+
+\begin{table}[ht]
+    \caption[Selected results from a literature study of isotopically-
+        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}]
+        {Selected results from a literature study of isotopically-
+        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}
+        For the heaviest and lightest stable nuclides in each closed shell in Z, all
+        datasets falling at least partially within 1-500 MeV are shown. For elements
+        whose natural abundance is $>$90\% of a single isotope (e.g.,
+        96.9\% of $^{\text{nat}}$Ca is $^{40}$Ca), \tot\ data on the natural
+        target was included as ``isotopic".}
+    \label{IsotopicCrossSectionTable}
+    \begin{center}
+        \begin{tabular}{ c c c c }
+            \hline
+            Isotope & Nat. Abund. & Energy Range & Reference\\
+                    & [\%] & [MeV] & \\
+
+            \hline
+
+            $^{3}$He & $2\times 10^{-4}\%$ & $1.5 - 40$ & \cite{Haesner1983}\\
+            $^{4}$He & $>99.9\%$ & $0.7-30$ & \cite{Goulding1973}\\
+            & & $2-40$ & \cite{Haesner1983}\\
+            & & $77-151$ & \cite{Measday1966}\\
+
+            $^{16}$O & $99.8\%$ & $0.2-49$ & \cite{Perey1972}\\
+            & & $5-600$ & \cite{Finlay1993}\\
+
+            $^{18}$O & $0.20\%$ & $0.1-2.5$ & \cite{Vaughn1965}\\
+            & & $2.5-19$ & \cite{Salisbury1965}\\
+
+            $^{40}$Ca & $96.9\%$ & $<0.1-6.4$ & \cite{Johnson1973}\\
+            & & $5.3-560$ & \cite{Abfalterer2001}\\
+
+            $^{48}$Ca & $0.187\%$ & $0.6-5.2$ & \cite{Harvey1985}\\
+            & & $12-276$ & \cite{Shane2010}\\
+
+            $^{58}$Ni & $68.1\%$ & $<0.1-68$ & \cite{Perey1993}\\
+
+            $^{64}$Ni & $0.926\%$ & $14.1$ & \cite{Dukarevich1967}\\
+
+            $^{112}$Sn & $0.97\%$ & $<0.1-1.4$ & \cite{Timokhov1989}\\
+            & & $14.1$ & \cite{Dukarevich1967}\\
+
+            $^{124}$Sn & $5.79\%$ & $0.3-5.0$ & \cite{Harper1982}\\
+            & & $5.1-26$ & \cite{Rapaport1980}\\
+
+            $^{204}$Pb & $1.4\%$ & $<0.1-27$ & \cite{Carlton2003}\\
+
+            $^{208}$Pb & $52.4\%$ & $<0.1 - 695$ & \cite{Harvey1999}\\
+            & & $5-600$ & \cite{Finlay1993}\\
+
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+In the 1990s, a comprehensive series of measurements were made at the Weapons Neutron Research (WNR)
+facility of the Los Alamos Neutron Science Center (LANSCE) on a wide battery of samples from Li to
+Pb \cite{Finlay1993, Abfalterer2001}, some isotopically-separated. The digitizer-enabled measurement
+of \cite{Shane2010} on \caAughtEight was the first measurement
+to employ newly-available digital-signal-processing technology to reduce the deadtime associated
+with processing each event and thus reduce the needed sample size. In 2015, we
+embarked on a systematic campaign to measure neutron \tot\ across the widest possible energy range
+for the heaviest and lightest stable isotopes in the Z = 8, Z = 28, and Z = 50 closed shells.
+
+%\subsection{Neutron beam production}
+%Thermal, monoenergetic, and white spectrum neutron beams are available from a wide variety of
+%neutron beam facilities worldwide. For our neutron \tot\ measurement, a broad spectrum, pulsed neutron
+%beam was required to precisely measure neutron energies across a wide energy range.
+
+\section{Neutron detection}
+Because neutrons carry no charge, they penetrate materials much further than protons and do not
+deposit energy continuously along their path. Further, when neutrons do interact with nuclei in
+detector materials, the energy transferred does not correspond linearly to the neutron energy. Thus
+assigning the correct energy to a scattered neutron is far from trivial. The two main approaches to
+energy detection are neutron time-of-flight and employing special detector materials ($^{3}$He,
+$^{35}$Cl) that have a reliable response to neutrons of different energies.
+
+\subsection{Fast plastic and liquid scintillators}
+Bicron-204
+Poly terphenyl
+Triplet-triplet fusion
+N-gamma discrimination by pulse shape discrimination (plus use of machine learning to distinguish
+gammas from neutrons)
+MoNA/neutron wall at FRIB, Vandal
+
+\subsection{Capture reactions}
+He3 counter
+Gadolinium
+CLYC array
+
+%\begin{figure}
+%    \includegraphics[scale=0.6]{figures/TOFCAD.jpg}
+%    \caption{CAD figure for light-tight fitting on PMT for time-of-flight detector}
+%    \label{TOFCAD}
+%\end{figure}
 
 \section{Sample Preparation}
 
@@ -144,7 +258,6 @@ samples used for neutron \tot\ measurements}
     \label{SamplesImage}
 \end{figure}
 
-
 The oxygen isotopes were prepared as water samples to increase the areal density
 of atoms and for ease of handling. Each water sample was contained by a
 cylindrical brass vessel with very thin (0.002 inch) brass endcaps, minimizing
@@ -160,22 +273,6 @@ machining properties, the rhodium
 sample was prepared by stacking a series of thin rhodium discs rather than by
 producing a fused cylinder. These discs were contained by a cylindrical plastic
 case with open ends, similar to the styrofoam sleeves.
-
-\section{Detector Construction}
-\begin{figure}
-    \includegraphics[scale=0.2]{figures/Scintillator_disassembled.jpg}
-    \caption{The time-of-flight detector, disassembled}
-    \label{TOFDetectorDisassembled}
-\end{figure}
-
-%\begin{figure}
-%    \includegraphics[scale=0.6]{figures/TOFCAD.jpg}
-%    \caption{CAD figure for light-tight fitting on PMT for time-of-flight detector}
-%    \label{TOFCAD}
-%\end{figure}
-
-The scintillator is just under 2`` cube, so the lightguide length should be pretty close to (24
-9/16'' - 2 - 2*PMT length``)/2. 
 
 \section{Experimental Facility at LANSCE}
 All neutron total cross section measurements were carried out at the 15R
@@ -197,11 +294,7 @@ stack of collimator donuts. After collimation, the beam passed successively thro
 monitor, the sample of interest held in a sample changer, a veto detector, and finally the 
 time-of-flight (TOF) detector approximately 25 meters from the neutron source.
 
-All detectors consisted of BC-400 fast scintillating plastic mated with 
-photomultiplier tubes (PMTs) and encased in a plastic or
-aluminium structural housing. The flux monitor and veto detector each had
-scintillator thicknesses of $\frac{1}{4}$ inch and the TOF detector had a
-scintillator thickness of 1 inch. Signals from all detectors and
+Signals from all detectors and
 the target changer were relayed to a 500-MHz CAEN DT-5730 waveform digitizer
 running custom software. To improve time resolution, the TOF detector used two
 PMTs (one left, one right) mated to the plastic scintillator and the PMTs' signals were 
@@ -268,13 +361,26 @@ detector from the neutron source determines both the minimum neutron energy that
 unambiguously resolved and the maximum instantaneous neutron flux, critical to correcting
 for per-event deadtime.
 
-\section{Data Acquisition}
-
 \begin{figure}
-    \includegraphics[scale=0.2]{figures/TargetChangerAlignment.png}
-    \caption{Precision target alignment via radiographic film}
-    \label{TargetChangerAlignment}
+    \includegraphics[scale=0.2]{figures/Scintillator_disassembled.jpg}
+    \caption{The time-of-flight detector, disassembled}
+    \label{TOFDetectorDisassembled}
 \end{figure}
+
+Fig. \ref{TOFDetectorDisassembled} shows the time-of-flight detector used in the experiment.
+A 2``x2``x1'' block of Bicron 400 fast plastic scintillator is coupled to two transparent
+[insert material] lightguides with [insert name] rubberized adhesive. These components were encased
+in an aluminum structural housing. On the distal end of the lightguides, Hamamatsu [insert number]
+phototubes are connected with optical grease and enclosed by
+$\mu$-metal shielding, used to prevent external magnetic fields from affecting photoelectrons.
+Phototube signals and read out and bias supplied by phototube bases attached to the back of each
+phototube. To hold the phototubes, fitted black Delrin sleeves were custom-made to apply light
+compression, keeping the optical surfaces in good contact. The entire assembly
+is 24 9/16'' in length. The monitor detector and veto detector, not pictured disassmbled, follow
+similar principles of construction, though only have one phototube each. The flux monitor and
+veto detector each had scintillator thicknesses of $\frac{1}{4}$ inch.
+
+\section{Data Acquisition}
 
 A programmable sample changer with six positions
 was used to cycle each sample into the beam at a regular interval of 150 seconds 
@@ -311,6 +417,14 @@ the fourth, fifth, and sixth cradles. For water samples, an empty brass vessel
 was placed in the first cradle to serve as the blank.
 
 Sample alignment (image of dental x-ray from LANSCE) \ref{TargetChangerAlignment}
+
+\begin{figure}
+    \includegraphics[scale=0.2]{figures/TargetChangerAlignment.png}
+    \caption{Precision target alignment via radiographic film}
+    \label{TargetChangerAlignment}
+\end{figure}
+
+Fig. \ref{TCSLogicDiagram} shows the workflow of detector signals 
 
 \begin{figure}
     \includegraphics[scale=0.6]{figures/TCSLogicDiagram.png}
