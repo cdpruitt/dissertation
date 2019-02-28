@@ -1,4 +1,7 @@
-\section{Detector Calibration}
+\section{Detector Characterization and Calibration}
+ To improve time resolution, signals
+from the two PMTs of the time-of-flight detector were summed before digitization.
+
 To identify valid neutron events and precisely determine the TOF start (micropulse start 
 time) and TOF stop time (arrival at TOF detector) for each event, a series of corrections 
 are required.  First, each event was assigned to the correct macropulse.
@@ -169,7 +172,26 @@ analytic deadtime correction required when using analog approaches \cite{Finlay1
 Abfalterer2001} that were as high as 500\%.% The effect of this correction on the final 
 %cross section results is shown in Fig. \ref{DeadtimeEffectOnCS}.
 
+ In \cite{Finlay1993, Abfalterer2001},
+arriving T$_{0}$ signals were used to begin a "looking period" during which neutron and $\gamma$-ray
+events could be collected. At the time of the T$_{0}$ arrival, if the electronic modules
+were still busy from processing a previous event (as indicated by a "system busy" signal),
+the looking period was aborted. During a looking period, if a neutron or gamma
+was detected, recording of any subsequent events in that period were prevented.
+This logic is diagrammed in Fig. \ref{AnalogLogic}, reproduced from
+\cite{Abfalterer2001}. Thus, both the fraction of T$_{0}$ signals that result in looking
+periods ($\frac{T_{0,live}}{T_{0}}$) and the chance that the detector is busy
+for a given time \textit{within each looking period}, the so-called ``analytic
+dead-time", are both recovered and used to correct the time-of-flight histograms
+to the true number of detector events.
+
 [insert information about constant rate and discarding first 40 micropulses]
+
+Systematic differences between \cite{Shane2010, Finlay1993, Abfalterer2001}:
+
+- sample diameters and collimation diameter (2.2-2.9 cm in finlay)
+- data acquisition structure
+- flight path length: 38.14 m in finlay
 
 \begin{figure}
     \includegraphics[scale=0.24]{figures/TimeDifferenceBetweenEvents.png}
@@ -288,6 +310,15 @@ For the sample with the smallest areal density (Rh), this correction was 2 mb.
 The cross section for $^{64}$Ni was corrected for the isotopic enrichment of our
 sample (92.2\%) using our measured $^{\text{nat}}$Ni cross section. All other isotopes were 
 sufficiently pure such that the impurity correction was negligible.
+
+Oxygen cross sections were calculated by
+subtracting the well-known hydrogen cross section from the raw H$_{2}$O result
+(we used H \tot\ data sets from Clement et al \cite{Clement1972} and Abfalterer
+et al \cite{Abfalterer2001}, which together cover the range $0.5 \leq E_n \leq 500$ MeV
+and are in excellent agreement where their energy ranges overlap). In light of
+the additional uncertainty inherent to this kind of subtractive \tot\
+determination, a D$_{2}^{\text{nat}}$O sample from which the literature \tot\ for
+D$_{2}$ could be subtracted was prepared as an additional cross-check. 
 
 \section{Results}
 \subsection{Benchmarking \tot\ results with natural samples}
