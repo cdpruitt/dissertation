@@ -414,7 +414,8 @@ left and right PMTs of the time-of-flight detector were gain-matched and a
 time-matching between the left and right signals.
 
 \section{Data Acquisition}
-Signals from all detectors and the target changer were relayed to an 8-channel, 500-MHz CAEN DT-5730
+Signals from all detectors and the target changer were relayed to an 8-channel, 500-MHz CAEN 
+DT-5730
 waveform digitizer as shown in Fig. \ref{TCSLogicDiagram}. Custom software was used to run the 
 digitizer in two complementary modes, referred to as ``DPP mode" and ``Waveform 
 mode". In DPP mode, triggers were initiated by the digitizer's onboard
@@ -422,6 +423,8 @@ peak-sensing firmware. For each trigger, several quantities were recorded: the t
 timestamp, two charge integrals over the detected peak with different
 integration ranges (32 ns for the short integral, 100 ns for the long integral),
 and a 96-ns portion of the raw digitized waveform, referred to as a ``wavelet".
+The timestamp was stored as two components: a 48-bit timestamp with 2 ns
+resolution, and 10-bit "fine time" within the 2 ns coarse time bin period.
 DPP mode was used for the vast majority of the 
 experiment and accounts for $\approx$99\% of the total data volume. In waveform mode, 
 the digitizer performs no peak-sensing and was externally triggered. Upon 
