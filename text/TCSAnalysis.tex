@@ -1,4 +1,4 @@
-\section{Detector Characterization and Calibration}
+\section{Timing Considerations}
 To assign correct neutron energies, the time resolution of the time-of-flight
 detector is critical. Several tests and corrections were applied to improve
 timing resolution as much as possible.
@@ -9,44 +9,97 @@ on-board CFD calculation increased the time required to process each event by 40
 ns or more, an unacceptable increase in the per-event deadtime. Thus we chose
 to use the digitizer's faster LED option and to calculate precise event timing
 in software, after the experiment, by analyzing the digitized waveform for each event in
-software. By taking data from the left and right detectors separately (shown
-figs. \ref{LRCorrelation} and \ref{LRTimeDifferenceLinear}), we could assigned an
-inherent timing resolution of our after our software CFD: 0.36 ns FWHM.
+software. Data taken from the left and right detectors separately and gated by neutron energy 
+is shown in Figs. \ref{LRCorrelation} and \ref{LRTimeDifferenceByEnergy}. 
+For each energy range, the FWHM of the distribution was calculated and a hyperbolic fit was
+performed, shown in Fig. \ref{DifferenceThresholdsFit}. The inherent detector timing resolution,
+independent of neutron energy, was identified as 0.34 ns FWHM.
 
 \begin{figure*}
     \includegraphics[scale=0.3]{figures/LRCorrelation.png}
     \caption[Event times for left and right PMTs of time-of-flight detector]
     {Fine times for left and right PMT events, taken separately, of the time-of-flight 
-        detector as recovered by our software CFD algorithm. The times given are referenced
-        to the start of each event waveform, which varied event-to-event. The spread from 35-
+        detector as recovered by our software CFD algorithm. The times plotted are referenced
+        to the start of each event waveform, which varied by several ns event-to-event.
+        Thus the spread from 35-
         55 ns depends on where the digitizer initiated the waveform for each
-        event and does not indicate timing resolution.}
+        event and does not indicate timing resolution information.}
     \label{LRCorrelation}
 \end{figure*}
 
-\begin{figure*}
-    \includegraphics[scale=0.3]{figures/Difference_Linear.png}
-    \caption[Time difference between left and right PMTs of time-of-flight detector] {
-        For all events in a diagnostic data run, the time difference   
-        between the left and right PMTs of the TOF detector is plotted.
-        A Gaussian fit (in red) to these events reveals an 85-ps delay of the right PMT with 
-        respect to the left PMT and a left-right time difference FWHM of 355 ps.
-    }
-    \label{LRTimeDifferenceLinear}
-\end{figure*}
+%\begin{figure*}
+%    \includegraphics[scale=0.3]{figures/Difference_Linear.png}
+%    \caption[Time difference between left and right PMTs of time-of-flight detector] {
+%        For all events in a diagnostic run, the time difference   
+%        between the left and right PMTs of the TOF detector is plotted.
+%        A Gaussian fit (in red) to these events reveals an 85-ps delay of the right PMT with 
+%        respect to the left PMT and a left-right time difference FWHM of 355 ps.
+%    }
+%    \label{LRTimeDifferenceLinear}
+%\end{figure*}
 
 \begin{figure*}
     \includegraphics[scale=0.3]{figures/LRDifferenceByEnergy.png}
-    \caption{Effect of energy gating on left/right PMT time resolution}
+    \caption[Effect of energy gating on left/right PMT time difference]
+    {
+    Effect of energy gating on the left/right PMT time difference. Higher-energy neutrons traverse
+    the volume of the scintillating plastic faster and also deposit more energy on average,
+    improving the accuracy of the software CFD.
+    }
     \label{LRTimeDifferenceByEnergy}
 \end{figure*}
 
-The energy dependence of the left-right time difference is shown in Fig. \ref{LRDifferenceByEnergy}.
-from the two PMTs of the time-of-flight detector were summed before digitization.
+\begin{figure*}
+    \includegraphics[scale=0.3]{figures/DifferenceThresholdsFit.png}
+    \caption[Intrinsic time resolution of time-of-flight detector as a function
+    of signal amplitude]
+    {
+        The time difference between the left and right PMTs
+        of the TOF detector was calculated for all events in a diagnostic run.
+        The FWHM of these time differences as a function of
+        neutron energy are shown (black points) and fitted with a hyperbolic
+        curve (red line). For low-energy
+        events, the time resolution is poorer due to the lower signal amplitude and
+        the larger traversal time for neutrons through the 1-inch detector. As energy
+        increases, the FWHM time resolution approaches an asymptote of 0.34
+        ns (grey dashed line).
+    }
+    \label{DifferenceThresholdsFit}
+\end{figure*}
 
-To identify valid neutron events and precisely determine the TOF start (micropulse start 
-time) and TOF stop time (arrival at TOF detector) for each event, a series of corrections 
-are required.  First, each event was assigned to the correct macropulse.
+After adjusting all event times for cable and electronics delay, the ``starting gun'' of each
+macropulse had to be precisely determined. To reduce unnecessary
+data collection, we collected only the first \tZero of each macropulse. Using this time and the
+precisely-known micropulse frequency, we identified all $\gamma$ rays for a given macropulse and tabulated
+the average $\gamma$ time-of- flight, as shown in Fig. \ref{GammaCorrection}. The imprecision of our
+macropulse start time manifests as a spread in average gamma times-of-flight; were the macropulse
+start time exactly known, all gammas should have exactly the same time-of-flight, up to the detector
+timing resolution. Thus the difference between the average calculated gamma times-of-flight and the
+\textit{expected} TOF (given the TOF detector distance and speed of light)
+was applied to all events in that macropulse (see Fig.
+\ref{TimingCorrectionStudy}). After these corrections, the total time-of-flight resolution
+(the FWHM of the $\gamma$-ray peak in the time-of-flight spectra) ranged from
+0.60-0.85 ns over the series of \tot\ measurements and is comparable to the resolution from 
+our digitizer-mediated Ca experiment from 2008 \cite{Shane2010}.
+
+To contextualize, for a 100-MeV neutron and a TOF detector distance of 27 meters, a TOF 
+uncertainty of 0.80 ns translates to an energy resolution of $\approx$900 keV.
+For neutrons below $\approx$20 MeV, the TOF time resolution worsens as the traversal time 
+through the 1-inch thickness of the TOF detector becomes non-negligible.
+However, because the TOF of these neutrons is already several hundred ns or
+longer, the relative energy resolution ($\frac{\Delta E}{E}$) is
+superior at low energies: for a 5 MeV neutron with a 0.82 ns detector-traversal time and
+an inherent TOF resolution of 0.80 ns, $\Delta E$ is 13 keV. These energy uncertainties
+deriving from time-of-flight have been propagated through subsequent analysis.
+
+\begin{figure}
+    \includegraphics[scale=0.24]{figures/gammaCorrection2D.png}
+    \caption[Deviation of the average $\gamma$-ray arrival time by macropulse]
+    {Deviation of the average $\gamma$-ray arrival time by macropulse. }
+    \label{GammaCorrection}
+\end{figure}
+
+First, each event was assigned to the correct macropulse.
 Time offsets (accounting for cable and
 electronics delay) were applied, coarsely synchronizing all detectors with
 facility-provided pulses indicating the arrival time of proton micropulses on the
@@ -57,41 +110,6 @@ through an offline software CFD algorithm, improving the timing resolution
 for TOF-detector events to 0.52 ns FWHM (see Figs. \ref{LRTimeDifferenceLinear}
 and \ref{DifferenceThresholdsFit}).
 
-\begin{figure*}
-    \includegraphics[scale=0.3]{figures/DifferenceThresholdsFit.png}
-    \caption[Intrinsic time resolution of time-of-flight detector as a function
-    of signal amplitude]{
-        The time difference between the left and right PMTs
-        of the TOF detector was calculated for all events in a diagnostic run.
-        The FWHM of these time differences as a function of
-        neutron energy are shown (black points) and fitted with a hyperbolic
-        curve (red line). For low-energy
-        events, the time resolution is poorer due to the lower signal amplitude and
-        the larger traversal time for neutrons through the 1-inch detector. As energy
-        increases, the FWHM time resolution approaches an asymptote of 0.34
-        ns (grey dashed line).}
-        \label{DifferenceThresholdsFit}
-\end{figure*}
-
-To improve the micropulse time resolution and test the stability of the
-micropulse period during a macropulse, all $\gamma$ rays for a given macropulse
-were identified and their average TOF calculated. The difference between this
-time and the expected TOF (given the TOF detector distance and speed of light)
-was applied to all events in that macropulse (see Fig.
-\ref{TimingCorrectionStudy}). After these corrections, the total TOF resolution
-(the FWHM of the $\gamma$-ray peak in the TOF spectra) ranged from
-0.60-0.85 ns over the series of \tot\ measurements and is comparable to the resolution from 
-our digitizer-mediated Ca experiment from 2008 \cite{Shane2010}.
-To contextualize, for a 100-MeV neutron and a TOF detector distance of 27 meters, a TOF 
-uncertainty of 0.80 ns translates to an energy resolution of $\approx$900 keV.
-For neutrons below $\approx$20 MeV, the TOF time resolution worsens as the traversal time 
-through the 1-inch thickness of the TOF detector becomes non-negligible.
-However, because the TOF of these neutrons is already several hundred ns or
-longer, the relative energy resolution ($\frac{\Delta E}{E}$) is
-superior at low energies: for a 5 MeV neutron with a 0.82 ns detector-traversal time and
-an inherent TOF resolution of 0.80 ns, $\Delta E$ is 13 keV. These energy uncertainties
-have been propagated through subsequent analysis and appear in the systematic
-uncertainty.
 
 \begin{figure}
     \includegraphics[scale=0.24]{figures/RFTimeStudy.png}
