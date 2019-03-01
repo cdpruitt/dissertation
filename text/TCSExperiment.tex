@@ -127,9 +127,28 @@ CLYC array
 
 \section{Detector Construction}
 \begin{figure}
-    \includegraphics[scale=0.2]{figures/Scintillator_disassembled.jpg}
-    \caption{The time-of-flight detector, disassembled}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Scintillator_disassembled.jpg}
+    \caption[Time-of-flight detector partially assembled]
+    {One of three time-of-flight detectors, partially assembled, with pencil for scale.
+    The aluminum casing and Delrin phototube sleeves are at top, and the
+scintillator (beneath the beam direction arrow), lightguides, and phototubes, at
+bottom. The detector described in the text has a thinner scintillating plastic
+element (1 inch thick) and tapered lightguides to match.}
     \label{TOFDetectorDisassembled}
+
+    \vspace*{\floatsep}
+
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/TimeOfFlightCAD.png}
+    \caption[Cutaway CAD figure of time-of-flight detector.]
+{
+    Cutaway CAD figure of time-of-flight detector described in the text. The 
+    1-inch-thick scintillating plastic element is visible in the middle of the aluminum 
+    housing brackets, and the light-tight sleeve for the phototube is visible on
+    the left.
+}
+    \label{TOFCAD}
 \end{figure}
 
 Fig. \ref{TOFDetectorDisassembled} shows a time-of-flight detector used in one
@@ -146,12 +165,6 @@ compression, keeping the optical surfaces in good contact. The entire assembly
 is 24 9/16'' in length. The monitor detector and veto detector, not pictured disassmbled, follow
 similar principles of construction, though only have one phototube each. The flux monitor and
 veto detector each had scintillator thicknesses of $\frac{1}{4}$''.
-
-\begin{figure}
-    \includegraphics[scale=0.6]{figures/TimeOfFlightCAD.png}
-    \caption{Cutaway figure showing light-tight fitting of time-of-flight detector.}
-    \label{TOFCAD}
-\end{figure}
 
 \section{Sample Preparation}
 Where possible, the \tot\ samples were formed as right
@@ -277,15 +290,22 @@ hours to remove adsorbed machining oil and water.
     \end{center}
 \end{table*}
 
-\begin{figure}
-    \includegraphics[scale=0.23]{figures/AllIsotopicSamples.jpg}
-    \caption{${^{112,\text{nat},124}}$Sn, $^{{\text{nat}, 18}}$O, and ${^{58,\text{nat},64}}$Ni
-samples used for neutron \tot\ measurements}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/AllIsotopicSamples.jpg}
+    \caption[${^{112,\text{nat},124}}$Sn, $^{{\text{nat}, 18}}$O, and ${^{58,\text{nat},64}}$Ni
+samples used for neutron \tot\ measurements]
+{
+    ${^{112,\text{nat},124}}$Sn (section a), H$_2^{{\text{nat}, 18}}$O (section
+    b), and ${^{58,\text{nat},64}}$Ni
+    samples (section c) used for neutron \tot\ measurements, with rulers for
+    scale. Brass vessels were used to hold the water samples.
+}
     \label{SamplesImage}
-\end{figure}
 
-\begin{figure}
-    \includegraphics[scale=0.25]{figures/RhodiumSample.jpg}
+    \vspace*{\floatsep}
+
+    \includegraphics[width=0.5\textwidth]{figures/RhodiumSample.jpg}
     \caption{\rhThree\ sample used for the neutron \tot\ measurements}
     \label{RhodiumSample}
 \end{figure}
@@ -314,48 +334,55 @@ time-of-flight (TOF) detector approximately 25 meters from the neutron source
 experimental area looking upstream from the perspective of the time-of-flight
 detector.
 
-\begin{figure}
-    \includegraphics[scale=0.6]{figures/ExperimentalSetup.png}
-    \caption{Layout of the 15R beamline at the WNR facility at LANSCE}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/ExperimentalSetup.png}
+    \caption[Layout of the 15R beamline at the WNR facility at LANSCE]
+        {Layout of the 15R beamline at the WNR facility at LANSCE, with our
+    experimental equipment indicated toward the bottom of the flight path.
+    After a permanent magnet sweeps charged particles from the beam, neutrons and
+    $\gamma$-rays are collimated to a 0.200'' beam en route to the
+    detectors used in the experiment. Samples are cycled into and out of beam
+    using a linear actuator with a period of 150 seconds. Times-of-flight (TOFs) are
+    determined by the TOF detector and used to calculate neutron energy.
+}
     \label{ExperimentalApparatus}
 \end{figure}
 
-(Color online) Experimental configuration at WNR facility. After a
-        permanent magnet sweeps charged particles from the beam, neutrons and
-        $\gamma$-rays are collimated to a 0.200'' beam en route to the
-        detectors used in the experiment. Samples are cycled into and out of beam
-        using a linear actuator with a period of 150 seconds. Times-of-flight (TOFs) are
-    determined by the TOF detector and used to calculate neutron energy.
-
-\begin{figure*}
-    \includegraphics[scale=0.4]{figures/beamStructure.png}
-    \caption{Pulsed structure of the neutron beam at the WNR facility}
-    \label{BeamStructure}
-\end{figure*}
-
-(Color online) Neutron beam structure at WNR facility.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/beamStructure.png}
+    \caption[Pulsed structure of the neutron beam at the WNR facility]
+    {
+        Neutron beam structure at WNR facility.
         ``Macropulses" of protons (row d) are delivered to
         WNR's tungsten Target 4, where they generate neutrons by spallation.
         Each macropulse consists of
         $\approx$350 proton ``micropulses" (row c). Neutrons
         from each micropulse (row b) disperse in
         time as they travel along the flight path so that $\gamma$ rays and high-energy 
-    neutrons catch up to low-energy ones from the previous pulse (row a).
+        neutrons catch up to low-energy ones from the previous pulse (row a).
+    }
+    \label{BeamStructure}
+\end{figure}
 
-\begin{figure}
-    \includegraphics[scale=0.2]{figures/VetoAndTOFDetectors.jpg}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/VetoAndTOFDetectors.jpg}
     \caption{Veto and time-of-flight detectors installed in the 15R beamline}
     \label{VetoAndTOFDetectors}
 \end{figure}
 
-\begin{figure}
-    \includegraphics[scale=0.2]{figures/UpstreamFromTOFDetector.jpg}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/UpstreamFromTOFDetector.jpg}
     \caption{Overview of \tot\ experimental setup in the 15R beamline}
     \label{BeamlineUpstream}
 \end{figure}
 
-\begin{figure}
-    \includegraphics[scale=0.2]{figures/UpstreamTowardCollimator.jpg}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/UpstreamTowardCollimator.jpg}
     \caption{Sample changer, monitor detector, and collimation stack}
     \label{BeamlineSampleChanger}
 \end{figure}
@@ -449,14 +476,16 @@ samples needed compared to previous measurements at the same facility. The reaso
 for our approach and tradeoffs are
 described in Section \ref{ComparisonToAnalog} of Chapter \ref{TCSAnalysis}.
 
-\begin{figure}
-    \includegraphics[scale=0.2]{figures/TargetChangerAlignment.png}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/TargetChangerAlignment.png}
     \caption{Precision sample alignment via radiographic film}
     \label{SampleChangerAlignment}
 \end{figure}
 
-\begin{figure}
-    \includegraphics[scale=0.6]{figures/TCSLogicDiagram.png}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/TCSLogicDiagram.png}
     \caption[Logic diagram for neutron \tot\ data acquisition]
     {Details on logic diagram}
     \label{TCSLogicDiagram}
