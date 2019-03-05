@@ -10,7 +10,7 @@ properties of great interest including the neutron skin of neutron-rich nuclei
 essential for an accurate neutron star equation-of-state (EOS)
 \cite{Fattoyev2012, Vinas2014, Brown2000}.
 
-By scattering secondary radioactive beams off of hydrogen targets in \Gls{inverse
+By scattering secondary radioactive beams off of hydrogen targets in \gls{inverse
 kinematics}, proton-scattering experiments are possible even on highly unstable
 nuclides. In contrast, because neutrons themselves must be generated as a
 secondary radioactive beam, neutron-scattering experiments are restricted to
@@ -26,12 +26,12 @@ recording events, techniques that suffer from a large per-event deadtime of
 up to several $\upmu$s. For a state-of-the-art intermediate-energy \tot\ measurement
 with dozens or hundreds of energy bins, achieving statistical uncertainty at the
 level of 1\% requires a thick sample to attenuate a sizable fraction of the
-incident neutron flux, generating the experimental signal.
+incident neutron flux.
 For cross sections in the 1-10 barn range, this means
 sample masses of tens of grams \cite{Finlay1993, Abfalterer2001}.
 Producing an isotopically-enriched sample of this size is often
-prohibitively expensive. Thus the lack of data for isotopically-resolved
-\tot\ measurements from 1-300 MeV, even for
+prohibitively expensive. This explains the lack of data for isotopically-resolved
+\tot\ measurements from 1-300 MeV even for
 closed-shell isotopes of special importance like $^{3,4}$He, $^{64}$Ni, and
 $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 
@@ -92,8 +92,8 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
 
 In the 1990s, a comprehensive series of measurements were made at the Weapons Neutron Research (WNR)
 facility of the Los Alamos Neutron Science Center (LANSCE) on a wide battery of samples from Li to
-Pb \cite{Finlay1993, Abfalterer2001}, some isotopically-separated. The digitizer-enabled measurement
-of \cite{Shane2010} on \caAughtEight was the first measurement
+Pb \cite{Finlay1993, Abfalterer2001}, some isotopically-separated. Twenty years
+later, the measurements on \caAughtEight \cite{Shane2010} were the first 
 to employ newly-available digital-signal-processing technology to reduce the deadtime associated
 with processing each event and thus reduce the needed sample size. In 2015, we
 embarked on a systematic campaign to measure neutron \tot\ across the widest possible energy range
@@ -108,22 +108,16 @@ for the heaviest and lightest stable isotopes in the Z = 8, Z = 28, and Z = 50 c
 Because neutrons carry no charge, they penetrate materials much further than protons and do not
 deposit energy continuously along their path. Further, when neutrons do interact with nuclei in
 detector materials, the energy transferred does not correspond linearly to the neutron energy. Thus
-assigning the correct energy to a scattered neutron is far from trivial. The two main approaches to
-energy detection are neutron time-of-flight and employing special detector materials ($^{3}$He,
-$^{35}$Cl) that have a reliable response to neutrons of different energies.
+assigning the correct energy to a scattered neutron is far from trivial. The main approach to
+energy determination is neutron time-of-flight.
 
 \subsection{Fast plastic and liquid scintillators}
-Bicron-204
-Poly terphenyl
-Triplet-triplet fusion
+Bicron-204\\
+Poly terphenyl\\
+Triplet-triplet fusion\\
 N-gamma discrimination by pulse shape discrimination (plus use of machine learning to distinguish
-gammas from neutrons)
-MoNA/neutron wall at FRIB, Vandal
-
-\subsection{Capture detectors}
-He3 counter
-Gadolinium
-CLYC array
+gammas from neutrons)\\
+MoNA/neutron wall at FRIB, Vandal\\
 
 \section{Detector Construction}
 \begin{figure}
@@ -151,20 +145,18 @@ element (1 inch thick) and tapered lightguides to match.}
     \label{TOFCAD}
 \end{figure}
 
-Fig. \ref{TOFDetectorDisassembled} shows a time-of-flight detector used in one
-of our
-neutron \tot\ measurements. A 2``x2``x1'' block of Bicron 400 fast plastic scintillator is coupled to two transparent
-[insert material] lightguides with [insert name] rubberized adhesive. These components were encased
+Figure \ref{TOFDetectorDisassembled} shows a time-of-flight detector used in one
+of our neutron \tot\ measurements. A 2 inch x 2 inch x 1 inch block of BC-400 fast
+plastic scintillator is coupled to two transparent
+BC-800 lightguides with RTV rubberized adhesive. These components were encased
 in an aluminum structural housing. On the distal end of the lightguides, Hamamatsu [insert number]
 phototubes are connected with optical grease and enclosed by
-$\mu$-metal shielding, used to prevent external magnetic fields from affecting photoelectrons.
-Phototube signals and read out and bias supplied by phototube bases attached to the back of each
+$\upmu$-metal shielding, used to prevent external magnetic fields from affecting photoelectrons.
+Phototube signals and high voltage are supplied by a phototube base attached to the back of each
 phototube. To hold the phototubes, fitted black Delrin sleeves (shown on the
 left side of the CAD cutaway Fig. \ref{TOFCAD}) were custom-made to apply slight
 compression, keeping the optical surfaces in good contact. The entire assembly
-is 24 9/16'' in length. The monitor detector and veto detector, not pictured disassmbled, follow
-similar principles of construction, though only have one phototube each. The flux monitor and
-veto detector each had scintillator thicknesses of $\frac{1}{4}$''.
+is 24 9/16'' in length.
 
 \section{Sample Preparation}
 Where possible, the \tot\ samples were formed as right
@@ -185,10 +177,10 @@ After measurement, the
 extremely-well-known H neutron \tot\ could be subtracted to yield the O \tot\ values.
 This technique is also used by \cite{Vaughn1965, Salisbury1965}; cf.  with
 results using ZnO and BeO of \cite{Finlay1993}.
-Because the natural abundance of \oSix in H$_{2}$O is >99\%, a sample of
-ordinary distilled water was used for the H$_{2}$\oSix sample. For H$_{2}$\oEight,
-we used distilled water enriched to >99\% in \oEight from
-[manufacturer]. Both samples were enclosed in brass vessels with very thin
+Because the natural abundance of \oSix\ in H$_{2}$O is $>$99\%, a sample of
+ordinary distilled water was used for the H$_{2}$\oSix\ sample. For H$_{2}$\oEight,
+we used distilled water enriched to $>$99\% in \oEight\ from
+[manufacturer]. Both samples were enclosed in brass vessels with thin
 (0.002") brass endcaps, to minimize neutron attenuation. At the temperature and
 altitude of the experimental facility, the amount of dissolved gas and ions
 in the water samples were small enough to have no effect on the measurement.
@@ -198,8 +190,8 @@ The isotopic Sn samples were prepared by melting highly-enriched foils to
 to the desired cylindrical shape in a tempered die. To reduce formation of tin
 oxide during melting, the samples were melted in vitreous carbon crucibles
 and kept under a reducing atmosphere (90\% Argon/ 10\%H2) while at elevated
-temperatures. Of the 4.9 grams of \snTwelve used to prepare the sample,
-3.5 grams were from semi-permanent loan from the [INSERT GROUP NAME] from LBNL
+temperatures. Of the 4.9 grams of \snTwelve\ used to prepare the sample,
+3.5 grams were from semi-permanent loan from the group of Lee Bernstein from LLNL
 and the remainder purchased from Isoflex Corp. All of the 5.8 grams of \snFour
 were purchased from Isoflex. The \snNat sample was prepared by melting and
 pressing analytical-grade Sn shot from Mallinckrodt Corp. Loss of isotopic
@@ -331,8 +323,11 @@ stack of collimator donuts. After collimation, the beam passed successively thro
 monitor, the sample of interest held in a sample changer (see Fig.
 \ref{BeamlineTargetChanger}), a veto detector, and finally the 
 time-of-flight (TOF) detector approximately 25 meters from the neutron source
-\ref{VetoAndTOFDetectors}. Fig. \ref{BeamlineUpstream} shows the entire
-experimental area looking upstream from the perspective of the time-of-flight
+\ref{VetoAndTOFDetectors}. The monitor detector and veto detector, not pictured
+disassembled, follow similar principles of construction as the time-of-flight
+detector, though only have one phototube each. The monitor and
+veto detectors each had scintillator thicknesses of $\frac{1}{4}$ inch. Fig. \ref{BeamlineUpstream} 
+shows the entire experimental area looking upstream from the perspective of the time-of-flight
 detector.
 
 \begin{figure}[h]
