@@ -191,7 +191,8 @@ very light nuclei.
 
 - Connect to chiral effective field theory work for calculating optical potentials
 and examining isovector component of potential, especially w/r/t to exotic
-nuclei near driplines. Nucleons are still degree of freedom, but allowed to exchange effective 
+nuclei near driplines. Nucleons are still degree of freedom, but allowed to
+exchange virtual and effective 
 pions that include the quark-quark interactions that comprise the strong nuclear force.
 - computational limitations to beyond-mean-field above A=12?
 
@@ -211,7 +212,8 @@ of possible energies, challenging the assumption that each
 nucleon resides a single subshell with a discrete energy. Additionally, when mean-field
 potentials are used to generate charge-density distributions, as measured in
 elastic electron scattering experiments \cite{DeVries1987}, the nuclear core is found to
-have too high a charge density \cite{ChargeDensityCoreExample}. Similar
+have too high a charge density (see \cite{Brown1979} for an example of this in the
+Ca isotopes). Similar
 effects have been seen in GeV-scale deep-inelastic scattering that probes the momentum
 distribution of quarks in deeply-bound nucleons. Excess high-momentum content is
 found in the tails of the momentum distribution, indicating that a few percent of the time, 
@@ -316,20 +318,26 @@ phase $\delta$, E must also increase \cite{Satchler1980, Peterson1962}.
 This is contrary to a typical resonance condition where an integer number of wavelengths
 are fit inside a potential; in that case, to maintain constant phase as A is increased,
 E must be decreased. Thus these \tot\ oscillations have been referred to as
-``anti-resonances" or ``echoes" \cite{Satchler1980, McVoy1967}.
+``anti-resonances" or ``echoes" \cite{Satchler1980, McVoy1967}. It should be
+noted that this simple Ramsauer picture is illustrative only, as it fails to
+account for interference between the partial waves of the incident nucleon and
+cannot be extrapolated to high energies without additional deficiencies
+\cite{Ahmad1973}.
 
-A new type of nuclear model is thus at hand: by replacing the intractable many-body problem
+A new type of nuclear model is thus at hand:
+by replacing the intractable many-body problem
 of the target nucleus by a complex, refractive potential, both elastic scattering (from the real 
 part of the potential) and inelastic scattering (from the imaginary part) can be neatly 
 explained. The existing mathematical machinery for calculating scattering of light from
 refractive materials can then be repurposed for nuclear scattering, giving birth to
-the ``optical model" of the nucleus \cite{Feshbach1958, McVoy1967}. In
-practice, the potential is typically parameterized with a series of
-terms centered on the nuclear surface and nuclear volume,
-corresponding to differing physics thought to be important for these areas (much
+the ``optical model" of the nucleus \cite{Feshbach1958, McVoy1967}.
+Instead of a single central potential, a series
+of potential terms may be used,
+centered on the nuclear surface and nuclear volume,
+corresponding to differing physics thought to be relevant for these areas (much
 as in the Droplet Model).
 
-\begin{figure}
+\begin{figure}[ht]
     \includegraphics[width=0.5\textwidth]{figures/phaseShiftStillsFigure.png}
     \caption[A illustration of the nuclear Ramsauer effect]{
         A neutron wave train (series of
@@ -361,30 +369,77 @@ are not identical, OM potentials are expected to differ for protons and
 neutrons. Isoscalar terms, which respect isospin symmetry and thus treat protons and neutrons 
 identically, account for most of the observed scattering data but do not include
 any isospin-symmetry-breaking interactions known to exist between
-nucleons, such as charged pion exchange. Thus isovector and isotensor terms,
+nucleons, such as virtual and real charged pion exchange.
+Thus isovector and isotensor terms,
 which depend on the difference between the proton and neutron density
-distributions in the nucleus, are needed. Constraining these terms requires data
-on asymmetric nuclei, preferably highly-asymmetric nuclei, where the imbalance
-of protons and neutrons makes any isovector effects most visible.
+distributions in the nucleus, are needed. As experimental facilities like
+the Facility for Radioactive Isotope Beams (FRIB) come online and produce
+extremely asymmetric nuclei, knowing the asymmetry-dependence of optical
+potentials will become increasingly important for predicting nucleon scattering on
+exotic nuclei. Of course, isovector considerations can also be
+introduced to a simpler Ramsauer-like model as well. Building on the 1986
+addition of a spin-spin term in a Ramsauer model by Gould et al \cite{Gould1986},
+Anderson and Grimes added an explicit isovector term to analyzing isotone and isotope shifts in 
+neutron total cross sections \cite{Anderson1990}.
+They concluded that "although [their] model may give
+semiquantitative agreement with some aspects of the data, optical-model
+calculations should be used for quantitative comparison".
 
 Despite their excellent reproduction of experiment, OMs involve the interaction of
 many sometimes-opaque parameters with many incident
 partial waves, complicating intuitive understanding of the underlying physics at work.
 OMs are unabashedly phenomenogical so a wide variety of
-experimental data types and energies are required to constrain the potential.
-Where data are absent, model predictions are poor. A long-standing issue has
-been a poor understanding of the isovector dependence of the real and
-imaginary parts of optical potentials \cite{Holt16}, partially due to the
-difficulty of neutron scattering experiments. As experimental facilities like
-the Facility for Radioactive Isotope Beams (FRIB) come online and produce
-extremely asymmetric nuclei, knowing the asymmetry-dependence of optical
-potentials becomes paramount. Providing such experimental constraints for optical
-potentials, in particular for the Dispersive Optical Model (DOM), is a primary 
-motivation for the isotopically-resolved neutron \tot\ and \el\ work presented in this 
-dissertation. In chapter \ref{DOMFormalism}, I present an overview of the DOM, a descendent of 
-traditional OMs that extends the potential to the negative-energy domain, treating
-nuclear structure and reactions on equal footing. 
+experimental data types and energies are required to constrain the potential,
+so when data are absent, model predictions are poor. Both of these shortcomings
+are relevant to the long-standing difficulty in constraining the isovector dependence
+of the real and
+imaginary parts of optical potentials \cite{Holt16, Anderson1990}. Improving constraints on the
+isovector terms in particular requires data
+on asymmetric nuclei, preferably on highly-asymmetric nuclei or isotopic chains,
+where the imbalance of protons and neutrons makes any isovector effects most visible.
 
+A few isotope-chain neutron total cross section analyses have been carried out
+to investigate these questions. The most recent and sophisticated was conducted
+by Dietrich et al.\cite{Dietrich2003}, where data on the $^{182,184,186}$W isotope chain
+were collected and Ramsauer- and optical-model analyses of these data completed.
+In their study, an expanded Ramsauer-type model performs quite well at reproducing the relative 
+difference between $^{186}$W and $^{182}$W, apart from a
+phase mismatch - but only when the isovector components they introduced in the
+Ramsauer model are \textit{suppressed} \ref{TungstenRamsauer}. Despite the
+physical incorrectness of this neglect of isospin, the resulting Ramsauer model
+agrees better with the experimental data than does the Ohio global optical 
+potential \cite{OhioPotential}, shown in Fig. \ref{TungstenOM}. The authors
+also performed phenomenological coupled-channel calculations
+based on a dispersive optical model formalism
+\cite{MahauxAndSartor} that showed similar behavior: it gave good agreement with the
+experimental \tot\ relative differences, but only when isovector terms in the calculations
+were explicitly \textit{neglected}. As the
+authors point out, it is quite puzzling that "good agreement with the
+experimental data can be obtained at the expense of an incorrect physical picture".
+Of the models they tested, only a deformed, semimicroscopic
+optical model potential (SMOMP),
+obtained by folding an energy- and density-dependent optical model potential from nuclear matter 
+calculations over the deformed nuclear densities, was capable of satisfactorily describing the
+\tot\ isotope shift in W. From this case study on W isotopes, several followup questions
+are apparent: is a microscopic knowledge of the proton and neutron matter
+densities important for reproducing the neutron \tot\ across an isotope
+chain? More fundamentally, what terms in an optical potential are the neutron
+\tot\ cross sections sensitive to, and are neutron \tot\ data connected to
+structural (i.e., bound-state) information in a clear and consistent way?
+
+Answers to these questions hinge on the availability well-measured 
+isotopic neutron \tot\ data sets across a broad energy range. Indeed, the
+\caAughtForty neutron \tot\ data collected by our group at LANSCE in 2009, in
+part inspired by the W measurements of \cite{Dietrich2003},
+provided grist for a non-local Dispersive Optical Model (DOM) analysis in 2015
+\cite{MahzoonPhDThesis}. This non-local analysis reveals links
+between the asymmetry-dependence of occupation numbers and high-energy scattering data.
+Thus, providing experimental 
+data on key nuclei, in particular for use with the Dispersive Optical Model
+(DOM), is a primary motivation for the isotopically-resolved neutron \tot\ and \el\
+results presented in this work. Our new data are analyzed in Chapter \ref{DOMResults} 
+with an improved non-local DOM capable of fits on even-even nuclei. Details on our DOM
+implementation are presented in chapter \ref{DOMFormalism}. 
 %"The magnitude and energy dependence of the real isovector part of the
 %optical potential are poorly constrained by experiment." \cite{Holt16}
 
@@ -393,14 +448,10 @@ Other topics that could be included:\\
 - Microscopic OMs (folds interaction over nucleon density)\\
 - Phenomenological OMs (no folding - use bulk)\\
 - can largely follow Bob and Wim's review paper\\
-- first formulated in 1949 to describe neutron cross section data\\
 - separate proton and neutron global optical potentials in the 60s (Becchetti
 and Greenlees)\\
 - CH89 includes additional neutron scattering data on isotopic targets\\
 - Lane potential \\
-- Isovector versus isoscalar. Charged pion exchange mediates the isovector forces;
-other nucleon-nucleon interactions mediate the isoscalar forces.
-
 \section{Relevant Experimental Nuclear Data}
 
 \subsection{Nucleon scattering data}
@@ -413,7 +464,7 @@ to these data, both regional and global \cite{CH89, KoningDelaroche}, have helpe
 constrain nuclear radii \cite{radiusExample}, the strength of the spin-orbit coupling,
 and revealed the importance of an imaginary spin-orbit term.
 
-Inelastic nucleon scattering data is more difficult to collect experimentally and much sparser in
+Inelastic nucleon scattering data are more difficult to collect experimentally and much sparser in
 the literature record. By helping fix the strength and energy-dependence of the absorptive component
 of the nuclear potential, inelastic data serve a complementary role to elastic
 data. As was pointed out by Finlay et al. in 1993:
@@ -437,14 +488,16 @@ on multiple samples had been conducted, most of them elemental, not isotopic
 Figs. \ref{TCSChart} and \ref{RCSChart} illustrate the status of isotopically-resolved inelastic
 nucleon scattering data in the EXFOR nuclear reaction database as of 2019.
 Except for light isotopes and a few security-related actinides, coverage is
-sparse and has changed little since the early 2000s. Isotopic proton \rxn\ measurements over
+sparse and has changed little since the early 2000s. The single notable
+exception is the triplet of $^{182,184.186}$W data sets from 5-560 MeV of \cite{Dietrich2003}, 
+mentioned in the previous section. Isotopic \textit{proton} \rxn\ measurements over
 a broad energy range are particularly lacking due to the paucity of suitable
-accelerators and the subtlety of the measurement. 
-Both high-energy ($>$100 MeV) neutron \tot\ and proton \rxn\ data are essential for
+accelerators and the subtlety of such a measurement. 
+Both high-energy ($>$100 MeV) neutron \tot\ and proton \rxn\ data are useful for
 understanding the asymmetry-dependence of the imaginary strength of the nuclear potential.
 In this work, we focus on isotopically-resolved neutron scattering, which
 is easier to measure and, when combined with proton \textit{elastic} cross sections,
-provides information on the asymmetry-dependence of the real part of the nuclear potential.
+also provides information on the asymmetry-dependence of the real part of the nuclear potential.
 
 \begin{sidewaysfigure}
     \centering
@@ -485,7 +538,15 @@ SRCs and LRCs
 \subsection{Nuclear Masses, Matter Radii, and Charge Radii}
 Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.
 neutron skin first mention: \cite{Wilkinson1967}
+In particular, the neutron distributions in \caAughtEight and \pbEight have been
+subject to scrutiny for over 50 years from both micro- and macroscopic analyses
+Overview of progress extracting radii from optical model: \cite{Jackson1974}.
+Also points out a lingering issue: the level density is too small and the
+single-particle level spacings too great compared to experimental data.
+
 HF-BCS treatment of 700 nuclei to calculate proton and neutron RMS radii \cite{Angeli1980}
+Connect neutron star EOS/neutron skin to Electric Dipole Polarizability and new Skyrme interaction, mean-field
+constrained from chiral EFT \cite{Zhang2018}
 
 Electron scattering and laser spectroscopy
 K. Minamisono
@@ -493,7 +554,7 @@ K. Minamisono
 \section{Motivation, Scope, and Dissertation Outline}
 Improved isotopically-resolved neutron scattering data are an essential ingredient
 for better nuclear reaction models and to test the asymmetry-dependence of the
-nuclear potential. The results of our campaign to produce these valuable
+nuclear potential. The results of our campaign to collect these valuable
 \tot\ and \el\ data sets on cornerstone nuclei form the backbone of this dissertation.
 In addition to these experimental results, a suite of Dispersive Optical Model (DOM) analyses that 
 incorporate these new data is presented. From the DOM potentials, a variety of asymmetry-dependent 
