@@ -99,20 +99,14 @@ with processing each event and thus reduce the needed sample size. In 2015, we
 embarked on a systematic campaign to measure neutron \tot\ across the widest possible energy range
 for the heaviest and lightest stable isotopes in the Z = 8, Z = 28, and Z = 50 closed shells.
 
-\section{Neutron detection}
+\section{Detector Construction}
 Because neutrons carry no charge, they penetrate materials much further than protons and do not
 deposit energy continuously along their path. Further, when neutrons do interact with nuclei in
 detector materials, the energy transferred does not correspond linearly to the neutron energy. Thus
 assigning the correct energy to a scattered neutron is far from trivial. The main approach to
-energy determination is neutron time-of-flight.
-
-\subsection{Fast plastic and liquid scintillators}
-Bicron-204\\
-Poly terphenyl\\
-Triplet-triplet fusion\\
-N-gamma discrimination by pulse shape discrimination (plus use of machine learning to distinguish
-gammas from neutrons)\\
-MoNA/neutron wall at FRIB, Vandal\\
+energy determination for fast neutrons is by time-of-flight, as evidenced by state-of-the-art
+neutron detector arrays including MoNA \cite{MoNDA}, VANDLE \cite{VANDLE}, and
+NeuLAND\cite{NeuLAND}.
 
 \section{Detector Construction}
 \begin{figure}
@@ -143,11 +137,11 @@ element (1 inch thick) and tapered lightguides to match.}
 Figure \ref{TOFDetectorDisassembled} shows a time-of-flight detector used in one
 of our neutron \tot\ measurements. A 2 inch x 2 inch x 1 inch block of BC-400 fast
 plastic scintillator is coupled to two transparent
-BC-800 lightguides with RTV rubberized adhesive. These components were encased
-in an aluminum structural housing. On the distal end of the lightguides, Hamamatsu [insert number]
-phototubes are connected with optical grease and enclosed by
+BC-800 adiabatic lightguides with RTV rubberized adhesive. These components were encased
+in an aluminum structural housing. On the distal end of the lightguides, Hamamatsu 1668
+photomultiplier tubes were connected with optical grease and enclosed by
 $\upmu$-metal shielding, used to prevent external magnetic fields from affecting photoelectrons.
-Phototube signals and high voltage are supplied by a phototube base attached to the back of each
+Phototube signals and high voltage were supplied by a phototube base attached to the back of each
 phototube. To hold the phototubes, fitted black Delrin sleeves (shown on the
 left side of the CAD cutaway Fig. \ref{TOFCAD}) were custom-made to apply slight
 compression, keeping the optical surfaces in good contact. The entire assembly
@@ -160,10 +154,10 @@ Table \ref{SampleTable} for sample characteristics and Fig. \ref{SamplesImage}
 for sample images). A natural-abundance sample
 was also prepared for each element for use in benchmarking to already-existing
 literature neutron \tot\ values. During the experiment, the samples were inserted
-into styrofoam sleeves and seated in the wells of the sample
+into styrofoam sleeves and seated in the cradles of the sample
 changer, described below. This design minimizes the amount of non-target mass proximate to the
 neutron beam path that could cause unwanted neutron scattering. For all O, Ni,
-and Sn samples, the areal densities of atoms in the sample, the essential quantity for cross section
+and Sn samples, the areal densities of atoms in the sample, the relevant quantity for cross section
 measurements, differ by less than 1\%.
 
 For the oxygen isotopes, isotopically-enriched water samples were prepared to
@@ -186,9 +180,9 @@ to the desired cylindrical shape in a tempered die. To reduce formation of tin
 oxide during melting, the samples were melted in vitreous carbon crucibles
 and kept under a reducing atmosphere (90\% Argon/ 10\%H2) while at elevated
 temperatures. Of the 4.9 grams of \snTwelve\ used to prepare the sample,
-3.5 grams were from semi-permanent loan from the group of Lee Bernstein from LLNL
-and the remainder purchased from Isoflex Corp. All of the 5.8 grams of \snFour
-were purchased from Isoflex. The \snNat sample was prepared by melting and
+3.5 grams were from a semi-permanent loan from the group of Lee Bernstein from LLNL
+and the remainder we purchased from Isoflex Corp. All of the 5.8 grams of \snFour\
+were purchased from Isoflex. The \snNat\ sample was prepared by melting and
 pressing analytical-grade Sn shot from Mallinckrodt Corp. Loss of isotopic
 material during the manufacturing process was minimal.
 
@@ -200,20 +194,20 @@ stacking a series of thin rhodium disks instead of manufacturing a
 fused cylinder. Four disks of 99.9\% pure natural (monoisotopic) Rh metal were purchased from
 Goodfellow Corp. These were corralled with a
 plastic sleeve with open ends, similar to the styrofoam sleeves used for the Ni
-and Sn samples, to match the $\frac{3}{4}$"-diameter wells of the sample changer
+and Sn samples, to match the $\frac{3}{4}$-inch-diameter cradles of the sample changer
 \ref{RhodiumSample.jpg}.
 This kept the discs snugly in series and perpendicular to the beam path.
 
 Lastly, two natural-abundance graphite samples of different lengths and one
-natural Pb sample, all with the same diameter as the Sn and Ni samples, were
+natural-abundance Pb sample, all with the same diameter as the Sn and Ni samples, were
 prepared. These samples were used to benchmark the total cross sections
 measured at LANSCE by comparison with previous measurements of the C and
 Pb total cross sections available in the literature
 (\cite{Finlay1993,Abfalterer2001}). In addition, the low-energy neutron \tot\ resonance
 structure of the C samples served a crucial role in fixing the exact distance
-of the time-of-flight detector, as detailed in Chapter \ref{TCSAnalysis}.
+of the time-of-flight detector as detailed in Chapter \ref{TCSAnalysis}.
 Before use, the C samples were baked in an oven for several
-hours to remove adsorbed machining oil and water.
+hours to remove adsorbed water.
 
 \begin{table*}[ht]
     \caption[Physical characteristics of samples used for neutron \tot\
@@ -303,25 +297,26 @@ All neutron \tot\ measurements were carried out at the 15R
 beamline of the Weapons Neutron Research (WNR) facility at the Los Alamos
 Neutron Science Center (LANSCE) over two run cycles (November 2016 and
 September 2017). At WNR, broad-spectrum neutrons up
-to 800 MeV are generated by impinging proton pulses onto a water-cooled, 7.5
+to 800 MeV are generated by impinging proton beam onto a water-cooled, 7.5
 cm-long tungsten target (see Fig. \ref{ExperimentalApparatus}). A 
-permanent magnet deflects all charged particles generated by the proton pulses, 
-allowing only neutrons and gamma rays to reach the flight path. Neutron flux can be
+permanent magnet deflects all charged particles from the beam path, 
+allowing only neutrons and gamma rays to reach our samples. Neutron flux can be
 adjusted by the user with a pair of a X and Y shutters upstream of the
 experimental vault. Based on beam divergence
 simulations, the beam was collimated to 0.200'' at  the entrance to the
 experimental vault using steel donuts with a total thickness of 24'' .
 To reduce (but not eliminate) the $\gamma$-ray component of the beam,
-a plug of Hevimet (90\% W, 6\% 
+a $\frac{1}{2}$-inch plug of Hevimet (90\% W, 6\% 
 Ni, 4\% Cu by weight) was inserted at the upstream end of the
 stack of collimator donuts. After collimation, the beam passed successively through a flux 
 monitor, the sample of interest held in a sample changer (see Fig.
-\ref{BeamlineTargetChanger}), a veto detector, and finally the 
-time-of-flight (TOF) detector approximately 25 meters from the neutron source
-\ref{VetoAndTOFDetectors}. The monitor detector and veto detector, not pictured
-disassembled, follow similar principles of construction as the time-of-flight
-detector, though only have one phototube each. The monitor and
-veto detectors each had scintillator thicknesses of $\frac{1}{4}$ inch. Fig. \ref{BeamlineUpstream} 
+\ref{BeamlineSampleChanger}), a veto detector, and finally the 
+time-of-flight (TOF) detector approximately 25 meters from the neutron source (see Fig.
+\ref{VetoAndTOFDetectors}). The monitor detector and veto detector
+were constructed along similar principles to the time-of-flight
+detector construction but only have one phototube each. The monitor and
+veto detectors each had scintillator thicknesses of $\frac{1}{4}$ inch.
+Fig. \ref{BeamlineUpstream} 
 shows the entire experimental area looking upstream from the perspective of the time-of-flight
 detector.
 
@@ -385,18 +380,18 @@ Each macropulse consists of ~350 individual proton pulses, called ``micropulses"
 $\upmu$s apart. Each micropulse consists of a single proton packet $<$1 ns wide when it 
 arrives at the tungsten target that generates gamma rays and neutrons within a tight
 temporal-spatial range. As neutrons from this micropulse travel along the beam path, 
-high energy neutrons separate in time from lower-energy neutrons so that neutron
+high-energy neutrons separate in time from lower-energy neutrons so that neutron
 energy can be determined by standard TOF techniques described in Chapter
 \ref{TCSAnalysis} (see \cite{Moore1980} for additional details).
 Because the $\gamma$ rays and high-energy neutrons from later micropulses can
 overtake slower neutrons from an earlier micropulse, an important tradeoff
 exists between measuring low and high-energy neutrons. The further the time-of-flight
 detector is placed from the neutron source, the higher the minimum neutron energy that can be 
-unambiguously resolved. However, placing the time-of-flight detector closer
+unambiguously resolved. However, placing the time-of-flight detector closer to the neutron source
 increases the maximum instantaneous neutron flux at the start of each
 micropulse, increasing the average per-event deadtime for the highest-energy
 neutrons. A balance must be stuck between the detector thickness, the neutron
-flux, the $\gamma$-day flux, the time-of-flight detector distance, and the rate
+flux, the $\gamma$-ray flux, the time-of-flight detector distance, and the rate
 of data acquisition.
 
 A programmable sample changer with six positions
@@ -406,23 +401,24 @@ indicate its current position. The sample configuration for each run varied, but
 generally all six positions on the sample changer were used. For the solid targets,
 a typical configuration was to place an empty styrofoam sample sleeve in the
 first sample-changer cradle as
-the ``blank", the \cNat and \pbNat samples in the second and third
+the ``blank", the \cNat\ and \pbNat\ samples in the second and third
 cradles, and the samples of interest (e.g., \niEight, \niNat, \niFour) in
 the fourth, fifth, and sixth cradles. For water samples, an empty brass vessel
 was placed in the first cradle to serve as the blank.
 
-Due to beam divergence out of the post-collimation and the small diameter of the
+Due to beam divergence after collimation and the small diameter of the
 samples, precise alignment of the sample changer was paramount. The sample
 changer was placed on an adjustable table and roughly aligned by laser. For
-precise alignment, a 2'' aluminum cylinder with a
-$\frac{1}{16}$'' axial hole was placed
+precise alignment, a 2-inch aluminum cylinder with a
+$\frac{1}{16}$-inch axial hole was placed
 in the first position of the sample changer and a radiographic film placed
-immediately posterior. The film was irradiated by the neutron beam for 15
+immediately posterior. The film was irradiated by the neutron beam for fifteen 
 minutes and developed to show the alignment of the aluminum cylinder with the
-beam profile. The target changed was adjusted to improve alignment, and the process was
+beam profile. The position of the target changer was adjusted to improve alignment,
+and the process was
 iterated until alignment was satisfactory, ensuring that all neutrons
 reaching the time-of-flight detector had to pass through the in-beam sample.
-Fig. \ref{SampleChangerAlignment} shows a radiogram confirming alignment of all
+Figure \ref{SampleChangerAlignment} shows a radiogram confirming alignment of all
 sample changer positions within 1 mm.
 
 The beam flux of each macropulse, required to normalize absolute cross sections, was continuously
@@ -455,17 +451,17 @@ mode because hundreds of $\upmu$s of consecutive waveform samples are
 stored. Roughly once every three seconds, the digitizer was switched to 
 waveform mode for one macropulse, then switched back to DPP mode as quickly as
 possible (within 10-40 ms, depending on run configuration). When the buffer for
-any channel filled, all buffers were read out by optical link to flash memory
-drive of a data acquisition computer, minimizing the downtime of the digitizer
+any channel filled, all buffers were read out by optical link to a flash memory
+drive of the data acquisition computer, minimizing the downtime of the digitizer
 due to data readout.
 
-Because we had fast digital-signal processing technology available, we were able
+Because we had fast digital-signal-processing technology available, we were able
 to perform event detection and processing in a fundamentally-different way
 compared to analog-mediated approaches. This is worth mentioning
 here as it enabled a dramatic reduction, over an order of magnitude, in the size of the
-samples needed compared to previous measurements at the same facility. The reasons
+samples required compared to previous measurements at the same facility. The reasons
 for our approach and tradeoffs are
-described in Section \ref{ComparisonToAnalog} of Chapter \ref{TCSAnalysis}.
+described in Section \ref{DeadtimeCorrection} of Chapter \ref{TCSAnalysis}.
 
 \begin{figure}[h]
     \centering

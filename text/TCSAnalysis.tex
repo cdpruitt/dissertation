@@ -8,14 +8,14 @@ The DT5730 provides leading-edge discrimination (LED) and constant-fraction disc
 on-board CFD calculation increased the time required to process each event by 40
 ns or more, an unacceptable increase in the per-event deadtime. Thus we chose
 to use the digitizer's faster LED option and to calculate precise event timing
-in software, after the experiment, by analyzing the digitized waveform for each event in
-software. Data taken from the left and right detectors separately and gated by neutron energy 
+in software, after the experiment, by analyzing the digitized waveform for each event.
+Data taken from the left and right detectors separately and gated by neutron energy 
 is shown in Figs. \ref{LRCorrelation} and \ref{LRTimeDifferenceByEnergy}. 
 For each energy range, the FWHM of the distribution was calculated and a hyperbolic fit was
 performed, shown in Fig. \ref{DifferenceThresholdsFit}. The inherent left-right timing 
 resolution, independent of neutron energy, was identified as 0.34 ns FWHM.
-Including the actual beam energy profile, the average left-right time difference was
-0.52 ns.
+When folded over the actual beam energy profile (as during the experiment)
+the left-right time resolution dropped to 0.52 ns.
 
 \begin{figure}[h]
     \centering
@@ -86,9 +86,9 @@ average calculated gamma times-of-flight (using the imprecise macropulse start
 time) and the \textit{expected} TOF (given the TOF detector distance and speed of light)
 can be used to improve the macropulse start time. This $\gamma$-averaging
 procedure was applied to all events in each macropulse (see Fig.
-\ref{TimingCorrectionStudy}). We also examined the stability of the \tZero
+\ref{TimingCorrectionStudy}). We also examined the stability of the \tZero\
 period and found that its day-to-day variation had a negligible effect on the
-calculated times-of-flight \ref{RFTimeStudy}.
+calculated times-of-flight (see Fig. \ref{RFTimeStudy}).
 
 After these corrections, the total time-of-flight
 resolution, taken as the FWHM of the $\gamma$-ray peak in the time-of-flight
@@ -101,7 +101,7 @@ For neutrons below $\approx$20 MeV, the time-of-flight time resolution worsens a
 traversal time through the 1-inch thickness of the scintillator becomes non-negligible.
 However, because the time-of-flight of these neutrons is already several hundred ns or
 longer, the relative energy resolution ($\frac{\Delta E}{E}$) is
-superior at low energies: for a 5 MeV neutron with a 0.82 ns detector-traversal time and
+superior at low energies. To wit, for a 5 MeV neutron with a 0.82 ns detector-traversal time and
 an inherent TOF resolution of 0.80 ns, $\Delta E$ is only 13 keV. These energy uncertainties
 have been propagated through the subsequent analysis.
 
@@ -117,16 +117,15 @@ have been propagated through the subsequent analysis.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/RFTimeStudy.png}
     \caption[Stability of the beam pick-off (T$_{0}$) during the experiment]
-    {Results of a study of the micropulse frequency stability. The period of \tZero used
+    {Results of a study of the micropulse frequency stability. The \tZero\ period used
         in the analysis was varied in 1-ps increments, changing the
         calculated arrival time of events in each micropulse. For each period, the FWHM of
         the time uncertainty in the $\gamma$-ray flash was tabulated, and the
         overall trend fitted with a quadratic curve. The true micropulse
         frequency was taken as the minimum of this curve. This procedure was
         repeated on data from different days throughout the experimental run,
-        verifying that effects
-        of micropulse frequency drifting are negligible on the recovered
-        times-of-flight.
+        verifying that micropulse frequency drifting has a negligible effect
+        on the recovered times-of-flight.
     }
     \label{RFTimeStudy}
 \end{figure}
@@ -173,7 +172,7 @@ Ni and Rh run configuration.}
     \label{DistanceStudy}
 \end{figure}
 
-\section{Deadtime Correction}
+\section{Deadtime Correction} \label{DeadtimeCorrection}
 Because events are not processed instantaneously, there is a brief period
 after each trigger during which the digitizer is busy processing that trigger.
  The busy period following each event is referred to as the ``analytic" or ``per-event" deadtime and can be corrected for according to standard techniques \cite{Moore1980}.
@@ -186,7 +185,8 @@ statistics over dozens or hundreds of energy bins within a few weeks of beam
 time. Given the extremely small areal density of our targets, this meant a rate
 of approximately one event per micropulse on average. Even with a flat
 time-of-flight spectrum, a sizable fraction of events would arrive in the shadow
-of the previous event's processing period, and thus be ignored. In reality, the
+of the previous event's processing period, and thus be ignored by the pulse-processing firmware.
+In reality, the
 problem is far worse, as the instantaneous flux is much higher during the gamma
 flash and arrival of high-energy neutrons.
 
@@ -198,17 +198,27 @@ were still busy from processing a previous event (as indicated by a "system busy
 the looking period was aborted. During a looking period, if a single neutron or gamma
 was detected, no subsequent events were allowed in the period.
 This logic is diagrammed in Fig. \ref{AnalogLogic}, reproduced from
-\cite{Abfalterer2001}. Both the fraction of T$_{0}$ signals that result in looking
-periods ($\frac{T_{0,live}}{T_{0}}$) and the chance that the detector is busy
-for a given time \textit{within each looking period}, the so-called ``analytic
-dead-time", are tabulated. Time-of-flight histograms are scaled by these
+\cite{Abfalterer2001}. The fraction of T$_{0}$ signals that result in looking
+periods ($\frac{T_{0,live}}{T_{0}}$) is tabulated, as is the so-called ``analytic dead-time'', i.e. 
+the chance that the detector is busy for a given time \textit{within each looking period}.
+Time-of-flight histograms are then scaled by these
 fractions to recover the true number of events per unit flux. This approach is useful if the
 analytic deadtime is commensurate with the micropulse period, as it means that
-only one event can be detected per micropulse anyway. Of course, it means
-that only one event can be recorded per micropulse, so many events are discarded.
-In addition, it requires that the analytic dead-time is
-very precisely known, as corrections can soar to over 100\% if the beam flux is
-high.
+only one event can be detected per micropulse anyway. For this approach to be successful, the
+analytic dead-time must be very precisely known, as corrections can soar to over 100\%
+if the beam flux is high.
+
+\begin{figure}[h]
+    \includegraphics[width=0.45\textwidth]{figures/AnalogLogic.png}
+    \caption[``Looking period'' logic used by previous neutron \tot\ measurements at LANSCE]
+    {
+        ``Looking period'' logic used by previous neutron \tot\ measurements at LANSCE
+        \cite{Abfalterer2001}. Per the original caption: proton beam bursts arriving at
+        evenly-spaced 1.8-$\mu$s time intervals define a time frame 1.4-1.6 $\mu$s long. For each
+        time frame, a delayed copy of the \tZero\ defining it was used as a stop signal on the TDC
+    clocks.}
+    \label{AnalogLogic}
+\end{figure}
 
 Due to the extremely low areal density of our samples,
 we could not afford to discard any neutron events and still acquire sufficient statistics. 
@@ -222,15 +232,17 @@ for a given time bin $i$ can be calculated:
     F_{i} = \sum^{N-1}_{j=0} R_{(i-j)\text{ mod N}}\times P_{j}
 \end{equation}
 
+\noindent
 where $N$ is the number of time bins in the micropulse, $R_{x}$ is the rate of
 detected events per micropulse in bin $x$, and $P_{j}$ is the probability that the
-digitizer is still busy from a trigger $j$ bins ago. Moore also provides a more advanced 
+digitizer is still busy from a trigger $j$ bins ago. Moore \cite{Moore1980} also provides
+a more advanced 
 formula to generate the appropriate dead-time correction in cases where the variation in beam 
-flux is significant \ref{Moore1980}. However, an examination of our flux-per-micropulse data 
+flux is significant. However, an examination of our flux-per-micropulse data 
 showed almost no variance in the flux per micropulse, except during the first 10\%
 of each macropulse when flux was "ramping up". In our final analysis, we have discarded the 
 first 40 micropulses of each macropulse and used the simpler Eq. \ref{DeadtimeEquation} to 
-calculate the dead time fraction.
+calculate the dead-time fraction.
 
 To model $P_{j}$, we
 employed a logistic function and fitted it to the observed spectrum for time
@@ -257,10 +269,11 @@ events detected in that bin, $N_{m}[i]$, was corrected to the \textit{true}
 number of events in that bin $N_{t}[i]$ that would have been detected in the
 absence of a per-event deadtime:
 
-\begin{equation}
+\begin{equation} \label{DeadtimeEquation}
     N_{t}[i] = -ln\left(\frac{1-\frac{N_m[i]}{M}}{(1-F_{i})\times M}\right)
 \end{equation}
 
+\noindent
 where M is the total number of micropulse periods. The difference between
 uncorrected and analytic-deadtime-corrected TOF spectra is shown in Fig.
 \ref{CorrectionEffectOnTOF}. At large TOFs (low energies) the correction is as low as a
@@ -269,9 +282,9 @@ from the $\gamma$-ray flash and high-energy neutrons, the correction is signific
 ($\approx$20\% for our Ni/Rh runs, and $\approx$40\% for our Sn/O runs). Again, these 
 corrections are themselves far lower than the correction required
 when using the previous approaches \cite{Finlay1993, Abfalterer2001}, which
-could be over 100\% for the lowest-energy neutrons, depending on beam flux.
-%The effect of this correction on the final 
-%cross section results is shown in Fig. \ref{DeadtimeEffectOnCS}.
+could be over 100\% for the lowest-energy neutrons, depending on beam flux. It is
+important to keep in mind that in these experiments the dead time is not a fixed number but a
+function of the neutron energy.
 
 \begin{figure}[h]
     \centering
@@ -327,16 +340,53 @@ TOF events. The frequency of these ``data dropouts" was similar to the rate of
 switching between DPP and waveform modes and we suspect it is related to edge
 case behavior right before or after a mode switch. To mitigate this issue,
 any macropulse that had less than 50\% of the average event rate in either the
-flux monitor or TOF detector channel was ignored during cross section calculation.
+flux monitor or TOF detector channel was ignored.
 
 After applying these corrections, the veto and integrated charge gates are applied to 
 all events and surviving events are populated into time-of-flight spectra (see Fig.
-\ref{ExampleTOFSpectrum}). Next, room background was subtracted (responsible for 0.1\% to 
-1\% of event rate, depending on energy) and spectra were mapped to the energy domain.
+\ref{ExampleTOFSpectrum}). From these spectra, room background was subtracted
+(responsible for 0.1\% to 1\% of event rate, depending on energy)
+and events were mapped to the energy domain.
 
-Could mention more systematic differences between \cite{Shane2010, Finlay1993, Abfalterer2001}?
-- sample diameters and collimation diameter (2.2-2.9 cm in finlay)
-- flight path length: 38.14 m in Finlay et al.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/exampleTOFSpectrum.png}
+    \caption[Typical time-of-flight spectrum after timing and deadtime corrections]
+    {
+        Typical time-of-flight spectra after analytic deadtime correction and
+        veto and integrated charge gating. A spectrum from the blank sample is shown in
+        red and a spectrum for the $^{\text{nat}}$C sample is shown in blue, both from the Ni/Rh 
+        experiment configuration.
+        The $\gamma$-ray peak presents as a sharp spike at 90 ns, followed by
+        the highest-energy neutrons at 130 ns. The small spikes spaced 60 ns
+        apart (visible before 90 ns and after 1500
+        ns) are $\gamma$-ray peaks from a low-level, continuous ``drip" 
+        of protons onto the tungsten target caused by mistuning of the proton 
+        buncher; their effect on the calculated cross sections is negligible. Low-energy carbon
+        resonances are visible above 600 ns.
+    }
+    \label{ExampleTOFSpectrum}
+\end{figure}
+
+It is worth mentioning two additional systematic differences between our configuration and
+those of previous LANSCE measurements \cite{Shane2010, Finlay1993, Abfalterer2001}, namely the
+flight path length and sample diameters. Flight path lengths of 37.70 meters, 38.14 meters, and 45
+meters were used in \cite{Finlay1993}, \cite{Abfalterer2001}, and \cite{Shane2010} respectively, 
+much longer than the 25-27 meters position of our time-of-flight detector.
+Had these lengths been available for our experiment,
+it would have reduced the high-energy instantaneous neutron flux by 
+$\frac{1}{3}$, potentially affecting our results for the highest-energy neutrons. Future
+experimental work at the 90 meter flight path station at LANSCE would be ideal: the
+instantaneous neutron flux would be reduced by more than half compared to our experiment
+and neutrons as low as 10 MeV could still be unambiguously identified before micropulse wraparound.
+The other major difference, the sample diameters, affects the diameter of the collimation used.
+Diameters of  2.2-2.9 cm, 2.3-3.8 cm, and [insert Shane] were used for \cite{Shane2010},
+\cite{Finlay1993}, and \cite{Abfalterer2001}, respectively, much larger than the 0.8 cm diameter of
+our samples. As sample (and thus collimator) size decreases, the cross-sectional area of the
+collimation pipe decreases compared to its circumference. At some point, neutrons scattering to very
+small angles on the interior of the collimation could become significant compared to the number of
+neutrons passing through the collimation freely. While we do not expect this phenomenon to affect
+our results, at smaller collimation diameters, a collimation-scattering simulation may be warranted.
 
 \section{Cross Section Calculation}
 The fundamental quantity of interest, \tot, is related to the flux
@@ -350,6 +400,7 @@ or, equivalently,
     \tot = -\frac{1}{\ell\rho}ln\left(\frac{I_{t}}{I_{0}}\right)
 \end{equation}
 
+\noindent
 where $I_{0}$ is the neutron flux entering the sample, $I_{t}$ is the neutron
 flux transmitted through the sample without interaction, $\rho$ is the number
 density of nuclei in the sample, and $\ell$ is the sample length. For thin
@@ -386,7 +437,7 @@ A series of small corrections were applied to the raw cross sections to produce
 the final results. First, because the blank sample contains air and not vacuum,
 the cross section of air must be added to each other sample's cross section (scaled by  
 the ratio of areal densities of air in the blank and the sample of interest).
-For the \rhThree sample, which had the smallest areal density, this correction
+For the \rhThree\ sample, which had the smallest areal density, this correction
 was approximately 2 mb $>$100 MeV. The cross section for $^{64}$Ni was corrected for the 
 isotopic enrichment of our
 sample (92.2\%) using our measured $^{\text{nat}}$Ni cross section. All other isotopes were 
@@ -407,9 +458,9 @@ results of the deuterium-to-hydrogen relative difference are shown in Fig. \ref{
     \centering
     \includegraphics[width=0.8\textwidth]{figures/relativeDiff_DtoH.png}
     \caption{(Color online) Relative difference of cross sections of
-        deuterium to hydrogen, as calculated by subtraction of our O \tot from
+        deuterium to hydrogen, as calculated by subtraction of our O \tot\ from
         D$_{2}$O and H$_{2}$O. Our results are shown in red; the measurement of
-        Abfalterer et al \cite{Abfalterer1998} is shown in black.}
+        Abfalterer et al. \cite{Abfalterer1998} is shown in black.}
     \label{DtoH}
 \end{figure}
 
@@ -437,8 +488,8 @@ energy range measured, but cannot change the \textit{slope} of the cross section
 as energy is increased. Thus, the high-energy discrepancy is unlikely to be from
 an incorrect monitor flux. Further, it was not dependent on the nuclear mass of
 the sample nor with any other physical characteristics of the samples,
-suggesting that backshine of neutrons into the flux monitor from the samples, or other 
-physical mechanisms, were not the cause.
+suggesting that backshine of neutrons into the flux monitor from the samples, or another 
+physical mechanism, was not the cause.
 
 At neutron times-of-flight corresponding to energies $>$100 MeV, the number of
 counts in the spectrum rises sharply as one moves to higher energies. In this
@@ -448,8 +499,8 @@ cross section calculation. Thus the event timing and data
 storage routines must be kept completely ignorant of which target is currently
 in-beam so as to avoid sample-dependent timing effects. In practice, this is
 difficult, as acquisition with the blank sample is naturally associated with
-a higher data rate as fewer neutrons are attenuated in-flight than during
-with the isotopic samples of interest. By reducing the rate of data acquisition
+a higher data rate as fewer neutrons are absorbed or scattered in-flight than during
+with samples in the beam path. By reducing the rate of data acquisition
 by an order of magnitude or more, the analog-electronics approach reduces the
 absolute data rates of both the blank and the samples, mitigating this effect.
 However, because much larger samples are required with the overall reduced data
@@ -462,6 +513,7 @@ resolve the high-energy discrepancy we see between all of our \tot\ data sets
 and literature data.
 
 \begin{figure}[h]
+    \centering
     \includegraphics[scale=0.5]{figures/literatureBenchmarking.png}
     \caption[Comparison of our natural-sample \tot\ measurement against literature data]
     {
@@ -474,9 +526,10 @@ and literature data.
         $\approx$5\% at 300 MeV.
     }
     \label{LiteratureBenchmarking}
+\end{figure}
 
-    \vspace*{\floatsep}
-
+\begin{figure}[h]
+    \centering
     \includegraphics[scale=0.30]{figures/relativeDiff_longCarbonShortCarbon.png}
     \caption[Neutron \tot\ relative difference between short and long \cNat\ samples]
     {
@@ -498,10 +551,10 @@ and literature data.
 \end{figure}
 
 Our absolute \tot\ results for all isotopic targets are shown in Figs.
-\ref{TwoPanelO, TwoPanelNi, TwoPanelRh, TwoPanelSn}. All previous isotopic \tot\
-measurements (where they exist) are shown alongside our results for comparison.
-Residuals between our data and literature
-data are also plotted below. The literature
+\ref{TwoPanelO}, \ref{TwoPanelNi}, \ref{TwoPanelRh}, and \ref{TwoPanelSn}.
+All previous isotopic \tot\
+measurements (where they exist) are shown alongside our results for comparison, and residuals 
+between our data and literature data are provided in the lower panels. To make comparison meaningful, the literature
 data sets shown have been modified to have the same bins as our data via a simple
 linear interpolation of the original data bins. This rebinning
 washes out the fine structure of the cross section data where the density of states
@@ -510,20 +563,21 @@ for a given sample is low and individual resonances are visible
 points or are smaller than the size of the markers used.
 
 Relative differences of our measured \tot\ between \oSixEight, \niEightFour, and
-\snTwelveFour are shown in Figs. \ref{IsotopicDiffO, IsotopicDiffNi, 
-IsotopicDiffSn}, respectively. By examining relative differences between
-isotopes, the systematic errors of our experimental approach are divided out.
-In a simple isoscalar picture with a nuclear radius dependence of
-A$^{\frac{1}{3}}$, the relative difference between isotopes is expected to be
-almost flat and rise slightly with neutron energy as the neutron wavelength is
-reduced. Deviations from this isoscalar behavior are present in all of our isotopic
-relative difference plots, revealing isovector dependence of the nuclear potential.
+\snTwelveFour\ are shown in Figs. \ref{IsotopicDifferenceO}, \ref{IsotopicDifferenceNi}, 
+and \ref{IsotopicDifferenceSn}, respectively. By examining relative differences between
+isotopes, any systematic errors of our approach (besides the areal density uncertainties)
+are divided out.
+%In a simple isoscalar picture with a nuclear radius dependence of
+%A$^{\frac{1}{3}}$, the relative difference between isotopes is expected to be
+%almost flat and rise slightly with neutron energy as the neutron wavelength is
+%reduced. Deviations from this isoscalar behavior are present in all of our isotopic
+%relative difference plots, revealing isovector dependence of the nuclear potential.
 
 \subsection{\oSixEight\ \tot\ results}
 \begin{figure}[h]
     \includegraphics[scale=0.35]{figures/TwoPanelO.png}
     \caption[Neutron \tot\ for \oSixEight: our results and literature data]
-    {Neutron \tot for \oSixEight: our results and literature data.
+    {Neutron \tot\ for \oSixEight: our results and literature data.
         (a) shows our digitizer-measured isotopic results (in shades of red) and
         corresponding analog-measured literature data \cite{Finlay1993, Perey1972, Vaughn1965,
         Salisbury1965} (in shades of blue). The data for \oEight have been
@@ -548,14 +602,14 @@ relative difference plots, revealing isovector dependence of the nuclear potenti
     \label{IsotopicDifferenceO}
 \end{figure}
 
-Above 5 MeV, our \oSix \tot\ results are within 5\% of those from \cite{Finlay1993}, where
+Above 5 MeV, our \oSix\ \tot\ results are within 5\% of those from \cite{Finlay1993}, where
 ZnO and BeO were used rather than H$_{2}$O. Below 5 MeV, the rapidly-rising
-(n,p) cross section and resonance structure of Zn, Be, and \oSix contribute to
-increased relative differences. Our measurement on \oEight extends the known
+(n,p) cross section and resonance structure of Zn, Be, and \oSix\ contribute to
+increased relative differences. Our measurement on \oEight\ extends the known
 neutron \tot\ by over an order of magnitude and shows reasonable agreement to
 the previous measurements taken over 50 years ago by \cite{Vaughn1965,Salisbury1965}.
 Above 200 MeV, the \oEight\ \tot\ is smaller than the \oSix\ \tot\, a
-consequence of the larger neutron elastic phase shift in \oEight compared to
+consequence of the larger neutron elastic phase shift in \oEight\ compared to
 \oSix, which pushes the \tot\ minimum to higher energies in \oEight.
 
 \subsection{\niEightFour\ \tot\ results}
@@ -563,7 +617,7 @@ consequence of the larger neutron elastic phase shift in \oEight compared to
     \includegraphics[scale=0.35]{figures/TwoPanelNi.png}
     \caption[Neutron \tot\ for \niEightFour: our results and literature data]
     {
-        Neutron \tot for \niEightFour: our results and literature data.
+        Neutron \tot\ for \niEightFour: our results and literature data.
         (a) shows our digitizer-measured isotopic results (in shades of red) and
         corresponding analog-measured literature data \cite{Perey1993,
         Dukarevich1967} (in shades of blue). (b) shows the relative difference
@@ -581,16 +635,16 @@ consequence of the larger neutron elastic phase shift in \oEight compared to
         is indicated by the red dotted region. Systematic error only (due to
         uncertainty in the sample areal density) is shown by the blue dotted region.   
         Assuming a simple A$^{\frac{1}{3}}$ size scaling for the
-        nuclear radius of \niFour from \niEight, the simple oscillatory model of
-        Eq. \ref{OscillatoryModel} prediction for the \niEightFour neutron \tot\ relative
+        nuclear radius of \niFour\ from \niEight, the simple oscillatory model of
+        Eq. \ref{OscillatoryModel} prediction for the \niEightFour\ neutron \tot\ relative
         difference is shown (black dashed line).
     }
     \label{IsotopicDifferenceNi}
-\end{figure}[h]
+\end{figure}
 
 In contrast to the case of O, no isotopic Ni data was available at all above 100
 MeV, and high-precision literature data was only available up to 15 MeV for
-\niEight \cite{Perey1993} and at only one data point, 14.2 MeV, for \niFour
+\niEight\ \cite{Perey1993} and at only one energy point, 14.2 MeV, for \niFour\
 \cite{Dukarevich1967}. Our results extended the energy range to 400 MeV and are
 in good agreement with the previous results when their errors are included.
 
@@ -599,9 +653,9 @@ in good agreement with the previous results when their errors are included.
     \includegraphics[scale=0.35]{figures/TwoPanelRh.png}
     \caption[Neutron \tot\ for \rhThree: our results and literature data]
     {
-        Neutron \tot for \rhThree: our results and literature data.
+        Neutron \tot\ for \rhThree: our results and literature data.
         (a) shows our digitizer-measured isotopic results (in red) and
-        corresponding analog-measured literature data \cite{Poenitz1983}(in blue).
+        corresponding analog-measured literature data \cite{Poenitz1983} (in blue).
         (b) shows the relative difference
         between our data and literature data that are shown in panel a).
     }
@@ -609,11 +663,11 @@ in good agreement with the previous results when their errors are included.
 \end{figure}
 
 The extremely small areal density and the reduced beam
-time allotted for our \rhThree sample made acquiring sufficient statistics difficult.
+time allotted for our \rhThree\ sample made acquiring sufficient statistics difficult.
 Nevertheless, by reducing the energy range and number of bins slightly, we were
 able to achieve 1\% statistics for all bins and our results agree with those of
 \cite{Poenitz1983} up to 20 MeV. Our results extend the known energy range by over an order of
-magnitude to 400 MeV.
+magnitude up to 400 MeV.
 
 \subsection{\snTwelveFour\ \tot\ results}
 \begin{figure}[h]
@@ -640,15 +694,15 @@ magnitude to 400 MeV.
         is indicated by the red dotted region. Systematic error only (due to
         uncertainty in the sample areal density) is shown by the blue dotted region.   
         Assuming a simple A$^{\frac{1}{3}}$ size scaling for the
-        nuclear radius of \snFour from \snTwelve, the simple oscillatory model of
-        Eq. \ref{OscillatoryModel} prediction for the \snTwelveFour neutron \tot\ relative
+        nuclear radius of \snFour\ from \snTwelve, the simple oscillatory model of
+        Eq. \ref{OscillatoryModel} prediction for the \snTwelveFour\ neutron \tot\ relative
         difference is shown (gray dashed line).
     }
     \label{IsotopicDifferenceSn}
 \end{figure}
 
 Similar to Ni isotopes, the only existing Sn isotope neutron \tot\ data was at
-low energies, up to 20 MeV for both \snTwelve and \snFour \cite{Harper1982, Timokhov1989, 
+low energies, up to 20 MeV for both \snTwelve\ and \snFour\ \cite{Harper1982, Timokhov1989, 
 Rapaport1980, Dukarevich1967}. Our results extended the energy range to 400 MeV and are
 in excellent agreement, $\approx$1\% difference, with the previous results.
 
