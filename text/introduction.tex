@@ -235,8 +235,9 @@ and in astrophysical reactions.
 The nuclear optical model (OM) was developed to this end and continues to be an
 widely-used tool for generating nucleon, $\alpha$, and heavy-ion scattering
 cross sections, though it has had less to say about nuclear structure. Basic
-motivations for OMs, plus references to successful OM potential parameterizations,
-are summarized here.
+motivations for OMs, stemming from a simple Ramsauer-effect piecture, are
+summarized, and references to several successful OM potential parameterizations
+are provided.
 
 Due to the magnitude of the strong nuclear force, it might be expected that 
 the interaction of an incident neutron on a nucleus should be strongly
@@ -335,7 +336,9 @@ Instead of a single central potential, a series
 of potential terms may be used,
 centered on the nuclear surface and nuclear volume,
 corresponding to differing physics thought to be relevant for these areas (much
-as in the Droplet Model).
+as in the Droplet Model). Many comprehensive overviews of optical models are
+available \cite{Dickhoff2018, Hodgson1971} that explore various potential forms
+and connect optical models to other approaches.
 
 \begin{figure}[ht]
     \includegraphics[width=0.5\textwidth]{figures/phaseShiftStillsFigure.png}
@@ -376,9 +379,9 @@ distributions in the nucleus, are needed. As experimental facilities like
 the Facility for Radioactive Isotope Beams (FRIB) come online and produce
 extremely asymmetric nuclei, knowing the asymmetry-dependence of optical
 potentials will become increasingly important for predicting nucleon scattering on
-exotic nuclei. Of course, isovector considerations can also be
-introduced to a simpler Ramsauer-like model as well. Building on the 1986
-addition of a spin-spin term in a Ramsauer model by Gould et al \cite{Gould1986},
+exotic nuclei. Isovector considerations are not unique to full-blown optical
+models and be introduced to a simpler Ramsauer-like models as well. For example, building
+on the addition of spin-spin terms a Ramsauer model by Gould et al \cite{Gould1986},
 Anderson and Grimes added an explicit isovector term to analyzing isotone and isotope shifts in 
 neutron total cross sections \cite{Anderson1990}.
 They concluded that "although [their] model may give
@@ -398,20 +401,54 @@ isovector terms in particular requires data
 on asymmetric nuclei, preferably on highly-asymmetric nuclei or isotopic chains,
 where the imbalance of protons and neutrons makes any isovector effects most visible.
 
-A few isotope-chain neutron total cross section analyses have been carried out
-to investigate these questions. The most recent and sophisticated was conducted
-by Dietrich et al.\cite{Dietrich2003}, where data on the $^{182,184,186}$W isotope chain
-were collected and Ramsauer- and optical-model analyses of these data completed.
+In the last few decades, a smattering of isotope-chain neutron total cross section
+analyses have been carried out to investigate these questions
+\cite{Mukhopadhyay2011, Anderson1990, Camarda1984}. The most sophisticated
+was conducted by Dietrich et al.\cite{Dietrich2003},
+where new data on the $^{182,184,186}$W isotope chain
+were collected and Ramsauer- and optical-model analyses completed using these data.
 In their study, an expanded Ramsauer-type model performs quite well at reproducing the relative 
 difference between $^{186}$W and $^{182}$W, apart from a
 phase mismatch - but only when the isovector components they introduced in the
-Ramsauer model are \textit{suppressed} \ref{TungstenRamsauer}. Despite the
-physical incorrectness of this neglect of isospin, the resulting Ramsauer model
+Ramsauer model are \textit{suppressed} \ref{Dietrich2003_Ramsauer}. Despite the
+dubiousness of ignoring isospin, the resulting Ramsauer model
 agrees better with the experimental data than does the Ohio global optical 
-potential \cite{OhioPotential}, shown in Fig. \ref{TungstenOM}. The authors
-also performed phenomenological coupled-channel calculations
+potential \cite{Rapaport1979}, shown in Fig. \ref{Dietrich2003_Ohio}.
+
+\begin{figure}[ht]
+    \includegraphics[width=0.5\textwidth]{figures/Dietrich2003_RamsauerPotential.png}
+    \caption[$^{186}$W-$^{182}$W neutron \tot\ relative difference and
+    Ramsauer model predictions]
+    {
+        $^{186}$W-$^{182}$W neutron \tot\ relative difference and
+        Ramsauer model predictions. Figure from \cite{Dietrich2003}.
+        If the standard isovector strength from
+        optical-model treatments is used to dictate the Ramsauer isovector
+        dependence, the model performs more poorly against the experimental
+        data.
+    }
+    \label{Dietrich2003_Ramsauer}
+\end{figure}
+
+\begin{figure}[ht]
+    \includegraphics[width=0.5\textwidth]{figures/Dietrich2003_OhioPotential.png}
+    \caption[$^{186}$W-$^{182}$W neutron \tot\ relative difference and
+    Ramsauer model predictions]
+    {
+        $^{186}$W-$^{182}$W neutron \tot\ relative difference and
+        Ramsauer model predictions. Figure from \cite{Dietrich2003}.
+        If the standard isovector strength from
+        optical-model treatments is used to dictate the Ramsauer isovector
+        dependence, the model performs more poorly against the experimental
+        data.
+    }
+    \label{Dietrich2003_Ramsauer}
+\end{figure}
+
+
+The authors also performed phenomenological coupled-channel calculations
 based on a dispersive optical model formalism
-\cite{MahauxAndSartor} that showed similar behavior: it gave good agreement with the
+\cite{Mahaux1991} that showed similar behavior: it gave good agreement with the
 experimental \tot\ relative differences, but only when isovector terms in the calculations
 were explicitly \textit{neglected}. As the
 authors point out, it is quite puzzling that "good agreement with the
@@ -429,29 +466,20 @@ structural (i.e., bound-state) information in a clear and consistent way?
 
 Answers to these questions hinge on the availability well-measured 
 isotopic neutron \tot\ data sets across a broad energy range. Indeed, the
-\caAughtForty neutron \tot\ data collected by our group at LANSCE in 2009, in
+\caAughtEight\ neutron \tot\ data collected by our group at LANSCE in 2009, in
 part inspired by the W measurements of \cite{Dietrich2003},
 provided grist for a non-local Dispersive Optical Model (DOM) analysis in 2015
-\cite{MahzoonPhDThesis}. This non-local analysis reveals links
-between the asymmetry-dependence of occupation numbers and high-energy scattering data.
-Thus, providing experimental 
-data on key nuclei, in particular for use with the Dispersive Optical Model
+\cite{MahzoonPhDThesis}. This non-local analysis revealed connections
+between the asymmetry-dependence of single-particle occupation numbers
+and high-energy scattering data.
+Providing experimental data on key nuclei, in particular for use with the Dispersive Optical Model
 (DOM), is a primary motivation for the isotopically-resolved neutron \tot\ and \el\
-results presented in this work. Our new data are analyzed in Chapter \ref{DOMResults} 
+results presented in this work. These new data are analyzed in Chapter \ref{DOMResults} 
 with an improved non-local DOM capable of fits on even-even nuclei. Details on our DOM
 implementation are presented in chapter \ref{DOMFormalism}. 
 %"The magnitude and energy dependence of the real isovector part of the
 %optical potential are poorly constrained by experiment." \cite{Holt16}
 
-Other topics that could be included:\\
-- Hodgson's optical model review in 1971\\
-- Microscopic OMs (folds interaction over nucleon density)\\
-- Phenomenological OMs (no folding - use bulk)\\
-- can largely follow Bob and Wim's review paper\\
-- separate proton and neutron global optical potentials in the 60s (Becchetti
-and Greenlees)\\
-- CH89 includes additional neutron scattering data on isotopic targets\\
-- Lane potential \\
 \section{Relevant Experimental Nuclear Data}
 
 \subsection{Nucleon scattering data}
@@ -511,8 +539,8 @@ also provides information on the asymmetry-dependence of the real part of the nu
         of coverage. Except for the lightest
         isotopes (O and below), a few security-related actinides, there is almost no coverage
         throughout the nuclear chart. Our newly-measured results on \oSixEight, \niEightFour,
-        \rhThree, and \snTwelveFour\ are included, as are a previous experiment on
-        \caAughtEight \cite{Shane2010}.
+        \rhThree, and \snTwelveFour\ are included, as are a previous experiment
+        by our group on \caAughtEight \cite{Shane2010}.
     }
     \label{TCSChart}
 \end{sidewaysfigure}
@@ -531,6 +559,11 @@ also provides information on the asymmetry-dependence of the real part of the nu
 \end{sidewaysfigure}
 
 \subsection{Quasi-free scattering data: (e,e'p), (p,2p), and (p,pn)}
+\cite{Mougey1980, Jacob1966, Jacob1973} provide an overview of (e,e'p) and other quasi-free 
+scattering experiments.
+
+\oSix data from \cite{Leuschner1990}
+
 Louk Lapikas
 NIKHEF data on 16O, 40Ca, 208Pb
 SRCs and LRCs
@@ -547,6 +580,9 @@ single-particle level spacings too great compared to experimental data.
 HF-BCS treatment of 700 nuclei to calculate proton and neutron RMS radii \cite{Angeli1980}
 Connect neutron star EOS/neutron skin to Electric Dipole Polarizability and new Skyrme interaction, mean-field
 constrained from chiral EFT \cite{Zhang2018}
+
+
+Alex Brown mirror nuclei paper
 
 Electron scattering and laser spectroscopy
 K. Minamisono

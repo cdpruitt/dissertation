@@ -45,10 +45,12 @@ the left-right time resolution dropped to 0.52 ns.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/LRDifferenceByEnergy.png}
     \caption[Effect of energy gating on left/right PMT time difference]
-    {Effect of energy gating on the left/right PMT time difference. Higher-energy neutrons 
-    traverse also deposit more energy on average, slightly improving the
-    precision of the software CFD. The same number of events are populated into
-each histogram.}
+    {
+        Effect of energy gating on the left/right PMT time difference. Higher-energy neutrons 
+        traverse also deposit more energy on average, slightly improving the
+        precision of the software CFD. The same number of events were populated into each
+        energy-range histogram.
+    }
     \label{LRTimeDifferenceByEnergy}
 \end{figure}
 
@@ -77,7 +79,7 @@ To reduce unnecessary data collection, we collected only the first \tZero, a
 logic signal, of each macropulse. 
 Using this time and the precisely-known micropulse frequency, we identified all $\gamma$ rays 
 for a given macropulse and tabulated
-the average $\gamma$ time-of- flight, as shown in Fig. \ref{GammaCorrection}.
+the average $\gamma$ time-of-flight, as shown in Fig. \ref{GammaCorrection}.
 The uncertainty of our macropulse start time manifests as a spread in average gamma times-of-
 flight. Were the start time exactly known for each macropulse, and the
 micropulse period exactly known, the time-of-flight for each gammas should be
@@ -209,14 +211,15 @@ analytic dead-time must be very precisely known, as corrections can soar to over
 if the beam flux is high.
 
 \begin{figure}[h]
-    \includegraphics[width=0.45\textwidth]{figures/AnalogLogic.png}
+    \includegraphics[width=0.8\textwidth]{figures/AnalogLogic.png}
     \caption[``Looking period'' logic used by previous neutron \tot\ measurements at LANSCE]
     {
         ``Looking period'' logic used by previous neutron \tot\ measurements at LANSCE
         \cite{Abfalterer2001}. Per the original caption: proton beam bursts arriving at
         evenly-spaced 1.8-$\mu$s time intervals define a time frame 1.4-1.6 $\mu$s long. For each
         time frame, a delayed copy of the \tZero\ defining it was used as a stop signal on the TDC
-    clocks.}
+    clocks. In contrast, the event processing logic of our experiment dispensed with looking 
+    periods to maximize the number of neutrons detected.}
     \label{AnalogLogic}
 \end{figure}
 
@@ -258,7 +261,7 @@ micropulse.
 
 By optimizing trigger processing in digitizer firmware,
 we reduced the per-event deadtimes affecting our
-measurement ranged from 150-230 ns depending on the digitizer configuration.
+measurement ranged from 160-230 ns depending on the digitizer configuration.
 For a 230 ns per-event deadtime, the probability-dead
 $F_{i}$ of our time bins is given in Fig.
 \ref{ExampleDeadtimeSpectrum}, showing that the probability-dead never exceeds
@@ -283,7 +286,8 @@ from the $\gamma$-ray flash and high-energy neutrons, the correction is signific
 corrections are themselves far lower than the correction required
 when using the previous approaches \cite{Finlay1993, Abfalterer2001}, which
 could be over 100\% for the lowest-energy neutrons, depending on beam flux. It is
-important to keep in mind that in these experiments the dead time is not a fixed number but a
+important to keep in mind that in these experiments the probability that the
+data acquisition electronics are busy is not a fixed number but a
 function of the neutron energy.
 
 \begin{figure}[h]
@@ -297,7 +301,7 @@ fit (red) models the detector's deadtime response and is used to generate a
 deadtime correction. The underlying linearly-decreasing count rate (gray dashed
 line) in incorporated into the logistic model. From the fit, a mean deadtime of
 228.1 ns was extracted for the Sn and O run configurations (a similar
-procedure was used to recover a deadtime of [insert deadtime] for the Ni and Rh
+procedure was used to recover a deadtime of 159.7 for the Ni and Rh
 run configurations).}
     \label{TimeDifferenceBetweenEvents}
 \end{figure}
@@ -380,13 +384,16 @@ experimental work at the 90 meter flight path station at LANSCE would be ideal: 
 instantaneous neutron flux would be reduced by more than half compared to our experiment
 and neutrons as low as 10 MeV could still be unambiguously identified before micropulse wraparound.
 The other major difference, the sample diameters, affects the diameter of the collimation used.
-Diameters of  2.2-2.9 cm, 2.3-3.8 cm, and [insert Shane] were used for \cite{Shane2010},
+Diameters of  2.2-2.9 cm, 2.3-3.8 cm, and 1.3 cm were used for \cite{Shane2010},
 \cite{Finlay1993}, and \cite{Abfalterer2001}, respectively, much larger than the 0.8 cm diameter of
 our samples. As sample (and thus collimator) size decreases, the cross-sectional area of the
-collimation pipe decreases compared to its circumference. At some point, neutrons scattering to very
+collimation pipe decreases compared to its circumference. At some point,
+neutrons scattering at very
 small angles on the interior of the collimation could become significant compared to the number of
-neutrons passing through the collimation freely. While we do not expect this phenomenon to affect
-our results, at smaller collimation diameters, a collimation-scattering simulation may be warranted.
+neutrons passing through the collimation freely, distorting results.
+While we see no evidence of this phenomenon affecting
+our results, a collimation-scattering simulation may be warranted for
+experiments with even smaller sample diameters.
 
 \section{Cross Section Calculation}
 The fundamental quantity of interest, \tot, is related to the flux
