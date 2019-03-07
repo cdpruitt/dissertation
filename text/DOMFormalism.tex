@@ -35,6 +35,36 @@ of a state $\psi(\bm{r},t)$ is the sum of the contributions of
 Subtracted dispersion relation.
 
 \subsection{Elastic and inelastic nucleon scattering}
+For nucleon-nucleus scattering, the scattering amplitude can be directly calculated using the
+reducible self-energy:
+
+\begin{equation}
+    f_{m'_{s},m_{s}}(\theta,\phi) =
+    -\frac{4m\pi^{2}}{\hbar^{2}}\bra{\boldmath{k}'m'_{s}}|\Sigma(E)|\ket{\boldmath{k}m_{s}}
+\end{equation}
+
+\noindent
+where $\boldmath{k}m_{s}$ are the wave vector and spin quantum number of the incident nucleon and
+$\boldmath{k'}m'_{s}$ are for the exiting nucleon. The matrix structure of the right side can be
+split into spin-independent and spin-dependent portions $\mathcal{F}$ and $\mathcal{G}$:
+
+\begin{eqnarray}
+    f(\theta,\phi) & = & \mathcal{F}(\theta)I + \sigma\cdot\boldmath{\hat{n}}\mathcal{G}(\theta)
+    & = & \frac{1}{2ik}\sum_{l=0}^{\infty}\left[(l+1){e^{2i\delta_{l+} - 1} +
+    l\left{e^{2i\delta_{l-}}-1\right}\right]P_{l}(cos\theta) +
+    \sigma\cdot\boldmath{\hat{n}}\left[\frac{sin\theta}{2k}\sum_{l=1}^{\infty}[e^{2i\delta_{l+}}-e^{2i\delta_{l-}}]P'_{l}(cos\theta)
+\end{eqnarray}
+\noindent
+where $P_{l}
+
+The phase shift (equivalently, the S-matrix elements) for each partial wave can be directly from the reducible self-energy:
+\begin{eqnarray}
+    e^{2i\delta_{lj}} & \equiv & \bra{k}|\mathcal{S}_{lj}(E)|\ket{k}
+    & = & 1 - 2\pi i \left(\frac{mk}{\hbar^{2}}\right) \bra{k|\Sigma_{lj}(E)|\ket{j}
+\end{eqnarray}
+\noindent
+where $k$ is the center-of-mass momentum of the nucleon, $m$ is the nucleon mass, and $E$ is the
+center-of-mass energy. 
 \subsection{Bound-state properties}
 
 \section{Parameterization of the Potential}
