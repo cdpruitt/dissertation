@@ -148,82 +148,92 @@ In an idealized differential cross section measurement, the sample and neutron
 detectors can be treated as point objects. In reality, the neutron beam,
 samples, and detectors occupy a finite size, leading to so-called finite-size
 effects that distort the measured cross sections. The experimenter is responsible
-for applying appropriate corrections so that reported results are size- and
-apparatus-independent.
+for applying appropriate corrections to make results size- and
+apparatus-independent. The finite-size analysis for
+a similar TUNL-based neutron \el\ measurement on $^{116,120}$Sn is described in detail
+in \cite{GussPhDThesis}. In their analysis, Monte Carlo simulations using the
+EFFIGY code were
+prepared to generate a correction for geometric uncertainty of the neutron
+scattering track, the possibility of multiple scattering
+in the samples, and flux attenuation in the sample. These effects are illustrated in
+\ref{GussFiniteSizeDiagram}.
+For the isotopic Ni and Sn samples they studied, they generated finite-size
+corrections on the order of 1-10\% depending on the scattering angle. As seen in
+Fig. \ref{GussFiniteSizeEffect}, the
+biggest effect is on the depth of the diffraction minima.
+However, their samples
+were an order of magnitude larger than our
+samples: 42.59 g and 44.73 g for their \snSixteen and \snTwenty samples,
+respectively, compared to 4.97 g and 5.55 g for our \snTwelve and \snFour
+samples. Thus we anticipated a dramatically smaller correction would be
+required.
 
-The finite-size analysis of Guss et al. for
-their neutron \el\ measurements on $^{116,120}$Sn is given in great detail in
-\cite{GussPhDThesis}. Monte carlo simulations are used to generate a correction
-for the uncertainty in neutron scattering path, multiple-scattering
-in the samples, and flux attenuation in the sample \ref{GussFiniteSizeEffect},
-all of which they found to be important corrections on the order of 1-10\%.
-However, their isotopic samples were an order of magnitude larger than our
-samples (42.59 g and 44.73 g for their \snSixteen and \snTwenty samples,
-respectively), dramatically increasing the finite-size effects. Given the small amount of sample 
-material in our measurement (4.97 g and 5.55 g for our \snTwelve and \snFour
-samples, respectively), the finite size corrections required were much
-smaller. The geometric finite-size correction from angular uncertainty in the
-scattered neutron flight path is mostly a function of the sample volume,
-not the number of sample atoms. Thus the angular uncertainty of the neutron
-scattering path is approximately half as large as that calculated by Guss et al,
-as our sample diameters and radii were smaller than the Guss et al. samples
-by roughly a factor of two. The multiple-scattering and flux attenuation
-effects, however, are proportional to the number of atoms
-encountered by neutrons after their first scattering event. Because the number
-of atoms in our samples was an order of magnitude smaller than those of Guss et
-al., these latter finite size corrections were anticipated to be approximately
-an order of magnitude smaller and thus have a negligible effect on our results.
-The same could not be said of the geometric finite-size effects \textit{a
-priori}, so a simulation was prepared and the details are presented below.
+\begin{figure}[ht!]
+    \begin{center}
+        \includegraphics[width = 0.9\textwidth]{figures/GussFiniteSizeDiagram.png}
+        \caption[Illustration of finite-size effects relevant for \el cross
+        section measurements]
+        {
+            Illustration of finite-size effects relevant for \el cross
+            section measurements, from the PhD thesis of P. Guss
+            \cite{GussPhDThesis}. Due to the uncertainty in the exact path taken
+            by neutrons during scattering, a series of finite-size corrections
+            must be applied to recover the true cross section.
+        }
+        \label{GussFiniteSizeDiagram}
+    \end{center}
+\end{figure}
 
-Because the samples and angular detectors are not point-like, the exact
+\begin{figure}[ht!]
+    \begin{center}
+        \includegraphics[width = 0.9\textwidth]{figures/GussFiniteSizeEffect.png}
+        \caption[Effect of finite-size corrections on previous neutron \el\ measurement at
+        TUNL]
+        {
+            Effect of finite-size corrections on previous neutron \el\ measurement at
+            TUNL, from the PhD thesis of P. Guss \cite{GussPhDThesis}.
+            The raw data from this measurement on Ni isotopes are shown as data
+            points. Using a Monte Carlo simulation, the authors of the previous
+            study generated a correction accounting for multiple scattering in
+            their samples, the angular uncertainty stemming from the volume
+            of their samples, resulting in the dashed curve. With beam
+            attenuation also considered, the cross section is uniformly
+            increased across the angular range, giving the solid curve, which
+            they take to be the "true" cross section. Because our targets are
+            approximately an order of magnitude smaller, we see far smaller
+            finite size effects in our simulation (see Figs.
+            \ref{FiniteSizeAngular} and \ref{FiniteSizeAttenuation}).
+        }
+        \label{GussFiniteSizeEffect}
+    \end{center}
+\end{figure}
+
+As diagrammed in Fig. \ref{GussFiniteSizeDiagram}, the exact
 path of elastically-scattered neutrons is subject to a small degree of angular
-uncertainty. The effect of this uncertainty is that in the measured cross
-sections, the maxima and minima are "washed out" compared to the true cross
+uncertainty. The effect of this uncertainty on the measured cross
+sections is to "wash out" the maxima and minima compared to the true cross
 section, especially in regions where the cross section varies rapidly compared
-to the angular uncertainty. To assess the magnitude of this effect, a 
-simulation was prepared in which a uniform beam of neutrons
+to the angular uncertainty. To assess the magnitude of this effect from our
+samples, an iterative simulation was prepared in which a uniform beam of neutrons
 impinged on the sample volume and was scattered into the time-of-flight
-detectors [insert figure reference].
-The input cross section, used to distribute neutrons in the simulation, was
-taken as the raw cross section from our measurement. Then, a new, "output"
-cross section was calculated based on the detector hits in the simulation. The
+detectors [insert figure reference]. To scatter neutrons
+in the simulation, we used the raw cross section from our measurement. After
+scattering in the simulation, neutrons were scored in a detector array and a new "output"
+cross section was generated based on the detector hits in the simulation. The
 output cross section is thus a weighted convolution of the input cross section
-with the size uncertainty of the samples and detectors.
-A comparison between the input and output cross
-sections shows this geometric finite-size effect is quite small in our case, much smaller
-than other sources of measurement error. Nevertheless, our results below include an
-angle-dependent correction calculated from this simulation. The small size of
-the geometric effect gives us confidence that the multiple-scattering and flux
-attenuation corrections mentioned previously can be neglected without impacting
-our results.
-
-For simplicity, the simulation was purely geometric - no nuclear physics or
-energy-dependence was included. For each Monte Carlo iteration, the beam was
-assumed to uniformly illuminate
-the sample from one direction so that the scattering vertex was randomly
-distributed within the sample volume. At the scattering vertex, a neutron
-trajectory was selected by randomly sampling an "input cross section" as a
-probability mass function, thus weighting the neutron scattering angles by the
-input cross section.  Once the trajectory was known, each detector's location
-and orientation was used to calculate the point of intersection in the plane of each detector. If the
-intersection fell within the detector's face, the detector registered a hit.
-Finally, the "output cross section" (that is, the result of the simulation)
-was calculated by normalizing the number of counts registered in each detector
-over the total number of iterations and the fraction of the total solid angle
-subtended by said detector.
-
-The results of the simulation are visible in Fig. [X]. For the sample and
-detector sizes actually used in the experiment, the deviation between the input
-and output cross sections is <1\% over all angles. When exaggerated sizes for the
-sample and detectors are used, the finite-size effect is visible as a "washing
-out" of minima and maxima in regions where the cross section varies rapidly with
-angle. To calculate a correction factor for our results, we divided the simulation's
+over the finite size effects of the samples and detectors. In addition to
+running a simulation with the sample sizes used in the experiment, we performed
+addition simulations with exaggerated sizes for the
+sample to make finite-size effects more visible. A comparison between the input
+and output cross sections shows the effects of beam attenuation and angular
+uncertainty, seen in Figs. \ref{FiniteSizeAttenuation} and \ref{FiniteSizeAngular}.
+[more comments about finite size w/r/t Guss et al.]
+To calculate correction factors, we divided the simulation's
 input cross section by the output cross section for each angle and multiplied our
 experimental results by this factor. In principle, this procedure to generate
-the correction should be repeated iteratively because the correction changes the input distribution 
-used for the simulation itself, but in practice the correction is so small
-that no further iteration is required.
+the correction should be repeated iteratively, with the new corrected cross
+section plugged back into the simulation, but in practice the corrections were so small
+that only the first iteration is required.
 
 \section{Results}
 \subsection{\snTwelveFour\ \el\ at 11 MeV}

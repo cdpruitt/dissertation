@@ -27,23 +27,42 @@ $\gamma$ rays, leaving only events from elastically-scattered neutrons.
 
 \subsection{Pulse-Shape Discrimination (PSD)}
 To identify neutron- and gamma-induced detector events, pulse-shape discrimination
-relies on the different energy deposition modes of neutrons and $\gamma$ rays.
-A liquid scintillator must be selected that
-possesses excited states capable of both prompt fluorescence (from a singlet
-state) and delayed phosphorescence (from a triplet state) accessible through
-intersystem crossing, as shown in Figure \ref{JablonskiExample}. During an experiment, incident 
-neutrons deposit energy by collision with scintillator nuclei.
+relies on the different modes of energy deposition in neutrons and $\gamma$ rays.
+A liquid scintillator must be used that exhibits prompt fluorescence with a
+lifetime of a few nanoseconds (from a singlet
+state) and delayed phosphorescence with much longer lifetime in the $\mu$seconds
+or longer (from a triplet state). Figure \ref{JablonskiExample} shows the
+relevant level structure for such a molecule. During a scattering experiment,
+incident neutrons deposit energy by collision with scintillator nuclei.
 These recoiling nuclei decelerate rapidly in the scintillating
-medium via Coulombic interactions. In contrast, incident $\gamma$ rays interact primarily with
-atomic electrons, which have smaller linear energy transfer rates during their
-recoil. For the same total energy deposition, neutron-initiated events produce a higher 
-concentration of excited states than $\gamma$-ray-initiated events. The increased
-concentration of excited states facilitates intersystem crossing, producing
-a small population of triplet-state molecules with far-higher lifetimes.
-By analyzing the tail of the light output signal after the prompt decay of
-singlet states, neutrons and $\gamma$-rays can be distinguished.
+medium via Coulombic interactions, exciting scintillator molecules in the
+immediate vicinity. In contrast, incident $\gamma$ rays interact primarily with
+atomic electrons, which, during their recoil, exhibit a \textit{smaller} linear energy
+transfer. For the same total energy deposition, neutron-initiated events produce a higher 
+concentration of excited scintillator molecules than do $\gamma$-ray-initiated
+events.
+
+In each population of excited scintillator molecules, most molecules are in a
+singlet excited state, and they decay promptly by fluorescence back to the
+ground state. A small fraction remain in a triplet excited state,
+either due to their initial excitation to a
+triplet state or because of intersystem crossing from a singlet state during its
+very short (picoseconds) vibrational decay period. Kept isolated, these
+triplet-state molecules have lifetimes that are orders of magnitude longer
+(microseconds to milliseconds) than the those in a singlet state because of their extra unit of 
+spin. If, however, two nearby triplet-state
+molecules collide and exchange a unit of spin, they can convert to two singlet-state
+molecules that then decay promptly (nanoseconds), freed of quantum-mechanical forbiddenness.
+Thus, delayed light output will appear after the initial prompt fluorescence
+from these triplet-triplet fusion events, and the amount of light will be
+dependent on the rate of triplet-triplet collision, a second-order kinetics
+process coupled with the diffusion of excited scintillator molecules in the
+medium. For neutron-initiated events, where the concentration of excited molecules is
+higher, the delayed light output is correspondingly higher than for $\gamma$-ray-initiated
+events. By comparing the tail of the light output signal to the prompt
+fluorescence peak, neutrons and $\gamma$-rays can be distinguished.
 Recently, machine learning techniques have been
-applied to PSD data of this type to further improve discrimination \cite{Doucet2018}.
+applied to light output data of this type to further improve discrimination \cite{Doucet2018}.
 
 \begin{figure}[h]
     \centering
