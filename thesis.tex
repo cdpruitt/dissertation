@@ -38,14 +38,17 @@
 \usepackage{pgffor}
 \usepackage{float}
 \usepackage{bm}
-\usepackage{csquotes}
-\usepackage{rotating}
+\usepackage{csquotes} % for block quotes
+\usepackage{rotating} % to rotate entire figure (needed to fill a whole page with a sideways figure)
+\usepackage[section]{placeins}
 
 \interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
 
 \setlength{\textfloatsep}{15pt} % might fix gap between text and figures, and it does!
 \setlength{\parskip}{0pt} % might fix gap between paragraphs, and it does!
 % now there are some weird gaps between section headings and text
+
+\newcommand{\sectionbreak}{\clearpage}
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}} %still don't understand how this grabs chapterName but it does...
 \renewcommand{\sectionmark}[1]{\markright{#1}} %still don't understand how this grabs sectionName but it does...
@@ -278,22 +281,19 @@
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
     \chapter{Experimental Data Used to Constrain DOM Potentials}
-    %\input{\textDirectory/dataSets}
-    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
+    \input{\textDirectory/dataSets}
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
 
     \chapter{Parameter Values of DOM Potentials}
     %\input{\textDirectory/parameters}
-    %\addcontentsline{toc}{chapter}{DOM Fit Parameters}
 
     \chapter{Visualization of DOM Fit Results}
     %\input{\textDirectory/fits}
 
     \chapter*{Physical Constants}
     \input{\textDirectory/units}
-    %\addcontentsline{toc}{chapter}{Physical Constants}
 
 \end{appendices}
 
