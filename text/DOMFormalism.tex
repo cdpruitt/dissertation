@@ -1,12 +1,25 @@
+This chapter provides a brief summary of the Dispersive Optical Model.
+A few motivating concepts, sourced from \cite{MahzoonPhDThesis, MBTE}, are followed by 
+the parameterization of the optical potential used for the DOM fits of Chapter \ref{DOMResults}.
+For all experimental data used in DOM fits, the formulae explicitly connecting the optical potential
+to the scattering data are given. For detail on the development of the DOM formalism, the seminal
+work of Mahaux and Sartor \cite{Mahaux1991} and a recent review \cite{Dickhoff2018} are recommended.
+The goal here is not to provide the complete underpinnings of the theory that are available
+elsewhere, but to discuss how potential terms are sensitive to different sectors of experimental
+data. In addition, several computational improvements to our implementation of the DOM, which
+enabled the new non-local DOM fits on even-even systems of Chapter \ref{DOMResults}, are pointed 
+out.
+
 \section{The Single-Particle Propagator}
 The central project of the Dispersive Optical Model (like any optical model) is
-to understand how nucleons move about in a nuclear many-body system. Specifically,
-we wish to know
+to understand how nucleons move about in a nuclear many-body system as parameterized by an optical
+potential.
+Specifically, we wish to know
 how a nucleon with energy $E$ and quantum numbers $\alpha$
-at time $t_{0}$ will be measured at a
-later time $t$ with quantum numbers $\beta$ after its interaction with the
-nuclear environment, which is modeled with an optical potential. Given the
-Hamiltonian that incorporates this interaction, the Schr\"odinger equation
+(position, momentum, spin, isospin, etc.) at time $t_{0}$ will be measured at a
+later time $t$ with quantum numbers $\beta$ after interaction with the
+optical potential. Given a
+Hamiltonian that models this interaction, the Schr\"odinger equation
 relates the Hamiltonian to the time evolution of this state:
 
 \begin{equation}
@@ -22,8 +35,21 @@ propagates in time according to:
     \ket{\alpha, t_{0}, t} = e^{-\frac{i}{\hbar}H(t-t_{0})}\ket{\alpha, t_{0}}
 \end{equation}
 
-Concretely, given initial position quantum numbers $\bm{r}$, the wavefunction
+This is a direct application of Huygens principle:
+given initial position quantum numbers $\bm{r}$, the wavefunction
 of a state $\psi(\bm{r},t)$ is the sum of the contributions of 
+
+Identify the propagator.
+\begin{equation} \label{PropagatorDefinition}
+\end{equation}
+
+In the simplest case of a free particle (no potential at all), the propagator is:
+\begin{equation}
+\end{equation}
+
+To model nucleon-nucleus interaction, we need to introduce a potential to describe 
+In the Hartree-Fock picture, the first-order term in a mean-field perturbation expansion,
+
 
 \begin{figure}
     \includegraphics[scale=0.35]{figures/DysonEquation.png}
