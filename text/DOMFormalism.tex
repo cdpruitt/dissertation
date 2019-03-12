@@ -1,53 +1,104 @@
 This chapter provides a brief summary of the Dispersive Optical Model.
-A few motivating concepts, sourced from \cite{MahzoonPhDThesis, MBTE}, are followed by 
-the parameterization of the optical potential used for the DOM fits of Chapter \ref{DOMResults}.
-For all experimental data used in DOM fits, the formulae explicitly connecting the optical potential
+A few motivating concepts, sourced from the extensive treatments of \cite{MahzoonPhDThesis, MBTE},
+are followed by an explicit parameterization of the optical potential used for the DOM fits of Chapter \ref{DOMResults}.
+For all sectors of experimental data used in these fits, the formulae connecting the optical potential
 to the scattering data are given. For detail on the development of the DOM formalism, the seminal
 work of Mahaux and Sartor \cite{Mahaux1991} and a recent review \cite{Dickhoff2018} are recommended.
-The goal here is not to provide the complete underpinnings of the theory that are available
-elsewhere, but to discuss how potential terms are sensitive to different sectors of experimental
-data. In addition, several computational improvements to our implementation of the DOM, which
-enabled the new non-local DOM fits on even-even systems of Chapter \ref{DOMResults}, are pointed 
-out.
+The goal here is not to provide the complete underpinnings of the theory, which are available in
+numerous sources elsewhere, but to discuss how the terms of the potential are sensitive
+to different sectors of experimental data.
+In addition, several computational improvements to our implementation of the DOM, important for
+expanding the reach of the fully non-local DOM of \cite{MahzoonPhDThesis} to all even-even systems,
+are pointed out. In all cases, the notation used conforms to \cite{MBTE}, which also provides an
+introduction to second quantization and historical background for relevant many-body concepts.
 
 \section{The Single-Particle Propagator}
 The central project of the Dispersive Optical Model (like any optical model) is
-to understand how nucleons move about in a nuclear many-body system as parameterized by an optical
+to understand how nucleons move about in a nuclear many-body system, as parameterized by an optical
 potential.
 Specifically, we wish to know
 how a nucleon with energy $E$ and quantum numbers $\alpha$
 (position, momentum, spin, isospin, etc.) at time $t_{0}$ will be measured at a
 later time $t$ with quantum numbers $\beta$ after interaction with the
-optical potential. Given a
+potential. Given a
 Hamiltonian that models this interaction, the Schr\"odinger equation
 relates the Hamiltonian to the time evolution of this state:
 
-\begin{equation}
+\begin{equation} \label{SchrodingerEquation}
     i\hbar\frac{\partial}{\partial t}\ket{\alpha, t_{0};t} = H\ket{\alpha,
     t_{0}; t}
 \end{equation}
 
 where $\ket{\alpha, t_{0},t}$ is the state at time $t$, given an initial state
-$\ket{\alpha, t_{0}}$. Simple substitution shows that this initial state
-propagates in time according to:
+$\ket{\alpha, t_{0}}$. Simple substitution into \label{SchrodingerEquation} shows
+that the initial state propagates in time according to:
 
 \begin{equation}
     \ket{\alpha, t_{0}, t} = e^{-\frac{i}{\hbar}H(t-t_{0})}\ket{\alpha, t_{0}}
 \end{equation}
 
-This is a direct application of Huygens principle:
-given initial position quantum numbers $\bm{r}$, the wavefunction
-of a state $\psi(\bm{r},t)$ is the sum of the contributions of 
+In position space, the wavefunction of the particle at time $t$, $\psi(\bm{r},t)$,
+is the sum of over all contributions from the propagation of the initial state, a direct application of
+Huygens principle:
 
-Identify the propagator.
-\begin{equation} \label{PropagatorDefinition}
+\begin{equation} \label{PropagatorDerivation}
+    \begin{split}
+        \psi(\bm{r},t) & = \braket{r|\alpha, t_{0}; t}
+        & = \int d\bm{r}'
+        \braket{\bm{r}|e^{-\frac{i}{\hbar}H(t-t_{0})}|\bm{r'}}\braket{\bm{r'|\alpha,t_{0}}}
+    \end{split}
 \end{equation}
 
-In the simplest case of a free particle (no potential at all), the propagator is:
+\noindent
+where we have inserted the $\bm{r}$ basis.
+The integrand of Eq. \ref{PropagatorDerivation} is referred to as the ``single-particle propagator'' (denoted $G(r,
+r'; t-t0)$ in the time domain), as it determines how the wavefunction of a single particle
+propagates over time. Crudely speaking, the propagator can be interpreted as the chance that a given
+initial state will evolve into a final state according to the wave equation.
+
+To conduct practical scattering calculations, the energy-domain representation of the progapator
+may be more useful than the time-domain representation. Applying a Fourier Transform to the propagator
+(and omitting the intermediate algebraic steps) gives us this representation, which brings the mathematical
+structure of the propagator into focus:
+
+\begin{equation} \label{PropagatorFT}
+    \begin{split}
+        G(\bm{r},\bm{r'};E) & = \int_{-\infty}^{\infty}d(t-t')e^\frac{i}{\hbar}E(t-t')G(\bm{r},\bm{r'}; t-t')
+        & = \braket{0|a_{\bm{r}}\frac{1}{E-H+i\eta}a\dagger_{\bm{r'}}|0}
+        & = \braket{\bm{r} | \frac{1}{E-H+i\eta} | \bm{r'}}
+    \end{split}
+\end{equation}
+
+\noindent
+where $a_{\bm{r}}$ and $a\dagger_{\bm{r}}$ represent the particle removal and addition operators in
+the second-quantization picture, respectively, and \ket{0} is the vacuum state.
+Equation \ref{PropagatorFT} contains the same information as Eq. \ref{PropagatorDerivation}: that
+the wavefunction $\psi(r)$ is the sum of the weighted contributions from all $r'$ and the weights
+are determined by the difference between the energy $E$ and the evaluation of $H$ on each of the $r'$
+contributions. Of course, we need not privilege $\bm{r}$-space; $G$ can be written using any
+suitable single-particle basis. For example, the momentum-space representation for a spinless,
+non-interacting free particle of mass $m$ and momentum $\bm{k}$ reads:
+
+\begin{equation} \label{PropagatorKSpace}
+    G^{0}(\bm{k}, \bm{k'}; E) = \delta(\bm{k}-\bm{k'})\frac{1}{E-\frac{\hbar^{2}k^{2}}{2m} + i\eta}
+\end{equation}
+
+\noindent
+If the independent-particle model was exact and the mean-field potential could be perfectly known,
+calculating the propagation of nucleons through the nucleus would be the same as calculating
+single-particle scattering off a potential well. Such a calculating involves little more than
+a simple matrix inversion of the Hamiltonian in the denominator of Eq. \ref{PropagatorFT}.
+Real nucleon-nucleus scattering involves the possibility of excitations in the nucleus from the incident
+nucleon so that the wavefunction of the compound system is very different from the ground state of
+the nucleus. The single-particle propagator must include these possibilities as well.
+The propagator of the $\ket{alpha}$ state at time $t$ to the 
 \begin{equation}
+    G(\alpha, \beta; t, t') =
+    -\frac{i}{\hbar}\braket{\Psi^{N}_{0}|\mathcal{T}[a_{\alpha_{H}}(t)a\dagger_{\beta_{H}}(t')]|\Psi^{N}_{0}}
 \end{equation}
 
-To model nucleon-nucleus interaction, we need to introduce a potential to describe 
+\noindent
+
 In the Hartree-Fock picture, the first-order term in a mean-field perturbation expansion,
 
 
