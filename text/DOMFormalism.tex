@@ -1,7 +1,7 @@
 This chapter provides a brief summary of the Dispersive Optical Model.
-A few motivating concepts, sourced from the extensive treatments of \cite{MahzoonPhDThesis, MBTE},
+A few motivating concepts and definitions, sourced from the extensive treatments of \cite{MahzoonPhDThesis, MBTE},
 are followed by an explicit parameterization of the optical potential used for the DOM fits of Chapter \ref{DOMResults}.
-For all sectors of experimental data used in these fits, the formulae connecting the optical potential
+For all sectors of experimental data used in said fits, the formulae connecting the optical potential
 to the scattering data are given. For detail on the development of the DOM formalism, the seminal
 work of Mahaux and Sartor \cite{Mahaux1991} and a recent review \cite{Dickhoff2018} are recommended.
 The goal here is not to provide the complete underpinnings of the theory, which are available in
@@ -91,16 +91,45 @@ a simple matrix inversion of the Hamiltonian in the denominator of Eq. \ref{Prop
 Real nucleon-nucleus scattering involves the possibility of excitations in the nucleus from the incident
 nucleon so that the wavefunction of the compound system is very different from the ground state of
 the nucleus. The single-particle propagator must include these possibilities as well.
-The propagator of the $\ket{alpha}$ state at time $t$ to the 
+The propagator from the $\ket{\alpha}$ state at time $t$ to the state $\ket{\beta}$ at a later time
+$t'$ is:
+
 \begin{equation}
     G(\alpha, \beta; t, t') =
     -\frac{i}{\hbar}\braket{\Psi^{N}_{0}|\mathcal{T}[a_{\alpha_{H}}(t)a\dagger_{\beta_{H}}(t')]|\Psi^{N}_{0}}
 \end{equation}
 
 \noindent
+Here, $\ket{\Psi^{N}_{0}}$ is the normalized Heisenberg ground state for the N-particle system.
+The time-ordering operator $\mathcal{T}$ ensures that operators with later time appear to the left
+of operators with earlier time
+\footnote{
+    The time-ordering operator $T$ is defined as:
+    \begin{equation}
+        \mathcal{T}[a_{\alpha_{H}}(t)a\dagger_{\beta_{H}}(t')]=\theta(t-t')a_{\alpha_{H}}(t)a\dagger_{\beta_{H}}(t')
+        -\theta(t'-t)a\dagger_{\beta_{H}}(t')a_{\alpha_{H}}(t)
+    \end{equation}
+}
+, important for the perturbative treatment to follow.
+In short, this expression includes contributions from both particle propagation, already seen in particle
+propagation in vacuum of Eq. \ref{PropagationDerivation}), and hole propagation, new behavior only
+relevant for a many-particle system capable of excitation. As before, a Fourier transform makes
+interpretation easier:
 
-In the Hartree-Fock picture, the first-order term in a mean-field perturbation expansion,
-
+\begin{equation}
+    \begin{split}
+        G(\alpha,\beta;E) & =
+        \int_{-\infty}^{\infty}d(t-t')e^{\frac{i}{\hbar}E(t-t')}G(\alpha,\beta;t-t')\\
+        & = \sum_m
+        \frac{\braket{\Psi^{N}_{0}|a_{\alpha}|\Psi^{N+1}_{m}}\braket{\Psi^{N+1}_{m}|a\dagger_{\beta}|\Psi^{N}_{0}}}
+        {E-(E^{N+1}_{m}-E^{N}_{0})+i\eta} +
+        \frac{\braket{\Psi^{N}_{0}|a_{\beta}|\Psi^{N-1}_{n}}\braket{\Psi^{N-1}_{n}|a\dagger_{\alpha}|\Psi^{N}_{0}}}
+        {E-(E^{N}_{0}-E^{N-1}_{n})+i\eta}\\
+        & =
+        \braket{\Psi^{N}_{0}|a_{\alpha}\frac{1}{E-(\hat{H}-E_{0}^{N})+i\eta}a\dagger_{\beta}|\Psi^{N}_{0}} +
+        \braket{\Psi^{N}_{0}|a\dagger_{\beta}\frac{1}{E-(E^{N}_{0}-\hat{H})-i\eta}a_{\alpha}|\Psi^{N}_{0}}
+    \end{split}
+\end{equation}
 
 \begin{figure}
     \includegraphics[scale=0.35]{figures/DysonEquation.png}
@@ -111,8 +140,10 @@ In the Hartree-Fock picture, the first-order term in a mean-field perturbation e
 The Hartree-Fock potential, the default starting place for a mean-field potential,
 has no energy dependence and thus cannot accommodate 
 
-\section{Connection to Experimental Observables}
+\subsection{The Dispersion Relation}
 Subtracted dispersion relation.
+
+\section{Connection to Experimental Observables}
 
 \subsection{Elastic and inelastic nucleon scattering}
 For nucleon-nucleus scattering, the scattering amplitude can be directly calculated using the
