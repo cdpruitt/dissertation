@@ -141,27 +141,28 @@ interpretation easier:
 \end{equation}
 
 \noindent
-Here, $\Psi^{N\pm1}_{m(n)}$ are the normalized Heisenberg states for the N\pm1 particle 
+Here, $\Psi^{N\pm1}_{m(n)}$ are the normalized Heisenberg states for the N$\pm$1 particle 
 systems. The $\Psi^{N+1}_{m}$ have eigenvalues $E^{N+1}_{m}$ and the $\Psi^{N-1}_{n}$ have 
 eigenvalues $E^{N-1}_{n}$:
 
 \begin{equation}
-    \begin{align}
+    \begin{split}
         \hat{H}\ket{\Psi^{N+1}_{m}} & = E^{N+1}_{m}\ket{\Psi^{N+1}_{m}}\\
         \hat{H}\ket{\Psi^{N-1}_{n}} & = E^{N-1}_{n}\ket{\Psi^{N-1}_{n}}
-    \end{align}
+    \end{split}
 \end{equation}
 
-The second line of Eq. \ref{LehmannRepresentation} was propounded by Lehmann \cite{Lehmann1954} and
-is referred to as the ``Lehmann representation''. To reach the third line, the complete set of
-$\Psi^{N+1}_{m}$ and $\Psi^{N-1}_{n}$ have been removed from the first and second addends of line
-two, respectively. The particle and hole contributions to the propagator are neatly separated and
-each possess the relevant energy weighting in the denominator sandwiched between the fermion 
+The second line of Eq. \ref{LehmannRepresentation} is referred to as the ``Lehmann representation'' 
+\cite{Lehmann1954}. To reach the third line, the complete set of
+$\Psi^{N+1}_{m}$ and $\Psi^{N-1}_{n}$ have been removed from the first and second addends of the
+second line, respectively.
+The particle and hole contributions to the propagator are neatly separated and
+each possesses the relevant energy weighting in the denominator, sandwiched between the fermion 
 creation and annihilation operators. Neither the ground-state wavefunction of the correlated
 many-body system $\Psi^{N}_{0}$ or the full Hamiltonian $\hat{H}$ are known at this stage, but they
-are amenable to a perturbation expansion, the subject of the next section.
+are now amenable to a perturbation expansion, the subject of the next section.
 
-\subsection{Pertubation Expansion: The Dyson Equation}
+\subsection{Pertubation Expansion and The Dyson Equation}
 The full single-particle propagator $G$ of the previous section can be calculated via perturbation
 expansion by starting with a non-interacting (unperturbed) propagator $G_{0}$ and adding interaction 
 terms, $\hat{V}$, that bring $G_{0}$ closer to the real $G$. This expansion requires a change from
@@ -185,54 +186,151 @@ problem). Broken up in this way, the non-interacting propagator reads:
 \begin{equation}
     G^{(0)}(\alpha, \beta; t-t') =
     -\frac{i}{\hbar}\braket{\Phi^{A}_{0}|
-    \mathcal{T}[a_{\alphaI}(t)a^{\dagger}_{\betaI}(t')]|\Phi^{A}_{0}}
+    \mathcal{T}[a_{\alpha I}(t)a^{\dagger}_{\beta I}(t')]|\Phi^{A}_{0}}
 \end{equation}
 
 where the fully-correlated many-body ground state $\Psi^{A}_{0}$ has been replaced by
 $\Psi^{A}_{0}$, the uncorrelated ground-state associated with $H_{0}$. Through algebraic
-manipulation and application of Wick's theorem, the \textit{full} propagator, including the
+manipulation and employing the Interaction version of all operators,
+the \textit{full} single-particle propagator, including the
 contribution from the interactions buried in $\hat{H_{1}}$, is:
 
-\begin{equation}
-    G(\alpha, \beta; t-t') =
-    -\frac{i}{\hbar}\sum^{\infty}_{n}(\frac{i}{\hbar})^{n}
-    \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n} \times
-    \braket{\Phi^{A}_{0}|
-    \mathcal{T}[\hat{H}_{1}(t_{1})
-    \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{\alphaI}(t)a^{\dagger}_{\betaI}(t')]|\Phi^{A}_{0}}
-    _{connected}
+\begin{equation} \label{ManyBodySPPropagator}
+    G(\alpha, \beta; t-t') = \frac{Num}{Denom}
 \end{equation}
 
+where
 
-\begin{equation}
+\begin{equation*}
+    \begin{split}
+        Num = -\frac{i}{\hbar}\sum^{\infty}_{n}\left(\frac{i}{\hbar}\right)^{n}\frac{1}{n!}
+    \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt_{1}
+    \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt_{2} \cdots
+    \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt_{n}\\
+    \times \braket{\Phi^{N}_{0}|\mathcal{T}[\hat{H}_{1}(t_{1})
+    \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{\alpha I}(t)a^{\dagger}_{\beta
+    I}(t')]|\Phi^{N}_{0}}\\\\
+    Denom = \sum^{\infty}_{m}\left(\frac{-i}{\hbar}\right)^{m}\frac{1}{m!}
+        \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{1}
+        \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{2} \cdots
+        \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{m}\\
+        \times \braket{\Phi^{N}_{0}|
+        \mathcal{T}[\hat{H}_{1}(t_{1})
+        \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{m})(t')]|\Phi^{N}_{0}}
+    \end{split}
+\end{equation*}
+\noindent
+Despite the extra ink, the mathematical structure of the Lehmann
+representation (Eq. \ref{LehmannRepresentation}) is still visible. We have generated an infinite
+series of terms with increasing order in the number of $\hat{H}_{1}$ interactions permitted.
+Aside from arbitrary counting indices,
+the only differences between the numerator and denominator are a
+factor of $-\frac{i}{\hbar}$ and the fermion annihilation and creation operators
+responsible for moving from $\ket{\alpha}$ to $\ket{\beta}$. Wick's
+theorem\footnote{See section 8.4 of \cite{MBTE}
+for the full procedure} can be applied to remove contributions to the propagator
+that appear in both the numerator and the denominator and divide out. This dramatically
+reduces the number of terms at each level of the perturbation expansion, and when the dust settles,
+the propagator reads:
+
+\begin{equation} \label{ManyBodySPPropagatorConnected}
+    \begin{split}
     G(\alpha, \beta; t-t') =
     -\frac{i}{\hbar}\sum^{\infty}_{n}(\frac{i}{\hbar})^{n}
-    \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n} \times
+    \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n} \times\\
     \braket{\Phi^{A}_{0}|
     \mathcal{T}[\hat{H}_{1}(t_{1})
-    \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{\alphaI}(t)a^{\dagger}_{\betaI}(t')]|\Phi^{A}_{0}}
-    _{connected}
+    \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{{\alpha}I}(t)a^{\dagger}_{{\beta}I}(t')]|\Phi^{A}_{0}}_{connected}
+\end{split}
 \end{equation}
 
-Physically speaking, the full propagator is an expectation value of 
-an infinite sum of $\hat{H_{1}}$ applied to the non-interacting ground state. The
+Physically speaking, the full propagator is the infinite sum of the expectation value of 
+an $\hat{H_{1}}$ iteratively applied to the non-interacting ground state. The
 non-interacting ground state is modified by each interaction and thus all the many-body correlations
-of $\Psi^{N}_{0}$ are encoded by the repeated operation of $\hat{H_{1}}$. The application of Wick's
-theorem removes a large number of To compute this sum, only 
-fully-connected Feynman diagrams should be used, as all non-connected diagrams appear on both the  The subscript
-``connected'' shows that only connected Feynman diagram
+of $\Psi^{N}_{0}$ are encoded by the repeated operation of $\hat{H_{1}}$. The subscript
+``connected'' indicates that the only terms that survive correspond to fully-connected Feynman 
+diagrams, as all non-connected diagrams appear in both the numerator and denominator of Eq. 
+\ref{ManyBodySPPropagator}.
 
-\begin{figure}
-    \includegraphics[scale=0.35]{figures/DysonEquation.png}
-    \caption{The Dyson Equation in diagrammatic form}
+We can represent the perturbation expansion of Eq. \ref{ManyBodySPPropagatorConnected}
+diagrammatically to clarify the physical meaning of the expansion terms. To zeroth-order, 
+the expansion is only one purely non-interacting term, which is just the free single-particle 
+propagator, represented by a upward-directed line in Fig. \ref{ZerothOrder}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.35]{figures/ZerothOrder.png}
+    \caption[The single-particle propagator perturbation expansion, to zeroth order]
+    {The single-particle propagator $G$ in the many-body system can be represented by means of a
+        perturbation expansion about the interacting part of the Hamiltonian.
+        To zeroth order, the full single-particle propagator, indicated by the upward-pointed double 
+        line on the left, is just the free propagator, indicated by the upward-pointed single line
+    on the right.}
+    \label{ZerothOrder}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.35]{figures/SecondOrder.png}
+    \caption[The single-particle propagator perturbation expansion, to second order]
+    {The first- and second-order terms have been added to the zeroth-order of the
+        single-particle propagator perturbation expansion.
+        The interaction $\hat{V}$ is indicated by the horizontal
+        dashed line and is taken to be two-body only in this treatment for simplicity.
+        The terms of each order are grouped by gray boxes and terms that contribute to
+        the Hartree-Fock approximation are surrounded by the red box. In each Hartree-Fock
+        term, the particle interacts with the mean-field of the nucleus but
+        the nucleus is never excited and thus the interaction has no energy dependence. The first
+        energy-dependent term in the expansion is the upper second-order term, which depicts
+        the production of a particle-hole pair in the nucleus after interaction with the
+        incident particle.}
     \label{DysonEquation}
 \end{figure}
 
-The Hartree-Fock potential, the default starting place for a mean-field potential,
-has no energy dependence and thus cannot accommodate 
+By grouping and rearranging the terms, we can condense the full perturbation expansion to a
+self-consistent, self-referential equation called the Dyson equation \ref{DysonEquation}:
 
-\subsection{The Dispersion Relation}
-Subtracted dispersion relation.
+\begin{equation} \label{DysonEquation}
+    G(\alpha,\beta;E) = G^{(0)}(\alpha,\beta;E) +
+    \sum_{\gamma,\delta}G^{(0)}(\alpha,\gamma;E)\Sigma^{*}(\gamma,\delta,E)G(\delta, \beta; E)
+\end{equation}
+
+A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonEquationDiagram}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.35]{figures/DysonEquation.png}
+    \caption{The Dyson equation in diagrammatic form}
+    \label{DysonEquationDiagram}
+\end{figure}
+
+The summation variables $\gamma$ and $\delta$ label states internal to the diagrams that are 
+accessed during the particle's excitation of the many-body system\footnote{If a three-body 
+    interaction was included in $\hat{H}_{0}$, additional labels would be needed.}. The Dyson
+    equation introduces a new term, the irreducible self-energy $\Sigma*$, that connects the free
+    single-particle propagator to the full single-particle propagator that incorporates all the
+    in-medium effects of traveling through the nuclear environment. The self-energy serves the role
+    of the potential - the optical potential - experienced by a particle in the medium.
+    This makes the Dyson equation the
+    equivalent of the Schr\"odinger equation, but for particles \textit{embedded in the medium} 
+    rather than propagating in free space. Calculating the full self-energy explicitly remains
+    impossible, as it involves a (countably) infinite number of diagrams and the underlying nuclear
+    interactions are only approximately known. By identifying the full self-energy as equivalent
+    to the optical potential, we cut the Gordian knot: the self-energy can be constrained
+    directly by comparison with experimental data, rather than calculated from base
+    principles. As already discussed in Chapter \ref{Introduction}, the optical potential is  
+    readily connected to a host of experimental data: elastic cross sections, analyzing powers, and 
+    inelastic reactions for both protons and neutrons.
+    From a well-constrained optical-potential/self-energy, additional important quantities, like
+    overlap functions and neutron skins, can be extracted. This phenomenological tactic is the 
+    heart of the Dispersive Optical Model.
+    
+    \subsection{The Dispersion Relation}
+    Subtracted dispersion relation.
+    In addition to scattering, the self-energy can be used to extract information
+    about bound nucleons, as they experience the same potential as scattering nucleons, albeit at
+    negative energies. Forging the link between positive and negative energies relies on a
+    dispersion relation, the subject of the next section.
 
 \section{Connection to Experimental Observables}
 
