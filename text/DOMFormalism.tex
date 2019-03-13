@@ -158,11 +158,69 @@ $\Psi^{N+1}_{m}$ and $\Psi^{N-1}_{n}$ have been removed from the first and secon
 two, respectively. The particle and hole contributions to the propagator are neatly separated and
 each possess the relevant energy weighting in the denominator sandwiched between the fermion 
 creation and annihilation operators. Neither the ground-state wavefunction of the correlated
-many-body system $\Psi^{N}_{0}$ or the full Hamiltonian $\hat{H}$ are known at this stage, but we 
-can express 
+many-body system $\Psi^{N}_{0}$ or the full Hamiltonian $\hat{H}$ are known at this stage, but they
+are amenable to a perturbation expansion, the subject of the next section.
 
 \subsection{Pertubation Expansion: The Dyson Equation}
+The full single-particle propagator $G$ of the previous section can be calculated via perturbation
+expansion by starting with a non-interacting (unperturbed) propagator $G_{0}$ and adding interaction 
+terms, $\hat{V}$, that bring $G_{0}$ closer to the real $G$. This expansion requires a change from
+the Heisenberg picture of the previous section to the Interaction picture\footnote{Operators in the
+    Interaction picture are related to those in the Schr\"odinger picture by:
+    \begin{equation*}
+        O_{I}(t) = e^{\frac{i}{\hbar}\hat{H}_{0}t}O_{S}e^{\frac{-i}{\hbar}\hat{H}_{0}t}
+    \end{equation*}
+    Appendix A of \cite{MBTE} provides a complete description of these different quantum-mechanical
+pictures.}. First, the full Hamiltonian $H$ is broken up into the non-interacting and interacting
+parts:
 
+\begin{equation}
+    \hat{H} = \hat{H_{0}}+\hat{H}_{1}
+\end{equation}
+
+where $\hat{H_{0}}$ contains the kinetic energy operator $\hat{T}$ and possibly a one-body auxiliary
+potential $\hat{U}$, and $\hat{H_{1}}$ collects all residual interactions (the hard part of the
+problem). Broken up in this way, the non-interacting propagator reads:
+
+\begin{equation}
+    G^{(0)}(\alpha, \beta; t-t') =
+    -\frac{i}{\hbar}\braket{\Phi^{A}_{0}|
+    \mathcal{T}[a_{\alphaI}(t)a^{\dagger}_{\betaI}(t')]|\Phi^{A}_{0}}
+\end{equation}
+
+where the fully-correlated many-body ground state $\Psi^{A}_{0}$ has been replaced by
+$\Psi^{A}_{0}$, the uncorrelated ground-state associated with $H_{0}$. Through algebraic
+manipulation and application of Wick's theorem, the \textit{full} propagator, including the
+contribution from the interactions buried in $\hat{H_{1}}$, is:
+
+\begin{equation}
+    G(\alpha, \beta; t-t') =
+    -\frac{i}{\hbar}\sum^{\infty}_{n}(\frac{i}{\hbar})^{n}
+    \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n} \times
+    \braket{\Phi^{A}_{0}|
+    \mathcal{T}[\hat{H}_{1}(t_{1})
+    \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{\alphaI}(t)a^{\dagger}_{\betaI}(t')]|\Phi^{A}_{0}}
+    _{connected}
+\end{equation}
+
+
+\begin{equation}
+    G(\alpha, \beta; t-t') =
+    -\frac{i}{\hbar}\sum^{\infty}_{n}(\frac{i}{\hbar})^{n}
+    \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n} \times
+    \braket{\Phi^{A}_{0}|
+    \mathcal{T}[\hat{H}_{1}(t_{1})
+    \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{\alphaI}(t)a^{\dagger}_{\betaI}(t')]|\Phi^{A}_{0}}
+    _{connected}
+\end{equation}
+
+Physically speaking, the full propagator is an expectation value of 
+an infinite sum of $\hat{H_{1}}$ applied to the non-interacting ground state. The
+non-interacting ground state is modified by each interaction and thus all the many-body correlations
+of $\Psi^{N}_{0}$ are encoded by the repeated operation of $\hat{H_{1}}$. The application of Wick's
+theorem removes a large number of To compute this sum, only 
+fully-connected Feynman diagrams should be used, as all non-connected diagrams appear on both the  The subscript
+``connected'' shows that only connected Feynman diagram
 
 \begin{figure}
     \includegraphics[scale=0.35]{figures/DysonEquation.png}
