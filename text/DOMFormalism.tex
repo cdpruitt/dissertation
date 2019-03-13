@@ -43,16 +43,17 @@ Huygens principle:
 
 \begin{equation} \label{PropagatorDerivation}
     \begin{split}
-        \psi(\bm{r},t) & = \braket{r|\alpha, t_{0}; t}
+        \psi(\bm{r},t) & = \braket{r|\alpha, t_{0}; t}\\
         & = \int d\bm{r}'
-        \braket{\bm{r}|e^{-\frac{i}{\hbar}H(t-t_{0})}|\bm{r'}}\braket{\bm{r'|\alpha,t_{0}}}
+        \braket{\bm{r}|e^{-\frac{i}{\hbar}H(t-t_{0})}|\bm{r'}}\braket{\bm{r'}|\alpha,t_{0}}
     \end{split}
 \end{equation}
 
 \noindent
-where we have inserted the $\bm{r}$ basis.
-The integrand of Eq. \ref{PropagatorDerivation} is referred to as the ``single-particle propagator'' (denoted $G(r,
-r'; t-t0)$ in the time domain), as it determines how the wavefunction of a single particle
+where we have inserted the $\bm{r'}$ basis on the right side of the equation.
+The integrand of Eq. \ref{PropagatorDerivation} is referred to as the ``single-particle propagator'' 
+(denoted $G(r, r'; t-t_{0})$ in the time domain),
+as it determines how the wavefunction of a single particle
 propagates over time. Crudely speaking, the propagator can be interpreted as the chance that a given
 initial state will evolve into a final state according to the wave equation.
 
@@ -63,15 +64,16 @@ structure of the propagator into focus:
 
 \begin{equation} \label{PropagatorFT}
     \begin{split}
-        G(\bm{r},\bm{r'};E) & = \int_{-\infty}^{\infty}d(t-t')e^\frac{i}{\hbar}E(t-t')G(\bm{r},\bm{r'}; t-t')
-        & = \braket{0|a_{\bm{r}}\frac{1}{E-H+i\eta}a\dagger_{\bm{r'}}|0}
+        G(\bm{r},\bm{r'};E) & = \int_{-\infty}^{\infty}d(t-t')e^\frac{i}{\hbar}E(t-t')G(\bm{r},\bm{r'}; t-t')\\
+        & = \braket{0|a_{\bm{r}}\frac{1}{E-H+i\eta}a^{\dagger}_{\bm{r'}}|0}\\
         & = \braket{\bm{r} | \frac{1}{E-H+i\eta} | \bm{r'}}
     \end{split}
 \end{equation}
 
 \noindent
-where $a_{\bm{r}}$ and $a\dagger_{\bm{r}}$ represent the particle removal and addition operators in
-the second-quantization picture, respectively, and \ket{0} is the vacuum state.
+where $a_{\bm{r}}$ and $a^{\dagger}_{\bm{r}}$ represent the particle removal and
+addition operators in
+the second-quantization picture, respectively, and $\ket{0}$ is the vacuum state.
 Equation \ref{PropagatorFT} contains the same information as Eq. \ref{PropagatorDerivation}: that
 the wavefunction $\psi(r)$ is the sum of the weighted contributions from all $r'$ and the weights
 are determined by the difference between the energy $E$ and the evaluation of $H$ on each of the $r'$
@@ -85,51 +87,82 @@ non-interacting free particle of mass $m$ and momentum $\bm{k}$ reads:
 
 \noindent
 If the independent-particle model was exact and the mean-field potential could be perfectly known,
-calculating the propagation of nucleons through the nucleus would be the same as calculating
-single-particle scattering off a potential well. Such a calculating involves little more than
-a simple matrix inversion of the Hamiltonian in the denominator of Eq. \ref{PropagatorFT}.
-Real nucleon-nucleus scattering involves the possibility of excitations in the nucleus from the incident
+calculating the propagation of nucleons through the nucleus would as simple as calculating
+single-particle scattering off a potential well. Such a calculation involves little more than
+a matrix inversion of the Hamiltonian in the denominator of Eq. \ref{PropagatorFT}.
+Real nucleon-nucleus scattering involves the possibility of excitations in the nucleus from the 
+incident
 nucleon so that the wavefunction of the compound system is very different from the ground state of
 the nucleus. The single-particle propagator must include these possibilities as well.
 The propagator from the $\ket{\alpha}$ state at time $t$ to the state $\ket{\beta}$ at a later time
 $t'$ is:
 
-\begin{equation}
+\begin{equation} \label{ManyBodySPPropagator}
     G(\alpha, \beta; t, t') =
-    -\frac{i}{\hbar}\braket{\Psi^{N}_{0}|\mathcal{T}[a_{\alpha_{H}}(t)a\dagger_{\beta_{H}}(t')]|\Psi^{N}_{0}}
+    -\frac{i}{\hbar}\braket{\Psi^{N}_{0}|\mathcal{T}[a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')]|\Psi^{N}_{0}}
 \end{equation}
 
 \noindent
-Here, $\ket{\Psi^{N}_{0}}$ is the normalized Heisenberg ground state for the N-particle system.
-The time-ordering operator $\mathcal{T}$ ensures that operators with later time appear to the left
-of operators with earlier time
-\footnote{
+Here, $\ket{\Psi^{N}_{0}}$ is the normalized Heisenberg ground state for the N-particle system with
+eigenvalue $E^{N}_{0}$:
+
+\begin{equation} \label{NParticleGroundState}
+    \hat{H}\ket{\Psi^{N}_{0}} = E^{N}_{0}\ket{\Psi^{N}_{0}}
+\end{equation}
+
+The time-ordering operator $\mathcal{T}$\footnote{
     The time-ordering operator $T$ is defined as:
-    \begin{equation}
-        \mathcal{T}[a_{\alpha_{H}}(t)a\dagger_{\beta_{H}}(t')]=\theta(t-t')a_{\alpha_{H}}(t)a\dagger_{\beta_{H}}(t')
-        -\theta(t'-t)a\dagger_{\beta_{H}}(t')a_{\alpha_{H}}(t)
-    \end{equation}
-}
-, important for the perturbative treatment to follow.
-In short, this expression includes contributions from both particle propagation, already seen in particle
-propagation in vacuum of Eq. \ref{PropagationDerivation}), and hole propagation, new behavior only
-relevant for a many-particle system capable of excitation. As before, a Fourier transform makes
+    \begin{equation*}
+        \mathcal{T}[a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')]=\theta(t-t')a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')
+        -\theta(t'-t)a^{\dagger}_{\beta_{H}}(t')a_{\alpha_{H}}(t)
+    \end{equation*}
+} ensures that operators with later time appear to the left
+of operators with earlier time, important for the perturbative treatment to follow.
+In short, this expression includes contributions from both particle propagation, already seen for 
+the particle
+propagation in vacuum of Eq. \ref{PropagatorDerivation}, and hole propagation, new behavior only
+relevant for a many-particle system capable of excitation. We can expand Eq.
+\ref{ManyBodySPPropagator} and once again apply a Fourier transform to make
 interpretation easier:
 
-\begin{equation}
+\begin{equation} \label{LehmannRepresentation}
     \begin{split}
         G(\alpha,\beta;E) & =
         \int_{-\infty}^{\infty}d(t-t')e^{\frac{i}{\hbar}E(t-t')}G(\alpha,\beta;t-t')\\
         & = \sum_m
-        \frac{\braket{\Psi^{N}_{0}|a_{\alpha}|\Psi^{N+1}_{m}}\braket{\Psi^{N+1}_{m}|a\dagger_{\beta}|\Psi^{N}_{0}}}
+        \frac{\braket{\Psi^{N}_{0}|a_{\alpha}|\Psi^{N+1}_{m}}\braket{\Psi^{N+1}_{m}|a^{\dagger}_{\beta}|\Psi^{N}_{0}}}
         {E-(E^{N+1}_{m}-E^{N}_{0})+i\eta} +
-        \frac{\braket{\Psi^{N}_{0}|a_{\beta}|\Psi^{N-1}_{n}}\braket{\Psi^{N-1}_{n}|a\dagger_{\alpha}|\Psi^{N}_{0}}}
+        \frac{\braket{\Psi^{N}_{0}|a_{\beta}|\Psi^{N-1}_{n}}\braket{\Psi^{N-1}_{n}|a^{\dagger}_{\alpha}|\Psi^{N}_{0}}}
         {E-(E^{N}_{0}-E^{N-1}_{n})+i\eta}\\
         & =
-        \braket{\Psi^{N}_{0}|a_{\alpha}\frac{1}{E-(\hat{H}-E_{0}^{N})+i\eta}a\dagger_{\beta}|\Psi^{N}_{0}} +
-        \braket{\Psi^{N}_{0}|a\dagger_{\beta}\frac{1}{E-(E^{N}_{0}-\hat{H})-i\eta}a_{\alpha}|\Psi^{N}_{0}}
+        \braket{\Psi^{N}_{0}|a_{\alpha}\frac{1}{E-(\hat{H}-E_{0}^{N})+i\eta}a^{\dagger}_{\beta}|\Psi^{N}_{0}} +
+        \braket{\Psi^{N}_{0}|a^{\dagger}_{\beta}\frac{1}{E-(E^{N}_{0}-\hat{H})-i\eta}a_{\alpha}|\Psi^{N}_{0}}
     \end{split}
 \end{equation}
+
+\noindent
+Here, $\Psi^{N\pm1}_{m(n)}$ are the normalized Heisenberg states for the N\pm1 particle 
+systems. The $\Psi^{N+1}_{m}$ have eigenvalues $E^{N+1}_{m}$ and the $\Psi^{N-1}_{n}$ have 
+eigenvalues $E^{N-1}_{n}$:
+
+\begin{equation}
+    \begin{align}
+        \hat{H}\ket{\Psi^{N+1}_{m}} & = E^{N+1}_{m}\ket{\Psi^{N+1}_{m}}\\
+        \hat{H}\ket{\Psi^{N-1}_{n}} & = E^{N-1}_{n}\ket{\Psi^{N-1}_{n}}
+    \end{align}
+\end{equation}
+
+The second line of Eq. \ref{LehmannRepresentation} was propounded by Lehmann \cite{Lehmann1954} and
+is referred to as the ``Lehmann representation''. To reach the third line, the complete set of
+$\Psi^{N+1}_{m}$ and $\Psi^{N-1}_{n}$ have been removed from the first and second addends of line
+two, respectively. The particle and hole contributions to the propagator are neatly separated and
+each possess the relevant energy weighting in the denominator sandwiched between the fermion 
+creation and annihilation operators. Neither the ground-state wavefunction of the correlated
+many-body system $\Psi^{N}_{0}$ or the full Hamiltonian $\hat{H}$ are known at this stage, but we 
+can express 
+
+\subsection{Pertubation Expansion: The Dyson Equation}
+
 
 \begin{figure}
     \includegraphics[scale=0.35]{figures/DysonEquation.png}
