@@ -302,39 +302,87 @@ A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonE
 \end{figure}
 
 The summation variables $\gamma$ and $\delta$ label states internal to the diagrams that are 
-accessed during the particle's excitation of the many-body system\footnote{If a three-body 
-    interaction was included in $\hat{H}_{0}$, additional labels would be needed.}. The Dyson
-    equation introduces a new term, the irreducible self-energy $\Sigma*$, that connects the free
-    single-particle propagator to the full single-particle propagator that incorporates all the
-    in-medium effects of traveling through the nuclear environment. The self-energy serves the role
-    of the potential - the optical potential - experienced by a particle in the medium.
-    This makes the Dyson equation the
-    equivalent of the Schr\"odinger equation, but for particles \textit{embedded in the medium} 
-    rather than propagating in free space. Calculating the full self-energy explicitly remains
-    impossible, as it involves a (countably) infinite number of diagrams and the underlying nuclear
-    interactions are only approximately known. By identifying the full self-energy as equivalent
-    to the optical potential, we cut the Gordian knot: the self-energy can be constrained
-    directly by comparison with experimental data, rather than calculated from base
-    principles. As already discussed in Chapter \ref{introduction}, the optical potential is  
-    readily connected to a host of experimental data: elastic cross sections, analyzing powers, and 
-    inelastic reactions for both protons and neutrons.
-    From a well-constrained optical-potential/self-energy, additional important quantities, like
-    overlap functions and neutron skins, can be extracted. This phenomenological tactic is the 
-    heart of the Dispersive Optical Model.
-    
-    \subsection{The Dispersion Relation}
-    Subtracted dispersion relation.
-    In addition to scattering, the self-energy can be used to extract information
-    about bound nucleons, as they experience the same potential as scattering nucleons, albeit at
-    negative energies. Forging the link between positive and negative energies relies on a
-    dispersion relation, the subject of the next section.
+accessed during the particle's excitation of the many-body system\
+\footnote{If a three-body interaction was included in $\hat{H}_{0}$, additional labels would be needed.}. The Dyson
+equation introduces a new term, the irreducible self-energy $\Sigma*$, that connects the free
+single-particle propagator to the full single-particle propagator that incorporates all the
+in-medium effects of traveling through the nuclear environment. The self-energy serves the role
+of the potential - the optical potential - experienced by a particle in the medium.
+This makes the Dyson equation the
+equivalent of the Schr\"odinger equation, but for particles \textit{embedded in the medium} 
+rather than propagating in free space. Calculating the full self-energy explicitly remains
+impossible, as it involves a (countably) infinite number of diagrams and the underlying nuclear
+interactions are only approximately known. By identifying the full self-energy as equivalent
+to the optical potential, we cut the Gordian knot: the self-energy can be constrained
+directly by comparison with experimental data, rather than calculated from base
+principles. As already discussed in Chapter \ref{introduction}, the optical potential is  
+readily connected to a host of experimental data: elastic cross sections, analyzing powers, and 
+inelastic reactions for both protons and neutrons.
+From a well-constrained optical-potential/self-energy, additional important quantities, like
+overlap functions and neutron skins, can be extracted. This phenomenological approach is the 
+heart of the Dispersive Optical Model.
+
+\subsection{The Dispersion Relation}
+State-of-the-art optical models \cite{CH89, KoningDelaroche} typically restrict their potentials to the
+positive-energy domain relevant for nucleon scattering. It should be clear from the previous
+section, though, the self-energy must have a negative-energy component if it is to describe the
+correlated many-body ground state. Bound nucleons experience the same potential as scattering nucleons, albeit at
+negative energies. It has been recognized for over fifty years \cite{FeshbachDispersionRelation,
+Passatore1967} that because the optical potential is a complex function, the real and imaginary
+parts should obey a dispersion relation: if the real part is known at all energies (positive and
+negative), the imaginary part can be deduced and vice-versa. Optical models that obey this relation
+may be called dispersive optical models.
+
+The real part of the self-energy can be shown to have two components: one independent of energy
+(equal to the correlated Hartree-Fock term)
+and an energy-dependent part that can be calculated from the imaginary part:
+\begin{equation} \label{RealPart}
+    \Re{\Sigma^{*}(\alpha,\beta; E) = \Sigma_{s}(\alpha,\beta) + \Re{\Sigma_{d}(\alpha,\beta; E)}
+\end{equation}
+
+\noindent
+The relevant dispersion relation to calculate the real
+energy-dependent part is:
+\begin{equation} \label{DispersionRelation}
+    \Re{\Sigma_{d}(\alpha,\beta; E) =
+    -\mathcal{P}\int_{\epsilon^{+}_{T}}^{\infty}\frac{dE'}{\pi}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+    + \mathcal{P} \int_{-infty}^{\epsilon^{-}_{T}}\frac{dE'}{\pi}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+\end{equation}
+
+\noindent
+$\mathcal{P}$ is the Cauchy principle value and the integration limits $\epsilon^{\pm}_{T}$ are
+selected to be just below the lowest-lying imaginary strength in the positive-energy domain
+(for $\epsilon^{+}_{T}$) and just above the highest-lying imaginary strength in the negative-energy
+domain (for $\epsilon^{-}_{T}$). Between these thresholds, the imaginary component of the potential
+vanishes, so the self-energy is entirely real. After some algebraic rearrangement, it can be shown that:
+\begin{equation} \label{DispersionRelation}
+    \Re{\Sigma(\alpha,\beta; E) = \Re{\Sigma(\alpha,\beta;\epsilon_{F})}
+    -\mathcal{P}\int_{\epsilon^{+}_{T}}^{\infty}\frac{dE'}{\pi}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+    \left[\frac{1}{E-E'}-\frac{1}{\epsilon_{F}-E'}\right]
+    + \mathcal{P} \int_{-infty}^{\epsilon^{-}_{T}}\frac{dE'}{\pi}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+    \left[\frac{1}{E-E'}-\frac{1}{\epsilon_{F}-E'}\right]
+\end{equation}
+
+\noindent
+which is referred to as the ``subtracted dispersion relation''. The integral of the imaginary
+component of the self-energy over the entire energy domain determines the dynamic (energy-dependent)
+part of the real component, ensuring that the potential is self-consistent and that reactions and
+structure calculations take place on equal footing. This is the form of the dispersion relation
+employed in the subsequent analysis.
 
 \section{Connection to Experimental Observables}
 
 \subsection{Elastic and inelastic nucleon scattering}
-For nucleon-nucleus scattering, the scattering amplitude can be directly calculated using the
-reducible self-energy:
-
+For nucleon-nucleus scattering, the momentum basis is a natural choice. The scattering amplitude can be directly calculated using the
+reducible self-energy $\Sigma$\footnote{The reducible self-energy is related to the irreducible
+    self-energy of the previous chapter by:
+    \begin{equation}
+        \Sigma = \Sigma^{*} + \Sigma^{*}G^{(0)}\Sigma
+    \end{equation}. See \cite{MahzoonPhDThesis} for details.}:
 \begin{equation}
     f_{m'_{s},m_{s}}(\theta,\phi) =
     -\frac{4m\pi^{2}}{\hbar^{2}}\braket{\boldmath{k}'m'_{s}|\Sigma(E)|\boldmath{k}m_{s}}
@@ -344,29 +392,83 @@ reducible self-energy:
 where $\boldmath{k}m_{s}$ are the wave vector and spin quantum number of the incident nucleon and
 $\boldmath{k'}m'_{s}$ are for the exiting nucleon. The matrix structure of the right side can be
 split into spin-independent and spin-dependent portions $\mathcal{F}$ and $\mathcal{G}$:
+\begin{equation}
+    f(\theta,\phi) = \mathcal{F}(\theta)I + \sigma\cdot\boldmath{\hat{n}}\mathcal{G}(\theta)
+\end{equation}
 
+\noindent
+where
 \begin{equation}
     \begin{split}
-    f(\theta,\phi) & = \mathcal{F}(\theta)I + \sigma\cdot\boldmath{\hat{n}}\mathcal{G}(\theta)\\
-    & = \frac{1}{2ik}\sum_{l=0}^{\infty}\left[(l+1)e^{2i\delta_{l+} - 1} +
-    l\left(e^{2i\delta_{l-}}-1\right)\right]P_{l}(cos\theta) +
-    \sigma\cdot\boldmath{\hat{n}}\left[\frac{sin\theta}{2k}\sum_{l=1}^{\infty}[e^{2i\delta_{l+}}-e^{2i\delta_{l-}}]P'_{l}(cos\theta)\right]
+        \mathcal{F}(\theta) & = \frac{1}{2ik}\sum_{l=0}^{\infty}\left[(l+1)e^{2i\delta_{l+} - 1} +
+        l\left(e^{2i\delta_{l-}}-1\right)\right]P_{l}(cos\theta)\\
+        \mathcal{G}(\theta) & = \sigma\cdot\boldmath{\hat{n}}\left[\frac{sin\theta}{2k}\sum_{l=1}^{\infty}[e^{2i\delta_{l+}}-e^{2i\delta_{l-}}]P'_{l}(cos\theta)\right]
     \end{split}
 \end{equation}
-\noindent
-where $P_{l}$
 
-The phase shift (equivalently, the S-matrix elements) for each partial wave can be directly from the reducible self-energy:
+\noindent
+Here, $P_{l}$ are Legendre polynomials of degree $l$, $P_{l}'$ is the derivative of the Legendre
+polynomial, and $\delta_{l\pm} \equiv \delta_{l\pm\frac{1}{2}}$, corresponding to the spin being
+parallel or antiparallel to the orbital angular momentum.
+
+\noindent
+From the scattering amplitude, the unpolarized cross section is simply:
+\begin{equation}
+    \left(\frac{d\sigma}{d\Omega}\right)(\theta) = |\mathcal{F}(\theta)|^{2}
+    +|\mathcal{G}(\theta)|^{2}
+\end{equation}
+
+\noindent
+and the analyzing power is:
+\begin{equation}
+    A(\theta) = \frac{2*\mathcal{F}(\theta)\mathcal{G}^{*}(\theta)}
+    {\left(\frac{d\sigma}{d\Omega}\right)(\theta)}
+\end{equation}
+
+\noindent
+The complex phase shift (equivalently, the S-matrix elements) for each partial wave associated
+with the nucleon under investigation can be
+calculated directly from the reducible self-energy:
 \begin{equation}
     \begin{split}
         e^{2i\delta_{lj}} & \equiv \braket{k|\mathcal{S}_{lj}(E)|k}\\
         & = 1 - 2\pi i \left(\frac{mk}{\hbar^{2}}\right) \braket{k|\Sigma_{lj}(E)|j}
     \end{split}
 \end{equation}
+
 \noindent
 where $k$ is the center-of-mass momentum of the nucleon, $m$ is the nucleon mass, and $E$ is the
-center-of-mass energy. 
+center-of-mass energy. The reaction cross section at a given energy is the sum of the partial
+reaction cross section over all partial waves:
+\begin{equation}
+    \sigma_{rxn} = \Sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
+    \left[(2l+1)-(l+1)|e^{2i\delta_{l+}}|^{2}-l|e^{2i\delta_{l-}|^{2}\right]
+\end{equation}
+
+\noindent
+and the total cross section simply a sum of the reaction and elastic of all partial waves:
+\begin{equation}
+    \sigma_{tot} & = \sigma_{el} + \sigma_{rxn}\\
+\end{equation}
+
+\noindent
+where
+\begin{equation}
+    \begin{split}
+        \sigma_{el} & = \int d\theta \int d\phi \left(\frac{d\sigma}{d\Omega}\right)(\theta)\\
+        & = \left[{\Sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
+        \frac{|(l+1)(e^{2i\delta_{l+}}-1)+l(e^{2i\delta_{l-}-1)|^{2}}{2l+1}\\
+    \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}\right]
+    \end{split}
+\end{equation}
+
 \subsection{Bound-state properties}
+Spectral function: widths
+SP levels
+Particle number
+Spectroscopic factors
+Charge density distribution
+Binding energy
 
 \section{Parameterization of the Potential}
 
