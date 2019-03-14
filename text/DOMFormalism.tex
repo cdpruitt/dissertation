@@ -23,24 +23,22 @@ later time $t$ with quantum numbers $\beta$ after interaction with the
 potential. Given a
 Hamiltonian that models this interaction, the Schr\"odinger equation
 relates the Hamiltonian to the time evolution of this state:
-
 \begin{equation} \label{SchrodingerEquation}
-    i\hbar\frac{\partial}{\partial t}\ket{\alpha, t_{0};t} = H\ket{\alpha,
-    t_{0}; t}
+    i\hbar\frac{\partial}{\partial t}\ket{\alpha, t_{0}; t} = H\ket{\alpha, t_{0}; t}
 \end{equation}
 
-where $\ket{\alpha, t_{0},t}$ is the state at time $t$, given an initial state
-$\ket{\alpha, t_{0}}$. Simple substitution into \label{SchrodingerEquation} shows
+\noindent
+where $\ket{\alpha, t_{0}; t}$ is the state at time $t$, given an initial state
+$\ket{\alpha, t_{0}}$. Simple substitution into \ref{SchrodingerEquation} shows
 that the initial state propagates in time according to:
-
 \begin{equation}
-    \ket{\alpha, t_{0}, t} = e^{-\frac{i}{\hbar}H(t-t_{0})}\ket{\alpha, t_{0}}
+    \ket{\alpha, t_{0}; t} = e^{-\frac{i}{\hbar}H(t-t_{0})}\ket{\alpha, t_{0}}
 \end{equation}
 
-In position space, the wavefunction of the particle at time $t$, $\psi(\bm{r},t)$,
-is the sum of over all contributions from the propagation of the initial state, a direct application of
-Huygens principle:
-
+\noindent
+In position space, the wavefunction of the particle at a given time, $\psi(\bm{r},t)$,
+is the sum of over all contributions from the propagation of the initial state up to that time,
+a direct application of Huygens principle:
 \begin{equation} \label{PropagatorDerivation}
     \begin{split}
         \psi(\bm{r},t) & = \braket{r|\alpha, t_{0}; t}\\
@@ -61,7 +59,6 @@ To conduct practical scattering calculations, the energy-domain representation o
 may be more useful than the time-domain representation. Applying a Fourier Transform to the propagator
 (and omitting the intermediate algebraic steps) gives us this representation, which brings the mathematical
 structure of the propagator into focus:
-
 \begin{equation} \label{PropagatorFT}
     \begin{split}
         G(\bm{r},\bm{r'};E) & = \int_{-\infty}^{\infty}d(t-t')e^\frac{i}{\hbar}E(t-t')G(\bm{r},\bm{r'}; t-t')\\
@@ -80,7 +77,6 @@ are determined by the difference between the energy $E$ and the evaluation of $H
 contributions. Of course, we need not privilege $\bm{r}$-space; $G$ can be written using any
 suitable single-particle basis. For example, the momentum-space representation for a spinless,
 non-interacting free particle of mass $m$ and momentum $\bm{k}$ reads:
-
 \begin{equation} \label{PropagatorKSpace}
     G^{0}(\bm{k}, \bm{k'}; E) = \delta(\bm{k}-\bm{k'})\frac{1}{E-\frac{\hbar^{2}k^{2}}{2m} + i\eta}
 \end{equation}
@@ -96,20 +92,20 @@ nucleon so that the wavefunction of the compound system is very different from t
 the nucleus. The single-particle propagator must include these possibilities as well.
 The propagator from the $\ket{\alpha}$ state at time $t$ to the state $\ket{\beta}$ at a later time
 $t'$ is:
-
 \begin{equation} \label{ManyBodySPPropagator}
     G(\alpha, \beta; t, t') =
-    -\frac{i}{\hbar}\braket{\Psi^{N}_{0}|\mathcal{T}[a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')]|\Psi^{N}_{0}}
+    -\frac{i}{\hbar}\braket{\Psi^{N}_{0}|\mathcal{T}
+    [a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')]|\Psi^{N}_{0}}
 \end{equation}
 
 \noindent
 Here, $\ket{\Psi^{N}_{0}}$ is the normalized Heisenberg ground state for the N-particle system with
 eigenvalue $E^{N}_{0}$:
-
 \begin{equation} \label{NParticleGroundState}
     \hat{H}\ket{\Psi^{N}_{0}} = E^{N}_{0}\ket{\Psi^{N}_{0}}
 \end{equation}
 
+\noindent
 The time-ordering operator $\mathcal{T}$\footnote{
     The time-ordering operator $T$ is defined as:
     \begin{equation*}
@@ -124,7 +120,6 @@ propagation in vacuum of Eq. \ref{PropagatorDerivation}, and hole propagation, n
 relevant for a many-particle system capable of excitation. We can expand Eq.
 \ref{ManyBodySPPropagator} and once again apply a Fourier transform to make
 interpretation easier:
-
 \begin{equation} \label{LehmannRepresentation}
     \begin{split}
         G(\alpha,\beta;E) & =
@@ -144,7 +139,6 @@ interpretation easier:
 Here, $\Psi^{N\pm1}_{m(n)}$ are the normalized Heisenberg states for the N$\pm$1 particle 
 systems. The $\Psi^{N+1}_{m}$ have eigenvalues $E^{N+1}_{m}$ and the $\Psi^{N-1}_{n}$ have 
 eigenvalues $E^{N-1}_{n}$:
-
 \begin{equation}
     \begin{split}
         \hat{H}\ket{\Psi^{N+1}_{m}} & = E^{N+1}_{m}\ket{\Psi^{N+1}_{m}}\\
@@ -174,54 +168,55 @@ the Heisenberg picture of the previous section to the Interaction picture\footno
     Appendix A of \cite{MBTE} provides a complete description of these different quantum-mechanical
 pictures.}. First, the full Hamiltonian $H$ is broken up into the non-interacting and interacting
 parts:
-
 \begin{equation}
     \hat{H} = \hat{H_{0}}+\hat{H}_{1}
 \end{equation}
 
+\noindent
 where $\hat{H_{0}}$ contains the kinetic energy operator $\hat{T}$ and possibly a one-body auxiliary
 potential $\hat{U}$, and $\hat{H_{1}}$ collects all residual interactions (the hard part of the
 problem). Broken up in this way, the non-interacting propagator reads:
-
 \begin{equation}
     G^{(0)}(\alpha, \beta; t-t') =
     -\frac{i}{\hbar}\braket{\Phi^{A}_{0}|
     \mathcal{T}[a_{\alpha I}(t)a^{\dagger}_{\beta I}(t')]|\Phi^{A}_{0}}
 \end{equation}
 
+\noindent
 where the fully-correlated many-body ground state $\Psi^{A}_{0}$ has been replaced by
 $\Psi^{A}_{0}$, the uncorrelated ground-state associated with $H_{0}$. Through algebraic
 manipulation and employing the Interaction version of all operators,
 the \textit{full} single-particle propagator, including the
 contribution from the interactions buried in $\hat{H_{1}}$, is:
-
-\begin{equation} \label{ManyBodySPPropagator}
+\begin{equation} \label{FullSPPropagator}
     G(\alpha, \beta; t-t') = \frac{Num}{Denom}
 \end{equation}
 
+\noindent
 where
-
 \begin{equation*}
     \begin{split}
-        Num = -\frac{i}{\hbar}\sum^{\infty}_{n}\left(\frac{i}{\hbar}\right)^{n}\frac{1}{n!}
+        Num & = -\frac{i}{\hbar}\sum^{\infty}_{n}\left(\frac{i}{\hbar}\right)^{n}\frac{1}{n!}
     \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt_{1}
     \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt_{2} \cdots
     \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt_{n}\\
-    \times \braket{\Phi^{N}_{0}|\mathcal{T}[\hat{H}_{1}(t_{1})
+    & \phantom{ {}= } \times \braket{\Phi^{N}_{0}|\mathcal{T}[\hat{H}_{1}(t_{1})
     \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{\alpha I}(t)a^{\dagger}_{\beta
     I}(t')]|\Phi^{N}_{0}}\\\\
-    Denom = \sum^{\infty}_{m}\left(\frac{-i}{\hbar}\right)^{m}\frac{1}{m!}
+    Denom & = \sum^{\infty}_{m}\left(\frac{-i}{\hbar}\right)^{m}\frac{1}{m!}
         \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{1}
         \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{2} \cdots
         \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{m}\\
-        \times \braket{\Phi^{N}_{0}|
+        & \phantom{ {}= } \times \braket{\Phi^{N}_{0}|
         \mathcal{T}[\hat{H}_{1}(t_{1})
         \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{m})(t')]|\Phi^{N}_{0}}
     \end{split}
 \end{equation*}
 \noindent
 Despite the extra ink, the mathematical structure of the Lehmann
-representation (Eq. \ref{LehmannRepresentation}) is still visible. We have generated an infinite
+representation (Eq. \ref{LehmannRepresentation}) is still visible: the numerator contains
+the contributions from the creation and annihilation operators attaching to the uncorrelated
+ground-state, and the denominator provides an energy weighting. We have generated an infinite
 series of terms with increasing order in the number of $\hat{H}_{1}$ interactions permitted.
 Aside from arbitrary counting indices,
 the only differences between the numerator and denominator are a
@@ -232,13 +227,12 @@ for the full procedure} can be applied to remove contributions to the propagator
 that appear in both the numerator and the denominator and divide out. This dramatically
 reduces the number of terms at each level of the perturbation expansion, and when the dust settles,
 the propagator reads:
-
 \begin{equation} \label{ManyBodySPPropagatorConnected}
     \begin{split}
-    G(\alpha, \beta; t-t') =
+    G(\alpha, \beta; t-t') & =
     -\frac{i}{\hbar}\sum^{\infty}_{n}(\frac{i}{\hbar})^{n}
-    \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n} \times\\
-    \braket{\Phi^{A}_{0}|
+    \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n}\\
+    & \phantom{ {}= } \times \braket{\Phi^{A}_{0}|
     \mathcal{T}[\hat{H}_{1}(t_{1})
     \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{{\alpha}I}(t)a^{\dagger}_{{\beta}I}(t')]|\Phi^{A}_{0}}_{connected}
 \end{split}
@@ -250,28 +244,31 @@ non-interacting ground state is modified by each interaction and thus all the ma
 of $\Psi^{N}_{0}$ are encoded by the repeated operation of $\hat{H_{1}}$. The subscript
 ``connected'' indicates that the only terms that survive correspond to fully-connected Feynman 
 diagrams, as all non-connected diagrams appear in both the numerator and denominator of Eq. 
-\ref{ManyBodySPPropagator}.
+\ref{FullSPPropagator}.
 
 We can represent the perturbation expansion of Eq. \ref{ManyBodySPPropagatorConnected}
-diagrammatically to clarify the physical meaning of the expansion terms. To zeroth-order, 
+diagrammatically to clarify the physical meaning of the expansion terms. Figure
+\ref{PerturbationExpansionDiagram} shows several diagrams from the first few orders of the
+expansion. To zeroth-order, 
 the expansion is only one purely non-interacting term, which is just the free single-particle 
-propagator, represented by a upward-directed line in Fig. \ref{ZerothOrder}.
+propagator. At each higher order, one more interaction is permitted to enter the diagram at any
+fermion line (i.e., into any propagator line).
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.35]{figures/ZerothOrder.png}
-    \caption[The single-particle propagator perturbation expansion, to zeroth order]
-    {The single-particle propagator $G$ in the many-body system can be represented by means of a
-        perturbation expansion about the interacting part of the Hamiltonian.
-        To zeroth order, the full single-particle propagator, indicated by the upward-pointed double 
-        line on the left, is just the free propagator, indicated by the upward-pointed single line
-    on the right.}
-    \label{ZerothOrder}
-\end{figure}
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[scale=0.35]{figures/ZerothOrder.png}
+%    \caption[The single-particle propagator perturbation expansion, to zeroth order]
+%    {The single-particle propagator $G$ in the many-body system can be represented by means of a
+%        perturbation expansion about the interacting part of the Hamiltonian.
+%        To zeroth order, the full single-particle propagator, indicated by the upward-pointed double 
+%        line on the left, is just the free propagator, indicated by the upward-pointed single line
+%    on the right.}
+%    \label{ZerothOrder}
+%\end{figure}
 
-\begin{figure}[ht]
+\begin{sidewaysfigure}
     \centering
-    \includegraphics[scale=0.35]{figures/SecondOrder.png}
+    \includegraphics[width=\textwidth]{figures/SecondOrder.png}
     \caption[The single-particle propagator perturbation expansion, to second order]
     {The first- and second-order terms have been added to the zeroth-order of the
         single-particle propagator perturbation expansion.
@@ -284,22 +281,22 @@ propagator, represented by a upward-directed line in Fig. \ref{ZerothOrder}.
         energy-dependent term in the expansion is the upper second-order term, which depicts
         the production of a particle-hole pair in the nucleus after interaction with the
         incident particle.}
-    \label{DysonEquation}
-\end{figure}
+    \label{PerturbationExpansionDiagram}
+\end{sidewaysfigure}
 
 By grouping and rearranging the terms, we can condense the full perturbation expansion to a
-self-consistent, self-referential equation called the Dyson equation \ref{DysonEquation}:
+self-consistent equation called the Dyson equation \ref{DysonEquation}:
 
 \begin{equation} \label{DysonEquation}
     G(\alpha,\beta;E) = G^{(0)}(\alpha,\beta;E) +
     \sum_{\gamma,\delta}G^{(0)}(\alpha,\gamma;E)\Sigma^{*}(\gamma,\delta,E)G(\delta, \beta; E)
 \end{equation}
-
+\noindent
 A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonEquationDiagram}.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
     \centering
-    \includegraphics[scale=0.35]{figures/DysonEquation.png}
+    \includegraphics[width=0.4\textwidth]{figures/DysonEquation.png}
     \caption{The Dyson equation in diagrammatic form}
     \label{DysonEquationDiagram}
 \end{figure}
@@ -318,7 +315,7 @@ accessed during the particle's excitation of the many-body system\footnote{If a 
     interactions are only approximately known. By identifying the full self-energy as equivalent
     to the optical potential, we cut the Gordian knot: the self-energy can be constrained
     directly by comparison with experimental data, rather than calculated from base
-    principles. As already discussed in Chapter \ref{Introduction}, the optical potential is  
+    principles. As already discussed in Chapter \ref{introduction}, the optical potential is  
     readily connected to a host of experimental data: elastic cross sections, analyzing powers, and 
     inelastic reactions for both protons and neutrons.
     From a well-constrained optical-potential/self-energy, additional important quantities, like
