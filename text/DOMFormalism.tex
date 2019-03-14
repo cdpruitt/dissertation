@@ -357,7 +357,7 @@ selected to be just below the lowest-lying imaginary strength in the positive-en
 (for $\epsilon^{+}_{T}$) and just above the highest-lying imaginary strength in the negative-energy
 domain (for $\epsilon^{-}_{T}$). Between these thresholds, the imaginary component of the potential
 vanishes, so the self-energy is entirely real. After some algebraic rearrangement, it can be shown that:
-\begin{equation} \label{DispersionRelation}
+\begin{equation} \label{SubtractedDispersionRelation}
     \Re{\Sigma(\alpha,\beta; E) = \Re{\Sigma(\alpha,\beta;\epsilon_{F})}
     -\mathcal{P}\int_{\epsilon^{+}_{T}}^{\infty}\frac{dE'}{\pi}
     \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
@@ -470,54 +470,6 @@ Spectroscopic factors
 Charge density distribution
 Binding energy
 
-\section{Parameterization of the Potential}
-
-To parameterize the DOM's optical potential, we rely on standard functional
-forms common in nuclear theory calculations.
-
-The real part of the potential is comprised of a Hartree-Fock component and
-a spin-orbit component (plus a Coulomb term if the projectile is a proton).
-The Hartree-Fock component $V_{HF}$ has two subcomponents:
-
-\begin{equation}
-    V_{HF}(r,r') = V_{vol}(r,r') + V_{WB}(r)
-\end{equation}
-
-The non-local Hartree-Fock volume term $V_{vol}(r,r')$, is defined as
-a Woods-Saxon form coupled to a Gaussian non-locality:
-
-\begin{equation}
-    V_{vol}(r,r') =
-    \dfrac{-V}{1+e^{(r-R)/a}}\cdot\dfrac{1}{\pi^{\frac{3}{2}}\beta^{3}}
-    \exp{\frac{|r-r'|^{2}}{\beta^{2}}}
-\end{equation}
-
-where $V$, $R$, and $a$ are the depth, radius, and diffuseness of the HF potential,
-and $beta$ is the extent of the non-locality. The local Hartree-Fock wine-bottle
-term $V_{wb}(r)$, named for resemblence to the dimple at the bottom of a wine
-bottle, is defined as a Gaussian centered at the nuclear origin:
-
-\begin{equation}
-    V_{wb}(r) = V\exp{\frac{r^{2}}{\sigma^{2}}}
-\end{equation}
-
-The real spin-orbit component $V_{so}$
-is defined using a derivative-Woods-Saxon shape to
-accommodate the expectation that the spin-orbit coupling is strongest near the
-nuclear surface:
-
-\begin{equation}
-    V_{so}(r,r') =
-    \frac{d}{dr} \frac{-V}{1+e^{\frac{(r-R)}{a}}}\cdot\frac{1}{\pi^{\frac{3}{2}}\beta^{3}} \exp{\frac{|r-r'|^{2}}{\beta^{2}}}
-\end{equation}
-
-The imaginary part of the potential is comprised of independent surface and volume terms
-both above and below the Fermi surface, plus an imaginary spin-orbit term:
-
-\begin{equation}
-    V_{HF}(r,r') = V_{vol}(r,r') + V_{WB}(r)
-\end{equation}
-
 The occupation number of nucleons with quantum numbers $\alpha$ can be
 calculated directly from the imaginary component of the single-particle
 propagator:
@@ -531,7 +483,6 @@ propagator:
 \delta(E-(E^{N}_{0}-E^{N-1}_{n}))\\
 & = & \int_{-\infty}^{\epsilon_{F}^{-}} dE \frac{1}{\pi}\operatorname{Im}G(\alpha,\alpha;E)
 \end{eqnarray}
-
 
 For nuclei with open subshells (e.g., the $\upnu$ 0\dFive in $^{18}$O and
 $\upnu$ 0\fFive in $^{58}$Ni), an additional
@@ -564,34 +515,117 @@ nucleus with nucleon numbers $N, Z$ , the pairing gap $\Delta$ was fixed accordi
 
 where $B(N,Z)$ is the nuclear binding energy.
 
-The Dispersive Optical Model (DOM) is a phenomenological framework useful for 
-extracting information about nuclear properties and structure from experimental
-data.
-
-The fundamental object of interest in the DOM is the \Gls{optical potential},
-which is identified as the \Gls{nucleon self-energy}. This potential represents
-the nuclear environment experienced
-by a nucleon as it traverses the nucleus being represented. In general, the
-potential is both non-local and complex, possessing both real (flux-conserving)
-and imaginary (flux-removing) parts. The functions used to parameterize the optical potential
+\section{Parameterization of the Potential}
+The functions used to parameterize the optical potential
 are selected to conform with general physical intuition about the nuclear
-many-body problem and past experience with optical potentials throughout the
-field. For example, the most important term, the Hartree-Fock (HF) potential
-that binds the nucleus together, is defined by a classic Woods-Saxon form to
-which non-locality has been added: [insert volume term formula]. The imaginary
-potential is separated into a Woods-Saxon volume component and a
-Woods-Saxon-derivative surface component. Each of these subcomponents has
-a non-linear energy dependence reflecting our expectation that surface-like
-behaviors should arise around 10-20 MeV and volume-like behavior should dominate
-above 50 MeV, with a mixture of the two in the intermediate region.
+many-body problem and past experience with optical potentials. Accordingly,
+the self-energy should be, non-local, complex, and dispersively correct.
+Before detailing the full parameterization,
+a few standard mathematical forms need to be introduced. We use two standard form factors
+to describe the radial dependence of components
+associated with the nuclear volume (a Woods-Saxon shape)
+and the nuclear surface (a derivative of the Woods-Saxon shape):
+\begin{equation} \label{WoodsSaxon}
+    f_{vol}(V,r) = \frac{-V}{1+e^{(r-R)/a}}
+    f_{surf}(V,r) = \frac{1}{r}\frac{d}{dr}f_{vol}(V,r)
+\end{equation}
 
-Beyond these basic considerations, several additional features make the 
-DOM a useful tool. First is the enforcement of a
-dispersion relation (the Kramers-Kronig relations) between the real and imaginary
-halves of the potential, ensuring that the potential is causal (i.e., the
-time-ordering of the operator representation of the self-energy is maintained).
+\noindent
+$R$ is the nuclear radius, calculated as $R = r_{0}A^{\frac{1}{3}}$, with $A$ as the total number of
+nucleons in the nucleus. The diffuseness term $a$ determines how quickly the potential reaches zero.
+The depth of the potential is $V$ such that the Woods-Saxon
+provides an attractive interaction.
+To approximate the non-locality, equivalent local potentials \cite{Mahaux1991}
+with an additional energy dependence may be used, but their additional energy-dependence
+voids the dispersion relation and thus makes local-equivalent potentials unsuitable
+for a comprehensive treatment at both positive and negative energies.
+The self-energy/optical potential used in our treatment is based on that of
+\cite{MahzoonPhDThesis}, which was the first to fully implement the non-locality in the potential
+forms alongside the dispersion relation. For simplicity, we use a Gaussian non-locality:
+\begin{equation}
+    N(r, r',\beta) = \frac{1}{\pi^{\frac{3}{2}}\beta^{3}} \exp{\frac{|r-r'|^{2}}{\beta^{2}}}
+\end{equation}
 
-\section{Computational Improvements}
+\noindent
+where $\beta$ is a free parameter that sets the Gaussian width. The energy-dependence of the
+imaginary components is based on the functional form of \cite{Charity2006}:
+
+\begin{equation}
+    \omega_{n}(E, A, B, C) = A\Theta(X)\frac{X^{n}}{X^{n}+B^{n}}
+\end{equation}
+
+\noindent
+where
+
+\begin{equation*}
+    \begin{split}
+        X = |E-\epsilon_{F}|-C\\
+    \end{split}
+\end{equation*}
+
+and $\Theta(X)$ is the step function. 
+
+We are now ready to give the full parameterization.  
+The energy-independent real part of the self-energy comprises a nonlocal Hartree-Fock and
+a spin-orbit component (plus a local Coulomb term if the nucleon in question is a proton):
+\begin{equation}
+    \Re{\Sigma}V_{s}(r,r') = \Sigma_{HF}(r,r')+V^{so}(r,r')+\delta(r-r')\timesV_{C}(r)
+\end{equation}
+
+\noindent
+The Hartree-Fock component $V_{HF}$ has two subcomponents:
+\begin{equation}
+    \Sigma_{HF}(r,r') = V_{vol}(r,r') + V_{WB}(r)
+\end{equation}
+
+\noindent
+where the non-local Hartree-Fock volume term $V_{vol}(r,r')$, is defined as
+a Woods-Saxon form coupled to a Gaussian non-locality:
+\begin{equation}
+    V_{vol}(r,r') = f_{vol}(V,r){\cdot}N(r,r',\beta)
+\end{equation}
+
+The local Hartree-Fock wine-bottle
+term $V_{wb}(r)$, named for resemblence to the dimple at the bottom of a wine
+bottle, is defined as a Gaussian centered at the nuclear origin:
+\begin{equation}
+    V_{wb}(V, r,\sigma) = V\exp{\frac{r^{2}}{\sigma^{2}}}
+\end{equation}
+
+\noindent
+The real spin-orbit component $V_{so}$
+is defined using a derivative-Woods-Saxon shape in keeping with the
+expectation that the spin-orbit coupling is strongest near the
+nuclear surface:
+\begin{equation}
+    V_{so}(r,r') =
+    \frac{1}{r}f_{surf}(W,r){\cdot}N(r,r',\beta)
+\end{equation}
+
+\noindent
+The energy-dependent part of the real component of the potential is calculated using the imaginary
+component of the potential according to the dispersion relation (Eq.
+\ref{SubtractedDispersionRelation}. This completes the description of the real component.
+
+The imaginary part of the potential is comprised of independent surface and volume terms
+both above and below the Fermi surface, plus an imaginary spin-orbit term:
+\begin{equation}
+    \Im{\Sigma(r,r',E)} = \Im{\Sigma_{vol}^{\pm}(r,r',E)} + \Im{\Sigma_{surf}^{\pm}(r,r',E)}
+    + W^{so}(r,r',E);
+\end{equation}
+
+\noindent
+where the volume and surface components are:
+\begin{equation}
+    \Im{\Sigma_{vol}^{\pm}(r,r',E)} = W_{vol}(E)^{\pm}f_{vol}(r; r_{0}, a){\times}N(r,r',\beta)
+    \Im{\Sigma_{surf}^{\pm}(r,r',E)} = 4aW_{surf}(E)^{\pm}f_{surf}(r; W, r_{0}, a){\times}N(r,r',\beta)
+\end{equation}
+
+The energy dependence of the imaginary volume term
+The energy dependence of the imaginary surface term
+The spin-orbit term
+
+\section{Computational Considerations}
 As with any high-dimensional optimization problem, the fitter must be vigilant
 against the overfitting of data. In practice, this requires:
 
