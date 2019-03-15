@@ -663,9 +663,51 @@ where the volume and surface components are:
     \Im{\Sigma_{surf}^{\pm}(r,r',E)} = 4aW_{surf}(E)^{\pm}f_{surf}(r; W, r_{0}, a){\times}N(r,r',\beta)
 \end{equation}
 
-The energy dependence of the imaginary volume term
-The energy dependence of the imaginary surface term
-The spin-orbit term
+\noindent
+The terms labeled with a $+$ determine the potential above $\epsilon_{F}$, and the terms labeled
+with a $-$ determine the potential below $\epsilon_{F}$. The energy dependence of the imaginary
+volume term reads:
+
+\begin{equation}
+    W_{vol}^{\pm}(E) = A_{vol}^{\pm}\frac{(E_{\Delta}))^{4}}
+    {(E_{\Delta})^{4}+(B_{vol}^{\pm})^{4}} + W_{NM}^{\pm}(E)
+    + W_{NM}^{\pm}(E)
+\end{equation}
+
+\noindent
+where
+
+\begin{equation}
+    \begin{split}
+    W_{NM}^{+}(E) = \alphaA_{vol}^{+}[\sqrt{E} +
+        \frac{(\epsilon_{F}+E^{+}_{NM})^{\frac{3}{2}}}{2E}
+        -\frac{3}{2}\sqrt{\epsilon_{F}+E^{+}_{NM}}
+        W_{NM}^{-}(E) = -A_{vol}^{-}\frac{(\epsilon_{F}-E-E_{NM}^{-})^{2}}
+        {(\epsilon_{F}-E-E_{NM}^{-})^{2}+(E_{NM}^{-})^{2}}
+    \end{split}
+\end{equation}
+
+\noindent
+The terms $W_{NM}^{\pm}$ are asymmetric above and below the Fermi surface and are modeled after
+nuclear-matter calculations. They account for the decreasing phase space at negative energies
+and the increasing phase space at positive energies. The imaginary surface terms read:
+\begin{equation}
+    W_{sur}^{\pm}(E) = \omega_{4}(E, A, B, 0) - \omega_{2}(E, A, B, C)
+\end{equation}
+
+\noindent
+Last, the imaginary spin-orbit term reads:
+\begin{equation}
+    [insert imaginary spin-orbit]
+\end{equation}
+This completes the parameterization of the potential for symmetric nuclei. For asymmetric nuclei,
+the parametric forms are modified to account for the different potential experienced by protons and
+neutrons in an asymmetric nucleus. We model asymmetry-dependence with a linear Lane-potential-like
+term:
+
+\begin{equation}
+    V_{asymm} = \frac{N-Z}{A}
+\end{equation}
 
 \section{Computational Considerations}
 As with any high-dimensional optimization problem, the fitter must be vigilant
@@ -734,8 +776,5 @@ escape local minima in the multidimensional fit.
 The radial grid, energy grid, size of the lagrange basis, partial wave angular momentum cutoff, and
 various integration cutoffs used in calculating the potential and
 observable quantities were varied to ensure that output was not distorted by numerical errors. 
-
-\subsection{Generalization to even-even nuclei}
-- 
 
 \afterpage{\clearpage}
