@@ -9,19 +9,19 @@ Basic questions, including how nucleons are distributed throughout the nuclear
 volume and how they share the energy of binding, are still only qualitatively
 answered. At the core of the issue is the short-range and extremely strong
 nature of nuclear forces, which confine
-quarks to nucleons and cannot be treated perturbatively in the MeV-energy regime of
-nuclear physics. Rather than take a truly ab-initio approach where quarks and gluons
+quarks to nucleons and cannot be treated perturbatively in the MeV-energy regime.
+Rather than take a truly ab-initio approach where quarks and gluons
 are the relevant degrees of freedom, a series of approximations must be made
 for calculations to be tractable. As long as the energy domain is less than that
 of the lowest-lying nucleon excitation, it is well-justified to reduce the
 nuclear problem to choosing protons and neutrons as the nuclear building blocks.
 The proton and neutron masses are so close, and their behaviors in the nucleus so similar,
 that the problem can be further simplified by introducing a new (approximate) quantum number
-$t$, the isospin, and treating protons and neutrons as generic "nucleons" with differing $t$
+$t$, the isospin, and treating protons and neutrons as generic "nucleons" with differing isospin
 projections.
 
 Starting with these simplifications, many nuclear models have been developed to describe existing 
-data on nucleon-nucleon, nuclear-nuclear, lepton-nuclear scattering as well as
+data on nucleon-nucleon, nucleon-nucleus, lepton-nucleus scattering as well as
 nuclear binding. Successful models should not only reproduce existing
 experimental data accurately but also posses predictive power for as-yet unmeasured
 experimental data. For parametric models
@@ -73,7 +73,7 @@ across the chart of nuclides. These five simple terms are quite successful
 in describing masses and radii of spherical nuclei, leading early nuclear
 scientists to expect that shell structure was less important in the nuclear
 many-body problem than in the atomic one. In this ansatz, the quantum
-nature of constituent nucleons not explicitly included, so the LDM is  
+nature of constituent nucleons is not explicitly considered, so the LDM is  
 unsuitable for extracting wavefunction information or predicting scattering
 cross sections.
 
@@ -86,7 +86,7 @@ and neutron-proton asymmetry:
 \end{equation}
 
 \begin{equation}
-    \delta = \frac{\rho_{n}-\rho{z}}{\rho}
+    \delta = \frac{\rho_{n}-\rho_{z}}{\rho}
 \end{equation}
 
 \noindent
@@ -97,7 +97,7 @@ that approximate shell effects and geometric deformation.
 The Droplet Model of Atomic Nuclei deploys 9 
 independent coefficients to describe spherical droplets and 6 additional
 coefficients to accommodate non-spherical effects. This expanded scope
-can successfully recover the degree of ground state deformation in non-spherical
+can successfully recover the degree of ground-state deformation in non-spherical
 nuclei and fission barriers.
 
 Because the LDM is not based upon shell structure, its utility has diminished
@@ -109,11 +109,11 @@ charge radii, shown for the even-A Sn isotopes in Fig.
 \ref{SnIsotopeShift} \cite{Anselment1986},
 is critically connected to difference in RMS radius 
 between the neutron and proton distributions, commonly referred to as the
-"neutron skin" \cite{Otten1989}.
+``neutron skin'' \cite{Otten1989}.
 In a Droplet Model picture, the slope of the isotope shift is linked to the symmetry energy $J$, 
 density dependence of the symmetry energy
 $L$, and surface stiffness coefficient $Q$, the same bulk quantities that determine
-neutron skin thickness \cite{Myers1969, MyersAndSwiatecki, Berdichevsky1988}
+neutron-skin thickness \cite{MyersAndSwiatecki, Berdichevsky1988}
 [insert footnote with Droplet Model explanation of these terms].
 Without addition experimental constraints, the $J$, $L$, and $Q$ parameters form an
 underdetermined system from which unique values cannot be recovered, even if the
@@ -131,7 +131,7 @@ effect on the formation and size of such a skin.
     An isoscalar treatment that only accounts for size scaling predicts an
     A$^{\frac{1}{3}}$ slope as neutrons are added, but the data show an
 A$^{\frac{1}{6}}$ slope instead, which is connected to the symmetry energy
-and its density-dependence. Data from Anselment et al. \cite{Anselment1986}}
+and its density dependence. Data from Anselment et al. \cite{Anselment1986}}
     \label{SnIsotopeShift}
 \end{figure}
 
@@ -139,7 +139,6 @@ Per the approach pioneered by Strutinsky \cite{Strutinsky1967, Seeger1975},
 modern macroscopic-microscopic models \cite{Moller1988, Wang2015} explicitly equip Droplet-type models
 with shell model physics (described in the next section). At present, these are the state-of-the-art
 for calculating nuclear masses and fission properties.
-[wrap up by mentioning failure to constrain symmetry energy and failure to deal with reactions]
 
 \subsection{Mean-field and beyond-mean-field models}
 Mean field models begin with a simple motivation: that nucleons
@@ -148,14 +147,15 @@ potential generated by all other nucleons, smeared out over nuclear volume.
 The assumption of independent nucleon motion may seem dubious, given the
 crowded environment of the nucleus and immense strength of nucleon-nucleon forces,
 but the Pauli exclusion principle provides some justification.
-From such a mean field, a shell model can be developed wherein nucleons obey a nuclear aufbau, 
-filling orthogonal states with quantum numbers N, L, and J, as electrons do in the atomic 
-case, resulting in shell structure. From a mean field consisting of a central
+From such a mean field, a shell model can be developed wherein protons and neutrons each
+obey a nuclear aufbau, filling orthogonal states with quantum numbers N, L, and J, just as electrons do in the atomic 
+case. From a mean field consisting of a central
 potential and a spin-orbit potential, as in the seminal shell-model work of Goeppert-Mayer
 and Jensen \cite{GoeppertMayer1955}, the basic ground-state quantum properties of most nuclei
-(spins, parities, magnetic moments) are recovered. For non-spherical nuclei (in open shells),
-deformation effects must be included as well as they alter the ordering of single-particle levels
-and change the ground-state configuration. In addition, nucleons can be
+(spins, parities, magnetic moments) are recovered for nuclei near major shell closures. For non-spherical nuclei (in open shells),
+deformation effects must be included as well, as they alter the ordering of single-particle levels.
+
+Nucleons can be
 excited into higher (but still bound) states and the low-lying excitation
 spectra predicted. The consequences of shell structure are obvious
 in the experimental record, including increased particle separation 
@@ -177,6 +177,7 @@ and vibrations. Coupled excitations of
 two or more nucleons to higher orbitals within or across shells and relativistic effects may 
 be included to accommodate the experimental phenomena under investigation.
 Models built on this premise are termed ``beyond-mean-field'', for obvious reasons.
+
 In light systems, where the number of nucleons is not too large, every nucleon
 may be allowed to participate in excitations into the valence space of the model
 (a ``no-core shell model"). As the system size increases, the configuration space grows
@@ -257,7 +258,7 @@ for the Dispersive Optical Model (DOM) summary of Chapter \ref{DOMFormalism}, mo
 to optical models than the LDM or mean-field models above. Motivations for OMs, stemming from a
 simple Ramsauer-effect picture, are
 summarized, and references to several successful OM potential parameterizations
-are provided.
+are provided in this section.
 
 Due to the magnitude of the strong nuclear force, it might be expected that 
 the interaction of an incident neutron on a nucleus should be strongly
@@ -337,12 +338,12 @@ discarding leading constants yields:
 This form reveals an important relation: as A is increased, to maintain constant 
 phase $\delta$, E must also increase \cite{Satchler1980, Peterson1962}. 
 This is contrary to a typical resonance condition where an integer number of wavelengths
-are fit inside a potential; in that case, to maintain constant phase as A is increased,
+are fit inside a potential; in that case, to maintain constant phase as size is increased,
 E must be decreased. Thus these \tot\ oscillations have been referred to as
 ``anti-resonances" or ``echoes" \cite{Satchler1980, McVoy1967}. It should be
 noted that this simple Ramsauer picture is illustrative only, as it fails to
 account for interference between the partial waves of the incident nucleon and
-cannot be extrapolated to high energies without additional deficiencies
+cannot be extrapolated to high energies without conspicuous deficiencies
 \cite{Ahmad1973}.
 
 A new type of nuclear model is thus at hand:
@@ -390,9 +391,9 @@ hundred MeV \cite{CH89, KoningDelaroche}. Because the proton-proton,
 proton-neutron, and neutron-neutron scattering cross sections
 are not identical, OM potentials are expected to differ for protons and
 neutrons. Isoscalar terms, which respect isospin symmetry and thus treat protons and neutrons 
-identically, account for most of the observed scattering data but do not include
-any isospin-symmetry-breaking interactions known to exist between
-nucleons, such as virtual and real charged pion exchange.
+identically, account for most of the observed scattering, but do not include
+the asymmetry-\textit{dependent} interactions known to exist between
+nucleons, such as charged pion exchange.
 Thus isovector and isotensor terms,
 which depend on the difference between the proton and neutron density
 distributions in the nucleus, are needed. As experimental facilities like
@@ -400,7 +401,7 @@ the Facility for Radioactive Isotope Beams (FRIB) come online and produce
 extremely asymmetric nuclei, knowing the asymmetry-dependence of optical
 potentials will become increasingly important for predicting nucleon scattering on
 exotic nuclei. Isovector considerations are not unique to full-blown optical
-models and be introduced to a simpler Ramsauer-like models as well. For example, building
+models and can be introduced to a simpler Ramsauer-like models as well. For example, building
 on the addition of spin-spin terms a Ramsauer model by Gould et al \cite{Gould1986},
 Anderson and Grimes added an explicit isovector term to analyzing isotone and isotope shifts in 
 neutron total cross sections \cite{Anderson1990}.
@@ -442,22 +443,22 @@ sector of experimental scattering databases. The EXFOR experimental reaction dat
 differential elastic scattering and analyzing
 power data sets between 1-300 MeV, the domain relevant for this work. Optical model fits
 to these data, both regional and global \cite{CH89, KoningDelaroche}, have helped
-constrain nuclear radii \cite{radiusExample}, the strength of the spin-orbit coupling,
+constrain nuclear radii, the strength of the spin-orbit coupling,
 and revealed the importance of an imaginary spin-orbit term.
 
 Inelastic nucleon scattering data are more difficult to collect experimentally and much sparser in
 the literature record. By helping fix the strength and energy-dependence of the absorptive component
 of the nuclear potential, inelastic data serve a complementary role to elastic
-data. As was pointed out by Finlay et al. in 1993:
-
-\begin{displayquote}
-    "Above about 200 MeV, an impulse approximation might be expected to
-    give a good description of the data, while at lower energy Pauli blocking and
-    medium effects must be included. Phenomenologically, the imaginary term in
-    the optical potential increases rapidly, while the real term is thought to
-    pass through zero \cite{Finlay1993}."
-\end{displayquote}
-
+data.
+%The was pointed out by Finlay et al. in 1993:
+%\begin{displayquote}
+%    ``Above about 200 MeV, an impulse approximation might be expected to
+%    give a good description of the data, while at lower energy Pauli blocking and
+%    medium effects must be included. Phenomenologically, the imaginary term in
+%    the optical potential increases rapidly, while the real term is thought to
+%    pass through zero \cite{Finlay1993}.''
+%\end{displayquote}
+\noindent
 Isotopically-resolved data is particularly valuable for constraining nuclear
 models, as it avoids averaging over multiple isotopes naturally present in many elemental samples.
 Unfortunately, many pure isotopes are extremely expensive ($>$\$10,000 per gram) to
@@ -518,7 +519,7 @@ using new data they measured on the $^{182,184,186}$W isotope chain (quite notic
 \ref{TCSChart}). In their study, an expanded Ramsauer-type model performed quite well at reproducing the relative 
 difference between $^{186}$W and $^{182}$W, apart from a
 phase mismatch - but only when the isovector components they introduced in the
-Ramsauer model are \textit{suppressed} \ref{Dietrich2003_Ramsauer}. Despite the
+Ramsauer model are \textit{suppressed} (see Fig. \ref{Dietrich2003_Ramsauer}). Despite the
 dubiousness of ignoring isospin, the resulting Ramsauer model
 agrees better with the experimental data than does the Ohio global optical 
 potential \cite{Rapaport1979}, shown in Fig. \ref{Dietrich2003_Ohio}.
@@ -566,7 +567,7 @@ are apparent: is a microscopic knowledge of the proton and neutron matter
 densities important for reproducing the neutron \tot\ across an isotope
 chain? More fundamentally, what terms in an optical potential are the neutron
 \tot\ cross sections sensitive to, and are neutron \tot\ data connected to
-structural (i.e., bound-state) information in a clear and consistent way?
+structural (i.e., bound-state) information in a consistent, transparent way?
 
 Answers to these questions hinge on the availability well-measured 
 isotopic neutron \tot\ data sets across a broad energy range. Indeed, the
@@ -579,7 +580,7 @@ and high-energy scattering data.
 Providing experimental data on key nuclei, in particular for use with the Dispersive Optical Model
 (DOM), is a primary motivation for the isotopically-resolved neutron \tot\ and \el\
 results presented in this work. These new data are analyzed in Chapter \ref{DOMResults} 
-with an improved non-local DOM capable of fits on even-even nuclei. Details on our DOM
+with an improved non-local DOM capable of fits to data on even-even nuclei. Details on our DOM
 implementation are presented in chapter \ref{DOMFormalism}. 
 %"The magnitude and energy dependence of the real isovector part of the
 %optical potential are poorly constrained by experiment." \cite{Holt16}
