@@ -337,18 +337,18 @@ The real part of the self-energy can be shown to have two components: one indepe
 (equal to the correlated Hartree-Fock term)
 and an energy-dependent part that can be calculated from the imaginary part:
 \begin{equation} \label{RealPart}
-    \Re{\Sigma^{*}(\alpha,\beta; E) = \Sigma_{s}(\alpha,\beta) + \Re{\Sigma_{d}(\alpha,\beta; E)}
+    \Re{\Sigma^{*}(\alpha,\beta; E)} = \Sigma_{s}(\alpha,\beta) + \Re{\Sigma_{d}(\alpha,\beta; E)}
 \end{equation}
 
 \noindent
 The relevant dispersion relation to calculate the real
 energy-dependent part is:
 \begin{equation} \label{DispersionRelation}
-    \Re{\Sigma_{d}(\alpha,\beta; E) =
+    \Re{\Sigma_{d}(\alpha,\beta; E)} =
     -\mathcal{P}\int_{\epsilon^{+}_{T}}^{\infty}\frac{dE'}{\pi}
-    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}}{E-E'}
     + \mathcal{P} \int_{-infty}^{\epsilon^{-}_{T}}\frac{dE'}{\pi}
-    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}}{E-E'}
 \end{equation}
 
 \noindent
@@ -358,12 +358,12 @@ selected to be just below the lowest-lying imaginary strength in the positive-en
 domain (for $\epsilon^{-}_{T}$). Between these thresholds, the imaginary component of the potential
 vanishes, so the self-energy is entirely real. After some algebraic rearrangement, it can be shown that:
 \begin{equation} \label{SubtractedDispersionRelation}
-    \Re{\Sigma(\alpha,\beta; E) = \Re{\Sigma(\alpha,\beta;\epsilon_{F})}
+    \Re{\Sigma(\alpha,\beta; E)} = \Re{\Sigma(\alpha,\beta;\epsilon_{F})}
     -\mathcal{P}\int_{\epsilon^{+}_{T}}^{\infty}\frac{dE'}{\pi}
-    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}}{E-E'}
     \left[\frac{1}{E-E'}-\frac{1}{\epsilon_{F}-E'}\right]
     + \mathcal{P} \int_{-infty}^{\epsilon^{-}_{T}}\frac{dE'}{\pi}
-    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}{E-E'}
+    \frac{\Im{\Sigma_{d}(\alpha,\beta; E')}}{E-E'}
     \left[\frac{1}{E-E'}-\frac{1}{\epsilon_{F}-E'}\right]
 \end{equation}
 
@@ -441,14 +441,14 @@ where $k$ is the center-of-mass momentum of the nucleon, $m$ is the nucleon mass
 center-of-mass energy. The reaction cross section at a given energy is the sum of the partial
 reaction cross section over all partial waves:
 \begin{equation}
-    \sigma_{rxn} = \Sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
-    \left[(2l+1)-(l+1)|e^{2i\delta_{l+}}|^{2}-l|e^{2i\delta_{l-}|^{2}\right]
+    \sigma_{rxn} = \sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
+    \left[(2l+1)-(l+1)|e^{2i\delta_{l+}}|^{2}-l|e^{2i\delta_{l-}}|^{2}\right]
 \end{equation}
 
 \noindent
 and the total cross section simply a sum of the reaction and elastic of all partial waves:
 \begin{equation}
-    \sigma_{tot} & = \sigma_{el} + \sigma_{rxn}\\
+    \sigma_{tot} = \sigma_{el} + \sigma_{rxn}\\
 \end{equation}
 
 \noindent
@@ -456,64 +456,109 @@ where
 \begin{equation}
     \begin{split}
         \sigma_{el} & = \int d\theta \int d\phi \left(\frac{d\sigma}{d\Omega}\right)(\theta)\\
-        & = \left[{\Sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
-        \frac{|(l+1)(e^{2i\delta_{l+}}-1)+l(e^{2i\delta_{l-}-1)|^{2}}{2l+1}\\
-    \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}\right]
+        & = \sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
+        \frac{|(l+1)(e^{2i\delta_{l+}}-1)+l(e^{2i\delta_{l-}-1)|^{2}}}{2l+1}
+        \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}
     \end{split}
 \end{equation}
 
 \subsection{Bound-state properties}
-Spectral function: widths
-SP levels
-Particle number
-Spectroscopic factors
-Charge density distribution
-Binding energy
+To compare the bound-state information of the propagator with experimental data, we first
+define the spectral functions for holes and particles:
 
-The occupation number of nucleons with quantum numbers $\alpha$ can be
-calculated directly from the imaginary component of the single-particle
-propagator:
+\begin{equation}
+    \begin{split}
+        S_{h}(\alpha; E) & = \frac{1}{\pi}\Im{G(\alpha,\alpha;E)} for E\leq\epsilon_{F}^{-}\\
+        & = \sum|\braket{\Psi^{N-1}_{n}|a_{\alpha}|\Psi^{N}_{0}}|^{2}
+        \delta(E-(E^{N}_{0}-E_{n}^{N-1}))\\
+        S_{p}(\alpha; E) & = -\frac{1}{\pi}\Im{G(\alpha,\alpha;E)}  for E\geq\epsilon_{F}^{+}\\
+        & = \sum|\braket{\Psi^{N+1}_{n}|a_{\alpha}^{\dagger}|\Psi^{N}_{0}}|^{2}
+        \delta(E-(E_{n}^{N+1}-E^{N}_{0}))
+    \end{split}
+\end{equation}
 
-\begin{eqnarray}
-    n(\alpha)
-    & = & \braket{\Psi^{N}_{0}|a^{\dagger}_{\alpha}a_{\alpha}|\Psi^{N}_{0}}\\
-    & = & \sum_{n}|\braket{\Psi^{N-1}_{n}|a_{\alpha}|\Psi^{N}_{0}}|^{2}\\
-    & = & \int_{-\infty}^{\epsilon_{F}^{-}} dE
-\sum_{n}|\braket{\Psi^{N-1}_{n}|a_{\alpha}|\Psi^{N}_{0}}|^{2}
-\delta(E-(E^{N}_{0}-E^{N-1}_{n}))\\
-& = & \int_{-\infty}^{\epsilon_{F}^{-}} dE \frac{1}{\pi}\operatorname{Im}G(\alpha,\alpha;E)
-\end{eqnarray}
+\indent
+In this expression, $\epsilon_{F}^{\pm}$ are the lowest-unoccupied and highest-occupied
+single-particle levels, which yield the Fermi energy $\epsilon_{F}$ when averaged. Physical
+speaking, the hole spectral function at the energy E is the probability density for plucking out
+a particle with quantum numbers $\alpha$ from the ground state and leaving the residual nucleus with the
+energy $E^{N}_{0}-E$. The particle spectral function provides the same information, but for adding a
+particle instead, leaving the nuclear system with energy $E^{N}_{0}+E$.
 
-For nuclei with open subshells (e.g., the $\upnu$ 0\dFive in $^{18}$O and
-$\upnu$ 0\fFive in $^{58}$Ni), an additional
-pairing parameter $\Delta$ was added to
-account for these subshells' fractional occupatio $n_{\pm}$ of the open subshells. due to pairing
-effects. This parameter splits partially-occupied subshells (e.g., the $\upnu$\dFive
-for \oEight) into upper and lower sublevels with energies $E_{\pm}$:
+From the spectral functions, the occupation of a state is simply
+\begin{equation} \label{ParticleNumber}
+    \begin{split}
+        n(\alpha) & = \braket{\Psi^{N}_{0}|a_{\alpha}^{\dagger}a_{\alpha}|\Psi^{N}_{0}}\\
+        & = \int_{-infty}^{-\epsilon_{F}}S_{h}(\alpha; E)
+    \end{split}
+\end{equation}
 
+\noindent
+Numerically, this integral can be difficult to compute near $\epsilon_{F}$ where peaks in the
+spectral function (from bound quasi-hole states just below $\epsilon_{F}$) become $\delta$-function-like. 
+This is a consequence of the vanishing imaginary strength near $\epsilon_{F}$. Thus, we use a piecemeal procedure
+where the spectral function is integrated up to an arbitrary threshold near (but below) the
+$\delta$-function-like behavior, and the spectroscopic factor of any quasi-holes between the threshold and
+$\epsilon_{F}^{-}$ is added to account for the remaining occupation. The spectroscopic factor is
+calculated:
+
+\begin{equation}
+    [insert spectroscopic factor calculation]
+\end{equation}
+
+The previous DOM analysis of \cite{MahzoonPhDThesis, Atkinson2018} dealt only with doubly-closed shell nuclei
+\caForty and \caEight. For these nuclei, the above procedure to calculate the occupation number is
+sufficient. The present analysis includes nuclei with open neutron subshells
+(e.g., the $\upnu$ 0\dFive in $^{18}$O and $\upnu$ 0\fFive in $^{58}$Ni), motivating a new
+procedure. Per standard treatments \cite{WalterRef}, an additional
+pairing parameter $\Delta$ was added to account for open subshells' fractional occupation $n_{\pm}$.
+This parameter splits these subshells' occupants into upper and lower sublevels with energies $E_{\pm}$:
 \begin{equation}
     E_{\pm} = \mu \pm ((\epsilon_{F}-\mu)^{2} + \Delta^{2})^{frac{1}{2}}
 \end{equation}
 
+\noindent
 where $\mu$ is the energy of the open subshell before pairing is considered and
 $\epsilon_{F}$ is the Fermi
 energy. The magnitude of $\Delta$ corresponds to the energy difference between
-adding/removing a nucleon to/from that subshell. The subshell's particle
-capacity is split between the upper and lower sublevels, and only the :
-
+adding/removing a nucleon to/from that subshell. The subshell
+is split between the upper and lower sublevels. These sublevels' occupancy are calculated:
 \begin{equation}
     n_{\pm} = \frac{1}{2}\left( 1-\frac{\chi}{E_{\pm}}\right)
 \end{equation}
 
+\noindent
 where $\chi = |E_{\pm}-\mu| - (\epsilon_{F} - \mu)$. Only occupation in the
 lower sublevel is counted toward the total particle number. For each open-shell
 nucleus with nucleon numbers $N, Z$ , the pairing gap $\Delta$ was fixed according to:
-
 \begin{equation}
     \Delta(N,Z) = \frac{1}{4}\left(B(N-2,Z)-3B(N-1,Z) + 3B(N,Z)-B(N+1,Z)\right)
 \end{equation}
 
+In addition to the total occupation of each state with quantum numbers $\alpha$,
+the density distribution of particles in that state in r-space can be calculated. By summing the
+distributions over all states, the total point distribution for that particle can be calculated.
+After folding this distribution with an appropriate form factor giving the internal charge density
+distribution for protons and neutrons \cite{FormFactorPaper}, the final distribution can be compared
+to the experimental charge density distribution calculated in (e,e) scattering experiments.
+
+\noindent
 where $B(N,Z)$ is the nuclear binding energy.
+
+The total binding energy of the nucleus is calculated directly from the spectral function and the
+kinetic energy operator $\hat{T}$:
+
+\begin{equation}
+    \begin{split}
+        E^{N}_{0} & = \braket{\Psi^{N}_{0}|\hat{H}|\Psi^{N}_{0}}\\
+        & = \frac{1}{2} \left(\sum_{\alpha,\beta}\braket{\alpha|T|\beta}n_{\alpha,\beta}
+        + \sum_{\alpha}\int_{-infty}^{\epsilon_{F}^{-}}dE E S_{h}(\alpha;E)\right)
+    \end{split}
+\end{equation}
+
+\noindent
+and the individual discrete, single-particle energy levels can be calculated by diagonalizing the
+Hamiltonian $H = T + V$.
 
 \section{Parameterization of the Potential}
 The functions used to parameterize the optical potential
@@ -556,11 +601,8 @@ imaginary components is based on the functional form of \cite{Charity2006}:
 
 \noindent
 where
-
 \begin{equation*}
-    \begin{split}
-        X = |E-\epsilon_{F}|-C\\
-    \end{split}
+    X = |E-\epsilon_{F}|-C\\
 \end{equation*}
 
 and $\Theta(X)$ is the step function. 
@@ -569,7 +611,7 @@ We are now ready to give the full parameterization.
 The energy-independent real part of the self-energy comprises a nonlocal Hartree-Fock and
 a spin-orbit component (plus a local Coulomb term if the nucleon in question is a proton):
 \begin{equation}
-    \Re{\Sigma}V_{s}(r,r') = \Sigma_{HF}(r,r')+V^{so}(r,r')+\delta(r-r')\timesV_{C}(r)
+    \Re{\Sigma}V_{s}(r,r') = \Sigma_{HF}(r,r')+V^{so}(r,r')+\delta(r-r')\times V_{C}(r)
 \end{equation}
 
 \noindent
