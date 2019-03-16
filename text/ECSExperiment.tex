@@ -1,6 +1,6 @@
 \section{Overview of neutron \el\ experiments}
 In neutron elastic scattering measurements, the same time-of-flight techniques are used:
-given a "starting gun" when neutrons are produced and the neutron arrival time
+given a ``starting gun'' when neutrons are produced and the neutron arrival time
 at a time-of-flight detector, the neutron energy can be calculated.
 However, in contrast to total cross section measurements, neutron elastic scattering
 measurements require a monoenergetic neutron beam so that elastically-scattered
@@ -14,7 +14,7 @@ large angles to generate sufficient statistics.
 
 In transmission measurements, the time-of-flight detector is typically placed
 very far from the scattering sample so that it subtends an extremely small solid
-angle so that only unattenuated particles are detected.
+angle so that only unscattered particles are detected.
 For example, in the neutron \tot\ experimental setup described in Chapter
 \ref{TCSExperiment}, the scintillator of the time-of-flight detector subtended
 4.5x10$^{-6}$ steradians from the point of view of the samples. Thus, the
@@ -34,11 +34,13 @@ state) and delayed phosphorescence with much longer lifetime in the $\mu$seconds
 or longer (from a triplet state). Figure \ref{JablonskiExample} shows the
 relevant level structure for such a molecule. During a scattering experiment,
 incident neutrons deposit energy by collision with scintillator nuclei.
-These recoiling nuclei decelerate rapidly in the scintillating
-medium via Coulombic interactions, exciting scintillator molecules in the
-immediate vicinity. In contrast, incident $\gamma$ rays interact primarily with
-atomic electrons, which, during their recoil, exhibit a \textit{smaller} linear energy
-transfer. For the same total energy deposition, neutron-initiated events produce a higher 
+These recoiling nuclei (mostly protons) decelerate rapidly in the scintillating
+medium via Coulombic interactions with all electrons in the vicinity,
+exciting many scintillator molecules in the
+ion track. In contrast, incident $\gamma$ rays interact primarily with
+single atomic electrons, which, during their recoil, produce a lower excitation energy density.
+For the same total energy deposition,
+neutron-initiated events produce a higher 
 concentration of excited scintillator molecules than do $\gamma$-ray-initiated
 events.
 
@@ -46,23 +48,27 @@ In each population of excited scintillator molecules, most molecules are in a
 singlet excited state, and they decay promptly by fluorescence back to the
 ground state. A small fraction remain in a triplet excited state,
 either due to their initial excitation to a
-triplet state or because of intersystem crossing from a singlet state during its
-very short (picoseconds) vibrational decay period. Kept isolated, these
+triplet state or because of intersystem crossing from a singlet state. Kept isolated, these
 triplet-state molecules have lifetimes that are orders of magnitude longer
-(microseconds to milliseconds) than the those in a singlet state because of their extra unit of 
-spin. If, however, two nearby triplet-state
+(microseconds to milliseconds) than the those in a singlet state because of the required spin
+flin to return to the ground-state manifold. If, however, two nearby triplet-state
 molecules collide and exchange a unit of spin, they can convert to two singlet-state
-molecules that then decay promptly (nanoseconds), freed of quantum-mechanical forbiddenness.
-Thus, delayed light output will appear after the initial prompt fluorescence
-from these triplet-triplet fusion events, and the amount of light will be
+molecules, one in the ground-state manifold and one in an excited-state manifold. The excited
+singlet-state molecule will decay promptly (nanoseconds), freed of quantum-mechanical forbiddenness.
+Thus, after the initial prompt fluorescence, delayed light output will appear tens of nanosecond
+later from these triplet-triplet fusion events. The amount of light will be
 dependent on the rate of triplet-triplet collision, a second-order kinetics
-process coupled with the diffusion of excited scintillator molecules in the
+process associated with the diffusion of excited scintillator molecules in the
 medium. For neutron-initiated events, where the concentration of excited molecules is
 higher, the delayed light output is correspondingly higher than for $\gamma$-ray-initiated
 events. By comparing the tail of the light output signal to the prompt
-fluorescence peak, neutrons and $\gamma$-rays can be distinguished.
-Recently, machine learning techniques have been
-applied to light output data of this type to further improve discrimination \cite{Doucet2018}.
+fluorescence peak, neutrons and $\gamma$-rays can be distinguished. Typically, the differences in
+light output are quantified by comparing the integrated charge of the prompt fluorescence peak
+with the integrated charge of a section of the delayed fluoresence. Machine learning 
+techniques have also been applied to light output data to further improve discrimination 
+\cite{Doucet2018} beyond the simple charge-gate-ratio method. Recently, pulse-shape
+discrimination has been shown to be possible in certain solid organic crystals (e.g.,
+para-terphenyl, which is also used in laser dyes).
 
 \begin{figure}[h]
     \centering
@@ -99,8 +105,7 @@ The same \snTwelveNatFour\ samples used in the neutron \tot\ experiment (see Cha
 polyethylene, were provided by the TUNL facility so that our measurements could
 be normalized using the extremely-well-known (n,p) elastic cross section. The
 details of this normalization are given in Chapter \ref{ECSAnalysis}.
-The physical characteristics of all the samples are given in 
-\ref{ECSSampleTable}.
+The physical characteristics of all the samples are given in Table \ref{ECSSampleTable}.
 
 \begin{table}[ht]
     \caption[Physical characteristics of samples used for neutron \el\
@@ -140,7 +145,7 @@ We conducted our neutron \el\ measurements at the neutron TOF
 beamline of the Triangle Universities Nuclear Laboratory (TUNL) facility
 (diagrammed in Fig. \ref{ExperimentalSetupTUNL}) in 2017 and 2018.
 Incident deuterons, supplied by the
-facility's variable-energy tandem Van De Graaf accelerator, impinged on a deuterium
+facility's variable-energy tandem Van de Graaff accelerator, impinged on a deuterium
 gas cell to produce a forward-focused neutron beam via the d(d,n)$^{3}$He reaction.
 Two measurements, one for 11 MeV neutrons and one for 17 MeV neutrons, were
 conducted. For the 11 MeV measurement, the neutron beam energy distribution
@@ -155,7 +160,7 @@ In addition to the production runs, a few normalization runs were taken
 with the TUNL-supplied samples (graphite, polyethylene, and a blank).
 Between runs, samples were rotated into position
 with a hand-actuated pulley. Sample alignment with the gas cell was confirmed
-by telescopic sight. Neutrons scattering off the samples were recorded by one
+by transit. Neutrons scattering off the samples were recorded by one
 of the two main time-of-flight
 detectors, designated ``4M" and ``6M", roughly 4 and 6 meters away from the target.
 These detectors were mounted on large, movable carriages, or "arms",
@@ -165,7 +170,7 @@ the arms' heavy shielding, only neutrons entering the arm at a precise angle
 were counted.
 
 To further reduce room background and to screen direct neutrons the gas cell,
-an ensemble of "shadow bars" (wedge-shaped tungsten bricks)
+an ensemble of ``shadow bars'' (wedge-shaped tungsten bricks)
 were used to adjust the aperture at the entrance to the arms. After an arm's
 angle was changed, the shadow bars were aligned by hand so that the
 detector within the arm had no line-of-sight to the gas cell or the
@@ -179,7 +184,7 @@ to record beam flux. In addition, a capacitive pickoff signal
 from the accelerator was collected to serve as a time-of-flight
 (TOF) stop signal any time an event was recorded on one of the four neutron
 detectors. Prior to production, detectors were gain-matched and calibrated with $^{137}$Cs
-and $^{22}$Na sources. For the 4M (6M) detector, a time resolution of [insert
+and $^{22}$Na sources using the Compton edges produced from these $\gamma$-ray sources. For the 4M (6M) detector, a time resolution of [insert
 resolution] ns was established.
 
 \begin{figure}[h]
@@ -213,12 +218,12 @@ resolution] ns was established.
 
 \section{Data Acquisition}
 Timing, pulse-shape discrimination, and pulse height information were
-extracted by the analog signal processing logic laid out in \ref{ECSLogicDiagram}.
+extracted by the analog signal processing logic laid out in Fig. \ref{ECSLogicDiagram}.
 Raw signals from each neutron detector are processed by Mesytec MPD-4
-pulse shape discrimination modules. The pulse tail length is converted to an
+pulse-shape-discrimination modules. The pulse tail length is converted to an
 amplitude via a time-to-analog converter (TAC), providing neutron-gamma
 discrimination. The pulse amplitude is measured by a separate
-analog-to-digital converter (ADC). Event times (labeled "Gate" from each MPD-4)
+analog-to-digital converter (ADC). Event times (labeled ``Gate'' from each MPD-4)
 are passed as logic signals to a single time-to-digital converter (TDC) so that
 event times are recorded using a single clock. Pulse counts ("scalers") are
 collected at each step and the TDC, ADC, and data acquisition computer busy

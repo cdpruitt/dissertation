@@ -9,7 +9,7 @@ on-board CFD calculation increased the time required to process each event by 40
 ns or more, an unacceptable increase in the per-event deadtime. Thus we chose
 to use the digitizer's faster LED option and to calculate precise event timing
 in software, after the experiment, by analyzing the digitized waveform for each event.
-Data taken from the left and right detectors separately and gated by neutron energy 
+Data taken from the left and right PMTs separately and gated by neutron energy 
 is shown in Figs. \ref{LRCorrelation} and \ref{LRTimeDifferenceByEnergy}. 
 For each energy range, the FWHM of the distribution was calculated and a hyperbolic fit was
 performed, shown in Fig. \ref{DifferenceThresholdsFit}. The inherent left-right timing 
@@ -118,16 +118,18 @@ have been propagated through the subsequent analysis.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/RFTimeStudy.png}
-    \caption[Stability of the beam pick-off (T$_{0}$) during the experiment]
-    {Results of a study of the micropulse frequency stability. The \tZero\ period used
-        in the analysis was varied in 1-ps increments, changing the
-        calculated arrival time of events in each micropulse. For each period, the FWHM of
-        the time uncertainty in the $\gamma$-ray flash was tabulated, and the
-        overall trend fitted with a quadratic curve. The true micropulse
+    \caption[Stability of the beam pick-off (\tZero) frequency during the experiment]
+    {Results of a study of the micropulse frequency (\tZero) stability. The \tZero\ period used
+        in the analysis was varied in 1-picosecond increments to change the
+        calculated arrival time-of-flight of events in each micropulse.
+        Within each micropulse, the FWHM of
+        the time uncertainty in the $\gamma$-ray flash was tabulated. The
+        variation of the $\gamma$-ray flash FWHM from varying the micropulse period was
+        then fitted with a quadratic curve (solid lines). The true micropulse
         frequency was taken as the minimum of this curve. This procedure was
         repeated on data from different days throughout the experimental run,
-        verifying that micropulse frequency drifting has a negligible effect
-        on the recovered times-of-flight.
+        verifying that the observed drift in the micropulse frequency is small enough to have a 
+        negligible effect on the recovered times-of-flight.
     }
     \label{RFTimeStudy}
 \end{figure}
@@ -230,7 +232,6 @@ we could use a more straightforward deadtime correction logic and minimize the
 number of lost events. Assuming negligible variation in beam flux between micropulses
 (an assumption investigated below), the fraction of time $F[i]$ that the digitizer is dead 
 for a given time bin $i$ can be calculated:
-
 \begin{equation}
     F_{i} = \sum^{N-1}_{j=0} R_{(i-j)\text{ mod N}}\times P_{j}
 \end{equation}
@@ -239,11 +240,11 @@ for a given time bin $i$ can be calculated:
 where $N$ is the number of time bins in the micropulse, $R_{x}$ is the rate of
 detected events per micropulse in bin $x$, and $P_{j}$ is the probability that the
 digitizer is still busy from a trigger $j$ bins ago. Moore \cite{Moore1980} also provides
-a more advanced 
-formula to generate the appropriate dead-time correction in cases where the variation in beam 
+a more general 
+formula to calculate the appropriate dead-time correction in cases where the variation in beam 
 flux is significant. However, an examination of our flux-per-micropulse data 
 showed almost no variance in the flux per micropulse, except during the first 10\%
-of each macropulse when flux was "ramping up". In our final analysis, we have discarded the 
+of each macropulse when flux was ``ramping up''. In our final analysis, we have discarded the 
 first 40 micropulses of each macropulse and used the simpler Eq. \ref{DeadtimeEquation} to 
 calculate the dead-time fraction.
 
@@ -256,7 +257,7 @@ digitizer is dead, $F_{i}$, is in essence a discrete convolution of the
 last micropulses in a macropulse, micropulses are consecutive and thus deadtime effects can
 ``wrap around" from the end of one micropulse to the next. For these wrap-around
 contributions (that is, $j>i$), the (mod N) term ensures that the bin referred
-to by $i-j$ is non-negative and has physical meaning as a time bin from the previous 
+to by $(i-j)$ is non-negative and has physical meaning as a time bin from the previous 
 micropulse.
 
 By optimizing trigger processing in digitizer firmware,
@@ -271,7 +272,6 @@ Once the fraction dead was identified for each time bin, the total number of
 events detected in that bin, $N_{m}[i]$, was corrected to the \textit{true}
 number of events in that bin $N_{t}[i]$ that would have been detected in the
 absence of a per-event deadtime:
-
 \begin{equation} \label{DeadtimeEquation}
     N_{t}[i] = -ln\left(\frac{1-\frac{N_m[i]}{M}}{(1-F_{i})\times M}\right)
 \end{equation}
@@ -398,10 +398,11 @@ experiments with even smaller sample diameters.
 \section{Cross Section Calculation}
 The fundamental quantity of interest, \tot, is related to the flux
 loss through a sample by:
-
 \begin{equation}
 I_{t} = I_{0}e^{-{\ell\rho\sigma_{tot}}}
 \end{equation}
+
+\noindent
 or, equivalently,
 \begin{equation}
     \tot = -\frac{1}{\ell\rho}ln\left(\frac{I_{t}}{I_{0}}\right)
@@ -421,11 +422,12 @@ From these energy spectra, the raw cross sections were calculated, bin-wise, as 
     \tot = -\frac{1}{\ell\rho_{n}}
     \ln \left(\frac{I_{0}}{I_{s}}\times\frac{M_{s}}{M_{0}}\right)
 \end{equation}
+
+\noindent
 where $\frac{I_{0}}{I_{s}}$ is the ratio of counts in the energy spectra between 
 the blank and sample, $\frac{M_{s}}{M_{0}}$ is the ratio of counts in the
 monitor detector between the sample and blank (for flux normalization), $\ell$ is the length 
 of the sample, and $\rho_{n}$ is the number density of atoms in the sample.
-
 %To compare \tot\ for two different targets of masses A and A', the relative
 %difference \totRD\ is useful:
 %\begin{equation} \label{SASRelDiff}
@@ -461,25 +463,27 @@ determination, a D$_{2}^{\text{nat}}$O sample from which the literature \tot\ fo
 D$_{2}$ could be subtracted was prepared as an additional cross-check. The
 results of the deuterium-to-hydrogen relative difference are shown in Fig. \ref{DtoH}. 
 
-\begin{figure}[h]
+\begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/relativeDiff_DtoH.png}
-    \caption{(Color online) Relative difference of cross sections of
-        deuterium to hydrogen, as calculated by subtraction of our O \tot\ from
-        D$_{2}$O and H$_{2}$O. Our results are shown in red; the measurement of
+    \includegraphics[width=0.9\textwidth]{figures/relativeDiff_DtoH.png}
+    \caption[\tot\ relative difference between deuterium and hydrogen from our measurement]
+    {The \tot\ relative difference between deuterium and hydrogen,
+        as calculated by subtraction of our O \tot\ results from
+        D$_{2}$O and H$_{2}$O. Data from our measurement are shown in red; the measurement of
         Abfalterer et al. \cite{Abfalterer1998} is shown in black.}
     \label{DtoH}
 \end{figure}
 
 \section{Results}
 \subsection{Benchmarking \tot\ results with natural samples}
-To validate our analysis, we first compared our \tot\ measurements on natural samples
-(\cNat, \niNat, \snNat, \pbNat) against the high-precision data sets on natural samples from 
+To validate our analysis, we first compared our \tot\ measurements on \cNat, \niNat, \snNat, \pbNat 
+against the high-precision data sets on natural samples from 
 Finlay et al. \cite{Finlay1993} and Abfalterer et al. \cite{Abfalterer2001}, shown in Fig.
 \ref{LiteratureBenchmarking}. From 3-100 MeV, our measurements are in excellent
 agreement, within statistical error, with these previous data sets. Above 100 MeV, our results 
-diverge from the previous measurements, up to a relative difference of 5\% at 300 MeV for all 
-targets) suggesting a small systematic effect at high energies, when the instantaneous neutron 
+on natural samples diverge from the previous measurements,
+(up to a relative difference of 5\% at 300 MeV for all 
+samples), suggesting a small systematic effect at high energies when the instantaneous neutron 
 flux is highest. To investigate this discrepancy, we analyzed data from multiple digitizer 
 thresholds during data production, applied various software threshold, gated events by low- 
 and high-integrated charge, and varied our software CFD logic, among other diagnostic tests. 
@@ -498,26 +502,11 @@ the sample nor with any other physical characteristics of the samples,
 suggesting that backshine of neutrons into the flux monitor from the samples, or another 
 physical mechanism, was not the cause.
 
-At neutron times-of-flight corresponding to energies $>$100 MeV, the number of
-counts in the spectrum rises sharply as one moves to higher energies. In this
-region, even a sub-nanosecond timing differences between the spectrum for the
-blank and for the sample of interest is amplified into large errors in the
-cross section calculation. Thus the event timing and data
-storage routines must be kept completely ignorant of which target is currently
-in-beam so as to avoid sample-dependent timing effects. In practice, this is
-difficult, as acquisition with the blank sample is naturally associated with
-a higher data rate as fewer neutrons are absorbed or scattered in-flight than during
-with samples in the beam path. By reducing the rate of data acquisition
-by an order of magnitude or more, the analog-electronics approach reduces the
-absolute data rates of both the blank and the samples, mitigating this effect.
-However, because much larger samples are required with the overall reduced data
-rate, the relative data rate between the blank and samples is increased,
-amplifying any effect on the electronics. Without a study of digital and analog
-systems running simultaneously with input from the same detectors, it is not
-clear which approach suffers more from this effect. Such a follow-up, especially
-with multiple digitizers from differing manufacturers, would help
-resolve the high-energy discrepancy we see between all of our \tot\ data sets
-and literature data.
+Interestingly, we did not see any energy-dependent 
+discrepancy in the \oSix\ results (see Fig. \ref{TwoPanelO}). Both our measurement and previous
+measurements on O isotopes used compound samples (H$_{2}$O, D$_{2}$O, BeO, ZnO), so it is possible 
+that the subtraction of the positive-ion species (D and H for us, Be and Zn for \cite{Finlay1993}), 
+eliminated the energy-dependent systematic difference in our measurements.
 
 \begin{figure}[h]
     \centering
@@ -526,8 +515,8 @@ and literature data.
     {
         A comparison of literature data (taken with analog
         techniques) and our results (signals processed with a digitizer, or "DSP")
-        for natural C, Ni, Sn, and Pb. In panel a), the absolute cross sections are shown from
-        3-500 MeV; in panel b), the relative differences between the literature data and
+        for natural C, Ni, Sn, and Pb. In panel (a), the absolute cross sections are shown from
+        3-500 MeV; in panel (b), the relative differences between the literature data and
         our data are shown in percent. From 3-100 MeV, our data are fully consistent with the
         literature datasets but above 100 MeV, a relative difference arises, peaking at
         $\approx$5\% at 300 MeV.
@@ -557,6 +546,27 @@ and literature data.
     \label{CarbonBenchmarking}
 \end{figure}
 
+At neutron times-of-flight corresponding to energies $>$100 MeV, the number of
+counts in the spectrum rises sharply as one moves to higher energies. In this
+region, even a sub-nanosecond timing differences between the spectrum for the
+blank and for the sample of interest is amplified into large errors in the
+cross section calculation. Thus the event timing and data
+storage routines must be kept completely ignorant of which target is currently
+in-beam so as to avoid sample-dependent timing effects. In practice, this is
+difficult, as acquisition with the blank sample is naturally associated with
+a higher data rate as fewer neutrons are absorbed or scattered in-flight than during
+with samples in the beam path. By reducing the rate of data acquisition
+by an order of magnitude or more, the analog-electronics approach reduces the
+absolute data rates of both the blank and the samples, mitigating this effect.
+However, because much larger samples are required with the overall reduced data
+rate, the relative data rate between the blank and samples is increased,
+amplifying any effect on the electronics. Without a study of digital and analog
+systems running simultaneously with input from the same detectors, it is not
+clear which approach suffers more from this effect. Such a follow-up, especially
+with multiple digitizers from differing manufacturers, would help
+resolve the high-energy discrepancy we see between all of our \tot\ data sets
+and literature data.
+
 Our absolute \tot\ results for all isotopic targets are shown in Figs.
 \ref{TwoPanelO}, \ref{TwoPanelNi}, \ref{TwoPanelRh}, and \ref{TwoPanelSn}.
 All previous isotopic \tot\
@@ -574,6 +584,7 @@ Relative differences of our measured \tot\ between \oSixEight, \niEightFour, and
 and \ref{IsotopicDifferenceSn}, respectively. By examining relative differences between
 isotopes, any systematic errors of our approach (besides the areal density uncertainties)
 are divided out.
+
 %In a simple isoscalar picture with a nuclear radius dependence of
 %A$^{\frac{1}{3}}$, the relative difference between isotopes is expected to be
 %almost flat and rise slightly with neutron energy as the neutron wavelength is
@@ -581,30 +592,30 @@ are divided out.
 %relative difference plots, revealing isovector dependence of the nuclear potential.
 
 \subsection{\oSixEight\ \tot\ results}
-\begin{figure}[h]
-    \includegraphics[scale=0.35]{figures/TwoPanelO.png}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{figures/TwoPanelO.png}
     \caption[Neutron \tot\ for \oSixEight: our results and literature data]
     {Neutron \tot\ for \oSixEight: our results and literature data.
         (a) shows our digitizer-measured isotopic results (in shades of red) and
         corresponding analog-measured literature data \cite{Finlay1993, Perey1972, Vaughn1965,
-        Salisbury1965} (in shades of blue). The data for \oEight have been
+        Salisbury1965} (in shades of blue). The data for \oEight\ have been
         shifted up by 1 barn, for visibility.
         (b) shows the relative difference between our data
-        and literature data that are shown in panel a).
+        and literature data that are shown in panel (a).
     }
     \label{TwoPanelO}
 \end{figure}
 
-\begin{figure}[h]
-    \includegraphics[scale=0.35]{figures/relativeDiff_O18O16.png}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{figures/relativeDiff_O18O16.png}
     \caption[\oSixEight\ neutron \tot\ relative difference]
     {\oSixEight\ neutron \tot\ relative difference, from our newly-measured
         data sets (in red). Assuming a simple A$^{\frac{1}{3}}$ size scaling for the
-        nuclear radius of \oEight from \oSix, the simple oscillatory model of
-        Eq. \ref{OscillatoryModel} prediction for the \oSixEight neutron \tot\ relative
+        nuclear radius of \oEight\ from \oSix, the simple oscillatory model of
+        Eq. \ref{SASAbsolute} prediction for the \oSixEight\ neutron \tot\ relative
         difference is shown (gray dashed line). From 10-100 MeV, the oscillatory
         model is surprisingly successful at reproducing the relative difference,
-        though it fails above 100 MeV as the \oEight neutron \tot\ drops below
+        though it fails above 100 MeV as the \oEight\ neutron \tot\ drops below
     that of \oSix.}
     \label{IsotopicDifferenceO}
 \end{figure}
@@ -620,8 +631,8 @@ consequence of the larger neutron elastic phase shift in \oEight\ compared to
 \oSix, which pushes the \tot\ minimum to higher energies in \oEight.
 
 \subsection{\niEightFour\ \tot\ results}
-\begin{figure}[h]
-    \includegraphics[scale=0.35]{figures/TwoPanelNi.png}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{figures/TwoPanelNi.png}
     \caption[Neutron \tot\ for \niEightFour: our results and literature data]
     {
         Neutron \tot\ for \niEightFour: our results and literature data.
@@ -633,8 +644,8 @@ consequence of the larger neutron elastic phase shift in \oEight\ compared to
     \label{TwoPanelNi}
 \end{figure}
 
-\begin{figure}[h]
-    \includegraphics[scale=0.35]{figures/relativeDiff_Ni64Ni58.png}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{figures/relativeDiff_Ni64Ni58.png}
     \caption[\niEightFour\ neutron \tot\ relative difference]
     {
         \niEightFour\ neutron \tot\ relative difference, from our newly-measured
@@ -643,7 +654,7 @@ consequence of the larger neutron elastic phase shift in \oEight\ compared to
         uncertainty in the sample areal density) is shown by the blue dotted region.   
         Assuming a simple A$^{\frac{1}{3}}$ size scaling for the
         nuclear radius of \niFour\ from \niEight, the simple oscillatory model of
-        Eq. \ref{OscillatoryModel} prediction for the \niEightFour\ neutron \tot\ relative
+        Eq. \ref{SASAbsolute} prediction for the \niEightFour\ neutron \tot\ relative
         difference is shown (black dashed line).
     }
     \label{IsotopicDifferenceNi}
@@ -656,29 +667,29 @@ MeV, and high-precision literature data was only available up to 15 MeV for
 in good agreement with the previous results when their errors are included.
 
 \subsection{\rhThree\ \tot\ results}
-\begin{figure}[h]
-    \includegraphics[scale=0.35]{figures/TwoPanelRh.png}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{figures/TwoPanelRh.png}
     \caption[Neutron \tot\ for \rhThree: our results and literature data]
     {
         Neutron \tot\ for \rhThree: our results and literature data.
         (a) shows our digitizer-measured isotopic results (in red) and
         corresponding analog-measured literature data \cite{Poenitz1983} (in blue).
         (b) shows the relative difference
-        between our data and literature data that are shown in panel a).
+        between our data and literature data that are shown in panel (a).
     }
     \label{TwoPanelRh}
 \end{figure}
 
 The extremely small areal density and the reduced beam
-time allotted for our \rhThree\ sample made acquiring sufficient statistics difficult.
+time allotted for our \rhThree\ sample made it difficult to acquire sufficient statistics.
 Nevertheless, by reducing the energy range and number of bins slightly, we were
 able to achieve 1\% statistics for all bins and our results agree with those of
 \cite{Poenitz1983} up to 20 MeV. Our results extend the known energy range by over an order of
 magnitude up to 400 MeV.
 
 \subsection{\snTwelveFour\ \tot\ results}
-\begin{figure}[h]
-    \includegraphics[scale=0.35]{figures/TwoPanelSn.png}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{figures/TwoPanelSn.png}
     \caption[Neutron \tot\ for \snTwelveFour: our results and literature data]
     {
         Neutron \tot\ for \snTwelveFour: our results and literature data.
@@ -686,14 +697,14 @@ magnitude up to 400 MeV.
         corresponding analog-measured literature data \cite{Harper1982, Timokhov1989, 
         Rapaport1980, Dukarevich1967} (in shades of blue).
         (b) shows the relative difference between our data
-        and literature data that are shown in panel a). The data sets are in
+        and literature data that are shown in panel (a). The data sets are in
         excellent agreement where literature data exist, up to 20 MeV.
     }
     \label{TwoPanelSn}
 \end{figure}
 
-\begin{figure}[h]
-    \includegraphics[scale=0.35]{figures/relativeDiff_Sn124Sn112.png}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{figures/relativeDiff_Sn124Sn112.png}
     \caption[\snTwelveFour\ neutron \tot\ relative difference]
     {
         \snTwelveFour\ neutron \tot\ relative difference, from our newly-measured
@@ -702,7 +713,7 @@ magnitude up to 400 MeV.
         uncertainty in the sample areal density) is shown by the blue dotted region.   
         Assuming a simple A$^{\frac{1}{3}}$ size scaling for the
         nuclear radius of \snFour\ from \snTwelve, the simple oscillatory model of
-        Eq. \ref{OscillatoryModel} prediction for the \snTwelveFour\ neutron \tot\ relative
+        Eq. \ref{SASAbsolute} prediction for the \snTwelveFour\ neutron \tot\ relative
         difference is shown (gray dashed line).
     }
     \label{IsotopicDifferenceSn}

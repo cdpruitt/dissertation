@@ -2,7 +2,7 @@
 During production, runs were taken in batches of three, one each with \snTwelve,
 \snFour, and the blank samples. Because the distance to each time-of-flight detector
 was already measured, the time-of-flight for elastically-scattered neutrons could
-be directly calculated and used to determine delay from electronics and cabling.
+be directly calculated and used to determine the delay from electronics and cabling.
 The timestamp of each event was thus adjusted by a fixed amount
 so that the first peak of the neutron spectrum aligned the expected
 time-of-flight. Next, background $\gamma$-ray events were separated from relevant
@@ -25,8 +25,8 @@ neutron events by a pulse-shape discrimination analysis, shown in Fig. \ref{PHPS
 Neutron events surviving this PSD gating are shown for a few typical runs in Fig. 
 \ref{tiledRunData}. The first and second subfigures in the left column of the figure are from 
 the same detector and arm angle, but the first is from a blank-sample run and
-the second is from a \snFour sample-run. In each subfigure, the expected location
-of the time-of-flight for elastic scattering on \snFour is marked with a dark blue arrow,
+the second is from a \snFour\ sample-run. In each subfigure, the expected location
+of the time-of-flight for elastic scattering on \snFour\ is marked with a dark blue arrow,
 and the approximate FWTM time
 resolution of the detector is marked with blue dashed lines. The expected
 location of the time-of-flight peak for elastic scattering on atmospheric
@@ -36,19 +36,19 @@ the second subfigure (compared to the first) are from elastic scattering on
 and are shown above each histogram. For clarity, these efficiencies are plotted
 relative to the efficiency of at the elastically-scattered neutron energy.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/tiledRunData.png}
-    \caption{Histograms from typical runs showing neutron elastic scattering peak} 
+    \caption[Histograms from typical runs showing neutron elastic scattering peak]
     {
         Neutron-event histograms for three typical runs, one with the blank
-        sample and two with the \snFour sample.
-        The expected location of the \snFour elastic scattering peak (dark blue arrow)
+        sample and two with the \snFour\ sample.
+        The expected location of the \snFour\ elastic scattering peak (dark blue arrow)
         and first two inelastic scattering peaks (light blue arrows) show an
         increased number of counts when the sample is in-beam (runs 253 and
         254). For reference, the expected location of the nitrogen elastic scattering
         peak is shown as green arrows and the expected location of the first- and
-        second-inelastic scattering peaks for \snFour are shown as red arrows.
+        second-inelastic scattering peaks for \snFour\ are shown as red arrows.
         The FWTM detector resolution is indicated by the blue dashed lines.
     }
     \label{tiledRunData}
@@ -59,7 +59,7 @@ normalized by the total neutron flux
 (i.e., total counts in the CMON detector for that run) and summed by detector
 angle. Then, blank-run histograms
 were subtracted from the isotopic-run histograms to yield the neutron scattering
-events from the isotopic samples. Figure \ref{tiledAngleData} depicts the
+events from the isotopic samples. Figure \ref{tiledAngleData} provides example 
 results. As in the previous figure, dark blue arrows mark the anticipated
 time-of-flight of the elastic scattering peak, green arrows mark elastic
 scattering from atmospheric nitrogen, and blue dashed lines mark the anticipated
@@ -71,8 +71,8 @@ kinematic regime are the most challenging as the increased overlap between
 these peaks increases the uncertainty of the number of counts in the elastic
 peak. We fit the amplitudes of two Gaussian distributions to the elastic and
 first-inelastic peaks while fixing
-the $\mu$ and $\sigma$ of each Gaussian according to our detector resolution and
-the expected time-of-flight. Then, we integrated the first Gaussian to recover the
+the width and centroid of each Gaussian according to our time-of-flight resolution and
+the expected time-of-flight. The integral of the first Gaussian provides the
 number of counts in the elastic peak.
 
 \begin{figure}[ht]
@@ -96,32 +96,34 @@ number of counts in the elastic peak.
 
 \section{Normalization}
 To normalize the cross sections, the absolute neutron flux must be known.
-To determine the absolute neutron flux, a few initial reference runs were taken using a graphite,
-a polyethylene, and a blank sample. Events from one batch of these runs are
+To determine the absolute neutron flux, reference runs were taken using a graphite,
+a polyethylene, and a blank sample at both the beginning and end of the experiment.
+Events from one batch of these runs are
 histogrammed in Fig. \ref{polyethyleneRef} for the 4M and 6M detectors.
 The same conventions from Fig.
 \ref{tiledAngleData} are used, except that now the light blue arrows correspond to
-the elastic and first-excited peaks of C. The dark gray histogram (back
-histogram layer) shows the elastic and first-excited peaks of C
+the elastic and first-excited states of \cTwelve. The dark gray histogram (back
+histogram layer) shows the elastic and first-excited states of \cTwelve
 and also a broad peak from elastic scattering on H. After scaling for the number
 of moles in the graphite and polyethylene samples, stoichiometry, and neutron
 flux, the graphite spectrum (light gray, middle histogram later) is subtracted from the polyethylene
 spectrum, yielding neutron events from elastic scattering on protons (area of
 the red histogram between the blue dashed lines). Given the
 well-established n(p,p)n cross section, the ratio of absolute neutron flux to
-the number of CMON counts can be calculated:
+the number of CMON counts was calculated:
 
 \begin{equation}
+    [insert monitor scaling equation]
 \end{equation}
 
 \noindent
 We used the Scattering Analysis Interactive Database (SAID) code \cite{SAIDCode}
 to generate
 the proton-neutron elastic scattering cross sections needed in the above
-equation. This flux-to-monitor ratio was then used to normalize the \snTwelveFour
+equation. This flux-to-monitor ratio was then used to normalize the \snTwelveFour\
 results.
 
-\begin{figure}
+\begin{figure}[ht!]
     \includegraphics[width = 0.9\textwidth]{figures/polyethyleneRef.png}
     \caption[Reference runs of neutron scattering on C and (CH$_{2}$)$_{n}$]
     {
@@ -163,8 +165,8 @@ Fig. \ref{GussFiniteSizeEffect}, the
 biggest effect is on the depth of the diffraction minima.
 However, their samples
 were an order of magnitude larger than our
-samples: 42.59 g and 44.73 g for their \snSixteen and \snTwenty samples,
-respectively, compared to 4.97 g and 5.55 g for our \snTwelve and \snFour
+samples: 42.59 g and 44.73 g for their \snSixteen\ and \snTwenty\ samples,
+respectively, compared to 4.97 g and 5.55 g for our \snTwelve\ and \snFour\
 samples. Thus we anticipated a dramatically smaller correction would be
 required.
 
@@ -199,7 +201,7 @@ required.
             of their samples, resulting in the dashed curve. With beam
             attenuation also considered, the cross section is uniformly
             increased across the angular range, giving the solid curve, which
-            they take to be the "true" cross section. Because our targets are
+            they take to be the ``true'' cross section. Because our targets are
             approximately an order of magnitude smaller, we see far smaller
             finite size effects in our simulation (see Figs.
             \ref{FiniteSizeAngular} and \ref{FiniteSizeAttenuation}).
@@ -208,19 +210,18 @@ required.
     \end{center}
 \end{figure}
 
-As diagrammed in Fig. \ref{GussFiniteSizeDiagram}, the exact
-path of elastically-scattered neutrons is subject to a small degree of angular
-uncertainty. The effect of this uncertainty on the measured cross
-sections is to "wash out" the maxima and minima compared to the true cross
-section, especially in regions where the cross section varies rapidly compared
-to the angular uncertainty. To assess the magnitude of this effect from our
+Figure \ref{GussFiniteSizeDiagram} illustrates the possibility of multiple scattering in the samples
+and the small degree of angular uncertainty in the neutron scattering path.
+The effect of this angular uncertainty on the measured cross
+sections is to ``wash out'' the sharp diffraction minima expected to be present in the true cross
+section. To assess the magnitude of this effect from our
 samples, an iterative simulation was prepared in which a uniform beam of neutrons
 impinged on the sample volume and was scattered into the time-of-flight
-detectors [insert figure reference]. To scatter neutrons
-in the simulation, we used the raw cross section from our measurement. After
-scattering in the simulation, neutrons were scored in a detector array and a new "output"
-cross section was generated based on the detector hits in the simulation. The
-output cross section is thus a weighted convolution of the input cross section
+detectors. To select each neutron's scattering angle in the simulation, we took the
+raw cross section from our measurement to be the true cross section. After
+scattering, neutrons were scored in simulated detectors with the same the dimensions
+used in the real experiment and an ``output'' cross section was generated. The
+output is thus a weighted convolution of the input cross section
 over the finite size effects of the samples and detectors. In addition to
 running a simulation with the sample sizes used in the experiment, we performed
 addition simulations with exaggerated sizes for the
@@ -233,7 +234,7 @@ input cross section by the output cross section for each angle and multiplied ou
 experimental results by this factor. In principle, this procedure to generate
 the correction should be repeated iteratively, with the new corrected cross
 section plugged back into the simulation, but in practice the corrections were so small
-that only the first iteration is required.
+that only the first iteration was required.
 
 \section{Results}
 \subsection{\snTwelveFour\ \el\ at 11 MeV}
