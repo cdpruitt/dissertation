@@ -91,7 +91,7 @@ number of counts in the elastic peak.
         subtracted histogram and the results of the fit drawn in dark
         blue (elastic peak) and light blue (first-inelastic peak).
     }
-        \label{tiledAngleData}
+    \label{tiledAngleData}
 \end{figure}
 
 \section{Normalization}
@@ -142,8 +142,20 @@ results.
 
 \section{Cross Section Calculation}
 
-\begin{equation}
+The absolute \el\ were calculated as:
+
+\begin{equation} \label{ECSCalculation}
+    \el = \el_{ref,\theta} \times \frac{X_{sample}}{X_{ref}} \times
+    \frac{N_{sample}{N_{ref}}
 \end{equation}
+
+\noindent
+where $\el_{ref}$ is the (n,p) cross section at lab angle $\theta$, $X_{sample}$
+and $X_{ref}$ are number of counts in the elastic scattering peak for the sample
+and the reference runs, respectively (see Figs. \ref{tiledAngleData} and
+\ref{polyethyleneRef}), and $N_{sample}$ and $N_{ref}$ are the number of atom in
+the sample of interest and the number of hydrogen atoms in the polyethylene
+sample, respectively.
 
 \section{Finite Size Corrections}
 In an idealized differential cross section measurement, the sample and neutron

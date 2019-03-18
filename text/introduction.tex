@@ -48,27 +48,31 @@ nucleus is approximated by five physically-intuitive terms appropriate for
 a droplet of nuclear matter:
 
 \begin{equation} \label{LDM}
-    BE(Z, N) = Vol + Surface + Coulomb + Asymmetry + Pairing
+    BE(A,Z) = a_{vol}A - a_{surf}A^{\frac{2}{3}}
+    -a_{coul}frac{Z(Z-1)}{A^{\frac{1}{3}}}-a_{asymm}\frac{(A-2Z)^{2}}{A}  +
+        a_{pair}(A,Z)
 \end{equation}
 
-a volume term that describes "bulk" binding that would be experienced in an
-infinite sea of nuclear matter
-
-a surface term that incorporates the finite size of a nucleus (i.e., it is a
-drop, not an ocean), equivalent to considering surface tension,
-
-a coulomb term that incorporates the electric repulsion experienced by protons
-kept in close proximity inside the drop,
-
-an asymmetry term representing the relative chemical potential of neutrons and
-protons as a function of their relative population (which can be re-balanced by
-beta decay),
-
-a pairing term to account for the experimental observation that nuclei with an
-even number of both protons and neutrons are slightly more bound, implying a
-favorable pairing interaction
-
-The free parameters in each term can be fitted to the hundreds of well-measured nuclear masses
+\noindent
+In order, these terms are:
+\begin{itemize}
+    \item A volume term that describes "bulk" binding that would be experienced in an
+        infinite sea of nuclear matter,
+    \item A surface term that incorporates the finite size of a nucleus (i.e., it is a
+        drop, not an ocean), equivalent to considering surface tension,
+    \item A coulomb term that incorporates the electric repulsion experienced by protons
+        kept in close proximity inside the drop,
+    \item An asymmetry term representing the relative chemical potential of neutrons and
+        protons as a function of their relative population (which can be re-balanced by
+        beta decay), and
+    \item a pairing term to account for the experimental observation that nuclei with an
+        even number of both protons and neutrons are slightly more bound, implying a
+        favorable pairing interaction
+\end{itemize}
+$A$ and $Z$ are the total number of nucleons and number of protons,
+respectively and the nuclear radius (not explicitly included here) varies
+$\alpha A^{\frac{1}{3}}$. The free parameters in each term can be fitted to the
+hundreds of well-measured nuclear masses
 across the chart of nuclides. These five simple terms are quite successful
 in describing masses and radii of spherical nuclei, leading early nuclear
 scientists to expect that shell structure was less important in the nuclear
@@ -81,16 +85,16 @@ The Droplet Model \cite{MyersAndSwiatecki} considers a systematic two-dimensiona
 Eq. \ref{LDM} about two fundamental independent quantities, the nucleon density
 and neutron-proton asymmetry:
 
-\begin{equation}
-    \epsilon = -\frac{1}{3}\frac{(\rho - \rho_{0})}{\rho_{0}}
+\begin{equation} \label{DropletIndependentQuantities}
+    \bar{\epsilon} = -\frac{1}{3}\frac{(\rho - \rho_{0})}{\rho_{0}}
 \end{equation}
 
 \begin{equation}
-    \delta = \frac{\rho_{n}-\rho_{z}}{\rho}
+    \bar{\delta} = \frac{\rho_{n}-\rho_{z}}{\rho}
 \end{equation}
 
 \noindent
-In the above, $\rho_{0}$ is the saturation density of 0.16 nucleons fm$^{-3}$. Relevant quantum
+Here, $\rho_{0}$ is the saturation density of 0.16 nucleons fm$^{-3}$. Relevant quantum
 effects, such as changes in level densities near shell closures
 that affect the observed masses, can be incorporated through a series of corrections
 that approximate shell effects and geometric deformation.
@@ -112,9 +116,50 @@ between the neutron and proton distributions, commonly referred to as the
 ``neutron skin'' \cite{Otten1989}.
 In a Droplet Model picture, the slope of the isotope shift is linked to the symmetry energy $J$, 
 density dependence of the symmetry energy
-$L$, and surface stiffness coefficient $Q$, the same bulk quantities that determine
-neutron-skin thickness \cite{MyersAndSwiatecki, Berdichevsky1988}
-[insert footnote with Droplet Model explanation of these terms].
+$L$, and surface stiffness coefficient $Q$\footnotemark, the same bulk quantities that determine
+neutron-skin thickness \cite{MyersAndSwiatecki, Berdichevsky1988}.
+\footnotetext{
+    In \cite{MyersAndSwiatecki}, the $J$-, $L$-, and $Q$-dependent contributions to the
+    binding energy are:
+    \begin{equation*}
+        \begin{split}
+            E(N,Z;shape) & =
+            [J\bar{\delta}^{2}-\frac{1}{2}K\bar{\epsilon}^{2}
+            +\frac{1}{2}M\bar{\delta}^{4}]A\\
+            & + \frac{9}{4}(J^{2}/Q)\bar{\delta}^{2}A^{\frac{2}{3}}B_{s}
+            + CC(J,Q)
+        \end{split}
+    \end{equation*}
+
+    \noindent
+    where $\bar{\delta}$ and $\bar{\epsilon}$ of Eq.
+    \ref{DropletIndependentQuantities} are fully parameterized as: 
+    \begin{equation*}
+        \begin{split}
+            \bar{\delta} & = [I+\frac{3}{16}(c_{1}/Q)ZA^{-\frac{2}{3}}B_{v}]
+            /[1+\frac{9}{4}(J/Q)A^{-\frac{1}{3}}B_{s}]\\
+            \bar{\epsilon} & = [-2a_{2}A^{-{\frac{1}{3}}}B_{s}+L\bar{\delta}^{2}
+            +c_{1}Z^{2}A^{-\frac{4}{3}}B_{c}/K
+        \end{split}
+    \end{equation*}
+    
+    \noindent
+    In these equations, $K$ is the compressibility coefficient, $M$
+    accounts for anharmonicity of the binding-energy dependence on $\bar{\delta}$,
+    and $B_{s}$ accounts for shape dependence of the surface energy. The quantity
+    $\frac{9}{4}(J^{2}/Q)\bar{\delta}^{2}$ is the correction to the binding
+    energy from excess neutrons accumulating on the nuclear surface in neutron-rich
+    systems (i.e., neutron skin formation).
+}
+
+    \begin{equation*}
+        \begin{split}
+            \bar{\delta} = (
+        \end{split}
+    \end{equation*}
+    the following values for $J$, $L$,
+    and $Q$ are used:
+
 Without addition experimental constraints, the $J$, $L$, and $Q$ parameters form an
 underdetermined system from which unique values cannot be recovered, even if the
 consensus value of $J \approx$ 30 MeV is used to reduce the parameter space.
@@ -182,7 +227,7 @@ Models built on this premise are termed ``beyond-mean-field'', for obvious reaso
 
 In light systems, where the number of nucleons is not too large, every nucleon
 may be allowed to participate in excitations into the valence space of the model
-(a ``no-core shell model"). As the system size increases, the configuration space grows
+(a ``no-core shell model''). As the system size increases, the configuration space grows
 combinatorially until calculations become prohibitively expensive. To ease calculations for these 
 larger nuclei, a variety of approaches
 are employed, including simply restricting the valence space and prohibiting deeply-bound 
@@ -224,7 +269,7 @@ picture. First, it has been known for decades that mean-field models give nuclea
 that are too small, an indication that deeply-bound nucleons were not being well-described. Evidence
 from (e,e'p) and (p,2p) knockout reactions 
 consistently shows that the occupancy of single-particle levels deep in the nucleus is lower
-than the mean-field expectation of full occupancy \cite{Mougey1980, Jacob1973}.
+than the mean-field expectation of full occupancy \cite{Mougey1980, Jacob1966, Jacob1973}.
 For levels near the Fermi surface, the depletion is on the order of 30\% and can partially be
 explained as a consequence of coupling between single-particle states and low-lying collective
 states, physics addressed by many beyond-mean-field models. However, even for extremely deeply bound
@@ -586,16 +631,6 @@ with an improved non-local DOM capable of fits to data on even-even nuclei. Deta
 implementation are presented in chapter \ref{DOMFormalism}. 
 %"The magnitude and energy dependence of the real isovector part of the
 %optical potential are poorly constrained by experiment." \cite{Holt16}
-
-\subsection{Quasi-free scattering data: (e,e'p), (p,2p), and (p,pn)}
-\cite{Mougey1980, Jacob1966, Jacob1973} provide an overview of (e,e'p) and other quasi-free 
-scattering experiments.
-
-\oSix data from \cite{Leuschner1994}
-
-Louk Lapikas
-NIKHEF data on 16O, 40Ca, 208Pb
-SRCs and LRCs
 
 \subsection{Nuclear Masses, Matter Radii, and Charge Radii}
 Connect to Vinas, Chuck Horowitz, and J. Piekarewicz's neutron star EOS work.

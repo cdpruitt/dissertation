@@ -73,13 +73,14 @@
 \newcommand{\totRD}{\ensuremath{\upsigma_{A,A'}}(E)}
 \newcommand{\rxn}{\ensuremath{\upsigma_{\text{rxn}}}}
 \newcommand{\rxnE}{\ensuremath{\upsigma_{\text{rxn}}}(E)}
-\newcommand{\el}{\ensuremath{\frac{d\upsigma_{\text{el}}}{d\Omega}}}
+\newcommand{\el}{\ensuremath{\frac{d\upsigma}}{d\Omega}}}
 
 % nuclides
 \newcommand{\cTwelve}{\ensuremath{^{12}}C}
 \newcommand{\cNat}{\ensuremath{^{\text{nat}}}C}
 
 \newcommand{\oSix}{\ensuremath{^{16}}O}
+\newcommand{\oSeven}{\ensuremath{^{17}}O}
 \newcommand{\oEight}{\ensuremath{^{18}}O}
 \newcommand{\oSixEight}{\ensuremath{^{16,18}}O}
 
@@ -90,6 +91,9 @@
 \newcommand{\caAughtEight}{\ensuremath{^{40,48}}Ca}
 
 \newcommand{\niEight}{\ensuremath{^{58}}Ni}
+\newcommand{\niSixty}{\ensuremath{^{60}}Ni}
+\newcommand{\niOne}{\ensuremath{^{61}}Ni}
+\newcommand{\niTwo}{\ensuremath{^{62}}Ni}
 \newcommand{\niFour}{\ensuremath{^{64}}Ni}
 \newcommand{\niEightFour}{\ensuremath{^{58,64}}Ni}
 \newcommand{\niNat}{\ensuremath{^{\text{nat}}}Ni}
@@ -97,8 +101,14 @@
 \newcommand{\rhThree}{\ensuremath{^{103}}Rh}
 
 \newcommand{\snTwelve}{\ensuremath{^{112}}Sn}
+\newcommand{\snFourteen}{\ensuremath{^{114}}Sn}
+\newcommand{\snFifteen}{\ensuremath{^{115}}Sn}
 \newcommand{\snSixteen}{\ensuremath{^{116}}Sn}
+\newcommand{\snSeventeen}{\ensuremath{^{117}}Sn}
+\newcommand{\snEighteen}{\ensuremath{^{118}}Sn}
+\newcommand{\snNineteen}{\ensuremath{^{119}}Sn}
 \newcommand{\snTwenty}{\ensuremath{^{120}}Sn}
+\newcommand{\snTwo}{\ensuremath{^{122}}Sn}
 \newcommand{\snFour}{\ensuremath{^{124}}Sn}
 \newcommand{\snTwelveFour}{\ensuremath{^{112,124}}Sn}
 \newcommand{\snNat}{\ensuremath{^{\text{nat}}}Sn}
@@ -236,7 +246,7 @@
 
 \chapter{Dispersive Optical Model:\protect\\ Results on \oSixEight, \caAughtEight,
 \niEightFour, \snTwelveFour, \pbEight}\label{DOMResults}
-\input{\textDirectory/DOMResults}
+%\input{\textDirectory/DOMResults}
 
 \chapter{Conclusions}
 \input{\textDirectory/conclusion}
@@ -278,6 +288,9 @@
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    \chapter{Isotopic Composition of Enriched Samples}
+    \input{\textDirectory/composition}
+
     \chapter{Experimental Data Used to Constrain DOM Potentials}
     \input{\textDirectory/dataSets}
 
