@@ -8,7 +8,8 @@ so that the first peak of the neutron spectrum aligned the expected
 time-of-flight. Next, background $\gamma$-ray events were separated from relevant
 neutron events by a pulse-shape discrimination analysis, shown in Fig. \ref{PHPSDPlot}.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
+    \centering
     \includegraphics[width=0.9\textwidth]{figures/PHPSDPlot.png}
     \caption[Event pulse height (PH) vs. pulse-shape-discrimination (PSD) for
     a typical run]
@@ -42,14 +43,15 @@ relative to the efficiency of at the elastically-scattered neutron energy.
     \caption[Histograms from typical runs showing neutron elastic scattering peak]
     {
         Neutron-event histograms for three typical runs, one with the blank
-        sample and two with the \snFour\ sample.
-        The expected location of the \snFour\ elastic scattering peak (dark blue arrow)
-        and first two inelastic scattering peaks (light blue arrows) show an
-        increased number of counts when the sample is in-beam (runs 253 and
-        254). For reference, the expected location of the nitrogen elastic scattering
-        peak is shown as green arrows and the expected location of the first- and
-        second-inelastic scattering peaks for \snFour\ are shown as red arrows.
-        The FWTM detector resolution is indicated by the blue dashed lines.
+        sample and two with the \snTwelve\ sample.
+        In the first two rows, the expected locations of the \snTwelve\ elastic scattering peak 
+        (blue arrow)
+        and inelastic scattering peak from the first two excited states (red arrows) show an
+        increased number of counts compared to the last run (bottom row), which used the blank
+        sample. For reference, the expected location of the nitrogen elastic scattering
+        peak is shown with green arrow in all histograms.
+        The energy-dependent detector efficiency is plotted in the upper section of
+        each panel.
     }
     \label{tiledRunData}
 \end{figure}
@@ -77,19 +79,19 @@ number of counts in the elastic peak.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width = 0.9\textwidth]{figures/tiledAngleData.png}
+    \includegraphics[width = 1.0\textwidth]{figures/tiledAngleData.png}
     \caption[Scaled event histograms showing neutron elastic scattering peak]
     {
-        Scaled event histograms showing neutron elastic scattering peak. The
-        neutron event histograms for isotopic-sample runs (dark gray),
-        blank-sample runs (light gray), and the difference (in red) are plotted.
-        The dark blue arrows indicate the expected location of the elastic scattering
-        peaks on \snTwelveFour, and the light blue arrows indicate the first-
-        and second-excited inelastic scattering peaks on \snTwelveFour. The
-        green arrows indicate the expected location of the elastic scattering
-        peaks on atmospheric N$_{2}$. A double-Gaussian function was fit to the
-        subtracted histogram and the results of the fit drawn in dark
-        blue (elastic peak) and light blue (first-inelastic peak).
+        Scaled event histograms showing neutron elastic scattering and first
+        inelastic scattering peaks from the 4M detector for a few representative angles. The
+        histograms for isotopic-sample runs (dark gray),
+        blank-sample runs (light gray), and the difference (in red) are shown.
+        For each difference histogram, a double-Gaussian function
+        was constructed with the centroid and width of each Gaussian fixed
+        according to the expected time-of-flight for the elastic and first
+        inelastic peaks and the detector resolution. The heights of each
+        Gaussian were fitted to the difference histogram and the results of the
+        fit are shown in dark blue (elastic peak) and light blue (first-inelastic peak).
     }
     \label{tiledAngleData}
 \end{figure}
@@ -99,8 +101,8 @@ To normalize the cross sections, a reference point is needed that connects the
 neutron flux (as measured by the monitor detector) to a known cross section.
 We took several reference runs using a graphite,
 a polyethylene, and a blank sample at both the beginning and end of the experiment.
-Figure \ref{polyethyleneRef} shows histograms for the 4M and 6M detectors for
-one set of these runs, taken at 23\textdegree in the lab frame.
+Figure \ref{ECSReferenceRuns} shows histograms for the 4M and 6M detectors for
+one set of these runs, taken at 30\textdegree in the lab frame.
 The same conventions from Fig.
 \ref{tiledAngleData} are used, except that now the light blue arrows correspond to
 the elastic and first-excited states of \cTwelve. The dark gray histogram (back
@@ -127,12 +129,13 @@ runs, and using the reference cross section, we the \snTwelveFour\
 where $\el_{ref}(\theta)$ is the (n,p) cross section at lab angle $\theta$, $X_{sample}$
 and $X_{ref}$ are number of counts in the elastic scattering peak for the sample
 and the reference runs, respectively (see Figs. \ref{tiledAngleData} and
-\ref{polyethyleneRef}), and $N_{sample}$ and $N_{ref}$ are the number of atom in
+\ref{ECSReferenceRuns}), and $N_{sample}$ and $N_{ref}$ are the number of atom in
 the sample of interest and the number of hydrogen atoms in the polyethylene
 sample, respectively.
 
 \begin{figure}[ht!]
-    \includegraphics[width = 0.9\textwidth]{figures/polyethyleneRef.png}
+    \centering
+    \includegraphics[width = 0.9\textwidth]{figures/ECSReferenceRuns.png}
     \caption[Reference runs of neutron scattering on C and (CH$_{2}$)$_{n}$]
     {
         Reference runs of neutron scattering on C and (CH$_{2}$)$_{n}$
@@ -145,7 +148,7 @@ sample, respectively.
         from scattering on C. The green arrow indicates the expected position of
         the elastic peak from scattering on atmospheric N$_{2}$.
     }
-    \label{polyethyleneRef}
+    \label{ECSReferenceRuns}
 \end{figure}
 
 \section{Finite Size Corrections}
@@ -191,7 +194,7 @@ required.
 
 \begin{figure}[ht!]
     \begin{center}
-        \includegraphics[width = 0.9\textwidth]{figures/GussFiniteSizeEffect.png}
+        \includegraphics[width=0.9\textwidth, trim={0 0.1cm 0 0}, clip]{figures/GussFiniteSizeEffect.png}
         \caption[Effect of finite-size corrections on previous neutron \el\ measurement at
         TUNL]
         {
