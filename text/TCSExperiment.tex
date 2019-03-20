@@ -21,36 +21,21 @@ days) are technically infeasible for this reason, though a handful have been car
 samples with half-lives in the tens to thousands of years \cite{Poenitz1983,
 Phillips1980, Foster1971}.
 
-Traditionally, \tot\ measurements have relied on analog electronics for processing and
-recording events, techniques that suffer from a large per-event deadtime of
-up to several $\upmu$s. For a state-of-the-art intermediate-energy \tot\ measurement
-with dozens or hundreds of energy bins, achieving statistical uncertainty at the
-level of 1\% requires a thick sample to attenuate a sizable fraction of the
-incident neutron flux.
-For cross sections in the 1-10 barn range, this means
-sample masses of tens of grams \cite{Finlay1993, Abfalterer2001}.
-Producing an isotopically-enriched sample of this size is often
-prohibitively expensive. This explains the lack of data for isotopically-resolved
-\tot\ measurements from 1-300 MeV even for
-closed-shell isotopes of special importance like $^{3,4}$He, $^{64}$Ni, and
-$^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
-
-\begin{table}[ht]
+\begin{table}[ht!]
     \caption[Selected results from a literature study of isotopically-
         resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}]
-        {Selected results from a literature study of isotopically-
-        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}
+        {Selected results from a literature search for isotopically-
+        resolved \tot\ data using the EXFOR database \cite{EXFORDatabase}.
         For the heaviest and lightest stable nuclides in each closed shell in Z, all
         datasets falling at least partially within 1-500 MeV are shown. For elements
         whose natural abundance is $>$90\% of a single isotope (e.g.,
         96.9\% of $^{\text{nat}}$Ca is $^{40}$Ca), \tot\ data on the natural
-        target was included as ``isotopic".}
+        sample was included as ``isotopic''.}
     \label{IsotopicCrossSectionTable}
     \begin{center}
         \begin{tabular}{ c c c c }
             \hline
-            Isotope & Nat. Abund. & Energy Range & Reference \\ & [\%] & [MeV] & \\
-
+            Isotope & Nat. Abund. [\%] & Energies [MeV] & Reference \\
             \hline
 
             $^{3}$He & $2\times 10^{-4}\%$ & $1.5 - 40$ & \cite{Haesner1983}\\
@@ -90,6 +75,20 @@ $^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
     \end{center}
 \end{table}
 
+Traditionally, \tot\ measurements have relied on analog electronics for processing and
+recording events, techniques that suffer from a large per-event deadtime of
+up to several $\upmu$s. For a state-of-the-art intermediate-energy \tot\ measurement
+with dozens or hundreds of energy bins, achieving statistical uncertainty at the
+level of 1\% requires a thick sample to attenuate a sizable fraction of the
+incident neutron flux.
+For cross sections in the 1-10 barn range, this means
+sample masses of tens of grams \cite{Finlay1993, Abfalterer2001}.
+Producing an isotopically-enriched sample of this size is often
+prohibitively expensive. This explains the lack of data for isotopically-resolved
+\tot\ measurements from 1-300 MeV even for
+closed-shell isotopes of special importance like $^{3,4}$He, $^{64}$Ni, and
+$^{204}$Pb (see Table \ref{IsotopicCrossSectionTable}).
+
 In the 1990s, a comprehensive series of measurements were made at the Weapons Neutron Research (WNR)
 facility of the Los Alamos Neutron Science Center (LANSCE) on a wide battery of samples from Li to
 Pb \cite{Finlay1993, Abfalterer2001}, some isotopically-separated. Twenty years
@@ -108,7 +107,7 @@ energy determination for fast neutrons is by time-of-flight, as evidenced by sta
 neutron detector arrays including MoNA \cite{MoNA}, VANDLE \cite{VANDLE}, and
 NeuLAND\cite{NeuLAND}.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/Scintillator_disassembled.jpg}
     \caption[Time-of-flight detector partially assembled]
@@ -118,9 +117,8 @@ NeuLAND\cite{NeuLAND}.
         bottom. The detector described in the text has a thinner scintillating plastic
     element (1 inch thick) and tapered lightguides to match.}
     \label{TOFDetectorDisassembled}
-
-    \vspace*{\floatsep}
-
+\end{figure}
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/TimeOfFlightCAD.png}
     \caption[Cutaway CAD figure of time-of-flight detector.]
@@ -157,68 +155,15 @@ literature neutron \tot\ values. During the experiment, the samples were inserte
 into styrofoam sleeves and seated in the cradles of the sample
 changer, described below. This design minimizes the amount of non-target mass proximate to the
 neutron beam path that could cause unwanted neutron scattering. The areal density of atoms,
-the relevant quantity for cross section measurements, for each O, Ni, and Sn sample differs by less than 1\%
-compared to the other samples of the same element.
-
-For the oxygen isotopes, isotopically-enriched water samples were prepared to
-increase the areal density of O in the sample volume and for ease of handling.
-After measurement, the
-extremely-well-known H neutron \tot\ could be subtracted to yield the O \tot\ values.
-This technique is also used by \cite{Vaughn1965, Salisbury1965}; cf. 
-the use of ZnO and BeO \cite{Finlay1993}.
-Because the natural abundance of \oSix\ in H$_{2}$O is $>$99\%, a sample of
-ordinary distilled water was used for the H$_{2}$\oSix\ sample. For H$_{2}$\oEight,
-we used distilled water enriched to 99.9\% in \oEight\, purchased from
-Aldrich. Both samples were enclosed in brass vessels with thin
-(0.002 inch) brass endcaps, to minimize neutron attenuation. At the temperature and
-altitude of the experimental facility, the amount of dissolved gas and ions
-in the water samples were small enough to have no effect on the measurement.
-
-The isotopic Sn samples were prepared by melting highly-enriched foils at 
-800 C in a tube furnace, cooling to ambient temperature, and pressing the ingots
-to the desired cylindrical shape in a tempered die. To reduce formation of tin
-oxide during melting, the samples were melted in vitreous carbon crucibles
-and kept under a reducing atmosphere (90\% Argon/10\% H$_{2}$) while at elevated
-temperatures. Of the 4.9 grams of \snTwelve\ used to prepare the sample,
-3.9 grams were from a semi-permanent loan from the group of Lee Bernstein from LLNL
-and the remainder we purchased from Isoflex Corp. All of the 5.8 grams of \snFour\
-were purchased from Isoflex. The \snNat\ sample was prepared by melting and
-pressing analytical-grade Sn shot from Mallinckrodt Corp. Loss of isotopic
-material during the manufacturing process was minimal.
-
-The natural and isotopic Ni samples were prepared by Mike Zach at Oak Ridge
-National Lab (ORNL) to match the diameter of our Sn samples.
-
-Due to its poor machining properties, the Rh sample was prepared by
-stacking a series of thin rhodium disks instead of manufacturing a
-fused cylinder. Four disks of 99.9\% pure natural (monoisotopic) Rh metal were purchased from
-Goodfellow Corp. These were corralled with a
-plastic sleeve with open ends, similar to the styrofoam sleeves used for the Ni
-and Sn samples, to match the $\frac{3}{4}$-inch-diameter cradles of the sample changer
-\ref{RhodiumSample}.
-This kept the discs snugly in series and perpendicular to the beam path.
-
-Lastly, two natural-abundance graphite samples of different lengths and one
-natural-abundance Pb sample, all with the same diameter as the Sn and Ni samples, were
-prepared. These samples were used to benchmark the total cross sections
-measured at LANSCE by comparison with previous measurements of the C and
-Pb total cross sections available in the literature
-(\cite{Finlay1993,Abfalterer2001}). In addition, the low-energy neutron \tot\ resonance
-structure of the C samples served a crucial role in fixing the exact distance
-of the time-of-flight detector as detailed in Chapter \ref{TCSAnalysis}.
-Before use, the C samples were baked in an oven for several
-hours to remove adsorbed water.
-
-Appendix \ref{SampleComposition} lists the full composition of each isotopic
-sample as listed by the manufacturer or from mass spectrometer analysis.
-
-\begin{table}[ht]
+the relevant quantity for cross section measurements, for each O, Ni, and Sn sample differs by less 
+than 1\% compared to the other samples of the same element.
+\begin{table}[htb!]
     \caption[Physical characteristics of samples used for neutron \tot\
     measurements]
     {
         For isotopically-enriched samples, the natural abundance
         of the enriched isotope and the isotopic fraction of the sample are
-        given. To calculate cross sections, the relevant ``sample thickness" is the areal
+        given. To calculate cross sections, the relevant ``sample thickness'' is the areal
         density of nuclei $\rho_{\text{areal}}$, equivalent to
         the (volumetric) density times the length of the sample. For liquid
         samples H$_{2}^{\text{nat}}$O, D$_{2}^{\text{nat}}$O, and H$_{2}^{18}$O,
@@ -273,7 +218,6 @@ sample as listed by the manufacturer or from mass spectrometer analysis.
         \end{tabular}
     \end{center}
 \end{table}
-
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/AllIsotopicSamples.jpg}
@@ -290,9 +234,61 @@ samples used for neutron \tot\ measurements]
     \vspace*{\floatsep}
 
     \includegraphics[width=0.5\textwidth]{figures/RhodiumSample.jpg}
-    \caption{\rhThree\ sample used for the neutron \tot\ measurements}
+    \caption{\rhThree\ sample used for the neutron \tot\ measurements. One of
+    the four Rh discs has been removed from the plastic sleeve.}
     \label{RhodiumSample}
 \end{figure}
+
+For the oxygen isotopes, isotopically-enriched water samples were prepared to
+increase the areal density of O in the sample volume and for ease of handling.
+After measurement, the
+extremely-well-known H neutron \tot\ could be subtracted to yield the O \tot\ values.
+This technique is also used by \cite{Vaughn1965, Salisbury1965}; cf. 
+the use of ZnO and BeO \cite{Finlay1993}.
+Because the natural abundance of \oSix\ in H$_{2}$O is $>$99\%, a sample of
+ordinary distilled water was used for the H$_{2}$\oSix\ sample. For H$_{2}$\oEight,
+we used distilled water enriched to 99.9\% in \oEight\, purchased from
+Aldrich. Both samples were enclosed in brass vessels with thin
+(0.002 inch) brass endcaps, to minimize neutron attenuation. At the temperature and
+altitude of the experimental facility, the amount of dissolved gas and ions
+in the water samples were small enough to have no effect on the measurement.
+
+The isotopic Sn samples were prepared by melting highly-enriched foils at 
+800 C in a tube furnace, cooling to ambient temperature, and pressing the ingots
+to the desired cylindrical shape in a tempered die. To reduce formation of tin
+oxide during melting, the samples were melted in vitreous carbon crucibles
+and kept under a reducing atmosphere (90\% Argon/10\% H$_{2}$) while at elevated
+temperatures. Of the 4.9 grams of \snTwelve\ used to prepare the sample,
+3.9 grams were from a semi-permanent loan from the group of Lee Bernstein from LLNL
+and the remainder we purchased from Isoflex Corp. All of the 5.8 grams of \snFour\
+were purchased from Isoflex. The \snNat\ sample was prepared by melting and
+pressing analytical-grade Sn shot from Mallinckrodt Corp. Loss of isotopic
+material during the sample preparation process was minimal.
+The natural and isotopic Ni samples were 
+prepared by Mike Zach at Oak Ridge National Lab (ORNL) to match the diameter of our Sn samples.
+
+Due to its poor machining properties, the Rh sample was prepared by
+stacking a series of thin rhodium disks instead of manufacturing a
+fused cylinder. Four disks of 99.9\% pure natural (monoisotopic) Rh metal were purchased from
+Goodfellow Corp. These were corralled with a
+plastic sleeve with open ends, similar to the styrofoam sleeves used for the Ni
+and Sn samples, to match the $\frac{3}{4}$-inch-diameter cradles of the sample changer
+\ref{RhodiumSample}.
+This kept the discs snugly in series and perpendicular to the beam path.
+
+Lastly, two natural-abundance graphite samples of different lengths and one
+natural-abundance Pb sample, all with the same diameter as the Sn and Ni samples, were
+prepared. These samples were used to benchmark the total cross sections
+measured at LANSCE by comparison with previous measurements of the C and
+Pb total cross sections available in the literature
+(\cite{Finlay1993,Abfalterer2001}). In addition, the low-energy neutron \tot\ resonance
+structure of the C samples served a crucial role in fixing the exact distance
+of the time-of-flight detector as detailed in Chapter \ref{TCSAnalysis}.
+Before use, the C samples were baked in an oven for several
+hours to remove adsorbed water.
+
+Appendix \ref{SampleComposition} lists the full composition of each isotopic
+sample as listed by the manufacturer or from mass spectrometer analysis.
 
 \section{Experimental Facility at LANSCE}
 All neutron \tot\ measurements were carried out at the 15R
@@ -322,7 +318,6 @@ Fig. \ref{BeamlineUpstream} shows the entire experimental area, looking upstream
 from the perspective of the time-of-flight
 detector. Fig. \ref{BeamlineDownstream} shows the same area, but looking
 downstream from the monitor detector.
-
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/ExperimentalSetup.png}
@@ -337,7 +332,6 @@ downstream from the monitor detector.
 }
     \label{ExperimentalApparatus}
 \end{figure}
-
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/UpstreamTowardCollimator.jpg}
@@ -345,7 +339,6 @@ downstream from the monitor detector.
     {Upstream view of sample changer, monitor detector, and collimation stack.}
     \label{BeamlineSampleChanger}
 \end{figure}
-
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/VetoAndTOFDetectors.jpg}
@@ -353,17 +346,6 @@ downstream from the monitor detector.
     {Veto and time-of-flight detectors installed in the 15R beamline. Beam enters from the left.}
     \label{VetoAndTOFDetectors}
 \end{figure}
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/UpstreamFromTOFDetector.jpg}
-    \caption[Overview of \tot\ experimental setup in the 15R beamline]
-    {Upstream view of \tot\ experimental setup in the 15R beamline. In the foreground is the
-    time-of-flight detector (the veto detector is not pictured here). In the background, the sample
-changer and monitor detector are visible. The blue cart holds the coarse-alignment laser.}
-    \label{BeamlineUpstream}
-\end{figure}
-
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/DownstreamFromMonitor.jpg}
@@ -374,11 +356,37 @@ changer and monitor detector are visible. The blue cart holds the coarse-alignme
     }
     \label{BeamlineDownstream}
 \end{figure}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/UpstreamFromTOFDetector.jpg}
+    \caption[Overview of \tot\ experimental setup in the 15R beamline]
+    {Upstream view of \tot\ experimental setup in the 15R beamline. In the foreground is the
+    time-of-flight detector (the veto detector is not pictured here). In the background, the sample
+changer and monitor detector are visible. The blue cart holds the coarse-alignment laser.}
+    \label{BeamlineUpstream}
+\end{figure}
 
 The particular neutron beam structure at WNR dictates the energy range
 achievable for \tot\ measurements (see Fig. \ref{BeamStructure}).
-Proton pulse trains, called ``macropulses", are delivered to the tungsten target at 120 Hz.
-Each macropulse consists of ~350 individual proton pulses, called ``micropulses", spaced 1.8 
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/beamStructure.png}
+    \caption[Pulsed structure of the neutron beam at the WNR facility]
+    {
+        Neutron beam structure at WNR facility.
+        ``Macropulses'' of protons (row d) are delivered to
+        WNR's tungsten Target 4, where they generate neutrons by spallation.
+        Each macropulse consists of
+        $\approx$350 proton ``micropulses'' (row c). Neutrons
+        from each micropulse (row b) disperse in
+        time as they travel along the flight path so that $\gamma$ rays and high-energy 
+        neutrons catch up to low-energy ones from the previous pulse (row a).
+    }
+    \label{BeamStructure}
+\end{figure}
+Proton pulse trains, called ``macropulses'', are delivered to the tungsten target at 120 Hz.
+Each macropulse consists of ~350 individual proton pulses, called
+``micropulses'', spaced 1.8 
 $\upmu$s apart. Each micropulse consists of a single proton packet $<$1 ns wide when it 
 arrives at the tungsten target that generates gamma rays and neutrons within a tight
 temporal-spatial range. As neutrons from this micropulse travel along the beam path, 
@@ -396,23 +404,6 @@ neutrons. A balance must be stuck between the detector thickness, the neutron
 flux, the $\gamma$-ray flux, the time-of-flight detector distance, and the rate
 of data acquisition.
 
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/beamStructure.png}
-    \caption[Pulsed structure of the neutron beam at the WNR facility]
-    {
-        Neutron beam structure at WNR facility.
-        ``Macropulses" of protons (row d) are delivered to
-        WNR's tungsten Target 4, where they generate neutrons by spallation.
-        Each macropulse consists of
-        $\approx$350 proton ``micropulses" (row c). Neutrons
-        from each micropulse (row b) disperse in
-        time as they travel along the flight path so that $\gamma$ rays and high-energy 
-        neutrons catch up to low-energy ones from the previous pulse (row a).
-    }
-    \label{BeamStructure}
-\end{figure}
-
 A programmable sample changer with six positions
 was used to cycle each sample into the beam at a regular interval of 150 seconds 
 per sample. Once per macropulse, an analog signal from the sample changer was recorded to 
@@ -420,7 +411,7 @@ indicate its current position. The sample configuration for each run varied, but
 generally all six positions on the sample changer were used. For the solid targets,
 a typical configuration was to place an empty styrofoam sample sleeve in the
 first sample-changer cradle as
-the ``blank", the \cNat\ and \pbNat\ samples in the second and third
+the ``blank'', the \cNat\ and \pbNat\ samples in the second and third
 cradles, and the samples of interest (e.g., \niEight, \niNat, \niFour) in
 the fourth, fifth, and sixth cradles. For water samples, an empty brass vessel
 was placed in the first cradle to serve as the blank.
@@ -464,14 +455,14 @@ time-matching between the left and right signals.
 Signals from all detectors and the sample changer were relayed to an 8-channel, 500-MHz CAEN 
 DT-5730
 waveform digitizer as shown in Fig. \ref{TCSLogicDiagram}. Custom software was used to run the 
-digitizer in two complementary modes, referred to as ``DPP mode" and ``Waveform 
-mode". In DPP mode, triggers were initiated by the digitizer's onboard
+digitizer in two complementary modes, referred to as ``DPP mode'' and ``Waveform 
+mode''. In DPP mode, triggers were initiated by the digitizer's onboard
 peak-sensing firmware. For each trigger, several quantities were recorded: the trigger 
 timestamp, two charge integrals over the detected peak with different
 integration ranges (32 ns for the short integral, 100 ns for the long integral),
-and a 96-ns portion of the raw digitized waveform, referred to as a ``wavelet".
+and a 96-ns portion of the raw digitized waveform, referred to as a ``wavelet''.
 The timestamp was stored as two components: a 48-bit timestamp with 2 ns
-resolution, and 10-bit "fine time" within the 2 ns coarse time bin period.
+resolution, and 10-bit ``fine time'' within the 2 ns coarse time bin period.
 DPP mode was used for the vast majority of the 
 experiment and accounts for $\approx$99\% of the total data volume. In waveform mode, 
 the digitizer performs no peak-sensing and was externally triggered. Upon 

@@ -95,11 +95,12 @@ number of counts in the elastic peak.
 \end{figure}
 
 \section{Normalization}
-To normalize the cross sections, the absolute neutron flux must be known.
-To determine the absolute neutron flux, reference runs were taken using a graphite,
+To normalize the cross sections, a reference point is needed that connects the
+neutron flux (as measured by the monitor detector) to a known cross section.
+We took several reference runs using a graphite,
 a polyethylene, and a blank sample at both the beginning and end of the experiment.
-Events from one batch of these runs are
-histogrammed in Fig. \ref{polyethyleneRef} for the 4M and 6M detectors.
+Figure \ref{polyethyleneRef} shows histograms for the 4M and 6M detectors for
+one set of these runs, taken at 23\textdegree in the lab frame.
 The same conventions from Fig.
 \ref{tiledAngleData} are used, except that now the light blue arrows correspond to
 the elastic and first-excited states of \cTwelve. The dark gray histogram (back
@@ -107,21 +108,28 @@ histogram layer) shows the elastic and first-excited states of \cTwelve
 and also a broad peak from elastic scattering on H. After scaling for the number
 of moles in the graphite and polyethylene samples, stoichiometry, and neutron
 flux, the graphite spectrum (light gray, middle histogram later) is subtracted from the polyethylene
-spectrum, yielding neutron events from elastic scattering on protons (area of
-the red histogram between the blue dashed lines). Given the
-well-established n(p,p)n cross section, the ratio of absolute neutron flux to
-the number of CMON counts was calculated:
-
-\begin{equation}
-    [insert monitor scaling equation]
+spectrum, yielding neutron events only from elastic scattering on protons (area of
+the red histogram between the blue dashed lines). As the cross section for
+(n,p) scattering is extremely well-known, the number of counts in the
+time-of-flight detectors in the reference run can pegged to the absolute
+differential cross section.
+We used the Scattering Analysis Interactive Database (SAID) code \cite{SAIDCode}
+to provide the (n,p) cross section at the energies and angles of the reference
+runs, and using the reference cross section, we the \snTwelveFour\
+\el\ were normalized as:
+\begin{equation} \label{ECSCalculation}
+    \el(\theta) = \el_{ref}(\theta)
+    \times \frac{X_{sample}}{X_{ref}} \times
+    \frac{N_{sample}}{N_{ref}}
 \end{equation}
 
 \noindent
-We used the Scattering Analysis Interactive Database (SAID) code \cite{SAIDCode}
-to generate
-the proton-neutron elastic scattering cross sections needed in the above
-equation. This flux-to-monitor ratio was then used to normalize the \snTwelveFour\
-results.
+where $\el_{ref}(\theta)$ is the (n,p) cross section at lab angle $\theta$, $X_{sample}$
+and $X_{ref}$ are number of counts in the elastic scattering peak for the sample
+and the reference runs, respectively (see Figs. \ref{tiledAngleData} and
+\ref{polyethyleneRef}), and $N_{sample}$ and $N_{ref}$ are the number of atom in
+the sample of interest and the number of hydrogen atoms in the polyethylene
+sample, respectively.
 
 \begin{figure}[ht!]
     \includegraphics[width = 0.9\textwidth]{figures/polyethyleneRef.png}
@@ -139,24 +147,6 @@ results.
     }
     \label{polyethyleneRef}
 \end{figure}
-
-\section{Cross Section Calculation}
-
-The absolute \el\ were calculated as:
-
-\begin{equation} \label{ECSCalculation}
-    \el = \el_{ref,\theta}
-    \times \frac{X_{sample}}{X_{ref}} \times
-    \frac{N_{sample}}{N_{ref}}
-\end{equation}
-
-\noindent
-where $\el_{ref}$ is the (n,p) cross section at lab angle $\theta$, $X_{sample}$
-and $X_{ref}$ are number of counts in the elastic scattering peak for the sample
-and the reference runs, respectively (see Figs. \ref{tiledAngleData} and
-\ref{polyethyleneRef}), and $N_{sample}$ and $N_{ref}$ are the number of atom in
-the sample of interest and the number of hydrogen atoms in the polyethylene
-sample, respectively.
 
 \section{Finite Size Corrections}
 In an idealized differential cross section measurement, the sample and neutron

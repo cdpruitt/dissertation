@@ -40,7 +40,15 @@
 \usepackage{bm}
 \usepackage{csquotes} % for block quotes
 \usepackage{rotating} % to rotate entire figure (needed to fill a whole page with a sideways figure)
-\usepackage[section]{placeins}
+\usepackage{placeins}
+%\usepackage{needspace}
+
+% force floats to stay in the same section
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
 
 \interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
 
@@ -48,7 +56,7 @@
 \setlength{\parskip}{0pt} % might fix gap between paragraphs, and it does!
 % now there are some weird gaps between section headings and text
 
-\newcommand{\sectionbreak}{\clearpage}
+%\newcommand{\sectionbreak}{\clearpage}
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}} %still don't understand how this grabs chapterName but it does...
 \renewcommand{\sectionmark}[1]{\markright{#1}} %still don't understand how this grabs sectionName but it does...
