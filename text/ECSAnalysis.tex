@@ -156,6 +156,21 @@ In an idealized differential cross section measurement, the sample and neutron
 detectors can be treated as point objects. In reality, the neutron beam,
 samples, and detectors occupy a finite size (as illustrated in \ref{GussFiniteSizeDiagram},
 leading to so-called finite-size effects that distort the measured cross sections.
+\begin{figure}[ht!]
+    \centering
+        \includegraphics[width = 0.9\textwidth]{figures/GussFiniteSizeDiagram.png}
+        \caption[Illustration of finite-size effects relevant for \el\ cross
+        section measurements]
+        {
+            Illustration of finite-size effects relevant for \el\ cross
+            section measurements, from the PhD thesis of P. Guss
+            \cite{GussPhDThesis}. Due to the uncertainty in the exact path taken
+            by neutrons during scattering and the possibility of multiple
+            scattering in the sample, a series of finite-size corrections
+            must be applied to recover the true cross section.
+        }
+        \label{GussFiniteSizeDiagram}
+\end{figure}
 The experimenter is responsible
 for applying appropriate corrections to make results size- and
 apparatus-independent. The finite-size analysis for
@@ -169,52 +184,56 @@ For the isotopic Ni and Sn samples they studied, they generated finite-size
 corrections of roughly 1-10\% depending on the scattering angle. As seen in
 Fig. \ref{GussFiniteSizeEffect}, the
 biggest effect is on the depth of the diffraction minima.
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth, trim={0 0.1cm 0 0}, clip]{figures/GussFiniteSizeEffect.png}
+    \caption[Effect of finite-size corrections on previous neutron \el\ measurement at
+    TUNL]
+    {
+        The extent of finite-size corrections on previous neutron \el\ measurement at
+        TUNL are shown. Figure is from the PhD thesis of P. Guss \cite{GussPhDThesis}.
+        The raw data from this measurement on Ni isotopes are shown as data
+        points. Using a Monte Carlo simulation, the authors of the previous
+        study generated a correction accounting for multiple scattering in
+        their samples, the angular uncertainty stemming from the volume
+        of their samples, resulting in the dashed curve. With beam
+        attenuation also considered, the cross section is uniformly
+        increased across the angular range, giving the solid curve, which
+        they take to be the ``true'' cross section. Because our targets are
+        approximately an order of magnitude smaller, we see smaller
+        finite size effects in our simulation (see Figs.
+        \ref{finiteSizeCorrections} and \ref{multipleScattering}).
+    }
+    \label{GussFiniteSizeEffect}
+\end{figure}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/finiteSizeCorrections.png}
+    \caption[Effect of finite-size corrections on our neutron \el\ measurement]
+    {
+        The extent of our finite-size corrections are shown, per the output
+        of a typical finite-size simulation. Our raw 11 MeV \snFour \el\ data
+        are shown as black triangles (connected with lines to guide the eye) and
+        were used as the input cross section for the finite-size simulation.
+        The simulation scattered neutrons according to the input distribution
+        that were scored on an array of detectors with the same geometry
+        as in the experiment. ``Output'' cross sections were calculated based on
+        the number of detector hits. The results of two simulations are shown:
+        one including only the effects of
+        angular uncertainty (AU) and multiple scattering (MS), shown by red
+        crosses, and the other also included flux attenuation in the target
+        (FA), shown as pink circles. For our targets, the finite-size effects
+        were an order of magnitude smaller than those of
+        \ref{GussFiniteSizeEffect}, as anticipated given the size of our targets.
+    }
+    \label{finiteSizeCorrections}
+\end{figure}
 However, their samples
 were an order of magnitude larger than our
 samples: 42.59 g and 44.73 g for their \snSixteen\ and \snTwenty\ samples,
 respectively, compared to 4.97 g and 5.55 g for our \snTwelve\ and \snFour\
 samples. Thus we anticipated a significantly smaller correction would be
 required.
-
-\begin{figure}[ht!]
-    \centering
-        \includegraphics[width = 0.9\textwidth]{figures/GussFiniteSizeDiagram.png}
-        \caption[Illustration of finite-size effects relevant for \el cross
-        section measurements]
-        {
-            Illustration of finite-size effects relevant for \el cross
-            section measurements, from the PhD thesis of P. Guss
-            \cite{GussPhDThesis}. Due to the uncertainty in the exact path taken
-            by neutrons during scattering and the possibility of multiple
-            scattering in the sample, a series of finite-size corrections
-            must be applied to recover the true cross section.
-        }
-        \label{GussFiniteSizeDiagram}
-\end{figure}
-
-\begin{figure}[ht!]
-    \centering
-        \includegraphics[width=0.9\textwidth, trim={0 0.1cm 0 0}, clip]{figures/GussFiniteSizeEffect.png}
-        \caption[Effect of finite-size corrections on previous neutron \el\ measurement at
-        TUNL]
-        {
-            Effect of finite-size corrections on previous neutron \el\ measurement at
-            TUNL, from the PhD thesis of P. Guss \cite{GussPhDThesis}.
-            The raw data from this measurement on Ni isotopes are shown as data
-            points. Using a Monte Carlo simulation, the authors of the previous
-            study generated a correction accounting for multiple scattering in
-            their samples, the angular uncertainty stemming from the volume
-            of their samples, resulting in the dashed curve. With beam
-            attenuation also considered, the cross section is uniformly
-            increased across the angular range, giving the solid curve, which
-            they take to be the ``true'' cross section. Because our targets are
-            approximately an order of magnitude smaller, we see smaller
-            finite size effects in our simulation (see Figs.
-            \ref{FiniteSizeAngular} and \ref{FiniteSizeAttenuation}).
-        }
-        \label{GussFiniteSizeEffect}
-\end{figure}
-
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/GussMultipleScattering.png}
@@ -229,8 +248,7 @@ required.
     }
     \label{multipleScattering}
 \end{figure}
-
-Figure \ref{GussFiniteSizeDiagram} illustrates the possibility of multiple scattering in the samples
+Figure \ref{GussFiniteSizeDiagram} illustrates the potential for multiple scattering in the samples
 and the small degree of angular uncertainty in the neutron scattering path.
 The effect of this angular uncertainty on the measured cross
 sections is to ``wash out'' the sharp diffraction minima expected to be present in the true cross
@@ -248,35 +266,30 @@ running a simulation with the sample sizes used in the experiment, we performed
 addition simulations with exaggerated sizes for the
 sample to make finite-size effects more visible. A comparison between the input
 and output cross sections shows the effects of beam attenuation and angular
-uncertainty, seen in Figs. \ref{FiniteSizeAttenuation} and \ref{FiniteSizeAngular}.
+uncertainty, seen in Figs. \ref{finiteSizeCorrections} and
+\ref{multipleScattering}.
 To calculate correction factors, we divided the simulation's
 input cross section by the output cross section for each angle and multiplied our
 experimental results by this factor. In principle, this procedure to generate
 the correction should be repeated iteratively, with the new corrected cross
-section plugged back into the simulation, but in practice the corrections were small
-that only the first iteration was required.
-
+section plugged back into the simulation, but in practice the corrections for
+our data were so small that only the first iteration was required.
 \section{Results}
 \subsection{\snTwelveFour\ \el\ at 11 MeV}
 Absolute cross sections 
-
-\begin{figure}
-    \begin{center}
+\begin{figure}[ht!]
+    \centering
         \includegraphics[width = 0.9\textwidth]{figures/neutronECS_Sn_11MeV.png}
         \caption{Neutron \el cross sections on $^{112,124}$Sn at 11
     MeV: our results and literature data}
     \label{SnECS_11MeV}
-\end{center}
 \end{figure}
-
 \subsection{\snTwelveFour\ \el\ at 17 MeV}
-
-\begin{figure}
-    \begin{center}
+\begin{figure}[ht!]
+    \centering
         \includegraphics[width = 0.9\textwidth]{figures/neutronECS_Sn_17MeV.png}
         \caption{Neutron \el cross sections on $^{112,nat,124}$Sn at 17
     MeV: our results and literature data} \label{SnECS_17MeV}
-\end{center}
 \end{figure}
 
 \afterpage{\clearpage}
