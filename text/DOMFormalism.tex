@@ -110,18 +110,20 @@ eigenvalue $E^{N}_{0}$:
 \end{equation}
 
 \noindent
-The time-ordering operator $\mathcal{T}$\footnote{
+The time-ordering operator $\mathcal{T}$\footnote ensures
+that operators with later time appear to the left
+of operators with earlier time, important for the perturbative treatment to follow.
+\footnotetext
+{
     The time-ordering operator $T$ is defined as:
     \begin{equation*}
         \mathcal{T}[a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')]=\theta(t-t')a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')
         -\theta(t'-t)a^{\dagger}_{\beta_{H}}(t')a_{\alpha_{H}}(t)
     \end{equation*}
-} ensures that operators with later time appear to the left
-of operators with earlier time, important for the perturbative treatment to follow.
-In short, this expression includes contributions from both particle propagation, already seen for 
-the particle
-propagation in vacuum of Eq. \ref{PropagatorDerivation}, and hole propagation, new behavior only
-relevant for a many-particle system capable of excitation. We can expand Eq.
+}
+In short, this expression includes contributions from both particle propagation, already seen 
+Eq. \ref{PropagatorDerivation}, and hole propagation, new behavior only
+pertinent for a many-particle system capable of excitation/hole production. We can expand Eq.
 \ref{ManyBodySPPropagator} and once again apply a Fourier transform to make
 interpretation easier:
 \begin{equation} \label{LehmannRepresentation}
@@ -220,6 +222,7 @@ where
         \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{m})(t')]|\Phi^{N}_{0}}
     \end{split}
 \end{equation*}
+
 \noindent
 Despite the extra ink, the mathematical structure of the Lehmann
 representation (Eq. \ref{LehmannRepresentation}) is still visible: the numerator contains
@@ -231,7 +234,7 @@ the only differences between the numerator and denominator are a
 factor of $-\frac{i}{\hbar}$ and the fermion annihilation and creation operators
 responsible for moving from $\ket{\alpha}$ to $\ket{\beta}$. Wick's
 theorem\footnote{See section 8.4 of \cite{MBTE}
-for the full procedure} can be applied to remove contributions to the propagator
+for the full procedure.} can be applied to remove contributions to the propagator
 that appear in both the numerator and the denominator and do not survive the
 division. This dramatically
 reduces the number of terms at each level of the perturbation expansion, and when the dust settles,
@@ -250,7 +253,7 @@ the propagator reads:
 Physically speaking, the full propagator is the infinite sum of the expectation value of 
 an $\hat{H_{1}}$ iteratively applied to the non-interacting ground state. The
 non-interacting ground state is modified by each interaction and thus all the many-body correlations
-of $\Psi^{N}_{0}$ are encoded by the repeated operation of $\hat{H_{1}}$. The subscript
+of $\ket{\Psi^{N}_{0}}$ are encoded by the repeated operation of $\hat{H_{1}}$. The subscript
 ``connected'' indicates that the only terms that survive correspond to fully-connected Feynman 
 diagrams, as all non-connected diagrams appear in both the numerator and denominator of Eq. 
 \ref{FullSPPropagator}.
@@ -261,8 +264,9 @@ diagrammatically to clarify the physical meaning of the expansion terms. Figure
 expansion. To zeroth-order, 
 the expansion is only one purely non-interacting term, which is just the free single-particle 
 propagator. At each higher order, one more interaction is permitted to enter the diagram at any
-fermion line (i.e., into any propagator line). By grouping and rearranging the terms, we can condense the full perturbation expansion to a
-self-consistent equation called the Dyson equation \ref{DysonEquation}:
+fermion line (i.e., into any propagator line). By grouping and rearranging the terms, we can 
+condense the full perturbation expansion to a
+self-consistent equation called the Dyson equation:
 \begin{equation} \label{DysonEquation}
     G(\alpha,\beta;E) = G^{(0)}(\alpha,\beta;E) +
     \sum_{\gamma,\delta}G^{(0)}(\alpha,\gamma;E)\Sigma^{*}(\gamma,\delta,E)G(\delta, \beta; E)
@@ -291,14 +295,18 @@ A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonE
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/DysonEquation.png}
-    \caption{The Dyson equation in diagrammatic form}
+    \caption{The Dyson equation in diagrammatic form.}
     \label{DysonEquationDiagram}
 \end{figure}
 
 The summation variables $\gamma$ and $\delta$ label states internal to the diagrams that are 
-accessed during the particle's excitation of the many-body system\
-\footnote{If a three-body interaction was included in $\hat{H}_{0}$, additional labels would be needed.}. The Dyson
-equation introduces a new term, the irreducible self-energy $\Sigma*$, that connects the free
+accessed during the particle's excitation of the many-body system\footnotemark.
+\footnotetext
+{
+    If a three-body interaction was included in $\hat{H}_{0}$, additional labels would be needed.
+}
+The Dyson
+equation introduces a new term, the irreducible self-energy $\Sigma^{*}$, that connects the free
 single-particle propagator to the full single-particle propagator that incorporates all the
 in-medium effects of traveling through the nuclear environment. The self-energy serves the role
 of the potential - the optical potential - experienced by a particle in the medium.
@@ -382,11 +390,15 @@ employed in the subsequent analysis.
 
 \subsection{Elastic and inelastic nucleon scattering}
 For nucleon-nucleus scattering, the momentum basis is a natural choice. The scattering amplitude can be directly calculated using the
-reducible self-energy $\Sigma$\footnote{The reducible self-energy is related to the irreducible
-    self-energy of the previous chapter by:
+reducible self-energy $\Sigma$\footnotemark:
+\footnotetext
+{
+    The reducible self-energy is related to the irreducible
+    self-energy of Eq. \ref{DysonEquation} by:
     \begin{equation}
         \Sigma = \Sigma^{*} + \Sigma^{*}G^{(0)}\Sigma
-    \end{equation}. See \cite{MahzoonPhDThesis} for details.}:
+    \end{equation}. See \cite{MahzoonPhDThesis} for details.
+}
 \begin{equation}
     f_{m'_{s},m_{s}}(\theta,\phi) =
     -\frac{4m\pi^{2}}{\hbar^{2}}\braket{\bm{k}'m'_{s}|\Sigma(E)|\bm{k}m_{s}}
@@ -493,7 +505,7 @@ particle instead, leaving the nuclear system with energy $E^{N}_{0}+E$. From the
 \begin{equation} \label{ParticleNumber}
     \begin{split}
         n(\alpha) & = \braket{\Psi^{N}_{0}|a_{\alpha}^{\dagger}a_{\alpha}|\Psi^{N}_{0}}\\
-        & = \int_{-infty}^{-\epsilon_{F}}S_{h}(\alpha; E)
+        & = \int_{-\infty}^{-\epsilon_{F}}S_{h}(\alpha; E)
     \end{split}
 \end{equation}
 
@@ -571,14 +583,16 @@ are selected to conform with general physical intuition about the nuclear
 many-body problem and past experience with optical potentials. Accordingly,
 the self-energy should be, non-local, complex, and dispersively correct.
 Before detailing the full parameterization,
-a few standard mathematical forms need to be introduced. We use two standard form factors
+a few standard mathematical forms need to be introduced. In this section, the free variables that
+are fitted to data during the DOM procedure are denoted in a bold typeface.
+We use two standard form factors
 to describe the radial dependence of components
 associated with the nuclear volume (a Woods-Saxon shape)
 and the nuclear surface (a derivative of the Woods-Saxon shape):
 \begin{equation} \label{WoodsSaxon}
     \begin{split}
-        f_{vol}(V,r) & = \frac{-V}{1+e^{(r-R)/a}}\\
-        f_{surf}(V,r) & = \frac{1}{r}\frac{d}{dr}f_{vol}(V,r)
+        f_{vol}(r; \bm{V}, \bm{R}, \bm{a}) & = \frac{-\bm{V}}{1+e^{(r-\bm{R})/\bm{a}}}\\
+        f_{surf}(r; \bm{V}, \bm{R}, \bm{a}) & = \frac{1}{r}\frac{d}{dr}f_{vol}(V,r)
     \end{split}
 \end{equation}
 

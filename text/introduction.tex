@@ -45,7 +45,7 @@ nucleus is approximated by five physically-intuitive terms appropriate for
 a droplet of nuclear matter:
 \begin{equation} \label{LDM}
     BE(A,Z) = a_{vol}A - a_{surf}A^{\frac{2}{3}}
-    -a_{coul}frac{Z(Z-1)}{A^{\frac{1}{3}}}-a_{asymm}\frac{(A-2Z)^{2}}{A}  +
+    -a_{coul}\frac{Z(Z-1)}{A^{\frac{1}{3}}}-a_{asymm}\frac{(A-2Z)^{2}}{A}  +
         a_{pair}(A,Z)
 \end{equation}
 
@@ -66,8 +66,8 @@ In order, these terms are:
         favorable pairing interaction
 \end{itemize}
 $A$ and $Z$ are the total number of nucleons and number of protons,
-respectively and the nuclear radius (not explicitly included here) varies
-$\alpha A^{\frac{1}{3}}$. The free parameters in each term can be fitted to the
+respectively and the nuclear radius is assumed to scale as $r = r_{0} A^{\frac{1}{3}}$.
+The free parameters in each term can be fitted to the
 hundreds of well-measured nuclear masses
 across the chart of nuclides. These five simple terms are quite successful
 in describing masses and radii of spherical nuclei, leading early nuclear
@@ -80,7 +80,6 @@ cross sections.
 The Droplet Model \cite{MyersAndSwiatecki} considers a systematic two-dimensional expansion of
 Eq. \ref{LDM} about two fundamental independent quantities, the nucleon density
 and neutron-proton asymmetry:
-
 \begin{equation} \label{DropletIndependentQuantities}
     \bar{\epsilon} = -\frac{1}{3}\frac{(\rho - \rho_{0})}{\rho_{0}}
 \end{equation}
@@ -372,7 +371,7 @@ extremely asymmetric nuclei, knowing the asymmetry-dependence of optical
 potentials will become increasingly important for predicting nucleon scattering on
 exotic nuclei. Isovector considerations are not unique to full-blown optical
 models and can be introduced to a simpler Ramsauer-like models as well. For example, building
-on the addition of spin-spin terms a Ramsauer model by Gould et al \cite{Gould1986},
+on the addition of spin-spin terms a Ramsauer model by Gould et al. \cite{Gould1986},
 Anderson and Grimes added an explicit isovector term to analyzing isotone and isotope shifts in 
 neutron total cross sections \cite{Anderson1990}.
 They concluded that ``although [their] model may give
@@ -505,8 +504,9 @@ potential \cite{Rapaport1979}, shown in Fig. \ref{Dietrich2003_Ohio}.
         Ramsauer model predictions. Figure from \cite{Dietrich2003}.
         If the standard isovector strength from
         optical-model treatments is used to dictate the Ramsauer isovector
-        dependence, the model performs more poorly against the experimental
-        data.
+        dependence (solid line), the model performs more poorly against the experimental
+        data. When the isovector strength is suppressed, the correspondence to data improves (dashed
+        line).
     }
     \label{Dietrich2003_Ramsauer}
 \end{figure}
@@ -619,17 +619,18 @@ neutron-skin thickness \cite{MyersAndSwiatecki, Berdichevsky1988}.
     \ref{DropletIndependentQuantities} are fully parameterized as: 
     \begin{equation*}
         \begin{split}
-            \bar{\delta} & = [I+\frac{3}{16}(c_{1}/Q)ZA^{-\frac{2}{3}}B_{v}]
+            \bar{\delta} & = I+\frac{3}{16}(c_{1}/Q)ZA^{-\frac{2}{3}}B_{v}]
             /[1+\frac{9}{4}(J/Q)A^{-\frac{1}{3}}B_{s}]\\
             \bar{\epsilon} & = [-2a_{2}A^{-{\frac{1}{3}}}B_{s}+L\bar{\delta}^{2}
-            +c_{1}Z^{2}A^{-\frac{4}{3}}B_{c}/K
+            +c_{1}Z^{2}A^{-\frac{4}{3}}B_{c}]/K
         \end{split}
     \end{equation*}
     
     \noindent
     In these equations, $K$ is the compressibility coefficient, $M$
     accounts for anharmonicity of the binding-energy dependence on $\bar{\delta}$,
-    and $B_{s}$ accounts for shape dependence of the surface energy. The quantity
+    and $B_{s}$ accounts for shape dependence of the surface energy. $CC(J,Q)$ are
+    corrections to the Coulomb term associated with deformation. The quantity
     $\frac{9}{4}(J^{2}/Q)\bar{\delta}^{2}$ is the correction to the binding
     energy from excess neutrons accumulating on the nuclear surface in neutron-rich
     systems (i.e., neutron skin formation).

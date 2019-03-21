@@ -28,7 +28,7 @@
 \usepackage{setspace}
 \doublespacing % double spaces whole document except for captions
 \usepackage{notoccite}
-\usepackage[symbol]{footmisc} % for footnotes with weird characters
+%\usepackage[symbol]{footmisc} % for footnotes with weird characters
 \usepackage{afterpage} % needed this for putting things back on track, outlined below
 \usepackage{textcomp}
 \usepackage{fancyhdr} % allows for fancy headers
@@ -71,7 +71,7 @@
 \newpage}
 
   % lets me change the type of footnote
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 %\allsectionsfont{\singlespacing} 
 
 % defines shortcuts for common physics symbols
@@ -235,29 +235,29 @@
 \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
 \chapter{Introduction} \label{introduction}
-\input{\textDirectory/introduction}
+%\input{\textDirectory/introduction}
 
 \chapter{Neutron Total Cross Sections: Experimental Setup} \label{TCSExperiment}
-\input{\textDirectory/TCSExperiment}
+%\input{\textDirectory/TCSExperiment}
 
 \chapter{Neutron Total Cross Sections: Analysis and Results} \label{TCSAnalysis}
-\input{\textDirectory/TCSAnalysis}
+%\input{\textDirectory/TCSAnalysis}
 
 \chapter{Neutron Elastic Cross Sections: Experimental Setup} \label{ECSExperiment}
-\input{\textDirectory/ECSExperiment}
+%\input{\textDirectory/ECSExperiment}
 
 \chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
 \input{\textDirectory/ECSAnalysis}
 
 \chapter{Dispersive Optical Model: Overview} \label{DOMFormalism}
-\input{\textDirectory/DOMFormalism}
+%\input{\textDirectory/DOMFormalism}
 
 \chapter{Dispersive Optical Model:\protect\\ Results on \oSixEight, \caAughtEight,
 \niEightFour, \snTwelveFour, \pbEight}\label{DOMResults}
 %\input{\textDirectory/DOMResults}
 
 \chapter{Conclusions}
-\input{\textDirectory/conclusion}
+%\input{\textDirectory/conclusion}
 
 \clearpage %needed this or for some reason the header writes appendix for the last chapter...
 

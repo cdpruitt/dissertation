@@ -154,8 +154,9 @@ sample, respectively.
 \section{Finite Size Corrections}
 In an idealized differential cross section measurement, the sample and neutron
 detectors can be treated as point objects. In reality, the neutron beam,
-samples, and detectors occupy a finite size, leading to so-called finite-size
-effects that distort the measured cross sections. The experimenter is responsible
+samples, and detectors occupy a finite size (as illustrated in \ref{GussFiniteSizeDiagram},
+leading to so-called finite-size effects that distort the measured cross sections.
+The experimenter is responsible
 for applying appropriate corrections to make results size- and
 apparatus-independent. The finite-size analysis for
 a similar TUNL-based neutron \el\ measurement on $^{116,120}$Sn is described in detail
@@ -163,21 +164,20 @@ in \cite{GussPhDThesis}. In their analysis, Monte Carlo simulations using the
 EFFIGY code were
 prepared to generate a correction for geometric uncertainty of the neutron
 scattering track, the possibility of multiple scattering
-in the samples, and flux attenuation in the sample. These effects are illustrated in
-\ref{GussFiniteSizeDiagram}.
+in the samples, and flux attenuation in the sample.
 For the isotopic Ni and Sn samples they studied, they generated finite-size
-corrections on the order of 1-10\% depending on the scattering angle. As seen in
+corrections of roughly 1-10\% depending on the scattering angle. As seen in
 Fig. \ref{GussFiniteSizeEffect}, the
 biggest effect is on the depth of the diffraction minima.
 However, their samples
 were an order of magnitude larger than our
 samples: 42.59 g and 44.73 g for their \snSixteen\ and \snTwenty\ samples,
 respectively, compared to 4.97 g and 5.55 g for our \snTwelve\ and \snFour\
-samples. Thus we anticipated a dramatically smaller correction would be
-required for our measurement.
+samples. Thus we anticipated a significantly smaller correction would be
+required.
 
 \begin{figure}[ht!]
-    \begin{center}
+    \centering
         \includegraphics[width = 0.9\textwidth]{figures/GussFiniteSizeDiagram.png}
         \caption[Illustration of finite-size effects relevant for \el cross
         section measurements]
@@ -190,11 +190,10 @@ required for our measurement.
             must be applied to recover the true cross section.
         }
         \label{GussFiniteSizeDiagram}
-    \end{center}
 \end{figure}
 
 \begin{figure}[ht!]
-    \begin{center}
+    \centering
         \includegraphics[width=0.9\textwidth, trim={0 0.1cm 0 0}, clip]{figures/GussFiniteSizeEffect.png}
         \caption[Effect of finite-size corrections on previous neutron \el\ measurement at
         TUNL]
@@ -214,7 +213,21 @@ required for our measurement.
             \ref{FiniteSizeAngular} and \ref{FiniteSizeAttenuation}).
         }
         \label{GussFiniteSizeEffect}
-    \end{center}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/GussMultipleScattering.png}
+    \label{GussMultipleScattering}
+    \vspace*{\floatsep}
+    \includegraphics[width=0.9\textwidth]{figures/multipleScattering.png}
+    \caption[Relative counts due to multiple scattering in the sample volume]
+    {
+        Relative counts due to multiple scattering in the sample volume. Results from a simulation
+        on \niEight\ from the PhD thesis of P. Guss \cite{GussPhDThesis} are shown in the top panel,
+        and the results of our simulation on \snFour\ are shown in the bottom panel.
+    }
+    \label{multipleScattering}
 \end{figure}
 
 Figure \ref{GussFiniteSizeDiagram} illustrates the possibility of multiple scattering in the samples
