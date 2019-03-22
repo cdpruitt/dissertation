@@ -448,8 +448,8 @@ with the nucleon under investigation can be
 calculated directly from the reducible self-energy:
 \begin{equation}
     \begin{split}
-        e^{2i\delta_{lj}} & \equiv \braket{k|\mathcal{S}_{lj}(E)|k}\\
-        & = 1 - 2\pi i \left(\frac{mk}{\hbar^{2}}\right) \braket{k|\Sigma_{lj}(E)|k}
+        e^{2i\delta_{lj}} & \equiv \braket{\bm{k}|\mathcal{S}_{lj}(E)|\bm{k}}\\
+        & = 1 - 2\pi i \left(\frac{mk}{\hbar^{2}}\right) \braket{\bm{k}|\Sigma_{lj}(E)|\bm{k}}
     \end{split}
 \end{equation}
 
@@ -472,9 +472,9 @@ and the total cross section simply a sum of the reaction and elastic of all part
 where
 \begin{equation}
     \begin{split}
-        \sigma_{el} & = \int d\theta \int d\phi \frac{d\sigma}{d\Omega}(\theta)\\
+        \sigma_{el} & = \int d\theta \int d\phi\ \frac{d\sigma}{d\Omega}(\theta)\\
         & = \sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
-        \frac{|(l+1)(e^{2i\delta_{l+}}-1)+l(e^{2i\delta_{l-}-1)|^{2}}}{2l+1}\\
+        \frac{|(l+1)(e^{2i\delta_{l+}}-1)+l(e^{2i\delta_{l-}}-1)|^{2}}{2l+1}\\
         & \times \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}
     \end{split}
 \end{equation}
@@ -485,12 +485,12 @@ define the spectral functions for holes and particles:
 \begin{equation}
     \begin{split}
         S_{h}(\alpha; E) & =
-        \frac{1}{\pi}\operatorname{Im}({G(\alpha,\alpha;E)}) for E\leq\epsilon_{F}^{-}\\
+        \frac{1}{\pi}\operatorname{Im}({G(\alpha,\alpha;E)})\qquad \text{for } E\leq\epsilon_{F}^{-}\\
         & = \sum|\braket{\Psi^{N-1}_{n}|a_{\alpha}|\Psi^{N}_{0}}|^{2}
         \delta(E-(E^{N}_{0}-E_{n}^{N-1}))\\
         \\
         S_{p}(\alpha; E) & =
-        -\frac{1}{\pi}\operatorname{Im}({G(\alpha,\alpha;E)}) for E\geq\epsilon_{F}^{+}\\
+        -\frac{1}{\pi}\operatorname{Im}({G(\alpha,\alpha;E)})\qquad \text{for } E\geq\epsilon_{F}^{+}\\
         & = \sum|\braket{\Psi^{N+1}_{n}|a_{\alpha}^{\dagger}|\Psi^{N}_{0}}|^{2}
         \delta(E-(E_{n}^{N+1}-E^{N}_{0}))
     \end{split}
@@ -518,7 +518,7 @@ $\delta$-function-like behavior, and the spectroscopic factor of any quasi-holes
 $\epsilon_{F}^{-}$ is added to account for the remaining occupation. The spectroscopic factor is
 calculated:
 \begin{equation}
-    [insert spectroscopic factor calculation]
+    [insert SF calculation]
 \end{equation}
 
 Previous DOM analyses (e.g., \cite{MahzoonPhDThesis}) dealt only with doubly-closed 
@@ -539,7 +539,7 @@ where $\mu$ is the energy of the open subshell before pairing is considered and
 $\epsilon_{F}$ is the Fermi
 energy. The magnitude of $\Delta$ corresponds to the energy difference between
 adding/removing a nucleon to/from that subshell. The subshell
-is split between the upper and lower sublevels. These sublevels' occupancy are calculated:
+is split between the upper and lower sublevels. The occupancy of these sublevels is calculated via:
 \begin{equation}
     n_{\pm} = \frac{1}{2}\left( 1-\frac{\chi}{E_{\pm}}\right)
 \end{equation}
@@ -547,10 +547,12 @@ is split between the upper and lower sublevels. These sublevels' occupancy are c
 \noindent
 where $\chi = |E_{\pm}-\mu| - (\epsilon_{F} - \mu)$. Only occupation in the
 lower sublevel is counted toward the total particle number. For each open-shell
-nucleus with nucleon numbers $N, Z$ , $\Delta$ was fixed according to:
+nucleus with neutron number $N$ and proton number $Z$, $\Delta$ was fixed according to:
 \begin{equation}
     \Delta(N,Z) = \frac{1}{4}\left(B(N-2,Z)-3B(N-1,Z) + 3B(N,Z)-B(N+1,Z)\right)
 \end{equation}
+\noindent
+where $B(N,Z)$ is the nuclear binding energy.
 
 In addition to the total occupation of each state with quantum numbers $\alpha$,
 the density distribution of particles in that state in r-space can be calculated. By summing the
@@ -560,22 +562,19 @@ After folding this distribution with an appropriate form factor giving the inter
 distribution for protons and neutrons \cite{FormFactorPaper}, the final distribution can be compared
 to the experimental charge density distribution calculated in (e,e) scattering experiments.
 
-\noindent
-where $B(N,Z)$ is the nuclear binding energy.
-
-The total binding energy of the nucleus is calculated directly from the spectral function and the
+The total binding energy of the nucleus may be calculated directly from the spectral function and the
 kinetic energy operator $\hat{T}$:
 \begin{equation} \label{TotalEnergyEquation}
     \begin{split}
         E^{N}_{0} & = \braket{\Psi^{N}_{0}|\hat{H}|\Psi^{N}_{0}}\\
-        & = \frac{1}{2} \left(\sum_{\alpha,\beta}\braket{\alpha|T|\beta}n_{\alpha,\beta}
-        + \sum_{\alpha}\int_{-infty}^{\epsilon_{F}^{-}}dE\ E\ S_{h}(\alpha;E)\right)
+        & = \frac{1}{2} \left(\sum_{\alpha,\beta}\braket{\alpha|\hat{T}|\beta}n_{\alpha,\beta}
+        + \sum_{\alpha}\int_{-\infty}^{\epsilon_{F}^{-}}dE\ E\ S_{h}(\alpha;E)\right)
     \end{split}
 \end{equation}
 
 \noindent
-and the individual discrete, single-particle energy levels can be calculated by diagonalizing the
-Hamiltonian $H = T + V$.
+and the discrete single-particle energy levels can be calculated by diagonalizing the
+Hamiltonian.
 
 \section{Parameterization of the Potential}
 The functions used to parameterize the optical potential
@@ -584,22 +583,28 @@ many-body problem and past experience with optical potentials. Accordingly,
 the self-energy should be, non-local, complex, and dispersively correct.
 Before detailing the full parameterization,
 a few standard mathematical forms need to be introduced. In this section, the free variables that
-are fitted to data during the DOM procedure are denoted in a bold typeface.
+are fitted to data during the DOM procedure are denoted in a bold typeface. In the basic functional
+forms of the next subsection, these variables are not labeled with numbers,
+but in the following subsections, the bolded
+variables are assigned numbers to facilitate comparison with the
+list of parameter values of Appendix \ref{DOMParameters}.
+
+\subsection{Functional forms}
 We use two standard form factors
 to describe the radial dependence of components
 associated with the nuclear volume (a Woods-Saxon shape)
 and the nuclear surface (a derivative of the Woods-Saxon shape):
 \begin{equation} \label{WoodsSaxon}
     \begin{split}
-        f_{vol}(r; \bm{V}, \bm{R}, \bm{a}) & = \frac{-\bm{V}}{1+e^{(r-\bm{R})/\bm{a}}}\\
-        f_{surf}(r; \bm{V}, \bm{R}, \bm{a}) & = \frac{1}{r}\frac{d}{dr}f_{vol}(V,r)
+        f_{vol}(r; \bm{R}, \bm{a}) & = \frac{-1}{1+e^{(r-\bm{R})/\bm{a}}}\\
+        f_{sur}(r; \bm{R}, \bm{a}) & = \frac{1}{r}\frac{d}{dr}f_{vol}(r; \bm{R}, \bm{a})
     \end{split}
 \end{equation}
 
 \noindent
-$R$ is the nuclear radius, calculated as $R = r_{0}A^{\frac{1}{3}}$, with $A$ as the total number of
-nucleons in the nucleus. The diffuseness term $a$ determines how quickly the potential reaches zero.
-The depth of the potential is $V$ such that the Woods-Saxon form
+$\bm{R}$ is the nuclear radius, calculated as $\bm{R} = \bm{r_{0}}A^{\frac{1}{3}}$, with $A$ the total number of
+nucleons in the nucleus. The diffuseness term $\bm{a}$ determines how quickly the potential reaches zero.
+The sign of the potential is such that the Woods-Saxon form
 provides an attractive interaction.
 To approximate the non-locality, equivalent local potentials \cite{Mahaux1991}
 with an additional energy dependence may be used, but their additional energy-dependence
@@ -609,49 +614,56 @@ The self-energy/optical potential used in our treatment is based on that of
 \cite{MahzoonPhDThesis}, which was the first to fully implement the non-locality in the potential
 forms alongside the dispersion relation. For simplicity, we use a Gaussian non-locality:
 \begin{equation}
-    N(r, r',\beta) = \frac{1}{\pi^{\frac{3}{2}}\beta^{3}} e^{\frac{|r-r'|^{2}}{\beta^{2}}}
+    N(r, r';\bm{\beta}) = \frac{1}{\pi^{\frac{3}{2}}\bm{\beta}^{3}}
+    e^{|r-r'|^{2}/{\bm{\beta}^{2}}}
 \end{equation}
 
 \noindent
-where $\beta$ is a free parameter that sets the Gaussian width. The energy-dependence of the
+where $\bm{\beta}$ is a free parameter that sets the Gaussian width. The energy-dependence of the
 imaginary components is based on the functional form of \cite{Charity2006}:
-\begin{equation}
-    \omega_{n}(E, A, B, C) = A\Theta(X)\frac{X^{n}}{X^{n}+B^{n}}
+\begin{equation} \label{omega}
+    \omega_{n}(E; \bm{A}, \bm{B}, \bm{C}) = \bm{A}\Theta(X)\frac{X^{n}}{X^{n}+\bm{B}^{n}}
 \end{equation}
 
 \noindent
 where
 \begin{equation*}
-    X = |E-\epsilon_{F}|-C\\
+    X = |E-\epsilon_{F}|-\bm{C}\\
 \end{equation*}
 \noindent
 and $\Theta(X)$ is the step function. 
 
-We are now ready to give the full parameterization.  
+We are now ready to give the full parameterization. The parameterization for symmetric nuclei
+is simpler as the same potential is used for protons and neutrons. For asymmetric systems, we
+introduce a handful of asymmetry-dependent additional terms, described after the symmetric potential
+form is presented.
+
+\subsection{Real potential}
 The energy-independent real part of the self-energy consists of a nonlocal Hartree-Fock and
 a spin-orbit component (plus a local Coulomb term if the nucleon in question is a proton):
 \begin{equation}
-    \operatorname{Re}({\Sigma}V_{s}(r,r')) = \Sigma_{HF}(r,r')+V_{so}(r,r')+\delta(r-r')\times V_{C}(r)
+    \operatorname{Re}({\Sigma}_{s}(r,r')) = \Sigma_{HF}(r,r')+V_{so}(r,r')+\delta(r-r')\times V_{C}(r)
 \end{equation}
 
 \noindent
 The Hartree-Fock component $V_{HF}$ has two subcomponents:
 \begin{equation}
-    \Sigma_{HF}(r,r') = V_{vol}(r,r') + V_{WB}(r)
+    \Sigma_{HF}(r,r') = V_{vol}(r,r') + V_{wb}(r)
 \end{equation}
 
 \noindent
 where the non-local Hartree-Fock volume term $V_{vol}(r,r')$, is defined as
 a Woods-Saxon form coupled to a Gaussian non-locality:
-\begin{equation}
-    V_{vol}(r,r') = f_{vol}(V,r){\cdot}N(r,r',\beta)
+\begin{equation} \label{RealVolume}
+    V_{vol}(r,r') = \bm{V_{1}}{\times}f_{vol}(r; \bm{R_{1}}, \bm{a_{1}})
+    {\times}N(r,r';\bm{\beta_{1}})
 \end{equation}
 
 The local Hartree-Fock wine-bottle
-term $V_{wb}(r)$, named for resemblence to the dimple at the bottom of a wine
+term $V_{wb}$, named for resemblence to the dimple at the bottom of a wine
 bottle, is defined as a Gaussian centered at the nuclear origin:
 \begin{equation}
-    V_{wb}(V, r,\sigma) = Ve^{\frac{r^{2}}{\sigma^{2}}}
+    V_{wb}(r) = \bm{V_{2}}{\times}e^{r^{2}/\bm{\sigma_{1}}^{2}}
 \end{equation}
 
 \noindent
@@ -660,54 +672,63 @@ is defined using a derivative-Woods-Saxon shape in keeping with the
 expectation that the spin-orbit coupling is strongest near the
 nuclear surface:
 \begin{equation}
-    V_{so}(r,r') =
-    \frac{1}{r}f_{surf}(W,r){\cdot}N(r,r',\beta)
+    V_{so}(r,r') = \left(\frac{\hbar}{m_{\pi}c}\right)^{2}
+    \bm{V_{3}}\times\frac{1}{r}f_{sur}(r;\bm{R_{3}}, \bm{a_{3}}){\times}N(r,r';\bm{\beta_{3}})
+    {\times}(\ell\cdot\sigma)
 \end{equation}
 
 \noindent
-The energy-dependent part of the real component of the potential is calculated using the imaginary
-component of the potential according to the dispersion relation (Eq.
-\ref{SubtractedDispersionRelation}. This completes the description of the real component.
+The leading constant $\left(\frac{\hbar}{m_{\pi}c}\right)^{2}$ is taken to be 2.0 fm$^{2}$
+\cite{MahzoonPhDThesis}.
+The energy-\textit{dependent} part of the real component of the potential is generated
+using the imaginary component of the potential, according to the dispersion relation (Eq.
+\ref{SubtractedDispersionRelation}). This completes the parameterization of the real component.
 
+\subsection{Imaginary part}
 The imaginary part of the potential is comprised of independent surface and volume terms
-both above and below the Fermi surface, plus an imaginary spin-orbit term:
+both above and below the Fermi surface:
 \begin{equation}
     \operatorname{Im}({\Sigma(r,r',E)}) =
     \operatorname{Im}({\Sigma_{vol}^{\pm}(r,r',E)})
-    + \operatorname{Im}({\Sigma_{surf}^{\pm}(r,r',E)})
-    + W^{so}(r,r',E);
+    + \operatorname{Im}({\Sigma_{sur}^{\pm}(r,r',E)})
 \end{equation}
 
 \noindent
 where the volume and surface components are:
 \begin{equation}
     \begin{split}
-    \operatorname{Im}({\Sigma_{vol}^{\pm}(r,r',E)})
-    & = W_{vol}(E)^{\pm}f_{vol}(r; r_{0}, a){\times}N(r,r',\beta)\\
-    \operatorname{Im}({\Sigma_{surf}^{\pm}(r,r',E)})
-    & = 4aW_{surf}(E)^{\pm}f_{surf}(r; W, r_{0}, a){\times}N(r,r',\beta)
-\end{split}
+        \operatorname{Im}({\Sigma_{vol}^{\pm}(r,r',E)})
+        & = W_{vol}^{\pm}(E){\times}f_{vol}(r; \bm{R_{4}}, \bm{a_{4}})
+        {\times}N(r,r'; \bm{\beta_{4}})\\
+        \operatorname{Im}({\Sigma_{sur}^{\pm}(r,r',E)})
+        & = 4\bm{a_{4}}W_{sur}^{\pm}(E){\times}f_{sur}(r; \bm{R_{4}}, \bm{a_{4}})
+        {\times} N(r,r';\bm{\beta_{4}})
+    \end{split}
 \end{equation}
 
 \noindent
 The terms labeled with a $+$ determine the potential above $\epsilon_{F}$, and the terms labeled
-with a $-$ determine the potential below $\epsilon_{F}$. The energy dependence of the imaginary
-volume term reads:
-\begin{equation}
-    W_{vol}^{\pm}(E) = A_{vol}^{\pm}\frac{(E_{\Delta}))^{4}}
-    {(E_{\Delta})^{4}+(B_{vol}^{\pm})^{4}} + W_{NM}^{\pm}(E)
-    + W_{NM}^{\pm}(E)
+with a $-$ determine the potential below $\epsilon_{F}$. Note that in this equation, the same
+Woods-Saxon variables and nonlocality are used for both imaginary surface and imaginary volume,
+both at positive and
+negative energies. Compared to parameterizations used in previous DOM treatments,
+this reduces by nine the number of parameters 
+used for the imaginary surface and volume.
+The energy dependence of the imaginary volume term reads:
+\begin{equation} \label{ImagVolume}
+    W_{vol}^{\pm}(E) = \bm{A_{5}^{\pm}}\left[\frac{(E_{\Delta})^{4}}
+    {(E_{\Delta})^{4}+(\bm{B_{5}^{\pm}})^{4}} + W_{NM}^{\pm}(E)\right]
 \end{equation}
 
 \noindent
-where
+where $E_{\Delta} = |E-\epsilon_{F}|$ and
 \begin{equation}
     \begin{split}
-        W_{NM}^{+}(E) & = {\alpha}A_{vol}^{+}[\sqrt{E} +
-            \frac{(\epsilon_{F}+E^{+}_{NM})^{\frac{3}{2}}}{2E}
-            -\frac{3}{2}\sqrt{\epsilon_{F}+E^{+}_{NM}}\\
-            W_{NM}^{-}(E) & = -A_{vol}^{-}\frac{(\epsilon_{F}-E-E_{NM}^{-})^{2}}
-        {(\epsilon_{F}-E-E_{NM}^{-})^{2}+(E_{NM}^{-})^{2}}]
+        W_{NM}^{+}(E) & = {\bm{\alpha_{6}}}\left[\sqrt{E} +
+            \frac{(\epsilon_{F}+\bm{E^{+}_{6}})^{\frac{3}{2}}}{2E}
+        -\frac{3}{2}\sqrt{\epsilon_{F}+\bm{E^{+}_{6}}}\right]\\
+        W_{NM}^{-}(E) & = \frac{(\epsilon_{F}-E-\bm{E_{6}^{-}})^{2}}
+        {(\epsilon_{F}-E-\bm{E_{6}^{-}})^{2}+(\bm{E_{6}^{-}})^{2}}
         \end{split}
     \end{equation}
 
@@ -715,90 +736,140 @@ where
 The terms $W_{NM}^{\pm}$ are asymmetric above and below the Fermi surface and are modeled after
 nuclear-matter calculations. They account for the decreasing phase space at negative energies
 and the increasing phase space at positive energies. The imaginary surface terms read:
-\begin{equation}
-    W_{sur}^{\pm}(E) = \omega_{4}(E, A, B, 0) - \omega_{2}(E, A, B, C)
+\begin{equation} \label{ImagSurface}
+    W_{sur}^{\pm}(E) = \omega_{4}(E, \bm{A_{7}^{\pm}}, \bm{B_{7}^{\pm}}, 0)
+    - \omega_{2}(E, \bm{A_{7}^{\pm}}, \bm{B_{7}^{'\pm}}, \bm{C_{7}^{\pm}}) + 
+    \bm{W_{7}}\times(\ell\cdot\sigma)
 \end{equation}
 
 \noindent
-Last, the imaginary spin-orbit term reads:
-\begin{equation}
-    [insert imaginary spin-orbit]
-\end{equation}
-This completes the parameterization of the potential for symmetric nuclei. For asymmetric nuclei,
-the parametric forms are modified to account for the different potential experienced by protons and
-neutrons in an asymmetric nucleus. We model asymmetry-dependence with a linear Lane-potential-like
-term:
+where $\omega_{n}$ was defined in Eq. \ref{omega}, and $\bm{W_{7}}$ represents the change in the
+imaginary surface strength due to an imaginary spin-orbit force. An imaginary spin-orbit
+contribution has been seen to be useful in previous optical-model treatments in order to reproduce 
+the high-energy analyzing power data.
 
+This completes the parameterization of the potential for symmetric nuclei. For asymmetric nuclei,
+the parametric forms must be modified to account for the different potential experienced by protons 
+and neutrons in an asymmetric nucleus. Previous DOM treatments have created entirely separate
+proton and neutron potentials, each having all the free parameters used in the symmetric
+parameterization presented above. For example, the fit of \caEight\ in
+\cite{MahzoonPhDThesis} used over sixty unique parameters. Such an abundance of
+parameters can lead to overfitting, hampering interpretation and predictive power.
+To reduce this risk, in this analysis we allowed only a select handful of parameters
+to differ between neutrons and protons. We embedded asymmetry-dependence with a linear form:
 \begin{equation}
-    V_{asymm} = \frac{N-Z}{A}
+    X_{asymm} = \bm{X}\times\frac{N-Z}{A}
 \end{equation}
+
+Of the ten free parameters used for the real potential in the symmetric parameterization above,
+only the depth of the central potential,
+$\bm{V_{1}}$ from Eq. \ref{RealVolume}, is allowed to vary with asymmetry:
+\begin{equation}
+    \bm{V_{1}} \Rightarrow \begin{cases}
+        \bm{V_{1}} + \bm{V_{asymm}}\times\frac{N-Z}{A} & \text{for protons}\\
+        \bm{V_{1}} - \bm{V_{asymm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
+    \end{cases}
+\end{equation}
+
+\noindent
+Of the nineteen free parameters used for the imaginary potential in the asymmetric parameterization
+above, the magnitude of the energy-dependence for the imaginary surface and volume,
+$\bm{A_{5}^{\pm}}$ and $\bm{A_{7}^{\pm}}$ from Eqs. \ref{ImagVolume} and \ref{ImagSurface},
+are allowed to vary with asymmetry:
+\begin{equation}
+    \bm{A_{5}^{\pm}} \Rightarrow \begin{cases}
+        \bm{A_{5}^{\pm}} + \bm{A_{vol, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for protons}\\
+        \bm{A_{5}^{\pm}} - \bm{A_{vol, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
+    \end{cases}
+\end{equation}
+\begin{equation}
+    \bm{A_{7}^{\pm}} \Rightarrow \begin{cases}
+        \bm{A_{7}^{\pm}} + \bm{A_{sur, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for protons}\\
+        \bm{A_{7}^{\pm}} - \bm{A_{sur, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
+    \end{cases}
+\end{equation}
+
+\noindent
+There should be no confusion between $\bm{A_{5,7}^{\pm}}$ and $A$, the total number of nucleons, 
+used in calculating the degree of asymmetry. With these four additional asymmetric imaginary terms,
+the total number of free parameters used for
+fitting asymmetric nuclei in the present work comes to thirty-four: eleven real, twenty-three
+imaginary.
 
 \section{Computational Considerations}
 As with any high-dimensional optimization problem, the fitter must be vigilant
 against the overfitting of data. In practice, this requires:
+\begin{itemize}
+    \item parsimony with the number of parameters used in the model, 
+    \item common-sense checking "under the hood" of the optimization to verify that
+        parameter values make sense, given the assumptions that undergird the model,
+    \item understanding of what the value function is (i.e., the function being
+        minimized/maximized) and whether certain experimental data are being privileged over others,
+    \item and the cross-correlation between parameters is understood
+\end{itemize}
+As was pointed out by Koning and Delaroche \cite{KoningDelaroche}, large-scale fitting to 
+experimental data is both art and science: fits should deviate as little as possible from the 
+experimental values but also be aesthetically acceptable to the eye of the fitter.
+Thus the expectations of the fitter, mistaken or not, play a big part in the definition of the
+potential forms, the starting values of the parameters, and the conclusion that a fit is ``good
+enough'' to stop fitting. For an extrapolation from a
+fit to be well-justified, the fitted potential should be physically reasonable throughout its domain
+and each parameter used in the fit should be well-constrained by the data.
 
-parsimony with the number of parameters used in the model
+To end this chapter, we briefly mention a few preconceptions
+that guided our expectations on how the nuclear potential should look. Figures
+\ref{PotentialSpatialDependence} and \ref{PotentialEnergyDependence} show the radial- and
+energy-dependence of the optical potential from our fit on \caForty.
+In the radial domain, 
+In the energy domain, above the Fermi level,
+the imaginary strength is dominated by the surface terms from
+0-50 MeV and by the volume terms from 50 MeV onward, increasing continuously.
+Below the Fermi surface, the imaginary strength is largely symmetric to that of the positive-energy
+regime for a short distance, then tapers off as the phase space is reduced. Especially for smaller
+nuclei like \oSix and even \caForty, it is difficult to clearly separate the negative-energy 
+imaginary surface and imaginary volume terms. These general trends comport with the expectation
+that low-lying excitations (surface phonons and collective modes) and
+two-particle-one-hole excitations should be responsible for most surface imaginary strength.
 
-common-sense checking "under the hood" of the optimization to verify that
-parameter values make sense given the assumptions that undergird the model
+%TCS affected by HF parameters, spin orbit, imaginary above
+%RCS affected by imaginary above, HF parameters
+%ECS affected by HF parameters, spin orbit, imaginary above
+%APower affected by HF parameters, spin orbit,  imaginary above
+%Charge Density affected by HF parameters, imaginary below
+%Levels affected by HF parameters, spin orbit,
+%Spectral functions affected by HF parameters, imaginary below
+%RMSRadii affected by HF parameters, imaginary below
 
-understanding of what the value function is (that is, the function being
-minimized/maximized) and whether it needs to be changed
-
-cross-correlation between parameters to understand the relationship between
-parameters and the effect that each has on predictions made using the model
-
-TCS affected by HF parameters, spin orbit, imaginary above
-RCS affected by imaginary above, HF parameters
-ECS affected by HF parameters, spin orbit, imaginary above
-APower affected by HF parameters, spin orbit,  imaginary above
-Charge Density affected by HF parameters, imaginary below
-Levels affected by HF parameters, spin orbit,
-Spectral functions affected by HF parameters, imaginary below
-RMSRadii affected by HF parameters, imaginary below
-
-Physical intuition about scattering data:
-- the low-angle ECS/APower data are sensitive to the imaginary strength above
-the Fermi surface. The high-angle ECS/APower data are sensitive to the imaginary
-strength below the Fermi surface, with the highest angles of elastic scattering
-probing the imaginary strength deepest in the core (see high-energy, high-angle
-data in Pb)
-- the NM correction to the imaginary volume strength is required in all cases to
-have the very high/very low energy imaginary strength have the correct trend
-(linearly increasing above 100 MeV above, decreasing to 0 below 100 MeV below).
-Seen in spectral functions and total cross section data at high energies, where
-the pion production channel enters the picture as it goes from virtual->real
-- the general trend of the elastic scattering data (not wiggles, but averaged
-over wiggles) depends on the imaginary strength at the given energy. If the
-minima in the elastic cross sections are too sharp/deep, the imaginary strength
-is too large at that energy
-- the spin-orbit strength has dramatic effects on the total cross section at low
-energies ($<$20 MeV)
-- above the Fermi surface, the imaginary strength is dominated by surface from
-0-50 MeV and by volume from 50 MeV up. Below the Fermi surface, the surface
-imaginary strength is dependent on A; for low A, where the level density is very
-low below the Fermi surface and there's almost no contribution from high LJ
-levels, there is virtually no surface imaginary strength below (cf. with charge
-density distribution tail, at the surface of the nucleus). As A increases, 
-imaginary surface strength below increases gradually but never reaches the
-imaginary surface strength above. A consequence of the asymmetry of the
-operators that contribute: below 0 MeV, the removal operator LJs
-must recouple to the ground state, so high LJ operators have virtually no
-contribution; above 0 MeV, addition operators can have arbitrary LJs because
-free scattering is possible, adding significantly to the collective strength and
-thus is imaginary strength peaked at the surface in the 20-30 MeV range (giant
-dipole resonance, for example, surface phonons).
+%Physical intuition about scattering data:
+%- the low-angle ECS/APower data are sensitive to the imaginary strength above
+%the Fermi surface. The high-angle ECS/APower data are sensitive to the imaginary
+%strength below the Fermi surface, with the highest angles of elastic scattering
+%probing the imaginary strength deepest in the core (see high-energy, high-angle
+%data in Pb)
+%- the NM correction to the imaginary volume strength is required in all cases to
+%have the very high/very low energy imaginary strength have the correct trend
+%(linearly increasing above 100 MeV above, decreasing to 0 below 100 MeV below).
+%Seen in spectral functions and total cross section data at high energies, where
+%the pion production channel enters the picture as it goes from virtual->real
+%- the general trend of the elastic scattering data (not wiggles, but averaged
+%over wiggles) depends on the imaginary strength at the given energy. If the
+%minima in the elastic cross sections are too sharp/deep, the imaginary strength
+%is too large at that energy
+%- the spin-orbit strength has dramatic effects on the total cross section at low
+%energies ($<$20 MeV)
 
 \subsection{Fitting procedure}
-The powell method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
-was used to minimize the RMS difference between experimental data points and the
-values calculated by the DOM. A weighting scheme was assigned to the data points
-according to their importance, guiding the fit to reproduce the most essential
-data points. From fit to fit, the weighting scheme was adjusted as necessary to
-escape local minima in the multidimensional fit.
+The powell minimization method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
+was used to minimize the $\chi^{2}$ between experimental data points and the
+values calculated by the DOM fit. A weighting scheme was assigned to the data points
+according to the number of data sets for each sector of experimental data (e.g., \el,
+binding energies) and to their relative importance, guiding the fit to reproduce
+the most essential data. From fit to fit, the weighting scheme was adjusted
+as necessary to escape local minima in the multidimensional fit.
 
-The radial grid, energy grid, size of the lagrange basis, partial wave angular momentum cutoff, and
-various integration cutoffs used in calculating the potential and
-observable quantities were varied to ensure that output was not distorted by numerical errors. 
-
+The radial grid, energy grid, size of the Lagrange and Laguerre bases,
+partial wave angular momentum cutoff,
+and various integration cutoffs used in calculating the potential and
+observable quantities were varied to ensure that results were not distorted by rounding or
+truncation errors.
 \afterpage{\clearpage}
