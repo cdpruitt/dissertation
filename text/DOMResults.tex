@@ -96,7 +96,7 @@ to the mean-field expectation, in keeping with (p,2p) measurements \cite{Liverpo
         The peak location and general shape of the hole spectral functions we recover match those
         extracted from analysis of experimental (p,2p) data of \cite{LiverpoolCa40}.
     }
-    \label{s1Depletion}
+    \label{Ca40SpectralFunctions}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -107,7 +107,7 @@ to the mean-field expectation, in keeping with (p,2p) measurements \cite{Liverpo
     {
         The depletion of the proton \sOne\ in \caForty is essential
         for reproducing the charge density
-        distribution as calculated from experimental elastic electron scattering \cite{DeVries}.
+        distribution as calculated from experimental elastic electron scattering \cite{DeVries1987}.
     }
     \label{s1Depletion}
 \end{figure}
@@ -117,26 +117,37 @@ calculated (shown in Fig. \ref{Ca40Momenta}). The amount of ``high-
 momentum content'' in these distributions is of great interest, as significant high-momentum content 
 indicates deviation from the mean-field picture due to short-range correlations (SRCs). SRCs arise 
 even in very light nuclear systems (e.g., $^{4}He$)
-and appear to be responsible for the so-called EMC Effect \cite{PRC_85_047301_OHen, 
+and thought to be responsible for the so-called EMC Effect \cite{PRC_85_047301_OHen, 
 PRC_86_065204_Arrington, CLAS2019}.
 Tensor-force 
 interactions in neutron-proton pairs are thought to be the dominant source of 
-SRCs \cite{Subedi2008}. Accordingly, in symmetric nuclei like \cTwelve and \caForty, the
+SRCs \cite{Subedi2008}. Accordingly, in symmetric nuclei like \cTwelve\ and \caForty, the
 high-momentum content is expected to be nearly the same for protons and neutrons, whereas in
 asymmetric nuclei like \pbEight, the minority nucleon species is expected to have a larger
-high-momentum tail in the momentum distribution. In \cite{C12HighMomentum}, the \cTwelve proton and
+high-momentum tail in the momentum distribution. In \cite{C12HighMomentum}, the \cTwelve\ proton and
 neutron momentum distributions showed that ~10\% of the total nucleon density lies above 270 MeV/c.
 From our DOM fits, we calculate values of [insert ca40 momentum for p/insert ca40 momentum for n]\%
 for protons and neutrons respectively, in line with the expectation that the high-momentum content
 should increase slightly as one moves to higher A.
 
-The binding energy for \caForty is readily calculated using Eq.
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/Ca40Momenta.png}
+    \caption[The single-particle momentum distributions in \caForty]
+    {
+        The momentum distribution of nucleons in \caForty, partitioned
+        by orbital angular momentum $L$ and total angular momentum $J$.
+    }
+    \label{Ca40Momenta}
+\end{figure}
+
+The binding energy for \caForty\ is readily calculated using Eq.
 \ref{TotalEnergyEquation}. Its radial dependence is shown in Fig. \ref{Ca40Energies} and the
 contributions to the binding energy from each single-particle LJ are shown in
-\ref{Ca40EnergiesByLJ}. Per our fit, even though the 0\sOne nucleons consitute only [insert \%
+\ref{Ca40EnergiesByLJ}. Per our fit, even though the 0\sOne\ nucleons consitute only [insert \%
 of 0\sOne occupation] of the 40 nucleons in \caForty, they provide the lion's share of the binding
 energy ([insert binding energy \% for protons and neutrons]). The spectral
-functions make things clear: 0\sOne nucleons spend a small but significant portion of their time 
+functions make things clear: 0\sOne\ nucleons spend a small but significant portion of their time 
 at very negative energies ($<$-100 MeV), pulling the weighted average binding energy toward
 [insert Ca40 binding energy] MeV/A, the experimentally-known binding energy for \caForty. In this
 picture, it is clear why mean-field models consistently underpredict the binding energy, as they
@@ -151,33 +162,52 @@ symmetric nuclei, a consequence of Coulomb repulsion nudging proton density towa
 
 \subsection{Results for \caEight}
 
-
 \section{Results for \oSixEight}
-As the lightest system analyzed in the DOM framework, \oSix is a useful test case
-for the validity of the DOM in light systems and useful benchmark for $\chi$-EFT, shell model, ab
-initio approaches, and other theoretical treatments. In addition, a wealth of scattering and
-bound-state information have been collected on this nucleus that expose the strengths and
-weaknesses of the DOM potential forms.
+The lightest system analyzed in the DOM framework, \oSix\ is a valuable benchmark
+for $\chi$-EFT, shell model, and ab initio approaches. A wealth of scattering and
+bound-state information have been collected on \oSix, making it a good test case for the validity
+of the DOM in light systems and helping to validate the choices of DOM potential forms.
 
+Of the nuclides we chose for a DOM treatment, \oEight was one of most challenging due to the paucity of
+available experimental data, the lightness of the system, and the neutron open shell.
+To constrain the negative-energy domain
+of the potential, the only available experimental data were the neutron and proton separation
+energies and the RMS charge radius of \oEight and \neEight. Accordingly, the uncertainty in our
+extracted structural quantities is larger than in any other system we studied.
+
+\subsection{Results for \oSix}
 The experimental data used to constrain the \oSix potential and structural information extracted
 from the fit are available in \ref{tab:O16ExpData} and \ref{O16DOMOutput}. Good agreement with all 
-experimental data was achieved, excepting the following regimes:
-
-- neutron total cross section at <10 MeV
-- proton differential elastic cross sections and analyzing powers above 150 MeV at backward angles
+experimental data was achieved, excepting for the highest-energy ($>$ 150 MeV)
+proton differential elastic cross sections and analyzing powers, especially at backward angles.
 
 For a system as light as \oSix, the density of states at low energies (i.e., below the neutron
 separation energy) is sufficiently low that a smoothly-varying potential will be a poor
-approximation of the resonance structure that dictates the strength of inelastic scattering. Hence,
-our fit of the neutron total cross section in \oSix fails to reproduce the resonance structures and
-instead generates an average behavior over these resonances.
+approximation of the resonance structure that dictates the strength of inelastic scattering. This
+deficiency is particularly acute in the doubly-closed-shell nuclei, where the level spacing is
+larger near the Fermi energy. We expect this to be a contributing factor to the slight
+overestimation of the RMS charge radius (see Fig. \ref{O16ChargeDensityDistribution}).
 
-Of the nuclides we chose for a DOM treatment, \oEight was the most difficult due to the paucity of
-available experimental data, the lightness of the system, and the neutron open shell. To constrain the negative-energy domain
-of the potential, the only available experimental data were the neutron and proton separation
-energies and the RMS charge radius of \oEight and \neEight. Accordingly, the uncertainty in our extracted structural quantities is
-larger than in any other system we studied.
+As with \caForty\ and \pbEight, (e,e'p) cross sections have been measured on \oSix. These data
+provide direct access to the momentum distribution of bound nucleons and are thus a critical test
+for the validity of our fits. Figure \ref{O16eep} presents the results of a calculation of (e,e'p)
+cross sections from the DWEEPY code \cite{DWEEPY} that uses the DOM potential and partial waves as input.
+It is important to note that these data were not used in the fitting of the DOM potential for \oSix
+and thus they give an indication of how well the DOM potential represents the underlying bound-state
+physics.
 
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/O16eep.png}
+    \caption[\oSix (e,e'p) cross sections calculated by the DOM]
+    {
+        \oSix (e,e'p) cross sections calculated by the DOM (solid line) and experimental data from
+        \cite{Leuschner1994}.
+    }
+    \label{O16eep}
+\end{figure}
+
+\subsection{Results for \oEight}
 Because no \oEight charge density distribution was available, we generated an approximate charge density
 distribution for \oEight by linearly scaling
 the radii and densities of the \oSix charge density distribution to reproduce the \oEight RMS charge
@@ -197,104 +227,16 @@ reducing the chi-square contribution from the charge density, particle number, a
 sectors. Once a chi-square minimum had been reached with these two parameters, all other symmetric parameters
 were allowed to vary.
 
-\oSix (e,e'p) data from \cite{Leuschner1994}
-
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_chargeDensity.png}
-%\caption{DOM fit of  charge density}
-%\label{o16ChargeDensity}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_SPLevels.png}
-%\caption{DOM fit of $^{16}O$ single-particle levels}
-%\label{o16SPLevels}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_protonElastic.png}
-%\caption{DOM fit of $^{16}O$ proton elastic scattering data}
-%\label{o16ProtonElastic}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_protonInelastic.png}
-%\caption{DOM fit of $^{16}O$ proton inelastic scattering data}
-%\label{o16ProtonInelastic}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_neutronElastic.png}
-%\caption{DOM fit of $^{16}O$ neutron elastic scattering data}
-%\label{o16NeutronElastic}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_neutronInelastic.png}
-%\caption{DOM fit of $^{16}O$ neutron inelastic scattering data}
-%\label{o16NeutronInelastic}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_protonPotentials.png}
-%\caption{Visualization of DOM optical potential components for protons on
-%$^{16}O$}
-%\label{o16ProtonPotentials}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_neutronPotentials.png}
-%\caption{Visualization of DOM optical potential components for neutrons on
-%$^{16}O$}
-%\label{o16NeutronPotentials}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_protonSpectralFunctions.png}
-%\caption{DOM calculation of $^{16}O$ proton spectral functions}
-%\label{o16ProtonSpectralFunctions}
-%\end{center}
-%\end{figure}
-%
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_neutronSpectralFunctions.png}
-%\caption{DOM calculation of $^{16}O$ neutron spectral functions}
-%\label{o16NeutronSpectralFunctions}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}
-%\begin{center}
-%\includegraphics[width = 0.9\textwidth]{figures/o16_matterDensity.png}
-%\caption{DOM prediction of $^{16}O$ matter density}
-%\label{o16MatterDensity}
-%\end{center}
-%\end{figure}
-
-
+Mention neutron skin and \neEight-\oEight charge density distribution.
 
 \section{Results for \niEightFour}
 
+\subsection{Results for \niEight}
+\subsection{Results for \niFour}
+
 \section{Results for \snTwelveFour}
+\subsection{Results for \snTwelve}
+\subsection{Results for \snFour}
 
 \section{Results for \pbEight}
 The size of the neutron skin of \pbEight has been identified by numerous studies as highly
@@ -307,28 +249,27 @@ within 0.06 fm. Given the wide range of \pbEight neutron skin thicknesses predic
 and non-relativistic mean-field models, an accurate calculation of this quantity is an excellent
 test for the validity of the DOM treatment.
 
-%\begin{table}
-%  \begin{center}
-%    \caption{Calibration beams and the energies generated with the degraders.}\label{CBeams}
-%  \begin{tabular}{ccccc}
-%    \hline \hline
-%    Species & Energy & Target & Thickness & Degraded Energy  \\ 
-%            & [MeV/A] & &[mg/cm$^2$] & [MeV/A] \\
-%     \hline
-%    $p$ & 24.2 &  Au & 20.0 & 24.0   \\
-%           &  & Al & 429 & 15.8 \\
-%    \hline
-%    $d$ & 24.2 &  Au &20.0 & 24.1 \\
-%            & & Al & 429 &20.3 \\
-%    & &  Al & 858 & 15.8 \\
-%            & 12.0 &  Au & 20.0 & 11.9 \\
-%    \hline
-%    $\alpha$ & 24.0 &  Au & 20.0 & 23.8 \\
-%     & & Al & 429 &15.6 \\
-%    \hline \hline
-%  \end{tabular}
-%\end{center}
-%\end{table}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/Pb208Momenta.png}
+    \caption[The single-particle momentum distributions in \pbEight]
+    {
+        The momentum distribution of nucleons in \pbEight, partitioned
+        by orbital angular momentum $L$ and total angular momentum $J$.
+    }
+    \label{Ca40Momenta}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/Pb208MatterDistribution.png}
+    \caption[The proton and neutron point distributions in \pbEight]
+    {
+        DOM calculation of the matter distributions of protons and neutrons and in \pbEight,
+        partitioned by orbital angular momentum $L$ and total angular momentum $J$.
+    }
+    \label{Ca40Momenta}
+\end{figure}
 
 \section{General trends}
 \subsection{Neutron skins sensitive to shell structure}

@@ -274,23 +274,22 @@ self-consistent equation called the Dyson equation:
 
 \noindent
 A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonEquationDiagram}.
-\begin{sidewaysfigure}
+\begin{figure}[ht!]
     \centering
-    \includegraphics[width=\textwidth]{figures/SecondOrder.png}
+    \includegraphics[width=0.9\textwidth]{figures/SecondOrder.png}
     \caption[The single-particle propagator perturbation expansion, to second order]
-    {The first- and second-order terms have been added to the zeroth-order of the
+    {
+        Example diagrams from the first few orders of the 
         single-particle propagator perturbation expansion.
         The interaction $\hat{V}$ is indicated by the horizontal
-        dashed line and is taken to be two-body only in this treatment for simplicity.
+        dashed line and is taken to be two-body only in this treatment.
         The terms of each order are grouped by gray boxes and terms that contribute to
         the Hartree-Fock approximation are surrounded by the red box. In each Hartree-Fock
         term, the particle interacts with the mean-field of the nucleus but
-        the nucleus is never excited and thus the interaction has no energy dependence. The first
-        energy-dependent term in the expansion is the upper second-order term, which depicts
-        the production of a particle-hole pair in the nucleus after interaction with the
-        incident particle.}
+        the nucleus is never excited and thus the interaction has no energy dependence.
+    }
     \label{PerturbationExpansionDiagram}
-\end{sidewaysfigure}
+\end{figure}
 
 \begin{figure}[ht!]
     \centering
@@ -316,9 +315,9 @@ rather than propagating in free space. Calculating the full self-energy explicit
 impossible in practice,
 as it involves a (countably) infinite number of diagrams and the underlying nuclear
 interactions are only approximately known. Rather than solve this problem
-theoretically, the DOM solves it empirically by identifying the full self-energy as equivalent
+analytically, the DOM solves it empirically by identifying the full self-energy as equivalent
 to the optical potential. By fitting the self-energy to experimental data, we
-cut the Gordian knot of the base-principles calculation. 
+cut the Gordian knot of making an analytic calculation to all orders.
 As already discussed in Chapter \ref{introduction}, the optical potential is  
 readily connected to a host of experimental data: elastic cross sections, analyzing powers, and 
 inelastic reactions for both protons and neutrons.
@@ -801,7 +800,7 @@ As with any high-dimensional optimization problem, the fitter must be vigilant
 against the overfitting of data. In practice, this requires:
 \begin{itemize}
     \item parsimony with the number of parameters used in the model, 
-    \item common-sense checking "under the hood" of the optimization to verify that
+    \item common-sense checking ``under the hood'' of the optimization to verify that
         parameter values make sense, given the assumptions that undergird the model,
     \item understanding of what the value function is (i.e., the function being
         minimized/maximized) and whether certain experimental data are being privileged over others,
