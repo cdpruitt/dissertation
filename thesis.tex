@@ -1,5 +1,5 @@
-\documentclass[12pt,twoside]{book} %twosided is nice requires (sometimes) introduces blank pagestyle, which is cool because it looks nice and lets me make fancy headers
-\usepackage{emptypage} % should remove blank page headers and footers, i.e., works beautifully
+\documentclass[12pt,twoside,draft]{book}
+\usepackage{emptypage} % should remove blank page headers and footers
 \usepackage{titlesec}
 \usepackage{amsmath} % lots of math functions
 \usepackage{amsfonts} % load mathematical fonts by AMS
@@ -38,11 +38,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[squaren,cdot]{SIunits}
 \usepackage[bottom]{footmisc}
-%\usepackage{minitoc}
-%\setcounter{minitocdepth}{2}
-%\setlength{\mtcindent}{24pt}
-%\renewcommand{\mtcfont}{\small\rm}
-%\renewcommand{\mtcSfont}{\small\bf}
+%\usepackage[overload]{textcase}
 
 % force floats to stay in the same section
 \let\Oldsection\section
@@ -70,23 +66,23 @@
 
 % defines shortcuts for common physics symbols
 % scattering cross sections
-\newcommand{\tot}{\ensuremath{\sigma_{\text{tot}}}}
-\newcommand{\totE}{\ensuremath{\sigma_{\text{tot}}}(E)}
+\newcommand{\tot}{\ensuremath{\sigma_{\text{\lowercase{tot}}}}}
+\newcommand{\totE}{\ensuremath{\sigma_{\text{\lowercase{tot}}}}(E)}
 \newcommand{\totRD}{\ensuremath{\sigma_{A,A'}}(E)}
-\newcommand{\rxn}{\ensuremath{\sigma_{\text{rxn}}}}
-\newcommand{\rxnE}{\ensuremath{\sigma_{\text{rxn}}}(E)}
-\newcommand{\el}{\ensuremath{\frac{d\sigma}{d\Omega}}}
+\newcommand{\rxn}{\ensuremath{\sigma_{\text{\lowercase{rxn}}}}}
+\newcommand{\rxnE}{\ensuremath{\sigma_{\text{\lowercase{rxn}}}}(E)}
+\newcommand{\el}{\ensuremath{\frac{\lowercase{d}\sigma}{\lowercase{d}\Omega}}}
 
 % nuclides
 \newcommand{\cTwelve}{\ensuremath{^{12}}C}
-\newcommand{\cNat}{\ensuremath{^{\text{nat}}}C}
+\newcommand{\cNat}{\ensuremath{^{\text{\lowercase{nat}}}}C}
 
 \newcommand{\oSix}{\ensuremath{^{16}}O}
 \newcommand{\oSeven}{\ensuremath{^{17}}O}
 \newcommand{\oEight}{\ensuremath{^{18}}O}
 \newcommand{\oSixEight}{\ensuremath{^{16,18}}O}
 
-\newcommand{\neEight}{\ensuremath{^{18}}Ne}
+\newcommand{\neEight}{\ensuremath{^{18}}N\lowercase{e}}
 
 \newcommand{\caForty}{\ensuremath{^{40}}C\lowercase{a}}
 \newcommand{\caEight}{\ensuremath{^{48}}C\lowercase{a}}
@@ -113,11 +109,11 @@
 \newcommand{\snTwo}{\ensuremath{^{122}}S\lowercase{n}}
 \newcommand{\snFour}{\ensuremath{^{124}}S\lowercase{n}}
 \newcommand{\snTwelveFour}{\ensuremath{^{112,124}}S\lowercase{n}}
-\newcommand{\snNat}{\ensuremath{^{\text{nat}}}S\lowercase{n}}
+\newcommand{\snNat}{\ensuremath{^{\text{\lowercase{nat}}}}S\lowercase{n}}
 \newcommand{\snTwelveNatFour}{\ensuremath{^{112,\text{nat},124}}S\lowercase{n}}
 
 \newcommand{\pbEight}{\ensuremath{^{208}}P\lowercase{b}}
-\newcommand{\pbNat}{\ensuremath{^{\text{nat}}}P\lowercase{b}}
+\newcommand{\pbNat}{\ensuremath{^{\text{\lowercase{nat}}}}P\lowercase{b}}
 
 % shell labels
 \newcommand{\sOne}{s\ensuremath{_{\frac{1}{2}}}}
@@ -133,11 +129,11 @@
 \setlength\epigraphwidth{.8\textwidth}
 \setlength\epigraphrule{0pt}
 
-\setlength\headheight{15pt} %fixed fancyhdr problems
+\setlength\headheight{28pt} %fixed fancyhdr problems
 
-\def\thickhrulefill{\leavevmode \leaders \hrule height 0.7ex \hfill \kern 0pt}
+\def\thickhrulefill{\leavevmode \leaders \hrule height 0.5ex \hfill \kern 0pt}
 
-% Manually define chapter title formatting
+% Manually define front matter title formatting
 \titleformat{\chapter}[display]
 {\bfseries}
 {\parindent 0pt \centering
@@ -145,16 +141,14 @@
     \scshape Chapter \thechapter
     \quad \thickhrulefill
 }
-%{\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
-{0.5ex}
+{1.0ex}
 {
+    \singlespacing \scshape \Large \centering
     \titlerule
-    %\vspace{1ex}
-    \centering
-    \scshape \LARGE
+    \vspace{1ex}
 } % before-code
 [
-    %\vspace{1ex}
+    \vspace{1ex}
     \titlerule
 ] % after-code
 
@@ -208,11 +202,9 @@
 
 \input{\textDirectory/titlepage}
 
-%\dominitoc
-
 \fancyhead{} %clears the header
-\fancyhead[RO]{\MakeUppercase{\leftmark}} %Right odd header
-\fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
+\fancyhead[RO]{\MakeUppercase{\rightmark}} %Right odd header
+\fancyhead[LE]{\MakeUppercase{\leftmark}} %Left even header
 
 \begingroup
 %\let\cleardoublepage\clearpage
@@ -259,6 +251,24 @@
 
 \mainmatter
 
+\titleformat{\chapter}[display]
+{\bfseries}
+{\parindent 0pt \centering
+    \thickhrulefill\quad
+    \scshape Chapter \thechapter
+    \quad \thickhrulefill
+}
+{1.0ex}
+{
+    \singlespacing \scshape \Large \centering
+    %\titlerule
+    %\vspace{1ex}
+} % before-code
+[
+    %\vspace{1ex}
+    %\titlerule
+] % after-code
+
 \fancyhead{} %clears the header
 \fancyhead[RO]{\MakeUppercase{Chapter \thechapter: \ \leftmark}} %Right odd header
 \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
@@ -281,17 +291,36 @@
 \chapter{Dispersive Optical Model: Overview} \label{DOMFormalism}
 \input{\textDirectory/DOMFormalism}
 
-\chapter{Dispersive Optical Model:\protect\\ Results on \oSixEight, \caAughtEight,
-\niEightFour, \snTwelveFour, \pbEight}\label{DOMResults}
-%\input{\textDirectory/DOMResults}
+\chapter{Dispersive Optical Model:\protect\\ Results on \textup{\oSixEight,
+\caAughtEight, \niEightFour, \snTwelveFour, \pbEight}}\label{DOMResults}
+\input{\textDirectory/DOMResults}
 
 \chapter{Conclusions}
 \input{\textDirectory/conclusion}
 
 \clearpage %needed this or for some reason the header writes appendix for the last chapter...
 
+\titleformat{\chapter}[display]
+{\bfseries}
+{\parindent 0pt \centering
+    \thickhrulefill\quad
+    \scshape Chapter \thechapter
+    \quad \thickhrulefill
+}
+{1.0ex}
+{
+    \singlespacing \scshape \Large \centering
+    \titlerule
+    \vspace{1ex}
+} % before-code
+[
+    \vspace{1ex}
+    \titlerule
+] % after-code
+
 \fancyhead{} %clears the header
-\fancyhead[LE]{\MakeUppercase{ \leftmark}} %rewrite fancy header to just label chapter name
+\fancyhead[RO]{\MakeUppercase{\leftmark}} %Right odd header
+\fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
 \clearpage
 \addcontentsline{toc}{chapter}{Bibliography}
@@ -304,55 +333,35 @@
 \clearpage
 
 \begin{appendices}
-
     \titleformat{\chapter}[display]
     {\bfseries}
     {\parindent 0pt \centering
         \thickhrulefill\quad
-        \scshape Chapter \thechapter
+        \scshape Appendix \thechapter
         \quad \thickhrulefill
     }
     %{\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
-    {0.5ex}
+    {1.0ex}
     {
-        \titlerule
+        %\titlerule
         %\vspace{1ex}
-        \centering
-        \scshape \LARGE
+        \centering \scshape \Large \singlespacing
     } % before-code
     [
         %\vspace{1ex}
-        \titlerule
+        %\titlerule
     ] % after-code
-
-    %\titleformat
-    %{\chapter} % command
-    %[display] % shape
-    %{\bfseries \Large} % format
-    %{Appendix \ \thechapter} % label %Here is where I write appendix, also \ moves you a space or two
-    %{0.1 in} % sep
-    %{
-    %    \rule{\textwidth}{1pt}
-    %    \vspace{0.2in}
-    %% \centering
-    %    \raggedleft
-    %} % before-code
-    %[
-    %    \vspace{-0.3in}%
-    %    \rule{\textwidth}{1pt}
-    %] % after-code
-    %\titlespacing*{\chapter}{0pt}{-22pt}{0pt}
+    \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 
     \fancyhead{} %clears the header
-    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
+    \fancyhead[RO]{\MakeUppercase{Appendix \thechapter: \ \leftmark}} %Right odd header
+    \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
+
     \chapter{Isotopic Composition of Enriched Samples}
     \input{\textDirectory/composition}
 
-    \chapter{Experimental Data Used to Constrain DOM Potentials}
+    \chapter{Experimental Data Used\protect\\ to Constrain DOM Potentials}
     \input{\textDirectory/dataSets}
-
-    \fancyhead{} %clears the header
-    \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix
 
     \chapter{Parameter Values of DOM Potentials}
     \input{\textDirectory/parameters}
@@ -362,11 +371,25 @@
 
     \chapter*{Physical Constants}
     \input{\textDirectory/units}
-
 \end{appendices}
 
-\fancyhead{} %clears the header
-\fancyhead[LE]{\MakeUppercase{ \leftmark}} %rewrite fancy header to say appendix
+\titleformat{\chapter}[display]
+{\bfseries}
+{\parindent 0pt \centering
+    \thickhrulefill\quad
+    \scshape Chapter \thechapter
+    \quad \thickhrulefill
+}
+{1.0ex}
+{
+    \singlespacing \scshape \Large \centering
+    \titlerule
+    \vspace{1ex}
+} % before-code
+[
+    \vspace{1ex}
+    \titlerule
+] % after-code
 
 \printglossary
 
