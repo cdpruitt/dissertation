@@ -279,14 +279,10 @@ A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonE
     \includegraphics[width=0.9\textwidth]{figures/SecondOrder.png}
     \caption[The single-particle propagator perturbation expansion, to second order]
     {
-        Example diagrams from the first few orders of the 
+        A subset of diagrams from the first few orders of the 
         single-particle propagator perturbation expansion.
         The interaction $\hat{V}$ is indicated by the horizontal
         dashed line and is taken to be two-body only in this treatment.
-        The terms of each order are grouped by gray boxes and terms that contribute to
-        the Hartree-Fock approximation are surrounded by the red box. In each Hartree-Fock
-        term, the particle interacts with the mean-field of the nucleus but
-        the nucleus is never excited and thus the interaction has no energy dependence.
     }
     \label{PerturbationExpansionDiagram}
 \end{figure}
@@ -373,7 +369,7 @@ it can be shown that:
         & -\mathcal{P}\int_{\epsilon^{+}_{T}}^{\infty}\frac{dE'}{\pi}
         \frac{\operatorname{Im}({\Sigma_{d}(\alpha,\beta; E')})}{E-E'}
         \left[\frac{1}{E-E'}-\frac{1}{\epsilon_{F}-E'}\right]\\
-        & + \mathcal{P} \int_{-infty}^{\epsilon^{-}_{T}}\frac{dE'}{\pi}
+        & + \mathcal{P} \int_{-\infty}^{\epsilon^{-}_{T}}\frac{dE'}{\pi}
         \frac{\operatorname{Im}({\Sigma_{d}(\alpha,\beta; E')})}{E-E'}
         \left[\frac{1}{E-E'}-\frac{1}{\epsilon_{F}-E'}\right]
     \end{split}
@@ -605,6 +601,7 @@ and the nuclear surface (a derivative of the Woods-Saxon shape):
 \begin{equation} \label{WoodsSaxon}
     \begin{split}
         f_{vol}(r; \bm{R}, \bm{a}) & = \frac{-1}{1+e^{(r-\bm{R})/\bm{a}}}\\
+        \\
         f_{sur}(r; \bm{R}, \bm{a}) & = \frac{1}{r}\frac{d}{dr}f_{vol}(r; \bm{R}, \bm{a})
     \end{split}
 \end{equation}
@@ -642,9 +639,14 @@ where
 and $\Theta(X)$ is the step function. 
 
 We are now ready to give the full parameterization. The parameterization for symmetric nuclei
-is simpler as the same potential is used for protons and neutrons. For asymmetric systems, we
-introduce a handful of asymmetry-dependent additional terms, described after the symmetric potential
-form is presented.
+is simpler, as the same potential is used for protons and neutrons. For asymmetric systems, we
+introduce a handful of asymmetry-dependent additional terms, described after the symmetric 
+potential form is presented. All calculations are performed non-relativistically
+with a first-order relativistic correction and do not explicitly account for
+nucleon excitations (e.g., the $\Delta$ resonance). Accordingly, the potential
+is not expected to be valid above
+the domain $-300\mega\electronvolt\ < E < 200 \mega\electronvolt$,
+which we used during fitting.
 
 \subsection{Real part}
 The energy-independent real part of the self-energy consists of a nonlocal Hartree-Fock and
@@ -652,10 +654,30 @@ a spin-orbit component (plus a local Coulomb term if the nucleon in question is 
 \begin{equation}
     \operatorname{Re}({\Sigma}_{s}(r,r')) = \Sigma_{HF}(r,r')+V_{so}(r,r')+\delta(r-r')\times V_{C}(r)
 \end{equation}
-
-\noindent
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/RealPotentialRSpace.png}
+    \caption[Radial dependence of the real part of the potential]
+    {
+        The local radial dependence of the real part of the neutron optical potential is shown
+        for \caForty at 50 MeV for $L=3\hbar$. The central Hartree-Fock term
+        is the dominant component of the real potential and has a small
+        wine-bottle contribution at the nuclear core (see Eq.
+        \ref{HFWBEquation}). Per Eq. \ref{RealSOEquation}, the Woods-Saxon form
+        of the real spin-orbit component is allowed to have a different radius
+        and diffuseness compared to the Hartree-Fock Woods-Saxon form. In this
+        fit, the radial component of the spin-orbit Woods-Saxon is smaller than
+        that from the Hartree-Fock Woods-Saxon. The
+        hyberbolic asymptotic growth of the real spin-orbit component at the
+        origin is a consequence of the $\frac{1}{r}$ term in Eq. \ref{RealSOEquation}
+        but contributes negligibly to the volume integral of the real part of the potential.
+    }
+    \label{RealRadialDependence}
+\end{figure}
+Figure \ref{RealRadialDependence} shows the radial dependence of these
+components of the real part of the potential.
 The Hartree-Fock component $V_{HF}$ has two subcomponents:
-\begin{equation}
+\begin{equation} \label{HFWBEquation}
     \Sigma_{HF}(r,r') = V_{vol}(r,r') + V_{wb}(r)
 \end{equation}
 
@@ -679,7 +701,7 @@ The real spin-orbit component $V_{so}$
 is defined using a derivative-Woods-Saxon shape in keeping with the
 expectation that the spin-orbit coupling is strongest near the
 nuclear surface:
-\begin{equation}
+\begin{equation} \label{RealSOEquation}
     V_{so}(r,r') = \left(\frac{\hbar}{m_{\pi}c}\right)^{2}
     \bm{V_{3}}\times\frac{1}{r}f_{sur}(r;\bm{R_{3}}, \bm{a_{3}}){\times}N(r,r';\bm{\beta_{3}})
     {\times}(\ell\cdot\sigma)
@@ -690,7 +712,9 @@ The leading constant $\left(\frac{\hbar}{m_{\pi}c}\right)^{2}$ is taken to be 2.
 \cite{MahzoonPhDThesis}.
 The energy-\textit{dependent} part of the real component of the potential is generated
 using the imaginary component of the potential, according to the dispersion relation (Eq.
-\ref{SubtractedDispersionRelation}). This completes the parameterization of the real component.
+\ref{SubtractedDispersionRelation}). Figure \ref{EnergyDependence} shows the
+energy-dependent behavior of the dispersively-generated real part.
+This completes the parameterization of the real component.
 
 \subsection{Imaginary part}
 The imaginary part of the potential is comprised of independent surface and volume terms
@@ -713,15 +737,27 @@ where the volume and surface components are:
         {\times} N(r,r';\bm{\beta_{4}})
     \end{split}
 \end{equation}
-
-\noindent
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/ImPotentialRSpace.png}
+    \caption[Radial dependence of the imaginary part of the potential]
+    {
+        The local radial dependence of the imaginary part of the neutron optical potential is shown
+        for \caForty\ at 50 MeV for $L=3\hbar$. At this energy, there are
+        significant contributions from both the surface- and volume-associated
+        terms.
+    }
+    \label{ImaginaryRadialDependence}
+\end{figure}
 The terms labeled with a $+$ determine the potential above $\epsilon_{F}$, and the terms labeled
 with a $-$ determine the potential below $\epsilon_{F}$. Note that in this equation, the same
 Woods-Saxon variables and nonlocality are used for both imaginary surface and imaginary volume,
 both at positive and
-negative energies. Compared to parameterizations used in previous DOM treatments,
-this reduces by nine the number of parameters 
-used for the imaginary surface and volume.
+negative energies. Figure \ref{ImaginaryRadialDependence} shows the radial
+dependence of the imaginary components of the potential.
+Compared to parameterizations used in previous DOM treatments,
+the parameterization given here reduces by nine the number of r-space
+parameters used for the imaginary surface and volume terms.
 The energy dependence of the imaginary volume term reads:
 \begin{equation} \label{ImagVolume}
     W_{vol}^{\pm}(E) = \bm{A_{5}^{\pm}}\left[\frac{(E_{\Delta})^{4}}
@@ -739,8 +775,6 @@ where $E_{\Delta} = |E-\epsilon_{F}|$ and
         {(\epsilon_{F}-E-\bm{E_{6}^{-}})^{2}+(\bm{E_{6}^{-}})^{2}}
         \end{split}
     \end{equation}
-
-\noindent
 The terms $W_{NM}^{\pm}$ are asymmetric above and below the Fermi surface and are modeled after
 nuclear-matter calculations. They account for the decreasing phase space at negative energies
 and the increasing phase space at positive energies. The imaginary surface terms read:
@@ -754,7 +788,36 @@ and the increasing phase space at positive energies. The imaginary surface terms
 where $\omega_{n}$ was defined in Eq. \ref{omega}, and $\bm{W_{7}}$ represents the change in the
 imaginary surface strength due to an imaginary spin-orbit force. An imaginary spin-orbit
 contribution has been seen to be useful in previous optical-model treatments in order to reproduce 
-the high-energy analyzing power data.
+the high-energy analyzing power data. Figure \ref{EnergyDependence} depicts the
+energy-dependence of the imaginary terms in the potential and the
+energy-dependence of the dispersive correction to the real part of the
+potential. For comparison to other models and to compare the potential between
+nuclei, the volume integral the potential is the most useful and an example 
+for neutrons in \caForty\ is shown in Fig. \ref{VolumeIntegral}.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/EnergyDependence.png}
+    \caption[Energy-dependent forms of the imaginary and real-dispersive parts of the potential]
+    {
+        Typical energy dependence of the imaginary part and the
+        dispersion-relation-generated energy-dependent real part of the
+        neutron optical potential are shown for \caForty\.
+    }
+    \label{EnergyDependence}
+\end{figure}
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/VolumeIntegral.png}
+    \caption[Volume integral of the imaginary part of the potential]
+    {
+        Volume integrals of imaginary part of the
+        neutron optical potential are shown for \caForty\ for the relevant $LJ$
+        quantum numbers. At this energy, there are
+        significant contributions from both the surface- and volume-associated
+        terms.
+    }
+    \label{VolumeIntegral}
+\end{figure}
 
 This completes the parameterization of the potential for symmetric nuclei. For asymmetric nuclei,
 the parametric forms must be modified to account for the different potential experienced by protons 
@@ -798,44 +861,52 @@ are allowed to vary with asymmetry:
 \end{equation}
 
 \noindent
-There should be no confusion between $\bm{A_{5,7}^{\pm}}$ and $A$, the total number of nucleons, 
-used in calculating the degree of asymmetry. With these four additional asymmetric imaginary terms,
-the total number of free parameters used for
-fitting asymmetric nuclei in the present work comes to thirty-four: eleven real, twenty-three
-imaginary.
+There should be no confusion between $\bm{A_{5,7}^{\pm}}$ and $A$, the total number of nucleons. 
+With these 4 additional asymmetric imaginary terms, the total number of
+free parameters used for
+fitting asymmetric nuclei in the present work comes to 34: 11 real, 23 imaginary.
 
 \section{Computational Considerations}
 As with any high-dimensional optimization problem, the fitter must be vigilant
 against the overfitting of data. In practice, this requires:
 \begin{itemize}
     \item parsimony with the number of parameters used in the model, 
-    \item common-sense checking ``under the hood'' of the optimization to verify that
-        parameter values make sense, given the assumptions that undergird the model,
+    \item checking ``under the hood'' during optimization to verify that
+        parameter values are sensible, given the assumptions that undergird the model,
     \item understanding of what the value function is (i.e., the function being
-        minimized/maximized) and whether certain experimental data are being privileged over others,
-    \item and the cross-correlation between parameters is understood
+        minimized/maximized) and whether certain experimental data are being
+        privileged over others, and
+    \item that the cross-correlation between parameters is understood.
 \end{itemize}
 As was pointed out by Koning and Delaroche \cite{KoningDelaroche}, large-scale fitting to 
-experimental data is both art and science: fits should deviate as little as possible from the 
+experimental data part science, part art: fits should deviate as little as possible from the 
 experimental values but also be aesthetically acceptable to the eye of the fitter.
-Thus the expectations of the fitter, mistaken or not, play a big part in the definition of the
+Thus the preconceptions of the fitter play a major role in the definition of the
 potential forms, the starting values of the parameters, and the conclusion that a fit is ``good
-enough'' to stop fitting. For an extrapolation from a
-fit to be well-justified, the fitted potential should be physically reasonable throughout its domain
-and each parameter used in the fit should be well-constrained by the data.
+enough'' to stop fitting. In addition, for an extrapolation from a
+fit to be well-justified, the fitted potential should be physically reasonable throughout its 
+domain and each parameter used in the fit should be well-constrained by the data.
 
-To end this chapter, we briefly mention a few preconceptions
-that guided our expectations on how the nuclear potential should look. Figures
-\ref{PotentialSpatialDependence} and \ref{PotentialEnergyDependence} show the radial- and
-energy-dependence of the optical potential from our fit on \caForty.
-In the radial domain, 
-In the energy domain, above the Fermi level,
-the imaginary strength is dominated by the surface terms from
-0-50 \mega\electronvolt\ and by the volume terms from 50 \mega\electronvolt\ onward, increasing continuously.
+To conclude this chapter, we briefly mention a few preconceptions
+that guided our expectations on how the nuclear potential should look. Based on
+countless optical model analyses over the last century, the Woods-Saxon radius
+parameters $\boldmath{r_{0}}$ and diffuseness parameters $\boldmath{a}$
+were expected to be 1.1-1.2
+\femto\meter\ and 0.6 \femto\meter, respectively. As non-local behavior is at
+least partially associated with Pauli exclusion principle arguments, our fitted
+non-localities $\boldmath{\beta}$
+are expected to stay between 0.5-1.5 \femto\meter, commensurate with the size of the
+nucleon. In the energy domain, above the Fermi level,
+the imaginary strength is expected to be dominated by the surface-associated term from
+0-50 \mega\electronvolt\ and by the volume-associated term from 50
+\mega\electronvolt\ upward, increasing continuously beyond 200
+\mega\electronvolt\ to agree with
+measurements of inelastic nucleon-nucleon scattering in the \giga\electronvolt\ regime.
 Below the Fermi surface, the imaginary strength is largely symmetric to that of the positive-energy
 regime for a short distance, then tapers off as the phase space is reduced. Especially for smaller
-nuclei like \oSix and even \caForty, it is difficult to clearly separate the negative-energy 
-imaginary surface and imaginary volume terms. These general trends comport with the expectation
+nuclei like \oSix\ and even \caForty, it is difficult to cleanly separate the negative-energy 
+imaginary surface and imaginary volume terms, and this may not be physically
+meaningful anyway. These general trends comport with the expectation
 that low-lying excitations (surface phonons and collective modes) and
 two-particle-one-hole excitations should be responsible for most surface imaginary strength.
 
