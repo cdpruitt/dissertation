@@ -1,15 +1,13 @@
-\documentclass[12pt]{book} %twosided is nice requires (sometimes) introduces blank pagestyle, which is cool because it looks nice and lets me make fancy headers
+\documentclass[12pt,twoside]{book} %twosided is nice requires (sometimes) introduces blank pagestyle, which is cool because it looks nice and lets me make fancy headers
 \usepackage{emptypage} % should remove blank page headers and footers, i.e., works beautifully
-\usepackage{titlesec} % modify title and section(<-doesn't work?)
+\usepackage{titlesec}
 \usepackage{amsmath} % lots of math functions
-\usepackage{epigraph} % lets me write an epigraph obviously...
+\usepackage{amsfonts} % load mathematical fonts by AMS
+\usepackage{epigraph}
 \usepackage[super]{nth} % pretty formatting of ordinal numerals
 \usepackage{graphicx} % putting in figures, if one might ask..
 \usepackage{braket} % Dirac notation
-\usepackage{geometry}
-\geometry{
-    margin = 1in  % give 1in margins
-}
+\usepackage[margin=1truein, includefoot, includehead]{geometry}
 \usepackage[font = small]{caption}
 \usepackage{verbatim}
 \usepackage[titletoc]{appendix}
@@ -20,15 +18,11 @@
 \usepackage[english]{babel}
 \usepackage{amssymb} % AMS symbol package
 \usepackage{amsthm}  % AMS symbol package
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{lemma}[theorem]{Lemma}
-\usepackage[toc]{glossaries} % makeglossaries thesis
+\usepackage[toc]{glossaries} % makeglossaries
 \usepackage{afterpage} % very useful for formating...
 \usepackage{setspace}
 \doublespacing % double spaces whole document except for captions
 \usepackage{notoccite}
-%\usepackage[symbol]{footmisc} % for footnotes with weird characters
 \usepackage{afterpage} % needed this for putting things back on track, outlined below
 \usepackage{textcomp}
 \usepackage{fancyhdr} % allows for fancy headers
@@ -41,7 +35,14 @@
 \usepackage{csquotes} % for block quotes
 \usepackage{rotating} % to rotate entire figure (needed to fill a whole page with a sideways figure)
 \usepackage{placeins}
-%\usepackage{needspace}
+\usepackage[T1]{fontenc}
+\usepackage[squaren,cdot]{SIunits}
+\usepackage[bottom]{footmisc}
+%\usepackage{minitoc}
+%\setcounter{minitocdepth}{2}
+%\setlength{\mtcindent}{24pt}
+%\renewcommand{\mtcfont}{\small\rm}
+%\renewcommand{\mtcSfont}{\small\bf}
 
 % force floats to stay in the same section
 \let\Oldsection\section
@@ -52,16 +53,13 @@
 
 \interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
 
-\setlength{\textfloatsep}{15pt} % might fix gap between text and figures, and it does!
-\setlength{\parskip}{0pt} % might fix gap between paragraphs, and it does!
-% now there are some weird gaps between section headings and text
+\setlength{\textfloatsep}{15pt} % set gap between floats and their captions
+\setlength{\parskip}{0pt}
 
-%\newcommand{\sectionbreak}{\clearpage}
-
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}} %still don't understand how this grabs chapterName but it does...
-\renewcommand{\sectionmark}[1]{\markright{#1}} %still don't understand how this grabs sectionName but it does...
-\fancyhead{} %clears the fancy header
-\fancyhead[LO]{\MakeUppercase{\leftmark}} %Left even header for just saying chaptername
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\fancyhead{} %clears the fancy header
+%\fancyhead[LO]{\MakeUppercase{\leftmark}} %Left even header for just saying chaptername
 
 % code below lets me add a blankpage with \afterpage{\blankpage}
 \newcommand\blankpage{%
@@ -69,10 +67,6 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
 \newpage}
-
-  % lets me change the type of footnote
-%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-%\allsectionsfont{\singlespacing} 
 
 % defines shortcuts for common physics symbols
 % scattering cross sections
@@ -94,36 +88,36 @@
 
 \newcommand{\neEight}{\ensuremath{^{18}}Ne}
 
-\newcommand{\caForty}{\ensuremath{^{40}}Ca}
-\newcommand{\caEight}{\ensuremath{^{48}}Ca}
-\newcommand{\caAughtEight}{\ensuremath{^{40,48}}Ca}
+\newcommand{\caForty}{\ensuremath{^{40}}C\lowercase{a}}
+\newcommand{\caEight}{\ensuremath{^{48}}C\lowercase{a}}
+\newcommand{\caAughtEight}{\ensuremath{^{40,48}}C\lowercase{a}}
 
-\newcommand{\niEight}{\ensuremath{^{58}}Ni}
-\newcommand{\niSixty}{\ensuremath{^{60}}Ni}
-\newcommand{\niOne}{\ensuremath{^{61}}Ni}
-\newcommand{\niTwo}{\ensuremath{^{62}}Ni}
-\newcommand{\niFour}{\ensuremath{^{64}}Ni}
-\newcommand{\niEightFour}{\ensuremath{^{58,64}}Ni}
-\newcommand{\niNat}{\ensuremath{^{\text{nat}}}Ni}
+\newcommand{\niEight}{\ensuremath{^{58}}N\lowercase{i}}
+\newcommand{\niSixty}{\ensuremath{^{60}}N\lowercase{i}}
+\newcommand{\niOne}{\ensuremath{^{61}}N\lowercase{i}}
+\newcommand{\niTwo}{\ensuremath{^{62}}N\lowercase{i}}
+\newcommand{\niFour}{\ensuremath{^{64}}N\lowercase{i}}
+\newcommand{\niEightFour}{\ensuremath{^{58,64}}N\lowercase{i}}
+\newcommand{\niNat}{\ensuremath{^{\text{nat}}}N\lowercase{i}}
 
-\newcommand{\rhThree}{\ensuremath{^{103}}Rh}
+\newcommand{\rhThree}{\ensuremath{^{103}}R\lowercase{h}}
 
-\newcommand{\snTwelve}{\ensuremath{^{112}}Sn}
-\newcommand{\snFourteen}{\ensuremath{^{114}}Sn}
-\newcommand{\snFifteen}{\ensuremath{^{115}}Sn}
-\newcommand{\snSixteen}{\ensuremath{^{116}}Sn}
-\newcommand{\snSeventeen}{\ensuremath{^{117}}Sn}
-\newcommand{\snEighteen}{\ensuremath{^{118}}Sn}
-\newcommand{\snNineteen}{\ensuremath{^{119}}Sn}
-\newcommand{\snTwenty}{\ensuremath{^{120}}Sn}
-\newcommand{\snTwo}{\ensuremath{^{122}}Sn}
-\newcommand{\snFour}{\ensuremath{^{124}}Sn}
-\newcommand{\snTwelveFour}{\ensuremath{^{112,124}}Sn}
-\newcommand{\snNat}{\ensuremath{^{\text{nat}}}Sn}
-\newcommand{\snTwelveNatFour}{\ensuremath{^{112,\text{nat},124}}Sn}
+\newcommand{\snTwelve}{\ensuremath{^{112}}S\lowercase{n}}
+\newcommand{\snFourteen}{\ensuremath{^{114}}S\lowercase{n}}
+\newcommand{\snFifteen}{\ensuremath{^{115}}S\lowercase{n}}
+\newcommand{\snSixteen}{\ensuremath{^{116}}S\lowercase{n}}
+\newcommand{\snSeventeen}{\ensuremath{^{117}}S\lowercase{n}}
+\newcommand{\snEighteen}{\ensuremath{^{118}}S\lowercase{n}}
+\newcommand{\snNineteen}{\ensuremath{^{119}}S\lowercase{n}}
+\newcommand{\snTwenty}{\ensuremath{^{120}}S\lowercase{n}}
+\newcommand{\snTwo}{\ensuremath{^{122}}S\lowercase{n}}
+\newcommand{\snFour}{\ensuremath{^{124}}S\lowercase{n}}
+\newcommand{\snTwelveFour}{\ensuremath{^{112,124}}S\lowercase{n}}
+\newcommand{\snNat}{\ensuremath{^{\text{nat}}}S\lowercase{n}}
+\newcommand{\snTwelveNatFour}{\ensuremath{^{112,\text{nat},124}}S\lowercase{n}}
 
-\newcommand{\pbEight}{\ensuremath{^{208}}Pb}
-\newcommand{\pbNat}{\ensuremath{^{\text{nat}}}Pb}
+\newcommand{\pbEight}{\ensuremath{^{208}}P\lowercase{b}}
+\newcommand{\pbNat}{\ensuremath{^{\text{nat}}}P\lowercase{b}}
 
 % shell labels
 \newcommand{\sOne}{s\ensuremath{_{\frac{1}{2}}}}
@@ -141,23 +135,47 @@
 
 \setlength\headheight{15pt} %fixed fancyhdr problems
 
-% Stuff below manually adjusts chapter titles
-\titleformat
-{\chapter} % command
-[display] % shape
-{\bfseries \Large} % format
-{Chapter \ \thechapter} % label
-{0.1 in} % sep
+\def\thickhrulefill{\leavevmode \leaders \hrule height 0.7ex \hfill \kern 0pt}
+
+% Manually define chapter title formatting
+\titleformat{\chapter}[display]
+{\bfseries}
+{\parindent 0pt \centering
+    \thickhrulefill\quad
+    \scshape Chapter \thechapter
+    \quad \thickhrulefill
+}
+%{\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+{0.5ex}
 {
-    \rule{\textwidth}{1pt}
-    \vspace{0.1in}
-    % \centering
-    \raggedleft
+    \titlerule
+    %\vspace{1ex}
+    \centering
+    \scshape \LARGE
 } % before-code
 [
-    \vspace{-0.25in}%
-    \rule{\textwidth}{1pt}
+    %\vspace{1ex}
+    \titlerule
 ] % after-code
+
+%\def\@makechapterhead#1{
+%    \vspace*{10\p@}
+%    {\parindent \z@ \centering \reset@font
+%        \thickhrulefill\quad
+%        \scshape \@chapapp{} \thechapter
+%        \quad \thickhrulefill
+%        \par\nobreak
+%        \vspace*{10\p@}
+%        \interlinepenalty\@M
+%        \hrule
+%        \vspace*{10\p@}
+%        \Huge \bfseries #1\par\nobreak
+%        \par
+%        \vspace*{10\p@}
+%        \hrule
+%        \vskip 100\p@
+%    }
+%}
 
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}
@@ -176,6 +194,11 @@
 \makeatother
 
 \newcommand{\textDirectory}{text}
+\addto\captionsenglish{
+    \renewcommand{\contentsname}{Table of Contents}
+}
+
+\raggedbottom
 
 \input{\textDirectory/glossary}
 
@@ -185,24 +208,30 @@
 
 \input{\textDirectory/titlepage}
 
+%\dominitoc
+
+\fancyhead{} %clears the header
+\fancyhead[RO]{\MakeUppercase{\leftmark}} %Right odd header
+\fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
+
 \begingroup
-\let\cleardoublepage\clearpage
+%\let\cleardoublepage\clearpage
+%\pagestyle{plain}
 \tableofcontents
 \endgroup
-
-\fancyhead{}
-\fancyhead[LO]{\MakeUppercase{\leftmark}}
+\clearpage
 
 \begingroup
 \let\cleardoublepage\clearpage
+%\clearpage
 \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
 \endgroup
 
 \clearpage
 
-\fancyhead{}
-\fancyhead[LO]{\MakeUppercase{\leftmark}}
+%\fancyhead{}
+%\fancyhead[LO]{\MakeUppercase{\leftmark}}
 
 \begingroup
 \let\cleardoublepage\clearpage
@@ -212,8 +241,8 @@
 
 \clearpage
 \addcontentsline{toc}{chapter}{Acknowledgements}
-\fancyhead{}
-\fancyhead[LO]{\MakeUppercase{Acknowledgements}} %Left even header
+%\fancyhead{}
+%\fancyhead[LO]{\MakeUppercase{Acknowledgements}} %Left even header
 
 \begingroup
 \let\cleardoublepage\clearpage
@@ -231,23 +260,23 @@
 \mainmatter
 
 \fancyhead{} %clears the header
-\fancyhead[RO]{\MakeUppercase{chapter \thechapter \ \leftmark}} %Right odd header
+\fancyhead[RO]{\MakeUppercase{Chapter \thechapter: \ \leftmark}} %Right odd header
 \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
 \chapter{Introduction} \label{introduction}
-%\input{\textDirectory/introduction}
+\input{\textDirectory/introduction}
 
 \chapter{Neutron Total Cross Sections: Experimental Setup} \label{TCSExperiment}
-%\input{\textDirectory/TCSExperiment}
+\input{\textDirectory/TCSExperiment}
 
 \chapter{Neutron Total Cross Sections: Analysis and Results} \label{TCSAnalysis}
-%\input{\textDirectory/TCSAnalysis}
+\input{\textDirectory/TCSAnalysis}
 
 \chapter{Neutron Elastic Cross Sections: Experimental Setup} \label{ECSExperiment}
-%\input{\textDirectory/ECSExperiment}
+\input{\textDirectory/ECSExperiment}
 
 \chapter{Neutron Elastic Cross Sections: Analysis and Results} \label{ECSAnalysis}
-%\input{\textDirectory/ECSAnalysis}
+\input{\textDirectory/ECSAnalysis}
 
 \chapter{Dispersive Optical Model: Overview} \label{DOMFormalism}
 \input{\textDirectory/DOMFormalism}
@@ -276,23 +305,43 @@
 
 \begin{appendices}
 
-    \titleformat
-    {\chapter} % command
-    [display] % shape
-    {\bfseries \Large} % format
-    {Appendix \ \thechapter} % label %Here is where I write appendix, also \ moves you a space or two
-    {0.1 in} % sep
+    \titleformat{\chapter}[display]
+    {\bfseries}
+    {\parindent 0pt \centering
+        \thickhrulefill\quad
+        \scshape Chapter \thechapter
+        \quad \thickhrulefill
+    }
+    %{\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+    {0.5ex}
     {
-        \rule{\textwidth}{1pt}
-        \vspace{0.2in}
-    % \centering
-        \raggedleft
+        \titlerule
+        %\vspace{1ex}
+        \centering
+        \scshape \LARGE
     } % before-code
     [
-        \vspace{-0.3in}%
-        \rule{\textwidth}{1pt}
+        %\vspace{1ex}
+        \titlerule
     ] % after-code
-    \titlespacing*{\chapter}{0pt}{-22pt}{0pt}
+
+    %\titleformat
+    %{\chapter} % command
+    %[display] % shape
+    %{\bfseries \Large} % format
+    %{Appendix \ \thechapter} % label %Here is where I write appendix, also \ moves you a space or two
+    %{0.1 in} % sep
+    %{
+    %    \rule{\textwidth}{1pt}
+    %    \vspace{0.2in}
+    %% \centering
+    %    \raggedleft
+    %} % before-code
+    %[
+    %    \vspace{-0.3in}%
+    %    \rule{\textwidth}{1pt}
+    %] % after-code
+    %\titlespacing*{\chapter}{0pt}{-22pt}{0pt}
 
     \fancyhead{} %clears the header
     \fancyhead[RO]{\MakeUppercase{appendix \thechapter \ \leftmark}} %rewrite fancy header to say appendix

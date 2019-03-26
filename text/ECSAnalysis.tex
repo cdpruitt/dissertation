@@ -8,7 +8,7 @@ so that the first peak of the neutron spectrum aligned the expected
 time-of-flight. Next, background $\gamma$-ray events were separated from relevant
 neutron events by a pulse-shape discrimination analysis, shown in Fig. \ref{PHPSDPlot}.
 
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/PHPSDPlot.png}
     \caption[Event pulse height (PH) vs. pulse-shape-discrimination (PSD) for
@@ -37,7 +37,7 @@ the second subfigure (compared to the first) are from elastic scattering on
 and are shown above each histogram. For clarity, these efficiencies are plotted
 relative to the efficiency of at the elastically-scattered neutron energy.
 
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/tiledRunData.png}
     \caption[Histograms from typical runs showing neutron elastic scattering peak]
@@ -127,13 +127,13 @@ runs, and using the reference cross section, we the \snTwelveFour\
 
 \noindent
 where $\el_{ref}(\theta)$ is the (n,p) cross section at lab angle $\theta$, $X_{sample}$
-and $X_{ref}$ are number of counts in the elastic scattering peak for the sample
+and $X_{ref}$ are number of counts in the flux-normalized elastic scattering peak for the sample
 and the reference runs, respectively (see Figs. \ref{tiledAngleData} and
-\ref{ECSReferenceRuns}), and $N_{sample}$ and $N_{ref}$ are the number of atom in
+\ref{ECSReferenceRuns}), and $N_{sample}$ and $N_{ref}$ are the number of atoms in
 the sample of interest and the number of hydrogen atoms in the polyethylene
 sample, respectively.
 
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/ECSReferenceRuns.png}
     \caption[Reference runs of neutron scattering on C and (CH$_{2}$)$_{n}$]
@@ -143,10 +143,13 @@ sample, respectively.
         (middle histogram, in light gray) are scaled by beam flux and number of
         atoms in each sample. Their difference (front histogram, in red) shows a
         broad peak corresponding to neutron-proton elastic scattering. The
-        expected time-of-flight for this peak is shown by the blue arrow. The light blue arrows 
-        indicate the expected position of the elastic and first-excited peaks
-        from scattering on C. The green arrow indicates the expected position of
-        the elastic peak from scattering on atmospheric N$_{2}$.
+        expected time-of-flight for neutrons elastically scattered from protons
+        is shown by the blue arrow and aligns with the observed peak. Similarly,
+        the light blue arrows 
+        indicate the expected times-of-flight associated with neutron elastic and
+        first-excited-state inelastic scattering on C.
+        The green arrow indicates the expected time-of-flight of 
+        neutrons elastically scattered on atmospheric N$_{2}$.
     }
     \label{ECSReferenceRuns}
 \end{figure}
@@ -156,7 +159,7 @@ In an idealized differential cross section measurement, the sample and neutron
 detectors can be treated as point objects. In reality, the neutron beam,
 samples, and detectors occupy a finite size (as illustrated in \ref{GussFiniteSizeDiagram},
 leading to so-called finite-size effects that distort the measured cross sections.
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
         \includegraphics[width = 0.9\textwidth]{figures/GussFiniteSizeDiagram.png}
         \caption[Illustration of finite-size effects relevant for \el\ cross
@@ -184,7 +187,7 @@ For the isotopic Ni and Sn samples they studied, they generated finite-size
 corrections of roughly 1-10\% depending on the scattering angle. As seen in
 Fig. \ref{GussFiniteSizeEffect}, the
 biggest effect is on the depth of the diffraction minima.
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth, trim={0 0.1cm 0 0}, clip]{figures/GussFiniteSizeEffect.png}
     \caption[Effect of finite-size corrections on previous neutron \el\ measurement at
@@ -206,13 +209,13 @@ biggest effect is on the depth of the diffraction minima.
     }
     \label{GussFiniteSizeEffect}
 \end{figure}
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/finiteSizeCorrections.png}
     \caption[Effect of finite-size corrections on our neutron \el\ measurement]
     {
         The extent of our finite-size corrections are shown, per the output
-        of a typical finite-size simulation. Our raw 11 MeV \snFour \el\ data
+        of a typical finite-size simulation. Our raw 11 \mega\electronvolt\ \snFour \el\ data
         are shown as black triangles (connected with lines to guide the eye) and
         were used as the input cross section for the finite-size simulation.
         The simulation scattered neutrons according to the input distribution
@@ -234,7 +237,7 @@ samples: 42.59 g and 44.73 g for their \snSixteen\ and \snTwenty\ samples,
 respectively, compared to 4.97 g and 5.55 g for our \snTwelve\ and \snFour\
 samples. Thus we anticipated a significantly smaller correction would be
 required.
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/GussMultipleScattering.png}
     \label{GussMultipleScattering}
@@ -275,21 +278,89 @@ the correction should be repeated iteratively, with the new corrected cross
 section plugged back into the simulation, but in practice the corrections for
 our data were so small that only the first iteration was required.
 \section{Results}
-\subsection{\snTwelveFour\ \el\ at 11 MeV}
-Absolute cross sections 
-\begin{figure}[ht!]
+\subsection{\snTwelveFour\ \el\ at 11 \mega\electronvolt}
+Figure \ref{SnECS_11MeV} shows our final results for \snTwelveFour\
+\el\ at 11 \mega\electronvolt\ after applying the corrections above. Our data on \snFour\
+at 11 \mega\electronvolt\ are in reasonable agreement with those of Rapaport et al.
+\cite{Rapaport1980}, which were taken using a much larger enriched sample
+($\approx\frac{1}{3}$ mol) at the University of Ohio neutron time-of-flight
+facility. At angles just less than diffraction minima (e.g., at
+angles of 65-70\textdegree), the \snTwelve\ \el\ is seen to be larger
+than that of \snFour, a consequence of nuclear size
+differences leading to a phase mismatch, similar to the effect in the \oSixEight\
+\tot\ relative difference of Fig. \ref{IsotopicDifferenceO}. This same
+phase-mismatch trend is
+visible in the $^{116,118,120,122,124}$Sn \el\ collected by Rapaport et al.,
+though the effect is less dramatic as the isotopic range is smaller.
+Due to our small \snTwelveFour\ sample sizes,
+our statistics in the 80\textdegree and 120\textdegree diffraction minima are
+limited, leading to a large uncertainty in the \el\ relative difference between
+\snTwelveFour.
+
+\begin{figure}[tb]
     \centering
-        \includegraphics[width = 0.9\textwidth]{figures/neutronECS_Sn_11MeV.png}
-        \caption{Neutron \el cross sections on $^{112,124}$Sn at 11
-    MeV: our results and literature data}
+    \includegraphics[width = 1.0\textwidth]{figures/ECSResults2017.png}
+    \caption[Neutron \el\ on \snTwelveFour at 11 \mega\electronvolt: our results and literature data]
+    {
+        Neutron \el\ on \snTwelveFour\ at 11 \mega\electronvolt: our results and data on
+        \snFour\ from Rapaport et al. \cite{Rapaport1980}. The data collected
+        with the 4M detector are shown as stars, and the data collected
+        with the 6M detector are shown as triangles. At 32.5\textdegree and
+        50\textdegree, data were taken with both 4M and 6M detectors at separate
+        times, and results from the two independent detectors are in reasonable agreement.
+    }
     \label{SnECS_11MeV}
 \end{figure}
-\subsection{\snTwelveFour\ \el\ at 17 MeV}
-\begin{figure}[ht!]
+
+\subsection{\snTwelveFour\ \el\ at 17 \mega\electronvolt}
+Figure \ref{SnECS_17MeV} shows our final results for \snTwelveFour\
+\el\ at 17 \mega\electronvolt\ after applying the corrections above. Our data on \snFour\
+at 17 \mega\electronvolt\ are in reasonable agreement with those on \snTwenty\ of Guss et al.
+\cite{Guss1989, GussPhDThesis}, which were taken at the same TUNL neutron
+time-of-flight facility using an enriched sample roughly ten
+times larger than ours. The same phase-mismatch effect is visible to the left of
+the diffraction minima (e.g., at 70\textdegree). Above 100\textdegree, we were unable
+to collect sufficient statistics to recover a precise \snTwelveFour\ \el\
+relative difference, a consequence of the reduced cross section at 17 \mega\electronvolt\
+compared to 11 \mega\electronvolt. Whereas in the 11 \mega\electronvolt\ dataset, the 4M and 6M detectors were in
+good agreement, in the 17 \mega\electronvolt\ dataset, our results from the 4M detector appear
+to be systematically slightly lower than those from the 6M detector, likely due to the
+increased difficulty in resolving the elastic from the inelastic scattering
+peaks in the 4M detector at 17 \mega\electronvolt, especially at low angles. As with the \tot\
+results presented in Chapter \ref{TCSAnalysis}, the relative difference between
+isotopes (relevant for fixing the isovector strength) should be insensitive to any systematic 
+errors in our measurement.
+
+As with the 11 \mega\electronvolt\ dataset, the biggest difference between the
+\snTwelveFour\ \el\ data is at the first diffraction minimum from
+30-40\textdegree. The cross section in this low-angle region is expected
+to be sensitive to the interaction of the incident neutron
+with the nuclear surface rather than with the nuclear core, which
+is better probed with backward-angle scattering. Connecting the shape and
+magnitude of these \el\ results with the shape and magnitude of the nuclear
+potential is the subject of Chapter \ref{DOMResults}.
+
+\begin{figure}[tb]
     \centering
-        \includegraphics[width = 0.9\textwidth]{figures/neutronECS_Sn_17MeV.png}
-        \caption{Neutron \el cross sections on $^{112,nat,124}$Sn at 17
-    MeV: our results and literature data} \label{SnECS_17MeV}
+    \includegraphics[width = 0.9\textwidth]{figures/ECSResults2018.png}
+    \caption[Neutron \el\ on \snTwelveFour at 17 \mega\electronvolt: our results and
+    literature data]
+    {
+        Neutron \el\ cross sections on \snTwelveFour\ at 17
+        \mega\electronvolt: our results and data on \snTwenty\ from Guss et al.
+        \cite{Guss1989}. The data collected with the 4M detector
+        are shown as stars, and the data collected
+        with the 6M detector are shown as triangles. In addition to data on
+        \snTwelveFour, we collected data on \snNat\ at 50\textdegree and
+        60\textdegree, shown in pink. The data on \snNat lie halfway between our data on
+        \snTwelve and \snFour, adding confidence that the relative difference
+        between \snTwelveFour\ is accurate. At 30\textdegree,
+        40\textdegree, and 50\textdegree, data were taken with both 4M
+        and 6M detectors at separate times, and results from the two independent
+        detectors are in rough agreement, though results from the 4M detector appear
+        to be systematically slightly lower at low angles.
+    }
+    \label{SnECS_17MeV}
 \end{figure}
 
 \afterpage{\clearpage}

@@ -17,7 +17,7 @@ resolution, independent of neutron energy, was identified as 0.34 ns FWHM.
 When folded over the actual beam energy profile (as during the experiment)
 the left-right time resolution dropped to 0.52 ns.
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/LRCorrelation.png}
     \caption[Event times for left and right PMTs of time-of-flight detector]
@@ -41,7 +41,7 @@ the left-right time resolution dropped to 0.52 ns.
 %    \label{LRTimeDifferenceLinear}
 %\end{figure*}
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/LRDifferenceByEnergy.png}
     \caption[Effect of energy gating on left/right PMT time difference]
@@ -54,7 +54,7 @@ the left-right time resolution dropped to 0.52 ns.
     \label{LRTimeDifferenceByEnergy}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/DifferenceThresholdsFit.png}
     \caption[Intrinsic time resolution of time-of-flight detector as a function
@@ -96,18 +96,18 @@ After these corrections, the total time-of-flight
 resolution, taken as the FWHM of the $\gamma$-ray peak in the time-of-flight
 spectrum, ranged from 0.60-0.90 ns over the series of \tot\ measurements. This is comparable 
 to the resolution from our digitizer-mediated Ca experiment from 2008 \cite{Shane2010},
-which used a similar $\gamma$-averaging technique. For a 100-MeV
+which used a similar $\gamma$-averaging technique. For a 100-\mega\electronvolt\
 neutron and a time-of-flight detector distance of 27 meters, an
 uncertainty of 0.80 ns translates to an energy resolution of $\approx$900 keV.
-For neutrons below $\approx$20 MeV, the time-of-flight time resolution worsens as the 
+For neutrons below $\approx$20 \mega\electronvolt, the time-of-flight time resolution worsens as the 
 traversal time through the 1-inch thickness of the scintillator becomes non-negligible.
 However, because the time-of-flight of these neutrons is already several hundred ns or
 longer, the relative energy resolution ($\frac{\Delta E}{E}$) is
-superior at low energies. To wit, for a 5 MeV neutron with a 0.82 ns detector-traversal time and
+superior at low energies. To wit, for a 5 \mega\electronvolt\ neutron with a 0.82 ns detector-traversal time and
 an inherent TOF resolution of 0.80 ns, $\Delta E$ is only 13 keV. These energy uncertainties
 have been propagated through the subsequent analysis.
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/gammaCorrection2D.png}
     \caption[Deviation of the average $\gamma$-ray arrival time by macropulse]
@@ -115,7 +115,7 @@ have been propagated through the subsequent analysis.
     \label{GammaCorrection}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/RFTimeStudy.png}
     \caption[Stability of the beam pick-off (\tZero) frequency during the experiment]
@@ -134,7 +134,7 @@ have been propagated through the subsequent analysis.
     \label{RFTimeStudy}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/TimeCorrections.png}
     \caption[Improving timing precision with a software CFD and $\gamma$-ray averaging]
@@ -151,14 +151,15 @@ have been propagated through the subsequent analysis.
 \end{figure}
 
 Precise determination of the TOF distance was done by comparing our measured \tot\ data
-for $^{\text{nat}}$C with the precisely known resonance structure from 3-15 MeV
-(Fig. \ref{DistanceStudy}). The distance was determined as 2709$\pm$1 cm for the
-Ni and Rh run configuration and 2554 $\pm$1 cm 
+for $^{\text{nat}}$C with the precisely known resonance structure from
+3-15 \mega\electronvolt\ (Fig. \ref{DistanceStudy}).
+The distance was determined as 2709$\pm$1 \centi\meter for the
+Ni and Rh run configuration and 2554 $\pm$1 \centi\meter 
 for the Sn and O run configuration. With all corrections applied, all events in the 
 time-of-flight detector channel were filtered against events in the veto detector to remove
 events caused by charged-particles created along the flight path.
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/DistanceStudyNi.png}
     \caption[Determining the time-of-flight detector distance using \cNat\ resonances]
@@ -167,7 +168,7 @@ events caused by charged-particles created along the flight path.
 are shown. First, a plausible range of flight path distances (26.97-27.21 m) was
 selected based on rough estimation during the experiment. Using each
 distance in this range, the \tot\ for natural carbon was calculated in the
-resonance region (3-15 MeV). The RMS difference between the cross section
+resonance region (3-15 \mega\electronvolt). The RMS difference between the cross section
 generated using that distance and literature data from Abfalterer
 \cite{Abfalterer2000, Abfalterer2001} was calculated (shown as black points in
 the figure). A quartic fit to these RMS data is shown (solid line). By minimizing the
@@ -212,7 +213,7 @@ only one event can be detected per micropulse anyway. For this approach to be su
 analytic dead-time must be very precisely known, as corrections can soar to over 100\%
 if the beam flux is high.
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \includegraphics[width=0.8\textwidth]{figures/AnalogLogic.png}
     \caption[``Looking period'' logic used by previous neutron \tot\ measurements at LANSCE]
     {
@@ -290,7 +291,7 @@ important to keep in mind that in these experiments the probability that the
 data acquisition electronics are busy is not a fixed number but a
 function of the neutron energy.
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/TimeDifferenceBetweenEvents.png}
     \caption[The time difference between consecutive events in the time-of-flight detector]
@@ -306,7 +307,7 @@ run configurations).}
     \label{TimeDifferenceBetweenEvents}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/exampleDeadtimeSpectrum.png}
     \caption[Digitizer busy probability as a function of time within micropulse]
@@ -321,7 +322,7 @@ run configurations).}
     \label{ExampleDeadtimeSpectrum}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/CorrectionEffectOnTOF.png}
     \caption[The effect of deadtime correction on a typical time-of-flight spectrum]
@@ -352,7 +353,7 @@ all events and surviving events are populated into time-of-flight spectra (see F
 (responsible for 0.1\% to 1\% of event rate, depending on energy)
 and events were mapped to the energy domain.
 
-\begin{figure}[h]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/exampleTOFSpectrum.png}
     \caption[Typical time-of-flight spectrum after timing and deadtime corrections]
@@ -382,7 +383,7 @@ it would have reduced the high-energy instantaneous neutron flux by
 $\frac{1}{3}$, potentially affecting our results for the highest-energy neutrons. Future
 experimental work at the 90 meter flight path station at LANSCE would be ideal: the
 instantaneous neutron flux would be reduced by more than half compared to our experiment
-and neutrons as low as 10 MeV could still be unambiguously identified before micropulse wraparound.
+and neutrons as low as 10 \mega\electronvolt\ could still be unambiguously identified before micropulse wraparound.
 The other major difference, the sample diameters, affects the diameter of the collimation used.
 Diameters of  2.2-2.9 cm, 2.3-3.8 cm, and 1.3 cm were used for \cite{Shane2010},
 \cite{Finlay1993}, and \cite{Abfalterer2001}, respectively, much larger than the 0.8 cm diameter of
@@ -413,7 +414,7 @@ where $I_{0}$ is the neutron flux entering the sample, $I_{t}$ is the neutron
 flux transmitted through the sample without interaction, $\rho$ is the number
 density of nuclei in the sample, and $\ell$ is the sample length. For thin
 or low-density samples, flux attenuation through the sample will be small
-(e.g., 13\% for our Ni samples at 100 MeV) and a large number
+(e.g., 13\% for our Ni samples at 100 \mega\electronvolt) and a large number
 of counts will be required to determine the cross section to high
 precision.
 
@@ -447,7 +448,7 @@ the final results. First, because the blank sample contains air and not vacuum,
 the cross section of air must be added to each other sample's cross section (scaled by  
 the ratio of areal densities of air in the blank and the sample of interest).
 For the \rhThree\ sample, which had the smallest areal density, this correction
-was approximately 2 mb $>$100 MeV. The cross section for $^{64}$Ni was corrected for the 
+was approximately 2 mb $>$100 \mega\electronvolt. The cross section for $^{64}$Ni was corrected for the 
 isotopic enrichment of our
 sample (92.2\%) using our measured $^{\text{nat}}$Ni cross section. All other isotopes were 
 sufficiently pure such that the isotopic impurities contributed $<$0.1\% to the final
@@ -456,21 +457,22 @@ cross section.
 Oxygen cross sections were calculated by
 subtracting the well-known hydrogen cross section from the raw H$_{2}$O result
 (we used H \tot\ data sets from Clement et al. \cite{Clement1972} and Abfalterer
-et al. \cite{Abfalterer2001}, which together cover the range $0.5 \leq E_n \leq 500$ MeV
-and are in excellent agreement where their energy ranges overlap). In light of
+et al. \cite{Abfalterer2001}, which together cover the range $0.5 \leq E_n \leq 500$ 
+\mega\electronvolt\ and
+are in excellent agreement where their energy ranges overlap). In light of
 the additional uncertainty inherent to this kind of subtractive \tot\
 determination, a D$_{2}^{\text{nat}}$O sample from which the literature \tot\ for
 D$_{2}$ could be subtracted was prepared as an additional cross-check. The
 results of the deuterium-to-hydrogen relative difference are shown in Fig. \ref{DtoH}. 
 
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/relativeDiff_DtoH.png}
     \caption[\tot\ relative difference between deuterium and hydrogen from our measurement]
     {The \tot\ relative difference between deuterium and hydrogen,
         as calculated by subtraction of our O \tot\ results from
-        D$_{2}$O and H$_{2}$O. Data from our measurement are shown in red; the measurement of
-        Abfalterer et al. \cite{Abfalterer1998} is shown in black.}
+        D$_{2}$O and H$_{2}$O. Data from our measurement are shown in red; the
+        data of Abfalterer et al. \cite{Abfalterer1998} are shown in black.}
     \label{DtoH}
 \end{figure}
 
@@ -479,16 +481,17 @@ results of the deuterium-to-hydrogen relative difference are shown in Fig. \ref{
 To validate our analysis, we first compared our \tot\ measurements on \cNat,
 \niNat, \snNat, \pbNat\ against the high-precision data sets on natural samples from 
 Finlay et al.\cite{Finlay1993} and Abfalterer et al.\cite{Abfalterer2001}, shown in Fig.
-\ref{LiteratureBenchmarking}. From 3-100 MeV, our measurements are in excellent
-agreement, within statistical error, with these previous data sets. Above 100 MeV, our results 
+\ref{LiteratureBenchmarking}. From 3-100 \mega\electronvolt, our measurements are in excellent
+agreement, within statistical error, with these previous data sets. Above 100 \mega\electronvolt, our results 
 on natural samples diverge from the previous measurements,
-(up to a relative difference of 5\% at 300 MeV for all 
+(up to a relative difference of 5\% at 300 \mega\electronvolt\ for all 
 samples), suggesting a small systematic effect at high energies when the instantaneous neutron 
 flux is highest. To investigate this discrepancy, we analyzed data from multiple digitizer 
 thresholds during data production, applied various software threshold, gated events by low- 
 and high-integrated charge, and varied our software CFD logic, among other diagnostic tests. 
-Throughout these exercises, the agreement at $<$100 MeV and the discrepancy $>$100 MeV 
-persisted. To ensure the shift was not related to imprecision in the areal
+Throughout these exercises, the agreement
+at $<$100 \mega\electronvolt\ and the discrepancy $>$100 \mega\electronvolt\ persisted.
+To ensure the shift was not related to imprecision in the areal
 density of the targets, we compared both our short and long natural carbon targets against 
 each other (see Fig. \ref{CarbonBenchmarking}) and found excellent agreement: the relative 
 difference was within 1\% throughout our energy domain, comparable to a similar test
@@ -508,7 +511,7 @@ measurements on O isotopes used compound samples (H$_{2}$O, D$_{2}$O, BeO, ZnO),
 that the subtraction of the positive-ion species (D and H for us, Be and Zn for \cite{Finlay1993}), 
 eliminated the energy-dependent systematic difference in our measurements.
 
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/literatureBenchmarking.png}
     \caption[Comparison of our natural-sample \tot\ measurement against literature data]
@@ -516,22 +519,22 @@ eliminated the energy-dependent systematic difference in our measurements.
         A comparison of literature data (taken with analog
         techniques) and our results (signals processed with a digitizer, or "DSP")
         for natural C, Ni, Sn, and Pb. In panel (a), the absolute cross sections are shown from
-        3-500 MeV; in panel (b), the relative differences between the literature data and
-        our data are shown in percent. From 3-100 MeV, our data are fully consistent with the
-        literature datasets but above 100 MeV, a relative difference arises, peaking at
-        $\approx$5\% at 300 MeV.
+        3-500 \mega\electronvolt; in panel (b), the relative differences between the literature data and
+        our data are shown in percent. From 3-100 \mega\electronvolt, our data are fully consistent with the
+        literature datasets but above 100 \mega\electronvolt, a relative difference arises, peaking at
+        $\approx$5\% at 300 \mega\electronvolt.
     }
     \label{LiteratureBenchmarking}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/relativeDiff_longCarbonShortCarbon.png}
     \caption[Neutron \tot\ relative difference between short and long \cNat\ samples]
     {
         Relative difference of cross sections (red line) of
         our two lengths of \cNat, (27.3 mm and 13.7 mm), shown from 3-400
-        MeV. Total error
+        \mega\electronvolt. Total error
         (including statistical and systematic) is indicated by the blue
         dotted region. Systematic error only (due to uncertainty in the areal
         density) is shown by the red hatched region (very small and immediately adjacent to 
@@ -546,7 +549,7 @@ eliminated the energy-dependent systematic difference in our measurements.
     \label{CarbonBenchmarking}
 \end{figure}
 
-At neutron times-of-flight corresponding to energies $>$100 MeV, the number of
+At neutron times-of-flight corresponding to energies $>$100 \mega\electronvolt, the number of
 counts in the spectrum rises sharply as one moves to higher energies. In this
 region, even a sub-nanosecond timing differences between the spectrum for the
 blank and for the sample of interest is amplified into large errors in the
@@ -577,7 +580,7 @@ data sets shown have been modified to have the same bins as our data via a simpl
 linear interpolation of the original data bins. This rebinning
 washes out the fine structure of the cross section data where the density of states
 for a given sample is low and individual resonances are visible
-(e.g., $^{\text{nat}}$C below 10 MeV). In all figures, error bars are indicated on data
+(e.g., $^{\text{nat}}$C below 10 \mega\electronvolt). In all figures, error bars are indicated on data
 points or are smaller than the size of the markers used.
 
 Relative differences of our measured \tot\ between \oSixEight, \niEightFour, and
@@ -587,16 +590,16 @@ isotopes, any systematic errors of our approach (besides the areal density uncer
 are divided out.
 
 \subsection{\oSixEight\ \tot\ results}
-Above 5 MeV, our \oSix\ \tot\ results are within 5\% of those from \cite{Finlay1993}, where
-ZnO and BeO were used rather than H$_{2}$O. Below 5 MeV, the rapidly-rising
+Above 5 \mega\electronvolt, our \oSix\ \tot\ results are within 5\% of those from \cite{Finlay1993}, where
+ZnO and BeO were used rather than H$_{2}$O. Below 5 \mega\electronvolt, the rapidly-rising
 (n,p) cross section and resonance structure of Zn, Be, and \oSix\ contribute to
 increased relative differences. Our measurement on \oEight\ extends the known
 neutron \tot\ by over an order of magnitude and shows reasonable agreement to
 the previous measurements taken over 50 years ago by \cite{Vaughn1965,Salisbury1965}.
-Above 200 MeV, the \oEight\ \tot\ is smaller than the \oSix\ \tot\, a
+Above 200 \mega\electronvolt, the \oEight\ \tot\ is smaller than the \oSix\ \tot\, a
 consequence of the larger neutron elastic phase shift in \oEight\ compared to
 \oSix, which pushes the \tot\ minimum to higher energies in \oEight.
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/TwoPanelO.png}
     \caption[Neutron \tot\ for \oSixEight: our results and literature data]
@@ -610,7 +613,7 @@ consequence of the larger neutron elastic phase shift in \oEight\ compared to
     }
     \label{TwoPanelO}
 \end{figure}
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/relativeDiff_O18O16.png}
     \caption[\oSixEight\ neutron \tot\ relative difference]
@@ -618,20 +621,20 @@ consequence of the larger neutron elastic phase shift in \oEight\ compared to
         data sets (in red). Assuming a simple A$^{\frac{1}{3}}$ size scaling for the
         nuclear radius of \oEight\ from \oSix, the strongly-absorbing-sphere model 
         Eq. \ref{SASAbsolute} prediction for the \oSixEight\ neutron \tot\ relative
-        difference is shown (black dashed line). From 10-100 MeV, the SAS
+        difference is shown (black dashed line). From 10-100 \mega\electronvolt, the SAS
         model is surprisingly successful at reproducing the relative difference,
-        though it fails above 100 MeV as the \oEight\ neutron \tot\ drops below
+        though it fails above 100 \mega\electronvolt\ as the \oEight\ neutron \tot\ drops below
     that of \oSix.}
     \label{IsotopicDifferenceO}
 \end{figure}
 
 \subsection{\niEightFour\ \tot\ results}
 In contrast to the case of O, no isotopic Ni data was available at all above 100
-MeV, and high-precision literature data was only available up to 15 MeV for
-\niEight\ \cite{Perey1993} and at only one energy point, 14.2 MeV, for \niFour\
-\cite{Dukarevich1967}. Our results extended the energy range to 400 MeV and are
+\mega\electronvolt, and high-precision literature data was only available up to 15 \mega\electronvolt\ for
+\niEight\ \cite{Perey1993} and at only one energy point, 14.2 \mega\electronvolt, for \niFour\
+\cite{Dukarevich1967}. Our results extended the energy range to 400 \mega\electronvolt\ and are
 in good agreement with the previous results when their errors are included.
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/TwoPanelNi.png}
     \caption[Neutron \tot\ for \niEightFour: our results and literature data]
@@ -644,7 +647,7 @@ in good agreement with the previous results when their errors are included.
     }
     \label{TwoPanelNi}
 \end{figure}
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/relativeDiff_Ni64Ni58.png}
     \caption[\niEightFour\ neutron \tot\ relative difference]
@@ -667,9 +670,9 @@ The extremely small areal density and the reduced beam
 time allotted for our \rhThree\ sample made it difficult to acquire sufficient statistics.
 Nevertheless, by reducing the energy range and number of bins slightly, we were
 able to achieve 1\% statistics for all bins and our results agree with those of
-\cite{Poenitz1983} up to 20 MeV. Our results extend the known energy range by over an order of
-magnitude up to 400 MeV.
-\begin{figure}[ht!]
+\cite{Poenitz1983} up to 20 \mega\electronvolt. Our results extend the known energy range by over an order of
+magnitude up to 400 \mega\electronvolt.
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/TwoPanelRh.png}
     \caption[Neutron \tot\ for \rhThree: our results and literature data]
@@ -685,10 +688,10 @@ magnitude up to 400 MeV.
 
 \subsection{\snTwelveFour\ \tot\ results}
 Similar to Ni isotopes, the only existing Sn isotope neutron \tot\ data was at
-low energies, up to 20 MeV for both \snTwelve\ and \snFour\ \cite{Harper1982, Timokhov1989, 
-Rapaport1980, Dukarevich1967}. Our results extended the energy range to 400 MeV and are
+low energies, up to 20 \mega\electronvolt\ for both \snTwelve\ and \snFour\ \cite{Harper1982, Timokhov1989, 
+Rapaport1980, Dukarevich1967}. Our results extended the energy range to 400 \mega\electronvolt\ and are
 in excellent agreement, $\approx$1\% difference, with the previous results.
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/TwoPanelSn.png}
     \caption[Neutron \tot\ for \snTwelveFour: our results and literature data]
@@ -699,11 +702,11 @@ in excellent agreement, $\approx$1\% difference, with the previous results.
         Rapaport1980, Dukarevich1967} (in shades of blue).
         (b) shows the relative difference between our data
         and literature data that are shown in panel (a). The data sets are in
-        excellent agreement where literature data exist, up to 20 MeV.
+        excellent agreement where literature data exist, up to 20 \mega\electronvolt.
     }
     \label{TwoPanelSn}
 \end{figure}
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/relativeDiff_Sn124Sn112.png}
     \caption[\snTwelveFour\ neutron \tot\ relative difference]

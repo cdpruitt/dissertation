@@ -110,9 +110,9 @@ eigenvalue $E^{N}_{0}$:
 \end{equation}
 
 \noindent
-The time-ordering operator $\mathcal{T}$\footnote ensures
+The time-ordering operator $\mathcal{T}$ ensures
 that operators with later time appear to the left
-of operators with earlier time, important for the perturbative treatment to follow.
+of operators with earlier time\footnotemark, important for the perturbative treatment to follow.
 \footnotetext
 {
     The time-ordering operator $T$ is defined as:
@@ -274,7 +274,7 @@ self-consistent equation called the Dyson equation:
 
 \noindent
 A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonEquationDiagram}.
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/SecondOrder.png}
     \caption[The single-particle propagator perturbation expansion, to second order]
@@ -291,24 +291,19 @@ A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonE
     \label{PerturbationExpansionDiagram}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/DysonEquation.png}
     \caption{The Dyson equation in diagrammatic form.}
     \label{DysonEquationDiagram}
 \end{figure}
 
-The summation variables $\gamma$ and $\delta$ label states internal to the diagrams that are 
-accessed during the particle's excitation of the many-body system\footnotemark.
-\footnotetext
-{
-    If a three-body interaction was included in $\hat{H}_{0}$, additional labels would be needed.
-}
-The Dyson
+The two summation variables $\gamma$ and $\delta$ label states internal to the diagrams that are 
+accessed during the particle's excitation of the many-body system\footnotemark. The Dyson
 equation introduces a new term, the irreducible self-energy $\Sigma^{*}$, that connects the free
 single-particle propagator to the full single-particle propagator that incorporates all the
 in-medium effects of traveling through the nuclear environment. The self-energy serves the role
-of the potential - the optical potential - experienced by a particle in the medium.
+of the potential -- the optical potential -- experienced by a particle in the medium.
 This makes the Dyson equation the
 equivalent of the Schr\"odinger equation, but for particles \textit{embedded in the medium} 
 rather than propagating in free space. Calculating the full self-energy explicitly remains
@@ -324,6 +319,12 @@ inelastic reactions for both protons and neutrons.
 From a well-constrained optical-potential/self-energy, additional important quantities, like
 overlap functions and neutron skins, can be extracted. This phenomenological approach is the 
 heart of the Dispersive Optical Model.
+\footnotetext
+{
+    While there are only two additional summation variables in Eq.
+    \ref{DysonEquation}, if a three-body interaction was included,
+    an additional summation variable would be needed.
+}
 
 \subsection{The Dispersion Relation}
 State-of-the-art optical models \cite{CH89, KoningDelaroche} typically
@@ -474,7 +475,7 @@ where
         \sigma_{el} & = \int d\theta \int d\phi\ \frac{d\sigma}{d\Omega}(\theta)\\
         & = \sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
         \frac{|(l+1)(e^{2i\delta_{l+}}-1)+l(e^{2i\delta_{l-}}-1)|^{2}}{2l+1}\\
-        & \times \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}
+        & \phantom{ {}= } \times \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}
     \end{split}
 \end{equation}
 
@@ -516,9 +517,17 @@ where the spectral function is integrated up to an arbitrary threshold near (but
 $\delta$-function-like behavior, and the spectroscopic factor of any quasi-holes between the threshold and
 $\epsilon_{F}^{-}$ is added to account for the remaining occupation. The spectroscopic factor is
 calculated:
-\begin{equation}
-    [insert SF calculation]
+\begin{equation} \label{SpectroscopicFactor}
+    S = \left(1-\frac{\partial\Sigma^{*}(\alpha_{qh},\alpha_{qh};E)}
+    {\partial{E}}\bigg\rvert_{\epsilon_{n}^{-}}\right)^{-1}
 \end{equation}
+where $qh$ indicates the quasi-hole nature of the single-particle state indicated
+by $\alpha$ and $\epsilon_{n}^{-} = E_{0}^{N}-E_{n}^{N-1}$ is the
+eigenvalue associated with the quasi-hole state. It should be noted that if the
+self-energy has a significant imaginary component at $\epsilon_{n}^{-}$, the
+quasi-hole normalization will be incorrect and the validity of Eq.
+\ref{SpectroscopicFactor} degraded. Hence, this expression should only be used
+in the vicinity of the Fermi energy where the imaginary strength is negligible.
 
 Previous DOM analyses (e.g., \cite{MahzoonPhDThesis}) dealt only with doubly-closed 
 shell nuclei such as \caForty\ and \caEight.
@@ -637,7 +646,7 @@ is simpler as the same potential is used for protons and neutrons. For asymmetri
 introduce a handful of asymmetry-dependent additional terms, described after the symmetric potential
 form is presented.
 
-\subsection{Real potential}
+\subsection{Real part}
 The energy-independent real part of the self-energy consists of a nonlocal Hartree-Fock and
 a spin-orbit component (plus a local Coulomb term if the nucleon in question is a proton):
 \begin{equation}
@@ -822,7 +831,7 @@ energy-dependence of the optical potential from our fit on \caForty.
 In the radial domain, 
 In the energy domain, above the Fermi level,
 the imaginary strength is dominated by the surface terms from
-0-50 MeV and by the volume terms from 50 MeV onward, increasing continuously.
+0-50 \mega\electronvolt\ and by the volume terms from 50 \mega\electronvolt\ onward, increasing continuously.
 Below the Fermi surface, the imaginary strength is largely symmetric to that of the positive-energy
 regime for a short distance, then tapers off as the phase space is reduced. Especially for smaller
 nuclei like \oSix and even \caForty, it is difficult to clearly separate the negative-energy 
@@ -847,7 +856,7 @@ two-particle-one-hole excitations should be responsible for most surface imagina
 %data in Pb)
 %- the NM correction to the imaginary volume strength is required in all cases to
 %have the very high/very low energy imaginary strength have the correct trend
-%(linearly increasing above 100 MeV above, decreasing to 0 below 100 MeV below).
+%(linearly increasing above 100 \mega\electronvolt\ above, decreasing to 0 below 100 \mega\electronvolt\ below).
 %Seen in spectral functions and total cross section data at high energies, where
 %the pion production channel enters the picture as it goes from virtual->real
 %- the general trend of the elastic scattering data (not wiggles, but averaged
@@ -855,7 +864,7 @@ two-particle-one-hole excitations should be responsible for most surface imagina
 %minima in the elastic cross sections are too sharp/deep, the imaginary strength
 %is too large at that energy
 %- the spin-orbit strength has dramatic effects on the total cross section at low
-%energies ($<$20 MeV)
+%energies ($<$20 \mega\electronvolt\)
 
 \subsection{Fitting procedure}
 The powell minimization method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
