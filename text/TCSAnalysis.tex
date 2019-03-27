@@ -180,7 +180,8 @@ Ni and Rh run configuration.}
 \section{Deadtime Correction} \label{DeadtimeCorrection}
 Because events are not processed instantaneously, there is a brief period
 after each trigger during which the digitizer is busy processing that trigger.
- The busy period following each event is referred to as the ``analytic" or ``per-event" deadtime and can be corrected for according to standard techniques \cite{Moore1980}.
+The busy period following each event is referred to as the ``analytic'' or
+``per-event'' deadtime and can be corrected for according to standard techniques \cite{Moore1980}.
 In an ideal experiment, the instantaneous flux at all times would be
 sufficiently low (and the amount of beam time available sufficiently high) that
 only very rarely would another event arrive at the time-of-flight detector while
@@ -196,21 +197,22 @@ problem is far worse, as the instantaneous flux is much higher during the gamma
 flash and arrival of high-energy neutrons.
 
 In \cite{Finlay1993, Abfalterer2001}, this problem was addressed by using a
-``looking period" logic. Arriving T$_{0}$ signals were used to begin a ``looking 
-period" during which neutron and $\gamma$-ray
+``looking period'' logic. Arriving T$_{0}$ signals were used to begin a ``looking 
+period'' during which neutron and $\gamma$-ray
 events could be collected. At the time of the T$_{0}$ arrival, if the electronic modules
-were still busy from processing a previous event (as indicated by a "system busy" signal),
+were still busy from processing a previous event (as indicated by a ``system
+busy'' signal),
 the looking period was aborted. During a looking period, if a single neutron or gamma
 was detected, no subsequent events were allowed in the period.
 This logic is diagrammed in Fig. \ref{AnalogLogic}, reproduced from
 \cite{Abfalterer2001}. The fraction of T$_{0}$ signals that result in looking
-periods ($\frac{T_{0,live}}{T_{0}}$) is tabulated, as is the so-called ``analytic dead-time'', i.e. 
+periods ($\frac{T_{0,live}}{T_{0}}$) is tabulated, as is the so-called ``analytic deadtime'', i.e. 
 the chance that the detector is busy for a given time \textit{within each looking period}.
 Time-of-flight histograms are then scaled by these
 fractions to recover the true number of events per unit flux. This approach is useful if the
 analytic deadtime is commensurate with the micropulse period, as it means that
 only one event can be detected per micropulse anyway. For this approach to be successful, the
-analytic dead-time must be very precisely known, as corrections can soar to over 100\%
+analytic deadtime must be very precisely known, as corrections can soar to over 100\%
 if the beam flux is high.
 
 \begin{figure}[tb]
@@ -242,12 +244,12 @@ where $N$ is the number of time bins in the micropulse, $R_{x}$ is the rate of
 detected events per micropulse in bin $x$, and $P_{j}$ is the probability that the
 digitizer is still busy from a trigger $j$ bins ago. Moore \cite{Moore1980} also provides
 a more general 
-formula to calculate the appropriate dead-time correction in cases where the variation in beam 
+formula to calculate the appropriate deadtime correction in cases where the variation in beam 
 flux is significant. However, an examination of our flux-per-micropulse data 
 showed almost no variance in the flux per micropulse, except during the first 10\%
 of each macropulse when flux was ``ramping up''. In our final analysis, we have discarded the 
 first 40 micropulses of each macropulse and used the simpler Eq. \ref{DeadtimeEquation} to 
-calculate the dead-time fraction.
+calculate the deadtime fraction.
 
 To model $P_{j}$, we
 employed a logistic function and fitted it to the observed spectrum for time
@@ -256,7 +258,7 @@ For a given bin $i$, the fraction of time that the
 digitizer is dead, $F_{i}$, is in essence a discrete convolution of the
 \textit{measured} TOF spectrum with $P_{j}$. Note that except for the first and
 last micropulses in a macropulse, micropulses are consecutive and thus deadtime effects can
-``wrap around" from the end of one micropulse to the next. For these wrap-around
+``wrap around'' from the end of one micropulse to the next. For these wrap-around
 contributions (that is, $j>i$), the (mod N) term ensures that the bin referred
 to by $(i-j)$ is non-negative and has physical meaning as a time bin from the previous 
 micropulse.
@@ -297,7 +299,7 @@ function of the neutron energy.
     \caption[The time difference between consecutive events in the time-of-flight detector]
     {The time difference between adjacent TOF-detector
     events for a single run is plotted (black histogram). Below a certain
-minimum time difference (the ``deadtime"), no events are recorded. A logistic
+minimum time difference (the ``deadtime''), no events are recorded. A logistic
 fit (red) models the detector's deadtime response and is used to generate a
 deadtime correction. The underlying linearly-decreasing count rate (gray dashed
 line) in incorporated into the logistic model. From the fit, a mean deadtime of
@@ -312,12 +314,12 @@ run configurations).}
     \includegraphics[width=0.8\textwidth]{figures/exampleDeadtimeSpectrum.png}
     \caption[Digitizer busy probability as a function of time within micropulse]
     {Using TOF data from a typical run, the probability that a given 
-        TOF bin is ``dead" is shown for the blank sample (dashed line) and the 
+        TOF bin is ``dead'' is shown for the blank sample (dashed line) and the 
         $^{\text{nat}}$C   
         sample (solid line). The sharp rise at 90 ns is the response to the
         $\gamma$-ray flash, the gradual increase from 90-245 ns is the response to
         the arrival of high-energy neutrons, and the sharp fall at 245 ns
-        is the elapse of the $\gamma$-ray ``shadow". Only high-energy neutrons
+        is the elapse of the $\gamma$-ray ``shadow''. Only high-energy neutrons
         have a probability-dead exceeding 10\%.}
     \label{ExampleDeadtimeSpectrum}
 \end{figure}
@@ -334,14 +336,14 @@ run configurations).}
         Note that at 245 ns, there is an
         obvious defect in the uncorrected spectrum is repaired in the corrected
         spectrum. The defect
-        corresponds to the elapse of the 155-ns-long deadtime ``shadow" from the $\gamma$-ray
+        corresponds to the elapse of the 155-ns-long deadtime ``shadow'' from the $\gamma$-ray
         flash, which arrived at 90 ns (not shown).}
     \label{CorrectionEffectOnTOF}
 \end{figure}
 
 During analysis, it was noted that occasionally (1 in 400 macropulses), one or two 
 adjacent macropulses would have an abnormally small number of flux monitor events or 
-TOF events. The frequency of these ``data dropouts" was similar to the rate of
+TOF events. The frequency of these ``data dropouts'' was similar to the rate of
 switching between DPP and waveform modes and we suspect it is related to edge
 case behavior right before or after a mode switch. To mitigate this issue,
 any macropulse that had less than 50\% of the average event rate in either the
@@ -365,7 +367,7 @@ and events were mapped to the energy domain.
         The $\gamma$-ray peak presents as a sharp spike at 90 ns, followed by
         the highest-energy neutrons at 130 ns. The small spikes spaced 60 ns
         apart (visible before 90 ns and after 1500
-        ns) are $\gamma$-ray peaks from a low-level, continuous ``drip" 
+        ns) are $\gamma$-ray peaks from a low-level, continuous ``drip'' 
         of protons onto the tungsten target caused by mistuning of the proton 
         buncher; their effect on the calculated cross sections is negligible. Low-energy carbon
         resonances are visible above 600 ns.
@@ -517,7 +519,8 @@ eliminated the energy-dependent systematic difference in our measurements.
     \caption[Comparison of our natural-sample \tot\ measurement against literature data]
     {
         A comparison of literature data (taken with analog
-        techniques) and our results (signals processed with a digitizer, or "DSP")
+        techniques) and our results (signals processed with a digitizer, or
+        ``DSP'')
         for natural C, Ni, Sn, and Pb. In panel (a), the absolute cross sections are shown from
         3-500 \mega\electronvolt; in panel (b), the relative differences between the literature data and
         our data are shown in percent. From 3-100 \mega\electronvolt, our data are fully consistent with the
