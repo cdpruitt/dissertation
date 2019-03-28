@@ -266,17 +266,17 @@ micropulse.
 By optimizing trigger processing in digitizer firmware,
 we reduced the per-event deadtimes affecting our
 measurement ranged from 160-230 ns depending on the digitizer configuration.
-For a 230 ns per-event deadtime, the probability-dead
+For a 230 ns per-event deadtime, the dead-probability
 $F_{i}$ of our time bins is given in Fig.
 \ref{ExampleDeadtimeSpectrum}, showing that the probability-dead never exceeds
 25\%, much smaller than the 50-80\% typical in the approach described above
 \cite{Finlay1993, Abfalterer2001}.
 Once the fraction dead was identified for each time bin, the total number of
-events detected in that bin, $N_{m}[i]$, was corrected to the \textit{true}
+events detected in that bin, $N_{d}[i]$, was corrected to the \textit{true}
 number of events in that bin $N_{t}[i]$ that would have been detected in the
 absence of a per-event deadtime:
 \begin{equation} \label{DeadtimeEquation}
-    N_{t}[i] = -ln\left(\frac{1-\frac{N_m[i]}{M}}{(1-F_{i})\times M}\right)
+    N_{t}[i] = -ln\left(\frac{1-\frac{N_{d}[i]}{M}}{(1-F_{i})\times M}\right)
 \end{equation}
 
 \noindent
@@ -473,8 +473,9 @@ results of the deuterium-to-hydrogen relative difference are shown in Fig. \ref{
     \caption[\tot\ relative difference between deuterium and hydrogen from our measurement]
     {The \tot\ relative difference between deuterium and hydrogen,
         as calculated by subtraction of our O \tot\ results from
-        D$_{2}$O and H$_{2}$O. Data from our measurement are shown in red; the
-        data of Abfalterer et al. \cite{Abfalterer1998} are shown in black.}
+        D$_{2}$O and H$_{2}$O. Data from our measurement are shown as red
+        squares; the data of Abfalterer et al. \cite{Abfalterer1998} are shown
+    as black circles.}
     \label{DtoH}
 \end{figure}
 
@@ -634,7 +635,7 @@ consequence of the larger neutron elastic phase shift in \oEight\ compared to
 \subsection{\niEightFour\ \tot\ results}
 In contrast to the case of O, no isotopic Ni data was available at all above 100
 \mega\electronvolt, and high-precision literature data was only available up to 15 \mega\electronvolt\ for
-\niEight\ \cite{Perey1993} and at only one energy point, 14.2 \mega\electronvolt, for \niFour\
+\niEight\ \cite{Perey1993} and at only one point, 14.2 \mega\electronvolt, for \niFour\
 \cite{Dukarevich1967}. Our results extended the energy range to 400 \mega\electronvolt\ and are
 in good agreement with the previous results when their errors are included.
 \begin{figure}[tb]

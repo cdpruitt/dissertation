@@ -23,38 +23,38 @@ neutron events by a pulse-shape discrimination analysis, shown in Fig. \ref{PHPS
     \label{PHPSDPlot}
 \end{figure}
 
-Neutron events surviving this PSD gating are shown for a few typical runs in Fig. 
-\ref{tiledRunData}. The first and second subfigures in the left column of the figure are from 
-the same detector and arm angle, but the first is from a blank-sample run and
-the second is from a \snFour\ sample-run. In each subfigure, the expected location
-of the time-of-flight for elastic scattering on \snFour\ is marked with a dark blue arrow,
-and the approximate FWTM time
-resolution of the detector is marked with blue dashed lines. The expected
-location of the time-of-flight peak for elastic scattering on atmospheric
-N$_{2}$ is marked with a green arrow. The additional counts in the 55-57 ns region in
-the second subfigure (compared to the first) are from elastic scattering on
-\snFour. Energy-dependent detector efficiencies for each detector were provided by TUNL
-and are shown above each histogram. For clarity, these efficiencies are plotted
-relative to the efficiency of at the elastically-scattered neutron energy.
-
-\begin{figure}[tb]
-    \centering
-    \includegraphics[height=0.6\textheight]{figures/tiledRunData.png}
-    \caption[Histograms from typical runs showing neutron elastic scattering peak]
-    {
-        Neutron-event histograms for three typical runs, one with the blank
-        sample and two with the \snTwelve\ sample.
-        In the first two rows, the expected locations of the \snTwelve\ elastic scattering peak 
-        (blue arrow)
-        and inelastic scattering peak from the first two excited states (red arrows) show an
-        increased number of counts compared to the last run (bottom row), which used the blank
-        sample. For reference, the expected location of the nitrogen elastic scattering
-        peak is shown with green arrow in all histograms.
-        The energy-dependent detector efficiency is plotted in the upper section of
-        each panel.
-    }
-    \label{tiledRunData}
-\end{figure}
+%Neutron events surviving this PSD gating are shown for a few typical runs in Fig. 
+%\ref{tiledRunData}. The first and second subfigures in the left column of the figure are from 
+%the same detector and arm angle, but the first is from a blank-sample run and
+%the second is from a \snFour\ sample-run. In each subfigure, the expected location
+%of the time-of-flight for elastic scattering on \snFour\ is marked with a dark blue arrow,
+%and the approximate FWTM time
+%resolution of the detector is marked with blue dashed lines. The expected
+%location of the time-of-flight peak for elastic scattering on atmospheric
+%N$_{2}$ is marked with a green arrow. The additional counts in the 55-57 ns region in
+%the second subfigure (compared to the first) are from elastic scattering on
+%\snFour. Energy-dependent detector efficiencies for each detector were provided by TUNL
+%and are shown above each histogram. For clarity, these efficiencies are plotted
+%relative to the efficiency of at the elastically-scattered neutron energy.
+%
+%\begin{figure}[tb]
+%    \centering
+%    \includegraphics[height=0.6\textheight]{figures/tiledRunData.png}
+%    \caption[Histograms from typical runs showing neutron elastic scattering peak]
+%    {
+%        Neutron-event histograms for three typical runs, one with the blank
+%        sample and two with the \snTwelve\ sample.
+%        In the first two rows, the expected locations of the \snTwelve\ elastic scattering peak 
+%        (blue arrow)
+%        and inelastic scattering peak from the first two excited states (red arrows) show an
+%        increased number of counts compared to the last run (bottom row), which used the blank
+%        sample. For reference, the expected location of the nitrogen elastic scattering
+%        peak is shown with green arrow in all histograms.
+%        The energy-dependent detector efficiency is plotted in the upper section of
+%        each panel.
+%    }
+%    \label{tiledRunData}
+%\end{figure}
 
 After scaling histogram counts by detector efficiency, histograms were
 normalized by the total neutron flux
@@ -239,15 +239,11 @@ samples. Thus we anticipated a significantly smaller correction would be
 required.
 \begin{figure}[tb]
     \centering
-    \includegraphics[height=0.4\textheight]{figures/GussMultipleScattering.png}
-    \label{GussMultipleScattering}
-    \vspace*{\floatsep}
     \includegraphics[height=0.4\textheight]{figures/multipleScattering.png}
     \caption[Relative counts due to multiple scattering in the sample volume]
     {
-        Relative counts due to multiple scattering in the sample volume. Results from a simulation
-        on \niEight\ from the PhD thesis of P. Guss \cite{GussPhDThesis} are shown in the top panel,
-        and the results of our simulation on \snFour\ are shown in the bottom panel.
+        Relative counts due to single scattering and double scattering
+        in the sample volume, per our finite-size simulation on \snFour.
     }
     \label{multipleScattering}
 \end{figure}
@@ -293,7 +289,7 @@ phase-mismatch trend is
 visible in the $^{116,118,120,122,124}$Sn \el\ collected by Rapaport et al.,
 though the effect is less dramatic as the isotopic range is smaller.
 Due to our small \snTwelveFour\ sample sizes,
-our statistics in the 80\textdegree and 120\textdegree diffraction minima are
+our statistics in the 80\textdegree\ and 120\textdegree\ diffraction minima are
 limited, leading to a large uncertainty in the \el\ relative difference between
 \snTwelveFour.
 
@@ -314,7 +310,7 @@ limited, leading to a large uncertainty in the \el\ relative difference between
 
 \subsection{\snTwelveFour\ \el\ at 17 \mega\electronvolt}
 Figure \ref{SnECS_17MeV} shows our final results for \snTwelveFour\
-\el\ at 17 \mega\electronvolt\ after applying the corrections above. Our data on \snFour\
+\el\ at 17 \mega\electronvolt\ after applying the corrections described above. Our data on \snFour\
 at 17 \mega\electronvolt\ are in reasonable agreement with those on \snTwenty\ of Guss et al.
 \cite{Guss1989, GussPhDThesis}, which were taken at the same TUNL neutron
 time-of-flight facility using an enriched sample roughly ten

@@ -33,12 +33,26 @@
 \usepackage{float}
 \usepackage{bm}
 \usepackage{csquotes} % for block quotes
-\usepackage{rotating} % to rotate entire figure (needed to fill a whole page with a sideways figure)
+\usepackage[figuresleft]{rotating} % to rotate entire figure (needed to fill a whole page with a sideways figure)
 \usepackage{placeins}
 \usepackage[T1]{fontenc}
-\usepackage[squaren,cdot]{SIunits}
+\usepackage[free-standing-units]{siunitx}
+%\usepackage[squaren,cdot]{SIunits}
 \usepackage[bottom]{footmisc}
 %\usepackage[overload]{textcase}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+
+\newcommand*{\alignUnderEnDash}[1]{%
+    \multicolumn{1}{r@{}}{\llap{\makebox[widthof{--}][c]{#1}}}
+}
+
+\newcolumntype{N}{>{\centering\arraybackslash}m{1.3in}}
+\newcolumntype{G}{>{\centering\arraybackslash}m{0.7in}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{0.45in}}
+
+\newcolumntype{d}[1]{D{.}{.}{#1} }
 
 % force floats to stay in the same section
 \let\Oldsection\section
