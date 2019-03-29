@@ -1,12 +1,11 @@
 This chapter provides a brief summary of the Dispersive Optical Model.
-A few motivating concepts and definitions, sourced from the extensive treatments of \cite{MahzoonPhDThesis, MBTE},
+A few motivating concepts and definitions, sourced from more
+extensive treatments \cite{MahzoonPhDThesis, MBTE},
 are followed by an explicit parameterization of the optical potential used for the DOM fits of Chapter \ref{DOMResults}.
 For all sectors of experimental data used in said fits, the formulae connecting the optical potential
 to the scattering data are given. For detail on the development of the DOM formalism, the seminal
 work of Mahaux and Sartor \cite{Mahaux1991} and a recent review \cite{Dickhoff2018} are recommended.
-The goal here is not to provide the complete underpinnings of the theory, which are available in
-numerous sources elsewhere, but to discuss how the terms of the potential are sensitive
-to different sectors of experimental data.
+The goal here is to connect the terms of the potential to different sectors of experimental data.
 In addition, several computational improvements to our implementation of the DOM, important for
 expanding the reach of the fully non-local DOM of \cite{MahzoonPhDThesis} to all even-even systems,
 are pointed out. In all cases, the notation used conforms to \cite{MBTE}, which also provides an
@@ -14,7 +13,7 @@ introduction to second quantization and historical background for relevant many-
 
 \section{The Single-Particle Propagator}
 The central project of the Dispersive Optical Model (like any optical model) is
-to understand how nucleons move about in a nuclear many-body system as parameterized by an optical
+to understand how nucleons move about in a nuclear many-body system as parameterized by a 
 potential.
 Specifically, we wish to know
 how a nucleon with energy $E$ and quantum numbers $\alpha$
@@ -24,22 +23,23 @@ potential. Given a
 Hamiltonian that models this interaction, the Schr\"odinger equation
 relates the Hamiltonian to the time evolution of this state:
 \begin{equation} \label{SchrodingerEquation}
-    i\hbar\frac{\partial}{\partial t}\ket{\alpha, t_{0}; t} = H\ket{\alpha, t_{0}; t}
+    i\hbar\frac{\partial}{\partial t}\ket{\alpha, t_{0}; t} = H\ket{\alpha,
+    t_{0}; t},
 \end{equation}
 where $\ket{\alpha, t_{0}; t}$ is the state at time $t$, given an initial state
 $\ket{\alpha, t_{0}}$. Simple substitution into Eq. \ref{SchrodingerEquation} shows
 that the initial state propagates in time according to:
 \begin{equation}
-    \ket{\alpha, t_{0}; t} = e^{-\frac{i}{\hbar}H(t-t_{0})}\ket{\alpha, t_{0}}
+    \ket{\alpha, t_{0}; t} = e^{-\frac{i}{\hbar}H(t-t_{0})}\ket{\alpha, t_{0}}.
 \end{equation}
 In position space, the wavefunction of the particle at a given time, $\psi(\bm{r},t)$,
-is the sum of over all contributions from the propagation of the initial state up to that time,
+is the sum over all contributions from the propagation of the initial state up to that time,
 a direct application of Huygens principle:
 \begin{equation} \label{PropagatorDerivation}
     \begin{split}
-        \psi(\bm{r},t) & = \braket{r|\alpha, t_{0}; t}\\
-        & = \int d\bm{r}'
-        \braket{\bm{r}|e^{-\frac{i}{\hbar}H(t-t_{0})}|\bm{r'}}\braket{\bm{r'}|\alpha,t_{0}}
+        \psi(\bm{r},t) = \braket{r|\alpha, t_{0}; t}
+        = \int d\bm{r}'
+        \braket{\bm{r}|e^{-\frac{i}{\hbar}H(t-t_{0})}|\bm{r'}}\braket{\bm{r'}|\alpha,t_{0}}.
     \end{split}
 \end{equation}
 The integrand of Eq. \ref{PropagatorDerivation} is referred to as the
@@ -51,17 +51,17 @@ probability that a given
 initial state will evolve into a final state according to the wave equation.
 
 To conduct practical scattering calculations, the energy-domain representation of the progapator
-may be more useful than the time-domain representation. Applying a Fourier Transform to the propagator
+may be more useful than the time-domain representation. Applying a Fourier transform to the propagator
 (and omitting the intermediate algebraic steps) gives us the energy-domain representation,
 and brings the mathematical structure of the propagator into focus:
 \begin{equation} \label{PropagatorFT}
     \begin{split}
         G(\bm{r},\bm{r'};E) & = \int_{-\infty}^{\infty}d(t-t')e^\frac{i}{\hbar}E(t-t')G(\bm{r},\bm{r'}; t-t')\\
         & = \braket{0|a_{\bm{r}}\frac{1}{E-H+i\eta}a^{\dagger}_{\bm{r'}}|0}\\
-        & = \braket{\bm{r} | \frac{1}{E-H+i\eta} | \bm{r'}}
+        & = \braket{\bm{r} | \frac{1}{E-H+i\eta} | \bm{r'}},
     \end{split}
 \end{equation}
-where $a_{\bm{r}}$ and $a^{\dagger}_{\bm{r}}$ represent the particle removal and
+where $a_{\bm{r}}$ and $a^{\dagger}_{\bm{r}}$ are the particle removal and
 addition operators in
 the second-quantization picture, respectively, and $\ket{0}$ is the vacuum state.
 Equation \ref{PropagatorFT} contains the same information as Eq. \ref{PropagatorDerivation}: that
@@ -73,7 +73,8 @@ contributions. Of course, we need not privilege $\bm{r}$-space; $G$ can be writt
 suitable single-particle basis. For example, the momentum-space representation for a spinless,
 non-interacting free particle of mass $m$ and momentum $\bm{k}$ reads:
 \begin{equation} \label{PropagatorKSpace}
-    G^{0}(\bm{k}, \bm{k'}; E) = \delta(\bm{k}-\bm{k'})\frac{1}{E-\frac{\hbar^{2}k^{2}}{2m} + i\eta}
+    G^{0}(\bm{k}, \bm{k'}; E) =
+    \delta(\bm{k}-\bm{k'})\frac{1}{E-\frac{\hbar^{2}k^{2}}{2m} + i\eta}.
 \end{equation}
 If the independent-particle model was exact and the mean-field potential could be perfectly known,
 calculating the propagation of nucleons through the nucleus would as simple as calculating
@@ -89,7 +90,7 @@ $t'$ is:
 \begin{equation} \label{ManyBodySPPropagator}
     G(\alpha, \beta; t, t') =
     -\frac{i}{\hbar}\braket{\Psi^{N}_{0}|\mathcal{T}
-    [a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')]|\Psi^{N}_{0}}
+    [a_{\alpha_{H}}(t)a^{\dagger}_{\beta_{H}}(t')]|\Psi^{N}_{0}}.
 \end{equation}
 Here, $\ket{\Psi^{N}_{0}}$ is the normalized Heisenberg ground state for the N-particle system with
 eigenvalue $E^{N}_{0}$:
@@ -139,8 +140,8 @@ eigenvalues $E^{N-1}_{n}$:
 in keeping with Eq. \ref{NParticleGroundState}. The second line
 of Eq. \ref{LehmannRepresentation} is referred to as the ``Lehmann representation''.
 To reach the third line of Eq. \ref{LehmannRepresentation}, the complete bases of
-$\ket{\Psi^{N+1}_{m}}$ and $\ket{\Psi^{N-1}_{n}}$ have been removed from the first and second 
-addends of the second line, respectively.
+$\ket{\Psi^{N+1}_{m}}$ and $\ket{\Psi^{N-1}_{n}}$ have been removed from the
+corresponding terms on the second line.
 The particle and hole contributions to the propagator are neatly separated and
 each possesses the relevant energy weighting in the denominator, sandwiched between the fermion 
 creation and annihilation operators. Neither the ground-state wavefunction of the correlated
@@ -152,32 +153,37 @@ The full single-particle propagator $G$ can be calculated via perturbation
 expansion by starting with a non-interacting (unperturbed) propagator $G_{0}$
 and adding interaction 
 terms, $\hat{V}$, that bring $G_{0}$ closer to the real $G$. This expansion requires a change from
-the Heisenberg picture of the previous section to the Interaction picture\footnote{Operators in the
+the Heisenberg picture of the previous section to the Interaction
+picture\footnotemark. First, the full Hamiltonian $H$ is broken up into the non-interacting and interacting
+parts:
+\begin{equation}
+    \hat{H} = \hat{H_{0}}+\hat{H}_{1}
+\end{equation}
+\footnotetext{
+    Operators in the
     Interaction picture are related to those in the Schr\"odinger picture by:
     \begin{equation*}
         O_{I}(t) = e^{\frac{i}{\hbar}\hat{H}_{0}t}O_{S}e^{\frac{-i}{\hbar}\hat{H}_{0}t}
     \end{equation*}
     Appendix A of \cite{MBTE} provides a complete description of these different quantum-mechanical
-pictures.}. First, the full Hamiltonian $H$ is broken up into the non-interacting and interacting
-parts:
-\begin{equation}
-    \hat{H} = \hat{H_{0}}+\hat{H}_{1}
-\end{equation}
-where $\hat{H_{0}}$ contains the kinetic energy operator $\hat{T}$ and possibly a one-body auxiliary
+    pictures.
+}. 
+where $\hat{H_{0}}$ contains the kinetic energy operator $\hat{T}$
+and possibly a one-body auxiliary
 potential $\hat{U}$, and $\hat{H_{1}}$ collects all residual interactions (the hard part of the
 problem). Broken up in this way, the non-interacting propagator reads:
 \begin{equation}
     G^{(0)}(\alpha, \beta; t-t') =
     -\frac{i}{\hbar}\braket{\Phi^{A}_{0}|
-    \mathcal{T}[a_{\alpha I}(t)a^{\dagger}_{\beta I}(t')]|\Phi^{A}_{0}}
+    \mathcal{T}[a_{\alpha I}(t)a^{\dagger}_{\beta I}(t')]|\Phi^{A}_{0}},
 \end{equation}
 where the fully-correlated many-body ground state $\ket{\Psi^{A}_{0}}$ has been replaced by
-$\ket{\Psi^{A}_{0}}$, the uncorrelated ground-state associated with $H_{0}$. Through algebraic
+$\ket{\Phi^{A}_{0}}$, the uncorrelated ground-state associated with $H_{0}$. Through algebraic
 manipulation and employing the Interaction version of all operators,
 the \textit{full} single-particle propagator, including the
 contribution from the interactions buried in $\hat{H_{1}}$, is:
 \begin{equation} \label{FullSPPropagator}
-    G(\alpha, \beta; t-t') = \frac{Num}{Denom}
+    G(\alpha, \beta; t-t') = \frac{Num}{Denom},
 \end{equation}
 where
 \begin{equation*}
@@ -188,14 +194,14 @@ where
     \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt_{n}\\
     & \phantom{ {}= } \times \braket{\Phi^{N}_{0}|\mathcal{T}[\hat{H}_{1}(t_{1})
     \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{\alpha I}(t)a^{\dagger}_{\beta
-    I}(t')]|\Phi^{N}_{0}}\\\\
+    I}(t')]|\Phi^{N}_{0}},\\\\
     Denom & = \sum^{\infty}_{m}\left(\frac{-i}{\hbar}\right)^{m}\frac{1}{m!}
         \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{1}
         \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{2} \cdots
         \int_{-\infty(1-i\eta)}^{\infty(1-i\eta)} dt'_{m}\\
         & \phantom{ {}= } \times \braket{\Phi^{N}_{0}|
         \mathcal{T}[\hat{H}_{1}(t_{1})
-        \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{m})(t')]|\Phi^{N}_{0}}
+        \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{m})(t')]|\Phi^{N}_{0}}.
     \end{split}
 \end{equation*}
 Despite the extra ink, the mathematical structure of the Lehmann
@@ -220,7 +226,8 @@ the propagator reads:
     \frac{1}{n!}\int dt_{1} \int dt_{2} \cdots \int dt_{n}\\
     & \phantom{ {}= } \times \braket{\Phi^{A}_{0}|
     \mathcal{T}[\hat{H}_{1}(t_{1})
-    \hat{H}_{1}(t_{2}) \cdots \hat{H}_{1}(t_{n})a_{{\alpha}I}(t)a^{\dagger}_{{\beta}I}(t')]|\Phi^{A}_{0}}_{connected}
+    \hat{H}_{1}(t_{2}) \cdots
+    \hat{H}_{1}(t_{n})a_{{\alpha}I}(t)a^{\dagger}_{{\beta}I}(t')]|\Phi^{A}_{0}}_{connected}.
 \end{split}
 \end{equation}
 
@@ -228,9 +235,10 @@ Physically speaking, the full propagator is the infinite sum of the expectation 
 an $\hat{H_{1}}$ iteratively applied to the non-interacting ground state. The
 non-interacting ground state is modified by each interaction and thus all the many-body correlations
 of $\ket{\Psi^{N}_{0}}$ are encoded by the repeated operation of $\hat{H_{1}}$. The subscript
-``connected'' indicates that the only terms that survive correspond to fully-connected Feynman 
-diagrams, as all non-connected diagrams appear in both the numerator and denominator of Eq. 
-\ref{FullSPPropagator}.
+``connected'' indicates that only terms corresponding to fully-connected Feynman 
+diagrams should be included in the full propagator, as all non-connected diagrams appear in both 
+the numerator and denominator of Eq. \ref{FullSPPropagator} and do not survive
+the division.
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/DysonEquation.png}
@@ -241,14 +249,15 @@ We can represent the perturbation expansion of Eq. \ref{ManyBodySPPropagatorConn
 diagrammatically to clarify the physical meaning of the expansion terms. Figure
 \ref{PerturbationExpansionDiagram} shows several diagrams from the first few orders of the
 expansion. To zeroth-order, 
-the expansion is only one purely non-interacting term, which is just the free single-particle 
-propagator. At each higher order, one more interaction is permitted to enter the diagram at any
-fermion line (i.e., into any propagator line). By grouping and rearranging the terms, we can 
+the expansion is only one non-interacting term, which is just the free single-particle 
+propagator. At each higher order, one more interaction is permitted to enter the
+diagram and can attach at any fermion line (i.e., into any propagator line). By grouping and rearranging the terms, we can 
 condense the full perturbation expansion to a
 self-consistent equation called the Dyson equation:
 \begin{equation} \label{DysonEquation}
     G(\alpha,\beta;E) = G^{(0)}(\alpha,\beta;E) +
-    \sum_{\gamma,\delta}G^{(0)}(\alpha,\gamma;E)\Sigma^{*}(\gamma,\delta,E)G(\delta, \beta; E)
+    \sum_{\gamma,\delta}G^{(0)}(\alpha,\gamma;E)\Sigma^{*}(\gamma,\delta,E)G(\delta,
+    \beta; E).
 \end{equation}
 A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonEquationDiagram}.
 \begin{figure}[tb]
@@ -258,7 +267,7 @@ A diagrammatic representation of the Dyson equation is given in Fig. \ref{DysonE
     {
         A subset of diagrams from the first few orders that contribute to the 
         single-particle propagator perturbation expansion.
-        The interaction $\hat{V}$ is indicated by the horizontal
+        The interaction $\hat{V}$ is represented by the horizontal
         dashed line and is taken to be two-body only in this treatment.
     }
     \label{PerturbationExpansionDiagram}
@@ -311,7 +320,7 @@ and an energy-dependent part that can be calculated from the imaginary part:
 \begin{equation} \label{RealPart}
     \operatorname{Re}(\Sigma^{*}(\alpha,\beta; E)) =
     \operatorname{Re}(\Sigma_{s}(\alpha,\beta)) +
-    \operatorname{Re}({\Sigma_{d}(\alpha,\beta; E)})
+    \operatorname{Re}({\Sigma_{d}(\alpha,\beta; E)}).
 \end{equation}
 The relevant dispersion relation to calculate the real energy-dependent part is:
 \begin{equation} \label{DispersionRelation}
@@ -319,7 +328,7 @@ The relevant dispersion relation to calculate the real energy-dependent part is:
     -\mathcal{P}\int_{\epsilon^{+}_{T}}^{\infty}\frac{dE'}{\pi}
     \frac{\operatorname{Im}({\Sigma_{d}(\alpha,\beta; E')})}{E-E'}
     + \mathcal{P} \int_{-\infty}^{\epsilon^{-}_{T}}\frac{dE'}{\pi}
-    \frac{\operatorname{Im}({\Sigma_{d}(\alpha,\beta; E')})}{E-E'}
+    \frac{\operatorname{Im}({\Sigma_{d}(\alpha,\beta; E')})}{E-E'}.
 \end{equation}
 $\mathcal{P}$ is the Cauchy principle value and the integration limits $\epsilon^{\pm}_{T}$ are
 selected to be just below the lowest-lying imaginary strength in the positive-energy domain
@@ -406,7 +415,7 @@ reaction cross section over all partial waves:
     \sigma_{rxn} = \sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
     \left[(2l+1)-(l+1)|e^{2i\delta_{l+}}|^{2}-l|e^{2i\delta_{l-}}|^{2}\right]
 \end{equation}
-and the total cross section simply a sum of the reaction and elastic of all partial waves:
+and the total cross section simply a sum of the reaction and elastic over all partial waves:
 \begin{equation}
     \sigma_{tot} = \sigma_{el} + \sigma_{rxn}\\
 \end{equation}
@@ -416,7 +425,8 @@ where
         \sigma_{el} & = \int d\theta \int d\phi\ \frac{d\sigma}{d\Omega}(\theta)\\
         & = \sum^{\infty}_{l=0}\frac{\pi}{k^{2}}
         \frac{|(l+1)(e^{2i\delta_{l+}}-1)+l(e^{2i\delta_{l-}}-1)|^{2}}{2l+1}\\
-        & \phantom{ {}= } \times \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}
+        & \phantom{ {}= } \times
+        \frac{l(l+1)|e^{2i\delta_{l+}}-e^{2i\delta_{l-}}|^{2}}{2l+1}.
     \end{split}
 \end{equation}
 
@@ -428,12 +438,12 @@ define the spectral functions for holes and particles:
         S_{h}(\alpha; E) & =
         \frac{1}{\pi}\operatorname{Im}({G(\alpha,\alpha;E)})\qquad \text{for } E\leq\epsilon_{F}^{-}\\
         & = \sum|\braket{\Psi^{N-1}_{n}|a_{\alpha}|\Psi^{N}_{0}}|^{2}
-        \delta(E-(E^{N}_{0}-E_{n}^{N-1}))\\
+        \delta(E-(E^{N}_{0}-E_{n}^{N-1})),\\
         \\
         S_{p}(\alpha; E) & =
         -\frac{1}{\pi}\operatorname{Im}({G(\alpha,\alpha;E)})\qquad \text{for } E\geq\epsilon_{F}^{+}\\
         & = \sum|\braket{\Psi^{N+1}_{n}|a_{\alpha}^{\dagger}|\Psi^{N}_{0}}|^{2}
-        \delta(E-(E_{n}^{N+1}-E^{N}_{0}))
+        \delta(E-(E_{n}^{N+1}-E^{N}_{0}.))
     \end{split}
 \end{equation}
 In this expression, $\epsilon_{F}^{\pm}$ are the lowest-unoccupied and highest-occupied
@@ -445,7 +455,7 @@ particle instead, leaving the nuclear system with energy $E^{N}_{0}+E$. From the
 \begin{equation} \label{ParticleNumber}
     \begin{split}
         n(\alpha) & = \braket{\Psi^{N}_{0}|a_{\alpha}^{\dagger}a_{\alpha}|\Psi^{N}_{0}}\\
-        & = \int_{-\infty}^{-\epsilon_{F}}S_{h}(\alpha; E)
+        & = \int_{-\infty}^{-\epsilon_{F}}S_{h}(\alpha; E).
     \end{split}
 \end{equation}
 Numerically, this integral can be difficult to compute near $\epsilon_{F}$ where peaks in the
@@ -457,7 +467,7 @@ $\epsilon_{F}^{-}$ is added to account for the remaining occupation. The spectro
 calculated:
 \begin{equation} \label{SpectroscopicFactor}
     S = \left(1-\frac{\partial\Sigma^{*}(\alpha_{qh},\alpha_{qh};E)}
-    {\partial{E}}\bigg\rvert_{\epsilon_{n}^{-}}\right)^{-1}
+    {\partial{E}}\bigg\rvert_{\epsilon_{n}^{-}}\right)^{-1},
 \end{equation}
 where $qh$ indicates the quasi-hole nature of the single-particle state indicated
 by $\alpha$ and $\epsilon_{n}^{-} = E_{0}^{N}-E_{n}^{N-1}$ is the
@@ -477,7 +487,7 @@ pairing parameter $\Delta$ was added to account for open subshells' fractional o
 This parameter splits these subshells' occupants into upper and lower sublevels with energies 
 $E_{\pm}$:
 \begin{equation}
-    E_{\pm} = \mu \pm ((\epsilon_{F}-\mu)^{2} + \Delta^{2})^{\frac{1}{2}}
+    E_{\pm} = \mu \pm [(\epsilon_{F}-\mu)^{2} + \Delta^{2}]^{\frac{1}{2}}
 \end{equation}
 where $\mu$ is the energy of the open subshell before pairing is considered and
 $\epsilon_{F}$ is the Fermi
@@ -491,7 +501,7 @@ where $\chi = |E_{\pm}-\mu| - (\epsilon_{F} - \mu)$. Only occupation in the
 lower sublevel is counted toward the total particle number. For each open-shell
 nucleus with neutron number $N$ and proton number $Z$, $\Delta$ was fixed according to:
 \begin{equation}
-    \Delta(N,Z) = \frac{1}{4}\left(B(N-2,Z)-3B(N-1,Z) + 3B(N,Z)-B(N+1,Z)\right)
+    \Delta(N,Z) = \frac{1}{4}\left(B(N-2,Z)-3B(N-1,Z) + 3B(N,Z)-B(N+1,Z)\right),
 \end{equation}
 where $B(N,Z)$ is the nuclear binding energy.
 
@@ -519,10 +529,12 @@ Hamiltonian.
 The functions used to parameterize the optical potential
 are selected to conform with general physical intuition about the nuclear
 many-body problem and past experience with optical potentials. Accordingly,
-the self-energy should be, non-local, complex, and dispersively correct.
+the self-energy should be, \textit{non-local}, \textit{complex}, and
+\textit{dispersively correct}.
 Before detailing the full parameterization,
 a few standard mathematical forms need to be introduced. In this section, the free variables that
-are fitted to data during the DOM procedure are denoted in a bold typeface. In the basic functional
+are fitted to data during the DOM procedure are denoted in a \textbf{bold
+typeface}. In the basic functional
 forms of the next subsection, these variables are not labeled with numbers,
 but in the following subsections, the bolded
 variables are assigned numbers to facilitate comparison with the
@@ -535,9 +547,10 @@ associated with the nuclear volume (a Woods-Saxon shape)
 and the nuclear surface (a derivative of the Woods-Saxon shape):
 \begin{equation} \label{WoodsSaxon}
     \begin{split}
-        f_{vol}(r; \bm{R}, \bm{a}) & = \frac{-1}{1+e^{(r-\bm{R})/\bm{a}}}\\
+        f_{vol}(r; \bm{R}, \bm{a}) & = \frac{-1}{1+e^{(r-\bm{R})/\bm{a}}},\\
         \\
-        f_{sur}(r; \bm{R}, \bm{a}) & = \frac{1}{r}\frac{d}{dr}f_{vol}(r; \bm{R}, \bm{a})
+        f_{sur}(r; \bm{R}, \bm{a}) & = \frac{1}{r}\frac{d}{dr}f_{vol}(r; \bm{R},
+        \bm{a}).
     \end{split}
 \end{equation}
 $\bm{R}$ is the nuclear radius, calculated as $\bm{R} = \bm{r_{0}}A^{\frac{1}{3}}$, with $A$ the total number of
@@ -553,18 +566,18 @@ The self-energy/optical potential used in our treatment is based on that of
 forms alongside the dispersion relation. For simplicity, we use a Gaussian non-locality:
 \begin{equation}
     N(r, r';\bm{\beta}) = \frac{1}{\pi^{\frac{3}{2}}\bm{\beta}^{3}}
-    e^{|r-r'|^{2}/{\bm{\beta}^{2}}}
+    e^{|r-r'|^{2}/{\bm{\beta}^{2}}},
 \end{equation}
 where $\bm{\beta}$ is a free parameter that sets the Gaussian width. The energy-dependence of the
 imaginary components is based on the functional form of \cite{Charity2006}:
 \begin{equation} \label{omega}
-    \omega_{n}(E; \bm{A}, \bm{B}, \bm{C}) = \bm{A}\Theta(X)\frac{X^{n}}{X^{n}+\bm{B}^{n}}
+    \omega_{n}(E; \bm{A}, \bm{B}, \bm{C}) = \Theta(X)\bm{A}\frac{X^{n}}{X^{n}+\bm{B}^{n}}
 \end{equation}
 where
 \begin{equation*}
     X = |E-\epsilon_{F}|-\bm{C}\\
 \end{equation*}
-and $\Theta(X)$ is the step function. 
+and $\Theta(X)$ is the Heaviside step function. 
 
 We are now ready to give the full parameterization. The parameterization for symmetric nuclei
 is simpler, as the same potential is used for protons and neutrons. For asymmetric systems, we
@@ -573,14 +586,15 @@ potential form is presented. All calculations are performed non-relativistically
 with a first-order relativistic correction and do not explicitly account for
 nucleon excitations (e.g., the $\Delta$ resonance). Accordingly, the potential
 is not expected to be valid above
-the domain $-300\mega\electronvolt\ < E < 200 \mega\electronvolt$,
+the domain -300 \mega\electronvolt\ $<$ E $<$ 200 \mega\electronvolt,
 which we used during fitting.
 
 \subsection{Real part}
 The energy-independent real part of the self-energy consists of a nonlocal Hartree-Fock and
 a spin-orbit component (plus a local Coulomb term if the nucleon in question is a proton):
 \begin{equation}
-    \operatorname{Re}({\Sigma}_{s}(r,r')) = \Sigma_{HF}(r,r')+V_{so}(r,r')+\delta(r-r')\times V_{C}(r)
+    \operatorname{Re}({\Sigma}_{s}(r,r')) =
+    \Sigma_{HF}(r,r')+V_{so}(r,r')+\delta(r-r')\times V_{C}(r).
 \end{equation}
 \begin{figure}[tb]
     \centering
@@ -606,20 +620,20 @@ Figure \ref{RealRadialDependence} shows the radial dependence of these
 components of the real part of the potential.
 The Hartree-Fock component $V_{HF}$ has two subcomponents:
 \begin{equation} \label{HFWBEquation}
-    \Sigma_{HF}(r,r') = V_{vol}(r,r') + V_{wb}(r)
+    \Sigma_{HF}(r,r') = V_{vol}(r,r') + V_{wb}(r),
 \end{equation}
 where the non-local Hartree-Fock volume term $V_{vol}(r,r')$, is defined as
 a Woods-Saxon form coupled to a Gaussian non-locality:
 \begin{equation} \label{RealVolume}
     V_{vol}(r,r') = \bm{V_{1}}{\times}f_{vol}(r; \bm{R_{1}}, \bm{a_{1}})
-    {\times}N(r,r';\bm{\beta_{1}})
+    {\times}N(r,r';\bm{\beta_{1}}).
 \end{equation}
 
 The local Hartree-Fock wine-bottle
 term $V_{wb}$, named for resemblence to the dimple at the bottom of a wine
 bottle, is defined as a Gaussian centered at the nuclear origin:
 \begin{equation}
-    V_{wb}(r) = \bm{V_{2}}{\times}e^{r^{2}/\bm{\sigma_{1}}^{2}}
+    V_{wb}(r) = \bm{V_{2}}{\times}e^{r^{2}/\bm{\sigma_{1}}^{2}}.
 \end{equation}
 The real spin-orbit component $V_{so}$
 is defined using a derivative-Woods-Saxon shape in keeping with the
@@ -628,7 +642,7 @@ nuclear surface:
 \begin{equation} \label{RealSOEquation}
     V_{so}(r,r') = \left(\frac{\hbar}{m_{\pi}c}\right)^{2}
     \bm{V_{3}}\times\frac{1}{r}f_{sur}(r;\bm{R_{3}}, \bm{a_{3}}){\times}N(r,r';\bm{\beta_{3}})
-    {\times}(\ell\cdot\sigma)
+    {\times}(\ell\cdot\sigma).
 \end{equation}
 The leading constant $\left(\frac{\hbar}{m_{\pi}c}\right)^{2}$ is taken to be 2.0 fm$^{2}$
 \cite{MahzoonPhDThesis}.
@@ -644,17 +658,17 @@ both above and below the Fermi surface:
 \begin{equation}
     \operatorname{Im}({\Sigma(r,r',E)}) =
     \operatorname{Im}({\Sigma_{vol}^{\pm}(r,r',E)})
-    + \operatorname{Im}({\Sigma_{sur}^{\pm}(r,r',E)})
+    + \operatorname{Im}({\Sigma_{sur}^{\pm}(r,r',E)}),
 \end{equation}
 where the volume and surface components are:
 \begin{equation}
     \begin{split}
         \operatorname{Im}({\Sigma_{vol}^{\pm}(r,r',E)})
         & = W_{vol}^{\pm}(E){\times}f_{vol}(r; \bm{R_{4}}, \bm{a_{4}})
-        {\times}N(r,r'; \bm{\beta_{4}})\\
+        {\times}N(r,r'; \bm{\beta_{4}}),\\
         \operatorname{Im}({\Sigma_{sur}^{\pm}(r,r',E)})
         & = 4\bm{a_{4}}W_{sur}^{\pm}(E){\times}f_{sur}(r; \bm{R_{4}}, \bm{a_{4}})
-        {\times} N(r,r';\bm{\beta_{4}})
+        {\times} N(r,r';\bm{\beta_{4}}).
     \end{split}
 \end{equation}
 \begin{figure}[tb]
@@ -669,8 +683,8 @@ where the volume and surface components are:
     }
     \label{ImaginaryRadialDependence}
 \end{figure}
-The terms labeled with a $+$ determine the potential above $\epsilon_{F}$, and the terms labeled
-with a $-$ determine the potential below $\epsilon_{F}$. Note that in this equation, the same
+The terms labeled with $+$ determine the potential above $\epsilon_{F}$, and the terms labeled
+with $-$ determine the potential below $\epsilon_{F}$. Note that in this equation, the same
 Woods-Saxon variables and nonlocality are used for both imaginary surface and imaginary volume,
 both at positive and
 negative energies. Figure \ref{ImaginaryRadialDependence} shows the radial
@@ -688,9 +702,9 @@ where $E_{\Delta} = |E-\epsilon_{F}|$ and
     \begin{split}
         W_{NM}^{+}(E) & = {\bm{\alpha_{6}}}\left[\sqrt{E} +
             \frac{(\epsilon_{F}+\bm{E^{+}_{6}})^{\frac{3}{2}}}{2E}
-        -\frac{3}{2}\sqrt{\epsilon_{F}+\bm{E^{+}_{6}}}\right]\\
+        -\frac{3}{2}\sqrt{\epsilon_{F}+\bm{E^{+}_{6}}}\right],\\
         W_{NM}^{-}(E) & = \frac{(\epsilon_{F}-E-\bm{E_{6}^{-}})^{2}}
-        {(\epsilon_{F}-E-\bm{E_{6}^{-}})^{2}+(\bm{E_{6}^{-}})^{2}}
+        {(\epsilon_{F}-E-\bm{E_{6}^{-}})^{2}+(\bm{E_{6}^{-}})^{2}}.
         \end{split}
     \end{equation}
 The terms $W_{NM}^{\pm}$ are asymmetric above and below the Fermi surface and are modeled after
@@ -699,7 +713,7 @@ and the increasing phase space at positive energies. The imaginary surface terms
 \begin{equation} \label{ImagSurface}
     W_{sur}^{\pm}(E) = \omega_{4}(E, \bm{A_{7}^{\pm}}, \bm{B_{7}^{\pm}}, 0)
     - \omega_{2}(E, \bm{A_{7}^{\pm}}, \bm{B_{7}^{'\pm}}, \bm{C_{7}^{\pm}}) + 
-    \bm{W_{7}}\times(\ell\cdot\sigma)
+    \bm{W_{7}}\times(\ell\cdot\sigma),
 \end{equation}
 where $\omega_{n}$ was defined in Eq. \ref{omega}, and $\bm{W_{7}}$ represents the change in the
 imaginary surface strength due to an imaginary spin-orbit force. An imaginary spin-orbit
@@ -735,13 +749,16 @@ for neutrons in \caForty\ is shown in Fig. \ref{VolumeIntegral}.
     \label{VolumeIntegral}
 \end{figure}
 
-This completes the parameterization of the potential for symmetric nuclei. For asymmetric nuclei,
-the parametric forms must be modified to account for the different potential experienced by protons 
-and neutrons in an asymmetric nucleus. Previous DOM treatments have created entirely separate
+This completes the parameterization of the potential for symmetric nuclei.
+
+\subsection{Parameterization of asymmetry dependence}
+For asymmetric nuclei,
+the parametric forms must be modified to account for the different potential experienced by 
+protons and neutrons. Previous DOM treatments have created entirely separate
 proton and neutron potentials, each having all the free parameters used in the symmetric
 parameterization presented above. For example, the fit of \caEight\ in
 \cite{MahzoonPhDThesis} used over sixty unique parameters. Such an abundance of
-parameters can lead to overfitting, hampering interpretation and predictive power.
+parameters risks overfitting, which can hamper interpretation and predictive power.
 To reduce this risk, in this analysis we allowed only a select handful of parameters
 to differ between neutrons and protons. We embedded asymmetry-dependence with a linear form:
 \begin{equation}
@@ -791,7 +808,7 @@ against the overfitting of data. In practice, this requires:
     \item that the cross-correlation between parameters is understood.
 \end{itemize}
 As was pointed out by Koning and Delaroche \cite{KoningDelaroche}, large-scale fitting to 
-experimental data part science, part art: fits should deviate as little as possible from the 
+experimental data is part science, part art: fits should deviate as little as possible from the 
 experimental values but also be aesthetically acceptable to the eye of the fitter.
 Thus the preconceptions of the fitter play a major role in the definition of the
 potential forms, the starting values of the parameters, and the conclusion that a fit is ``good
@@ -805,7 +822,7 @@ countless optical model analyses over the last century, the Woods-Saxon radius
 parameters $\boldmath{r_{0}}$ and diffuseness parameters $\boldmath{a}$
 were expected to be 1.1-1.2
 \femto\meter\ and 0.6 \femto\meter, respectively. As non-local behavior is at
-least partially associated with Pauli exclusion principle arguments, our fitted
+least partially associated with Pauli-exclusion-principle arguments, our fitted
 non-localities $\boldmath{\beta}$
 are expected to stay between 0.5-1.5 \femto\meter, commensurate with the size of the
 nucleon. In the energy domain, above the Fermi level,
@@ -816,8 +833,8 @@ the imaginary strength is expected to be dominated by the surface-associated ter
 measurements of inelastic nucleon-nucleon scattering in the \giga\electronvolt\ regime.
 Below the Fermi surface, the imaginary strength is largely symmetric to that of the positive-energy
 regime for a short distance, then tapers off as the phase space is reduced. Especially for smaller
-nuclei like \oSix\ and even \caForty, it is difficult to cleanly separate the negative-energy 
-imaginary surface and imaginary volume terms, and this may not be physically
+nuclei like \oSix\ and even for \caForty, it is difficult to cleanly separate the negative-energy 
+imaginary surface and imaginary volume terms, and this separation may not be physically
 meaningful anyway. These general trends comport with the expectation
 that low-lying excitations (surface phonons and collective modes) and
 two-particle-one-hole excitations should be responsible for most surface imaginary strength.
@@ -850,7 +867,7 @@ two-particle-one-hole excitations should be responsible for most surface imagina
 %energies ($<$20 \mega\electronvolt\)
 
 \subsection{Fitting procedure}
-The powell minimization method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
+The Powell minimization method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
 was used to minimize the $\chi^{2}$ between experimental data points and the
 values calculated by the DOM fit. A weighting scheme was assigned to the data points
 according to the number of data sets for each sector of experimental data (e.g., \el,
