@@ -803,7 +803,7 @@ against the overfitting of data. In practice, this requires:
     \item checking ``under the hood'' during optimization to verify that
         parameter values are sensible, given the assumptions that undergird the model,
     \item understanding of what the value function is (i.e., the function being
-        minimized/maximized) and whether certain experimental data are being
+        optimized) and whether certain experimental data are being
         privileged over others, and
     \item that the cross-correlation between parameters is understood.
 \end{itemize}
@@ -869,15 +869,15 @@ two-particle-one-hole excitations should be responsible for most surface imagina
 \subsection{Fitting procedure}
 The Powell minimization method, outlined in Numerical Recipes in C \cite{NumericalRecipes},
 was used to minimize the $\chi^{2}$ between experimental data points and the
-values calculated by the DOM fit. A weighting scheme was assigned to the data points
+values calculated from the DOM potential. A weighting scheme was assigned to the data points
 according to the number of data sets for each sector of experimental data (e.g., \el,
 binding energies) and to their relative importance, guiding the fit to reproduce
 the most essential data. From fit to fit, the weighting scheme was adjusted
-as necessary to escape local minima in the multidimensional fit.
+as necessary to escape local minima and reproduce the broadest range of experimental data.
 
 The radial grid, energy grid, size of the Lagrange and Laguerre bases,
 partial wave angular momentum cutoff,
 and various integration cutoffs used in calculating the potential and
-observable quantities were varied to ensure that results were not distorted by rounding or
-truncation errors.
+observable quantities were varied to ensure that results were not 
+distorted by rounding or truncation errors.
 \afterpage{\clearpage}

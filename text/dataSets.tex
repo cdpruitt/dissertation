@@ -1,4 +1,36 @@
 \label{DOMDataSets}
+In this work, each DOM fit incorporated up to nine types of experimental data. Sources for proton
+and neutron scattering data (\el, analyzing powers, \rxn, \tot) are listed, starting with \oSix.
+For bound state data (binding energies, single-particle level energies, spectral function widths,
+charge density distributions, and RMS charge radii), we drew on compilations given in Table
+\ref{BoundStateData}. For \oEight\ and \snTwelve, no charge density distribution data were
+available. In these cases, we scaled the charge density distributions of \oSix\ and \snFour,
+respectively, so that they would reproduce the experimentally-known RMS charge radii of
+\oEight\ and \snTwelve.
+
+Data types are abbreviated as follows: AP (analyzing power), BE (binding energy),
+$\rho_{ch}(r)$ (charge density distribution), $\Delta$SF (spectral function widths), and
+$r_{rms}$ (root-mean-square charge radius).
+\\
+\\
+\begin{figure}[htp]
+    \captionof{table}{Sources for bound-state data, all nuclei}
+    \label{BoundStateData}
+    \centering
+    \begin{tabular}{c  c} 
+        \toprule
+        \bf{Data type} & \bf{Reference} \\
+        \midrule
+        $\rho_{ch}(r)$ & \cite{DeVries1987}\\
+        $r_{rms}$ & \cite{DeVries1987}\\
+        $\Delta$SF & \cite{Jacob1966, Jacob1973}\\
+        SP levels & \cite{AME2016}\\
+        BE & \cite{AME2016}\\
+        \bottomrule
+    \end{tabular}
+\end{figure}
+
+\pagebreak
 \section{\oSix\ Scattering Data}
 
 \begin{figure}[htp]
@@ -46,6 +78,7 @@
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
         \input{data/no16RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/no16TCSData.tex}
@@ -100,6 +133,7 @@
 %    \hfill
 %    \begin{minipage}[t]{0.47\linewidth}
 %        \centering
+%        \vspace{0pt}
 %        \input{data/no18RCSData.tex}
 %        \vspace*{0.5 cm}
 %        \input{data/no18TCSData.tex}
@@ -155,6 +189,7 @@
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
         \input{data/nca40RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/nca40TCSData.tex}
@@ -163,223 +198,331 @@
 \end{figure}
 
 \section{\caEight\ Scattering Data}
-\begin{figure}[tb]
-    \centering
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
     \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/pca48ECSData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nca48ECSData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/pca48APowerData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nca48APowerData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/pca48RCSData.tex}
-    \end{minipage}
+    \end{minipage}%
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
+        \input{data/nca48ECSData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/pca48APowerData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/nca48APowerData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/pca48RCSData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/nca48RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/nca48TCSData.tex}
     \end{minipage}
+    \hspace*{\fill}
 \end{figure}
 
 \section{\niEight\ Scattering Data}
-\begin{figure}[tb]
-    \centering
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
     \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/pni58ECSData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nni58ECSData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/pni58APowerData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nni58APowerData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/pni58RCSData.tex}
-    \end{minipage}
+    \end{minipage}%
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
+        \input{data/nni58ECSData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/pni58APowerData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/nni58APowerData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/pni58RCSData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/nni58RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/nni58TCSData.tex}
     \end{minipage}
+    \hspace*{\fill}
 \end{figure}
 
 \section{\niFour\ Scattering Data}
-\begin{figure}[tb]
-    \centering
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
     \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/pni64ECSData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nni64ECSData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/pni64APowerData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nni64APowerData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/pni64RCSData.tex}
-    \end{minipage}
+    \end{minipage}%
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
+        \input{data/nni64ECSData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/pni64APowerData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/nni64APowerData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/pni64RCSData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/nni64RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/nni64TCSData.tex}
     \end{minipage}
+    \hspace*{\fill}
 \end{figure}
 
 \section{\snTwelve\ Scattering Data}
-\begin{figure}[tb]
-    \centering
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
     \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/psn112ECSData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nsn112ECSData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/psn112APowerData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nsn112APowerData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/psn112RCSData.tex}
-    \end{minipage}
+    \end{minipage}%
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
+        \input{data/nsn112ECSData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/psn112APowerData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/nsn112APowerData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/psn112RCSData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/nsn112RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/nsn112TCSData.tex}
     \end{minipage}
+    \hspace*{\fill}
 \end{figure}
 
 \section{\snFour\ Scattering Data}
-\begin{figure}[tb]
-    \centering
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
     \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/psn124ECSData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nsn124ECSData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/psn124APowerData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/nsn124APowerData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/psn124RCSData.tex}
-    \end{minipage}
+    \end{minipage}%
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
+        \input{data/nsn124ECSData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/psn124APowerData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/nsn124APowerData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/psn124RCSData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/nsn124RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/nsn124TCSData.tex}
     \end{minipage}
+    \hspace*{\fill}
 \end{figure}
 
 \section{\pbEight\ Scattering Data}
-\begin{figure}[tb]
-    \centering
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
     \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/ppb208ECSData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/npb208ECSData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/ppb208APowerData.tex}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/npb208APowerData.tex}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \begin{minipage}[t]{0.47\linewidth}
-        \input{data/ppb208RCSData.tex}
-    \end{minipage}
+    \end{minipage}%
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
         \centering
+        \vspace{0pt}
+        \input{data/npb208ECSData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/ppb208APowerData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/npb208APowerData.tex}
+    \end{minipage}
+    \hspace*{\fill}
+\end{figure}
+
+\begin{figure}[htp]
+    \small
+    \hspace*{\fill}%
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
+        \input{data/ppb208RCSData.tex}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \vspace{0pt}
         \input{data/npb208RCSData.tex}
         \vspace*{0.5 cm}
         \input{data/npb208TCSData.tex}
     \end{minipage}
+    \hspace*{\fill}
 \end{figure}
