@@ -18,7 +18,9 @@
 \usepackage[english]{babel}
 \usepackage{amssymb} % AMS symbol package
 \usepackage{amsthm}  % AMS symbol package
-\usepackage[toc]{glossaries} % makeglossaries
+\usepackage[symbols,toc]{glossaries} % makeglossaries
+\usepackage[postdot]{glossaries-extra} % for listing the word “page(s)” in the glossary entries
+\usepackage{glossary-mcols}
 \usepackage{afterpage} % very useful for formating...
 \usepackage{setspace}
 \doublespacing % double spaces whole document except for captions
@@ -408,6 +410,6 @@
     \titlerule
 ] % after-code
 
-\printglossary
+\printnoidxglossary[sort=word]
 
 \end{document}

@@ -3,8 +3,8 @@ To assign correct neutron energies, the time resolution of the time-of-flight
 detector is critical. Several tests and corrections were applied to improve
 timing resolution as much as possible.
 
-The DT5730 provides leading-edge discrimination (LED) and constant-fraction discrimination
-(CFD) modes for timing determination. In pre-experiment testing, we found that using the
+The DT5730 provides leading-edge discrimination (\gls{LED}) and constant-fraction discrimination
+(\gls{CFD}) modes for timing determination. In pre-experiment testing, we found that using the
 on-board CFD calculation increased the time required to process each event by 40
 ns or more, an unacceptable increase in the per-event deadtime. Thus we chose
 to use the digitizer's faster LED option and to calculate precise event timing
@@ -22,7 +22,7 @@ the left-right time resolution dropped to 0.52 ns.
     \includegraphics[width=0.8\textwidth]{figures/LRCorrelation.png}
     \caption[Event times for left and right PMTs of time-of-flight detector]
     {Fine times for left and right PMT events, taken separately, of the time-of-flight 
-        detector as recovered by our software CFD algorithm. The times plotted are referenced
+        detector as recovered by our software \gls{CFD} algorithm. The times plotted are referenced
         to the start of each event waveform, which varied by several ns event-to-event.
         Thus the spread from 35-
         55 ns depends on where the digitizer initiated the waveform for each

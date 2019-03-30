@@ -1,44 +1,42 @@
-\makeglossaries
+\makenoidxglossaries
+
+\GlsXtrEnablePreLocationTag{\textit{~}}{\textit{~}}
+\renewcommand{\GlsXtrFormatLocationList}{\textit}
 
 \newglossaryentry{DOM}
 {
     name={DOM},
-    description={The \textbf{D}ispersive \textbf{O}ptical \textbf{M}odel, a phenomenological optical-model framework for extracting nuclear structure and reaction information from experimental data.},
-    sort={DOM}
+    description={The Dispersive Optical Model, a phenomenological framework for
+    extracting nuclear structure and reaction information from experimental data},
 }
 
 \newglossaryentry{optical potential}
 {
     name={optical potential},
-    description={A complex potential used to approximate the microscopic nuclear many-body problem. Incident nucleons scatter off the potential in analogy to the refraction and absorption of light in optical media.  In both cases, the real component of the potential determines elastic scattering, and the imaginary component determines inelastic scattering.},
-    sort={DOM}
+    description={A complex potential used to approximate the microscopic nuclear many-body problem. Incident nucleons scatter off the potential in analogy to the refraction and absorption of light in optical media.  In both cases, the real component of the potential determines elastic scattering, and the imaginary component determines inelastic scattering},
 }
 
-\newglossaryentry{nucleon self-energy}
+\newglossaryentry{self-energy}
 {
     name={nucleon self-energy},
-    description={A complex, non-local mathematical object that describes the interaction of a
+    description={
+        A complex, non-local mathematical object that describes the interaction of a
         nucleon with another body (typically a nucleus) via an infinite sum of relevant Feynman 
         diagrams. If the nucleon self-energy is known in a given system, a multitude of other 
         important physics quantities (scattering amplitudes, the mean free path, the level density) 
-        can be extracted. The DOM asserts a link between the optical potential and the nucleon self-
-        energy through the subtracted dispersion relation \ref{SubtractedDispersion}, enabling 
-        phenomenological constraints on solutions of the nuclear many-body 
-        problem. See \Gls{Dyson Equation}, \Gls{optical potential}, \Gls{DOM}},
-    sort={DOM}
+        can be extracted. The DOM links the optical potential and the nucleon
+        self-energy, enabling a phenomenological approach for extracting
+        information about the nuclear many-body problem
+    },
 }
 
-\newglossaryentry{Dyson Equation}
+\newglossaryentry{Dyson equation}
 {
-    name={Dyson Equation},
-    description={A self-consistent equation that relates the dressed propagator $G$ to the free
-        propagator $G_{0}$ and the \Gls{nucleon self-energy}, $\Sigma$:
-        \begin{equation}
-            G = G_{0} + G_{0} \Sigma G
-        \end{equation}
-        The equation can be expressed pictorally via Feynman diagrams (shown in
-        \ref{DysonEquation}).},
-    sort={DOM}
+    name={Dyson equation},
+    description={A self-consistent relationship between the dressed propagator $G$, the free
+        propagator $G_{0}$, and the irreducible nucleon self-energy, $\Sigma^{*}$ (shown in
+        Eq. \ref{DysonEquation}). The equation can be expressed pictorally
+        via Feynman diagrams (shown in Fig. \ref{DysonEquationDiagram})},
 }
 
 \newglossaryentry{inverse kinematics}
@@ -49,8 +47,7 @@
         scattering particle (e.g., protons or $\alpha$-particles).
         By reversing the usual kinematics of scattering,
         reactions can be studied on unstable nuclei that
-    cannot be made into a fixed target.},
-    sort={experiment}
+    cannot be made into a fixed target},
 }
 
 \newglossaryentry{TUNL}
@@ -58,7 +55,6 @@
     name={TUNL},
     description={The Triangle Universities Nuclear Laboratory, the site of our neutron \el\ 
         measurements on \snTwelve\ and \snFour},
-    sort={experiment}
 }
 
 \newglossaryentry{LANSCE}
@@ -66,7 +62,6 @@
     name={LANSCE},
     description={The Los Alamos Neutron Science Center, the site of our neutron \tot\ measurements on
     \oSixEight, \niEightFour, and \snTwelveFour},
-    sort={experiment}
 }
 
 \newglossaryentry{WNR}
@@ -74,7 +69,6 @@
     name={WNR},
     description={Weapons Neutron Research facility at LANSCE, site of a spallation neutron source
     useful for \tot\ measurements},
-    sort={experiment}
 }
 
 \newglossaryentry{PSD}
@@ -82,7 +76,6 @@
     name={PSD},
     description={Pulse-shape discrimination, a technique for differentiating between detector events
     caused by neutrons, heavy ions, and $\gamma$ rays},
-    sort={experiment}
 }
 
 \newglossaryentry{TOF}
@@ -90,7 +83,6 @@
     name={TOF},
     description={Time-of-flight. Measuring neutron TOF from a pulsed source is a common
     neutron energy determination technique},
-    sort={experiment}
 }
 
 \newglossaryentry{CFD}
@@ -98,7 +90,6 @@
     name={CFD},
     description={Constant-fraction discrimination, a technique for determining event timestamps
     independent of the pulse amplitude of the signal},
-    sort={experiment}
 }
 
 \newglossaryentry{LED}
@@ -106,21 +97,18 @@
     name={LED},
     description={Leading-edge discrimination, where event timestamps are assigned according to the
     time the leading edge of the signal crosses a fixed threshold},
-    sort={experiment}
 }
 
 \newglossaryentry{ADC}
 {
     name={ADC},
     description={Analog-to-digital converter, a device that digitally records the integral of an 
-    incident signal over a window specified by the user},
-    sort={experiment}
+    incident electrical signal over a window specified by the user},
 }
 
 \newglossaryentry{TDC}
 {
     name={TDC},
     description={Time-to-digital converter, a device that digitally records the timestamp of an
-    incident signal according to a threshold specified by the user},
-    sort={experiment}
+    incident electrical signal according to a threshold specified by the user},
 }
