@@ -356,7 +356,7 @@ employed in the subsequent analysis.
 
 \section{Connection to Experimental Observables}
 
-\subsection{Elastic and inelastic nucleon scattering}
+\subsection{Elastic and inelastic nucleon scattering} \label{ConnectionToScattering}
 For nucleon-nucleus scattering, the momentum basis is a natural choice. The scattering amplitude can be directly calculated using the
 reducible self-energy $\Sigma$\footnotemark:
 \footnotetext
@@ -526,19 +526,29 @@ and the discrete single-particle energy levels can be calculated by diagonalizin
 Hamiltonian.
 
 \section{Parameterization of the Potential}
-The functions used to parameterize the optical potential
+As discussed earlier in this chapter, the irreducible self-energy is composed of both real and
+imaginary parts that govern elastic and inelastic processes, respectively. If the real part is
+broken into a static component $\Sigma_{s}$ with no energy dependence and a dynamic part
+$\Sigma_{d}$ with energy dependence, the self-energy reads:
+\begin{equation} \label{SelfEnergyBreakdown}
+    \Sigma^{*}(\alpha,\beta;E) =  \Sigma_{s}(\alpha,\beta) + 
+    \Sigma_{d}(\alpha,\beta;E) +
+    \operatorname{Im}(\Sigma^{*}(\alpha,\beta;E))\\
+\end{equation}
+No confusion should arise between $\Sigma$, the reducible self-energy introduced in Section
+\ref{ConnectionToScattering}, and the static and dynamic real
+irreducible self-energy components $\Sigma_{s}$ and $\Sigma_{d}$ of this equation.
+To parameterize the real and imaginary terms, functional forms
 are selected to conform with general physical intuition about the nuclear
 many-body problem and past experience with optical potentials. Accordingly,
 the self-energy should be, \textit{non-local}, \textit{complex}, and
 \textit{dispersively correct}.
-Before detailing the full parameterization,
-a few standard mathematical forms need to be introduced. In this section, the free variables that
-are fitted to data during the DOM procedure are denoted in a \textbf{bold
-typeface}. In the basic functional
-forms of the next subsection, these variables are not labeled with numbers,
-but in the following subsections, the bolded
-variables are assigned numbers to facilitate comparison with the
-list of parameter values of Appendix \ref{DOMParameters}.
+Before the full parameterization is provided,
+a few standard mathematical forms need to be introduced. In this section, the free parameters that
+are fitted to data during the DOM procedure are \textbf{denoted in bold}.
+After the basic functional forms are introduced, all bolded
+free parameters are assigned numbers to facilitate comparison
+with the list of parameter values of Appendix \ref{DOMParameters}.
 
 \subsection{Functional forms}
 We use two standard form factors
@@ -554,7 +564,8 @@ and the nuclear surface (a derivative of the Woods-Saxon shape):
     \end{split}
 \end{equation}
 $\bm{R}$ is the nuclear radius, calculated as $\bm{R} = \bm{r_{0}}A^{\frac{1}{3}}$, with $A$ the total number of
-nucleons in the nucleus. The diffuseness term $\bm{a}$ determines how quickly the potential reaches zero.
+nucleons in the nucleus. The diffuseness term $\bm{a}$ determines how quickly the potential tends to
+zero outside the nuclear volume.
 The sign of the potential is such that the Woods-Saxon form
 provides an attractive interaction.
 To approximate the non-locality, equivalent local potentials \cite{Mahaux1991}
@@ -580,9 +591,9 @@ where
 and $\Theta(X)$ is the Heaviside step function. 
 
 We are now ready to give the full parameterization. The parameterization for symmetric nuclei
-is simpler, as the same potential is used for protons and neutrons. For asymmetric systems, we
-introduce a handful of asymmetry-dependent additional terms, described after the symmetric 
-potential form is presented. All calculations are performed non-relativistically
+is simpler as the same potential is used for protons and neutrons. For asymmetric systems, we
+introduce a handful of asymmetry-dependent additional terms.
+All calculations are non-relativistic
 with a first-order relativistic correction and do not explicitly account for
 nucleon excitations (e.g., the $\Delta$ resonance). Accordingly, the potential
 is not expected to be valid above
@@ -593,7 +604,7 @@ which we used during fitting.
 The energy-independent real part of the self-energy consists of a nonlocal Hartree-Fock and
 a spin-orbit component (plus a local Coulomb term if the nucleon in question is a proton):
 \begin{equation}
-    \operatorname{Re}({\Sigma}_{s}(r,r')) =
+    \Sigma_{s}(r,r') =
     \Sigma_{HF}(r,r')+V_{so}(r,r')+\delta(r-r')\times V_{C}(r).
 \end{equation}
 \begin{figure}[tb]
@@ -646,7 +657,8 @@ nuclear surface:
 \end{equation}
 The leading constant $\left(\frac{\hbar}{m_{\pi}c}\right)^{2}$ is taken to be 2.0 fm$^{2}$
 \cite{MahzoonPhDThesis}.
-The energy-\textit{dependent} part of the real component of the potential is generated
+The energy-\textit{dependent} part of the real component of the potential,
+$\operatorname{Re}(\Sigma_{\Delta}(\alpha,\beta;E))$, is generated
 using the imaginary component of the potential, according to the dispersion relation (Eq.
 \ref{SubtractedDispersionRelation}). Figure \ref{EnergyDependence} shows the
 energy-dependent behavior of the dispersively-generated real part.
@@ -656,7 +668,7 @@ This completes the parameterization of the real component.
 The imaginary part of the potential is comprised of independent surface and volume terms
 both above and below the Fermi surface:
 \begin{equation}
-    \operatorname{Im}({\Sigma(r,r',E)}) =
+    \operatorname{Im}({\Sigma^{*}(r,r',E)}) =
     \operatorname{Im}({\Sigma_{vol}^{\pm}(r,r',E)})
     + \operatorname{Im}({\Sigma_{sur}^{\pm}(r,r',E)}),
 \end{equation}
@@ -682,6 +694,30 @@ where the volume and surface components are:
         terms.
     }
     \label{ImaginaryRadialDependence}
+\end{figure}
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/EnergyDependence.png}
+    \caption[Energy-dependent forms of the imaginary and real-dispersive parts of the potential]
+    {
+        Typical energy dependence of the imaginary part and the
+        dispersion-relation-generated energy-dependent real part of the
+        neutron optical potential are shown for \caForty.
+    }
+    \label{EnergyDependence}
+\end{figure}
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/VolumeIntegral.png}
+    \caption[Volume integral of the imaginary part of the potential]
+    {
+        Volume integrals of imaginary part of the
+        neutron optical potential are shown for \caForty\ for the relevant $LJ$
+        quantum numbers. At this energy, there are
+        significant contributions from both the surface- and volume-associated
+        terms.
+    }
+    \label{VolumeIntegral}
 \end{figure}
 The terms labeled with $+$ determine the potential above $\epsilon_{F}$, and the terms labeled
 with $-$ determine the potential below $\epsilon_{F}$. Note that in this equation, the same
@@ -724,31 +760,6 @@ energy-dependence of the dispersive correction to the real part of the
 potential. For comparison to other models and to compare the potential between
 nuclei, the volume integral the potential is the most useful and an example 
 for neutrons in \caForty\ is shown in Fig. \ref{VolumeIntegral}.
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/EnergyDependence.png}
-    \caption[Energy-dependent forms of the imaginary and real-dispersive parts of the potential]
-    {
-        Typical energy dependence of the imaginary part and the
-        dispersion-relation-generated energy-dependent real part of the
-        neutron optical potential are shown for \caForty.
-    }
-    \label{EnergyDependence}
-\end{figure}
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/VolumeIntegral.png}
-    \caption[Volume integral of the imaginary part of the potential]
-    {
-        Volume integrals of imaginary part of the
-        neutron optical potential are shown for \caForty\ for the relevant $LJ$
-        quantum numbers. At this energy, there are
-        significant contributions from both the surface- and volume-associated
-        terms.
-    }
-    \label{VolumeIntegral}
-\end{figure}
-
 This completes the parameterization of the potential for symmetric nuclei.
 
 \subsection{Parameterization of asymmetry dependence}
@@ -760,18 +771,14 @@ parameterization presented above. For example, the fit of \caEight\ in
 \cite{MahzoonPhDThesis} used over sixty unique parameters. Such an abundance of
 parameters risks overfitting, which can hamper interpretation and predictive power.
 To reduce this risk, in this analysis we allowed only a select handful of parameters
-to differ between neutrons and protons. We embedded asymmetry-dependence with a linear form:
-\begin{equation}
-    X_{asymm} = \bm{X}\times\frac{N-Z}{A}
-\end{equation}
-
-Of the ten free parameters used for the real potential in the symmetric parameterization above,
+to differ between neutrons and protons. Of the ten free parameters used for the real potential
+in the symmetric parameterization above,
 only the depth of the central potential,
 $\bm{V_{1}}$ from Eq. \ref{RealVolume}, is allowed to vary with asymmetry:
 \begin{equation}
     \bm{V_{1}} \Rightarrow \begin{cases}
-        \bm{V_{1}} + \bm{V_{asymm}}\times\frac{N-Z}{A} & \text{for protons}\\
-        \bm{V_{1}} - \bm{V_{asymm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
+        \bm{V_{1}} + \bm{V_{asym}}\times\frac{N-Z}{A} & \text{for protons}\\
+        \bm{V_{1}} - \bm{V_{asym}}\times\frac{N-Z}{A} & \text{for neutrons}\\
     \end{cases}
 \end{equation}
 Of the nineteen free parameters used for the imaginary potential in the asymmetric parameterization
@@ -780,20 +787,20 @@ $\bm{A_{5}^{\pm}}$ and $\bm{A_{7}^{\pm}}$ from Eqs. \ref{ImagVolume} and \ref{Im
 are allowed to vary with asymmetry:
 \begin{equation}
     \bm{A_{5}^{\pm}} \Rightarrow \begin{cases}
-        \bm{A_{5}^{\pm}} + \bm{A_{vol, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for protons}\\
-        \bm{A_{5}^{\pm}} - \bm{A_{vol, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
+        \bm{A_{5}^{\pm}} + \bm{A_{vol, asym}^{\pm}}\times\frac{N-Z}{A} & \text{for protons}\\
+        \bm{A_{5}^{\pm}} - \bm{A_{vol, asym}^{\pm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
     \end{cases}
 \end{equation}
 \begin{equation}
     \bm{A_{7}^{\pm}} \Rightarrow \begin{cases}
-        \bm{A_{7}^{\pm}} + \bm{A_{sur, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for protons}\\
-        \bm{A_{7}^{\pm}} - \bm{A_{sur, asymm}^{\pm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
+        \bm{A_{7}^{\pm}} + \bm{A_{sur, asym}^{\pm}}\times\frac{N-Z}{A} & \text{for protons}\\
+        \bm{A_{7}^{\pm}} - \bm{A_{sur, asym}^{\pm}}\times\frac{N-Z}{A} & \text{for neutrons}\\
     \end{cases}
 \end{equation}
 There should be no confusion between $\bm{A_{5,7}^{\pm}}$ and $A$, the total number of nucleons. 
-With these 4 additional asymmetric imaginary terms, the total number of
+With these four additional asymmetric imaginary terms, the total number of
 free parameters used for
-fitting asymmetric nuclei in the present work comes to 34: 11 real, 23 imaginary.
+fitting asymmetric nuclei in the present work comes to thirty-four: eleven real, twenty-three imaginary.
 
 \section{Computational Considerations}
 As with any high-dimensional optimization problem, the fitter must be vigilant
@@ -812,16 +819,16 @@ experimental data is part science, part art: fits should deviate as little as po
 experimental values but also be aesthetically acceptable to the eye of the fitter.
 Thus the preconceptions of the fitter play a major role in the definition of the
 potential forms, the starting values of the parameters, and the conclusion that a fit is ``good
-enough'' to stop fitting. In addition, for an extrapolation from a
+enough'' to stop fitting. For an extrapolation from a
 fit to be well-justified, the fitted potential should be physically reasonable throughout its 
 domain and each parameter used in the fit should be well-constrained by the data.
 
 To conclude this chapter, we briefly mention a few preconceptions
 that guided our expectations on how the nuclear potential should look. Based on
-countless optical model analyses over the last century, the Woods-Saxon radius
+countless optical model analyses over the last fifty years, the Woods-Saxon radius
 parameters $\boldmath{r_{0}}$ and diffuseness parameters $\boldmath{a}$
 were expected to be 1.1-1.2
-\femto\meter\ and 0.6 \femto\meter, respectively. As non-local behavior is at
+\femto\meter\ and 0.5-0.7 \femto\meter, respectively. As non-local behavior is at
 least partially associated with Pauli-exclusion-principle arguments, our fitted
 non-localities $\boldmath{\beta}$
 are expected to stay between 0.5-1.5 \femto\meter, commensurate with the size of the
