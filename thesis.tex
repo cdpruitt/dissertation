@@ -46,6 +46,7 @@
 \usepackage{booktabs}
 \usepackage{dcolumn}
 \usepackage[lofdepth,lotdepth]{subfig} % for aligned subfigures in appendices
+\usepackage{wrapfig}
 
 \newcommand*{\alignUnderEnDash}[1]{%
     \multicolumn{1}{r@{}}{\llap{\makebox[widthof{--}][c]{#1}}}
@@ -379,14 +380,14 @@
 
     \newcommand{\sectionbreak}{\clearpage}
 
-    \chapter{Experimental Data Used\protect\\ to Constrain DOM Potentials}
+    \chapter{Experimental Data Used to Constrain DOM Potentials}
     \input{\textDirectory/dataSets}
 
     \chapter{Parameter Values of DOM Potentials}
     \input{\textDirectory/parameters}
 
     \chapter{Visualization of DOM Fit Results}
-    %\input{\textDirectory/fits}
+    \input{\textDirectory/fits}
 
     \chapter*{Physical Constants}
     \input{\textDirectory/units}

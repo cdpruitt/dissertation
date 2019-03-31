@@ -120,13 +120,13 @@ indicates deviation from the mean-field picture due to short-range correlations 
 even in very light nuclear systems (e.g., $^{4}He$)
 and are associated with the so-called EMC Effect that affects the quark distribution in nucleons 
 \cite{Hen2012, Arrington2012, CLAS2019}.
-Tensor-force interactions in neutron-proton pairs are thought to be the dominant source of 
-SRCs \cite{Subedi2008}. Accordingly, in symmetric nuclei like \cTwelve\ and \caForty, the
+Tensor-force interactions in neutron-proton pairs are thought to be a dominant source of 
+SRCs \cite{Subedi2008}. Thus in symmetric nuclei like \cTwelve\ and \caForty, the
 high-momentum content is expected to be nearly the same for protons and neutrons, whereas in
 asymmetric nuclei like \pbEight, the minority nucleon species is expected to have a larger
-high-momentum tail in the momentum distribution. In \cite{C12HighMomentum}, the \cTwelve\ proton and
-neutron momentum distributions showed that ~10\% of the total nucleon density
-lies above 270 \mega\electronvolt\per{c}.
+high-momentum tail in the momentum distribution. In \cite{Rohe2004}, the \cTwelve\ proton and
+neutron momentum distributions showed that ~10\% of the nucleon density
+has momentum above 270 \mega\electronvolt\per{c}.
 From our DOM fits, we calculate values of [insert ca40 momentum for p/insert ca40 momentum for n]\%
 for protons and neutrons respectively, in line with the expectation that the high-momentum content
 should increase slightly as one moves to higher A.
@@ -192,7 +192,7 @@ overestimation of the RMS charge radius (see Fig. \ref{O16ChargeDensityDistribut
 As with \caForty\ and \pbEight, (e,e'p) cross sections have been measured on \oSix. These data
 provide direct access to the momentum distribution of bound nucleons and are thus a critical test
 for the validity of our fits. Figure \ref{O16eep} presents the results of a calculation of (e,e'p)
-cross sections from the DWEEPY code \cite{DWEEPY} that uses the DOM potential and partial waves as input.
+cross sections from the DWEEPY code \cite{Atkinson2018, Giusti2011} that uses the DOM potential and partial waves as input.
 It is important to note that these data were not used in the fitting of the DOM potential for \oSix
 and thus they give an indication of how well the DOM potential represents the underlying bound-state
 physics.
@@ -231,11 +231,21 @@ were allowed to vary.
 Mention neutron skin and \neEight-\oEight charge density distribution.
 
 \section{Results for \niEightFour}
-
+Unlike \caFortyEight, both \niEight\ and \niFour\ have partially-occupied neutron shells in the
+independent-particle-model picture. Both 
 \subsection{Results for \niEight}
 \subsection{Results for \niFour}
 
 \section{Results for \snTwelveFour}
+Of the isotopic systems studed in this treatment, \snTwelveFour\ was the least well-characterized by
+experimental data. Our new neutron \tot\ and \el\ measurements provide a sizable fraction
+of available nucleon scattering data on \snTwelveFour\ from 1-200 \mega\electronvolt. Due to the
+lack of data, the Sn DOM fits presented here are the least well-constrained of all the fits
+presented with the possible exception of \niFour. Still, the structural information exctracted from
+our fits on \snTwelveFour\ largely comports with the trends seen in the other isotopic systems and
+may be useful for extrapolating properties of the doubly-magic $^{100}$Sn and $^{132}$Sn. As
+mid-shell nuclei, the Sn isotopes exhibit deformation and help provide important information
+about deviations from the shell model outside shell closures. 
 \subsection{Results for \snTwelve}
 \subsection{Results for \snFour}
 
@@ -276,7 +286,71 @@ test for the validity of the DOM treatment.
 \subsection{Neutron skins sensitive to shell structure}
 - too little data fixing the imaginary surface below. Difficulty in separating the imaginary surface
 below and imaginary volume below, especially for lighter nuclei (Ni and lower).
+\begin{table}[tb]
+    \caption[Neutron skins extracted from DOM analysis]
+    {
+    Neutron skins extracted from DOM analysis. The skins are calculated as the difference between the
+    proton and neutron point distribution root-mean-square (RMS) radii and thus do not include the
+    nucleon-size form factor. The full calculated matter distributions for protons and
+    neutrons for each nucleus are available in Appendix \ref{DOMVisualization}. 
+    }
+    \label{NeutronSkins}
+    \centering
+    \begin{tabular}{c c c c}
+        \toprule
+        Isotope & Proton $r_{rms}$ & Neutron $r_{rms}$ & Neutron skin\\
+        \midrule
+        \oSix & & & \\
+        \oEight & & & \\
+
+        \caForty & & & \\
+        \caEight & & & \\
+        
+        \niEight & & & \\
+        \niFour & & & \\
+
+        \snTwelve & & & \\
+        \snFour & & & \\
+
+        \pbEight & & & \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \subsection{Depletion essential for recovering high-momentum content}
+\begin{table}[tb]
+    \caption[High momentum content extracted from DOM analysis]
+    {
+        High momentum content as extracted from DOM analysis. For protons and neutrons for each
+        nucleus under study, the nucleon density distribution in momentum-space is calculated and
+        the fraction of the density distribution above 270 \mega\electronvolt/c is
+        tabulated. For comparison, \cite{Rohe2004} reported $\approx10\%$ high momentum content for
+        \cTwelve. The full momentum-space matter distributions for protons and
+        neutrons for each nucleus are available in Appendix \ref{DOMVisualization}. 
+    }
+    \label{HighMomentumContent}
+    \centering
+    \begin{tabular}{c c c c}
+        \toprule
+        Isotope & Proton $p_{>270}$ & Neutron $p_{>270}$ & p/n Ratio\\
+        \midrule
+        \oSix & & & \\
+        \oEight & & & \\
+
+        \caForty & & & \\
+        \caEight & & & \\
+
+        \niEight & & & \\
+        \niFour & & & \\
+
+        \snTwelve & & & \\
+        \snFour & & & \\
+
+        \pbEight & & & \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \subsection{Overestimation of RMS charge radius}
 \subsection{Need for full covariance analysis}
 
