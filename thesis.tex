@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside,draft]{book}
+\documentclass[12pt,twoside]{book}
 \usepackage{emptypage} % should remove blank page headers and footers
 \usepackage{titlesec}
 \usepackage{amsmath} % lots of math functions
@@ -20,7 +20,7 @@
 \usepackage{amssymb} % AMS symbol package
 \usepackage{amsthm}  % AMS symbol package
 \usepackage[symbols,toc]{glossaries} % makeglossaries
-\usepackage[postdot]{glossaries-extra} % for listing the word “page(s)” in the glossary entries
+%\usepackage[postdot]{glossaries-extra} % for listing the word “page(s)” in the glossary entries
 \usepackage{glossary-mcols}
 \usepackage{afterpage} % very useful for formating...
 \usepackage{setspace}
@@ -48,6 +48,9 @@
 \usepackage{dcolumn}
 \usepackage[lofdepth,lotdepth]{subfig} % for aligned subfigures in appendices
 \usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{tablefootnote}
+\usepackage{makecell}
 %\usepackage{etoolbox}
 %\usepackage[subfigure]{tocloft}
 
@@ -69,6 +72,7 @@
 }
 
 \newcolumntype{N}{>{\centering\arraybackslash}m{1.3in}}
+\newcolumntype{M}{>{\centering\arraybackslash}m{1.1in}}
 \newcolumntype{G}{>{\centering\arraybackslash}m{0.7in}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}m{0.45in}}
 
@@ -350,7 +354,7 @@
 \caAughtEight, \niEightFour, \snTwelveFour, \pbEight}}\label{DOMResults}
 \input{\textDirectory/DOMResults}
 
-\chapter{Conclusions}
+\chapter{Conclusions} \label{conclusion}
 \input{\textDirectory/conclusion}
 
 \clearpage %needed this or for some reason the header writes appendix for the last chapter...
@@ -413,18 +417,18 @@
     \fancyhead[RO]{\MakeUppercase{Appendix \thechapter: \ \leftmark}} %Right odd header
     \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
-    \chapter{Isotopic Composition of Enriched Samples}
+    \chapter{Isotopic Composition of Enriched Samples} \label{SampleComposition}
     \input{\textDirectory/composition}
 
     \newcommand{\sectionbreak}{\clearpage}
 
-    \chapter{Experimental Data Used to Constrain DOM Potentials}
+    \chapter{Experimental Data Used to Constrain DOM Potentials} \label{DOMDataSets}
     \input{\textDirectory/dataSets}
 
-    \chapter{Parameter Values of DOM Potentials}
+    \chapter{Parameter Values of DOM Potentials} \label{DOMParameters}
     \input{\textDirectory/parameters}
 
-    \chapter{Visualization of DOM Fit Results}
+    \chapter{Visualization of DOM Fit Results} \label{DOMVisualization}
     \input{\textDirectory/fits}
 
     \chapter*{Physical Constants}
@@ -449,6 +453,7 @@
     \titlerule
 ] % after-code
 
-\printnoidxglossary[sort=word]
+%\printnoidxglossary[sort=word]
+\printglossary
 
 \end{document}

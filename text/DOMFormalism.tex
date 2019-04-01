@@ -43,7 +43,7 @@ a direct application of Huygens principle:
     \end{split}
 \end{equation}
 The integrand of Eq. \ref{PropagatorDerivation} is referred to as the
-``single-particle propagator'', 
+``single-particle \gls{propagator}'', 
 denoted $G(r, r'; t-t_{0})$ in the time domain,
 as it determines how the wavefunction of a single particle
 propagates over time. Crudely speaking, the propagator can be interpreted as the
@@ -525,9 +525,11 @@ kinetic energy operator $\hat{T}$:
     \end{split}
 \end{equation}
 and the discrete single-particle energy levels can be calculated by diagonalizing the
-Hamiltonian.
+Hamiltonian. It should be noted that while previous DOM treatments have
+calculated binding energies after fitting was complete, the present DOM treatment is the first to
+explicitly include the binding energy as part of the fitting process.
 
-\section{Parameterization of the Potential}
+\section{Parameterization of the Potential} \label{PotentialParameterization}
 As discussed earlier in this chapter, the irreducible \gls{self-energy} is composed of both real and
 imaginary parts that govern elastic and inelastic processes, respectively. If the real part is
 broken into a static component $\Sigma_{s}$ with no energy dependence and a dynamic part
@@ -847,15 +849,6 @@ imaginary surface and imaginary volume terms, and this separation may not be phy
 meaningful anyway. These general trends comport with the expectation
 that low-lying excitations (surface phonons and collective modes) and
 two-particle-one-hole excitations should be responsible for most surface imaginary strength.
-
-%TCS affected by HF parameters, spin orbit, imaginary above
-%RCS affected by imaginary above, HF parameters
-%ECS affected by HF parameters, spin orbit, imaginary above
-%APower affected by HF parameters, spin orbit,  imaginary above
-%Charge Density affected by HF parameters, imaginary below
-%Levels affected by HF parameters, spin orbit,
-%Spectral functions affected by HF parameters, imaginary below
-%RMSRadii affected by HF parameters, imaginary below
 
 %Physical intuition about scattering data:
 %- the low-angle ECS/APower data are sensitive to the imaginary strength above

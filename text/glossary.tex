@@ -1,7 +1,9 @@
-\makenoidxglossaries
+%\makenoidxglossaries
 
-\GlsXtrEnablePreLocationTag{\textit{~}}{\textit{~}}
-\renewcommand{\GlsXtrFormatLocationList}{\textit}
+\makeglossaries
+
+%\GlsXtrEnablePreLocationTag{\textit{~}}{\textit{~}}
+%\renewcommand{\GlsXtrFormatLocationList}{\textit}
 
 \newglossaryentry{DOM}
 {
@@ -111,4 +113,34 @@
     name={TDC},
     description={Time-to-digital converter, a device that digitally records the timestamp of an
     incident electrical signal according to a threshold specified by the user},
+}
+
+\newglossaryentry{GDG}
+{
+    name={GDG},
+    description={Gate-and-delay generator, a device used to generate
+    variable-width logic gates for analog signal processing}
+}
+
+\newglossaryentry{propagator}
+{
+    name={single-particle propagator},
+    description={a mathematical object (specifically, a Green's function) that dictates the 
+    evolution of a single-particle state per the Sch\"odinger equation}
+}
+
+\newglossaryentry{LDM}
+{
+    name={LDM},
+    description={Liquid Drop Model. An early, physically-intuitive model that treats the
+    nucleus as a charged drop of nuclear fluid}
+}
+
+\newglossaryentry{finite-size corrections}
+{
+    name={finite-size correction},
+    description={Any of a series of corrections that account for the
+    non-zero size of scattering targets used in cross section measurements,
+    including flux attenuation, angular uncertainty in the scattering path, and
+    multiple scattering}
 }
