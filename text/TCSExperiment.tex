@@ -80,7 +80,7 @@ Phillips1980, Foster1971}.
 
 Traditionally, \tot\ measurements have relied on analog electronics for processing and
 recording events, techniques that suffer from a large per-event deadtime of
-up to several $\upmu$s. For a state-of-the-art intermediate-energy \tot\ measurement
+up to several \micro\second. For a state-of-the-art intermediate-energy \tot\ measurement
 with dozens or hundreds of energy bins, achieving statistical uncertainty at the
 level of 1\% requires a thick sample to attenuate a sizable fraction of the
 incident neutron flux.
@@ -137,10 +137,10 @@ NeuLAND\cite{NeuLAND}.
 \end{figure}
 
 Figure \ref{TOFDetectorDisassembled} shows a TOF detector used in one
-of our neutron \tot\ measurements. A 2 inch x 2 inch x 1 inch block of BC-400 fast
+of our neutron \tot\ measurements. A 2-inch x 2-inch x 1-inch block of BC-400 fast
 plastic scintillator is coupled to two transparent
-BC-800 adiabatic lightguides with RTV rubberized adhesive. The 2 inch x 2 inch face is perpendicular
-to the beam and the 1 inch dimension is along the beam dimension. These components were encased
+BC-800 adiabatic lightguides with RTV rubberized adhesive. The 2-inch x 2-inch face is perpendicular
+to the beam and the 1-inch dimension is parallel to the beam. These components were encased
 in an aluminum structural housing. On the distal end of the lightguides, Hamamatsu 1668
 photomultiplier tubes were connected with optical grease and enclosed by
 $\upmu$-metal shielding, used to prevent external magnetic fields from affecting photoelectrons.
@@ -310,8 +310,8 @@ permanent magnet deflects all charged particles from the beam path,
 allowing only neutrons and gamma rays to reach our samples. Neutron flux can be
 adjusted by the user with a pair of a X and Y shutters upstream of the
 experimental vault. Based on beam divergence
-simulations, the beam was collimated to 0.200'' at  the entrance to the
-experimental vault using steel donuts with a total thickness of 24'' .
+simulations, the beam was collimated to 0.200 inch at the entrance to the
+experimental vault using steel donuts with a total thickness of 24 inch.
 To reduce (but not eliminate) the $\gamma$-ray component of the beam,
 a $\frac{1}{2}$-inch plug of Hevimet (90\% W, 6\% 
 Ni, 4\% Cu by weight) was inserted at the upstream end of the
@@ -329,12 +329,12 @@ detector. Figure \ref{BeamlineDownstream} shows the same area, but looking
 downstream from the monitor detector.
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.4\textwidth]{figures/ExperimentalSetup.png}
+    \includegraphics[height=0.7\textheight]{figures/ExperimentalSetup.png}
     \caption[Layout of the 15R beamline at the WNR facility at LANSCE]
     {Layout of the 15R beamline at the WNR facility at LANSCE, with our
         experimental equipment indicated toward the bottom of the flight path.
         After a permanent magnet sweeps charged particles from the beam, neutrons and
-        $\gamma$-rays are collimated to a 0.200'' beam en route to the
+        $\gamma$-rays are collimated to 0.200 inch en route to the
         detectors used in the experiment. Samples are cycled into and out of beam
         using a linear actuator with a period of 150 seconds. Times-of-flight (TOFs) are
         determined by the TOF detector and used to calculate neutron energy.
@@ -367,7 +367,7 @@ downstream from the monitor detector.
 \end{figure}
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/UpstreamFromTOFDetector.jpg}
+    \includegraphics[width=0.9\textwidth]{figures/UpstreamFromTOFDetector.jpg}
     \caption[Overview of \tot\ experimental setup in the 15R beamline]
     {Upstream view of \tot\ experimental setup in the 15R beamline. In the foreground is the
         TOF detector (the veto detector is not pictured here). In the background, the sample
@@ -395,8 +395,8 @@ achievable for \tot\ measurements (see Fig. \ref{BeamStructure}).
 \end{figure}
 Proton pulse trains, called ``macropulses'', are delivered to the tungsten target at 120 Hz.
 Each macropulse consists of ~350 individual proton pulses, called
-``micropulses'', spaced 1.8 
-$\upmu$s apart. Each micropulse consists of a single proton packet $<$1 ns wide when it 
+``micropulses'', spaced 1.8 \micro\second\ apart.
+Each micropulse consists of a single proton packet $<$1 \nano\second\ wide when it 
 arrives at the tungsten target that generates gamma rays and neutrons within a tight
 temporal-spatial range. As neutrons from this micropulse travel along the beam path, 
 high-energy neutrons separate in time from lower-energy neutrons so that neutron
@@ -468,17 +468,18 @@ digitizer in two complementary modes, referred to as ``DPP mode'' and ``Waveform
 mode''. In DPP mode, triggers were initiated by the digitizer's onboard
 peak-sensing firmware. For each trigger, several quantities were recorded: the trigger 
 timestamp, two charge integrals over the detected peak with different
-integration ranges (32 ns for the short integral, 100 ns for the long integral),
+integration ranges (32 \nano\second\ for the short integral, 100 \nano\second\ for
+the long integral),
 and a 96-ns portion of the raw digitized waveform, referred to as a ``wavelet''.
-The timestamp was stored as two components: a 48-bit timestamp with 2 ns
-resolution, and 10-bit ``fine time'' within the 2 ns coarse time bin period.
+The timestamp was stored as two components: a 48-bit timestamp with 2 \nano\second resolution,
+and 10-bit ``fine time'' within the 2 \nano\second\ coarse time bin period.
 DPP mode was used for the vast majority of the 
 experiment and accounts for $\approx$99\% of the total data volume. In waveform mode, 
 the digitizer performs no peak-sensing and was externally triggered. Upon 
-triggering, the trigger timestamp and a very long wavelet (60 $\upmu$s) 
+triggering, the trigger timestamp and a very long wavelet (60 \micro\second) 
 were recorded. While waveform mode data accounts for only $\approx$1\% of the total data, 
 the instantaneous data rate is much higher than in DPP 
-mode because hundreds of $\upmu$s of consecutive waveform samples are 
+mode because hundreds of \micro\second\ of consecutive waveform samples are 
 stored. Roughly once every three seconds, the digitizer was switched to 
 waveform mode for one macropulse, then switched back to DPP mode as quickly as
 possible (within 10-40 ms, depending on run configuration). When the buffer for
