@@ -359,23 +359,23 @@
 
 \clearpage %needed this or for some reason the header writes appendix for the last chapter...
 
-%\titleformat{\chapter}[display]
-%{\bfseries}
-%{\parindent 0pt \centering
-%    \thickhrulefill\quad
-%    \scshape Chapter \thechapter
-%    \quad \thickhrulefill
-%}
-%{1.0ex}
-%{
-%    \singlespacing \scshape \Large \centering
-%    \titlerule
-%    \vspace{1ex}
-%} % before-code
-%[
-%    \vspace{1ex}
-%    \titlerule
-%] % after-code
+\titleformat{\chapter}[display]
+{\bfseries}
+{\parindent 0pt \centering
+    \thickhrulefill\quad
+    \scshape Chapter \thechapter
+    \quad \thickhrulefill
+}
+{1.0ex}
+{
+    \singlespacing \scshape \Large \centering
+    \titlerule
+    \vspace{1ex}
+} % before-code
+[
+    \vspace{1ex}
+    \titlerule
+] % after-code
 
 \fancyhead{} %clears the header
 \fancyhead[RO]{\MakeUppercase{\leftmark}} %Right odd header
