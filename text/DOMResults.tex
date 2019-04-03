@@ -11,18 +11,16 @@ local approach
 (outlined in chapter \ref{DOMFormalism}) and lay the groundwork for a comprehensive DOM treatment 
 across the chart of nuclides.
 
-Beginning with \caForty, the a few highlights from our new analyses of
-\caAughtEight\ and \pbEight\ are compared to the previous
+Beginning with \caForty, results from our new analyses of
+\caAughtEight\ are compared to the previous
 DOM analyses of \cite{MahzoonPhDThesis} and 
-\cite{Atkinson2018}. Next, results on \oSixEight, \niEightFour, and \snTwelveFour\ are
-presented and compared to the local treatments of \cite{Charity2006, Mueller2011} where appropriate. 
-Last, general trends are identified across
+\cite{Atkinson2018}. Highlights from our results on \oSixEight, \niEightFour, \snTwelveFour,
+and \pbEight\ are then presented; a complete picture of the fits on these nuclei
+is reserved for Appendix \ref{DOMVisualization}. Last, general trends are identified across
 all nine nuclei and successes and deficiencies of the present DOM treatment are pointed out.
 A complete list of experimental data used to constrain the fits is provided in Appendix
 \ref{DOMDataSets}. The best-fit parameter values for each nucleus are given in Appendix
-\ref{DOMParameters}. Finally, complete visualizations of the experimental data used to constrain
-the data, DOM predictions for these data, and structural information extracted from the DOM fits are
-provided in Appendix \ref{DOMVisualization}.
+\ref{DOMParameters}.
 
 \section{Results for \caAughtEight}
 As doubly-closed, mid-A nuclei, \caAughtEight\ are heavy enough for both density functional
@@ -37,137 +35,328 @@ isotopes, optical models have been applied to
 \caAughtEight\ more than almost any other nuclei. Thanks to the
 great deal of high-quality \caAughtEight\ 
 elastic and inelastic nucleon scattering data, quasi-free scattering data, and elastic electron
-scattering data are available, \caAughtEight are ideal
+scattering data are available, \caAughtEight\ are ideal
 candidates to test the DOM approach. To orient the
 reader and facilitate a comparison to previous DOM treatments, the \caAughtEight\ fit results are
 presented in greater detail than are the fit results on \oSixEight, \niEightFour,
-\snTwelveFour, and \pbEight presented later in subsequent sections.
+\snTwelveFour, and \pbEight\ presented in later sections.
 
 \subsection{Results for \caForty}
-As with previous DOM treatments of \caForty \cite{MahzoonPhDThesis}, the present fit
+As with previous DOM treatments of \caForty\ \cite{MahzoonPhDThesis}, the present fit
 quickly converged on proton and neutron elastic and inelastic scattering data from 10-200
-\mega\electronvolt\ (shown in Fig. \ref{CaElasticReproduced}). Because the \caForty\ proton \rxn\ 
+\mega\electronvolt\ (shown in Figs. \ref{CaProtonElasticReproduced} and
+\ref{CaNeutronElasticReproduced}). Because the \caForty\ proton \rxn\ 
 has been
 measured up to 200 \mega\electronvolt, the energy-dependence of the imaginary volume potential, 
 $W_{vol}^{+}$, was well-constrained, expediting the fitting process
-and lending confidence to the quality of our fit \ref{CaReactionReproduced}. 
+and lending confidence to the quality of our fit. Inelastic scattering data for
+protons and neutrons on \caForty\ are shown in Figs. \ref{Ca40ProtonInelastic}
+and \ref{Ca40NeutronInelastic}. 
 
-[insert comments about bound-state data fitting]
-- table with spectroscopic factors of valence states
-- table with particle numbers
-
-In Figure \ref{s1Depletion}, is clear that without $\approx$30\%
-depletion of the proton 1\sOne\ shell, the charge density at the core of
+Table \ref{Ca40ParticleNumber} shows the nucleon occupancy associated with each
+set of quantum numbers $LJ$ as calculated from our \caForty\ fit. We see
+slightly less depletion of the proton 1\sOne\ and 0\dThree\ occupancy than the
+treatments of \cite{MahzoonPhDThesis, Mahzoon2017}, but there is qualitative
+agreement. In both treatments, the correct total proton and neutron numbers were
+achieved within 1\% of the real values. In Figure \ref{s1Depletion}, is clear
+that without $\approx$30\%
+depletion of the proton 0\sOne\ and 1\sOne\ shells, the charge density at the core of
 \caForty\ would be too high,
-a characteristic failure of mean-field models that do not account for this depletion. 
-
+a characteristic failure of mean-field models that do not account for depletion. 
 The spectral functions of \caForty\ nucleons that 
-we extract from the fit (Fig. \ref{Ca40SpectralFunctions}) show significant occupation depletion and 
-spectral peak broadening compared 
-to the mean-field expectation, in keeping with (p,2p) measurements \cite{LiverpoolCa40}.
+we extract from the fit (Fig. \ref{Ca40SpectralFunctions})
+show spectral peak broadening compared 
+to the mean-field expectation, in keeping with (e,e'p) and (p,2p) measurements
+\cite{Jacob1966, Jacob1973}.
+
+\begin{table}[tb]
+    \caption[\caForty\ proton and neutron occupancies from our DOM analysis]
+    {
+        \caForty\ proton and neutron occupancies by orbital angular momentum
+        $L$ and total angular momentum $J$ from our DOM analysis. While
+        most of the particle occupancy resides in states completely
+        filled in an independent-particle-model (0\sOne, 0\pThree, 0\pOne, 0\dFive, 0\dThree,
+        and 1\sOne\ for \caForty), 5-10\% of the occupancy appears in
+        higher-angular-momentum states.
+    }
+    \centering
+    \begin{tabular}{c c c c c c c c c c c}
+        \toprule
+        LJ & \sOne & \pThree & \pOne & \dFive & \dThree & \fSeven & \fFive &
+        \gNine & \gSeven & Total\\
+        \midrule
+        $\pi_{occ}$ & & & & & & & & & & \\
+        $\nu_{occ}$ & & & & & & & & & & \\
+        \bottomrule
+        \label{Ca40ParticleNumber}
+    \end{tabular}
+\end{table}
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/CaElasticReproduced.png}
-    \caption[Nucleon differential cross sections of \caForty: DOM predictions and experimental data]
+    \includegraphics[width=0.85\textwidth]{figures/ca40_protonElastic.png}
+    \caption[Proton elastic scattering cross sections on \caForty: DOM predictions and experimental data]
     {
-        Experimental \caForty\ proton and neutron differential elastic cross sections
-        (panels (a) and (c)) and analyzing powers (panels (b) and (d)) are shown as points, and 
-        predictions from the DOM \caForty\ fit of these data are shown as lines. For visibility, the 
+        Proton elastic scattering cross sections on \caForty: experimental data
+        and results from DOM fit. Experimental data are shown as points and
+        calculated values from the DOM fit of these data are shown as lines.
+        Differential cross sections (\el) are shown in the left panel and
+        analyzing powers are shown in the right panel. For visual clarity, the 
         data have been offset along the ordinate axis so that the highest-energy data
-        appear at the top of the graphs. References to all experimental data are listed
+        appear at the top of the figures. Data are colored according to the
+        energy ranges shown in the left panel. References to all experimental data are listed
         in Appendix \ref{DOMDataSets}.
     }
-    \label{CaElasticReproduced}
+    \label{CaProtonElasticReproduced}
 \end{figure}
-
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/CaReactionReproduced.png}
-    \caption[Nucleon \rxn\ of \caForty: DOM predictions and experimental data]
+    \includegraphics[width=0.85\textwidth]{figures/ca40_neutronElastic.png}
+    \caption[Neutron elastic scattering cross sections on \caForty: DOM predictions and experimental data]
     {
-        Experimental \caForty\ proton \rxn\ data (panel (a)) and neutron \tot\ and \rxn\ data (panel
-        (b)) are shown as points, and 
-        predictions from the DOM \caForty\ fit of these data are shown as lines.
-        References to all experimental data are listed in Appendix \ref{DOMDataSets}.
+        Neutron elastic scattering cross sections on \caForty: experimental data
+        and results from DOM fit. Experimental data are shown as points and
+        calculated values from the DOM fit of these data are shown as lines.
+        Differential cross sections (\el) are shown in the left panel and
+        analyzing powers are shown in the right panel. For visual clarity, the 
+        data have been offset along the ordinate so that the highest-energy data
+        appear at the top of the figures. Data are colored according to the
+        energy ranges shown in the left panel. References to all experimental data are listed
+        in Appendix \ref{DOMDataSets}.
     }
-    \label{CaReactionReproduced}
+    \label{CaNeutronElasticReproduced}
 \end{figure}
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/Ca40SpectralFunctions.png}
-    \caption[Spectral peak broadening in \caForty: DOM prediction and experimental (p,2p) data]
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.82\textwidth]{figures/ca40_protonInelastic.png}
+        \caption[Proton \rxn\ of \caForty: DOM predictions and experimental data]
+        {
+            Proton reaction cross sections on \caForty: experimental data and
+            DOM predictions. Experimental data are shown as points and 
+            calculated values from our DOM fit of these data are shown
+            by the line. References to all experimental
+            data are listed in Appendix \ref{DOMDataSets}.
+        }
+        \label{Ca40ProtonInelastic}
+    \end{subfigure}\vspace{16pt}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.82\textwidth]{figures/ca40_neutronInelastic.png}
+        \caption[Neutron \rxn\ and \tot\ of \caForty: DOM predictions and experimental data]
+        {
+            Neutron reaction and total cross sections on \caForty: experimental data and
+            DOM predictions. Experimental data are shown as points and 
+            calculated values from our DOM fit of these data are shown
+            by the line. References to all experimental
+            data are listed in Appendix \ref{DOMDataSets}.
+        }
+        \label{Ca40NeutronInelastic}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ca40_SPLevels.png}
+    \caption[Single-particle levels in \caForty]
     {
-        Spectral peak broadening is observed in nucleon knock-out experiments, a 
-        consequence of increased imaginary strength in the self-energy at energies far from the
-        Fermi energy. Panel (b) shows the hole spectral functions for
-        protons in \caForty\ with orbital angular momentum $L$ and
-        total angular momentum $J$ as predicted by our DOM fit.
-        The peak location and general shape of the hole spectral functions we recover match those
-        extracted from analysis of experimental (p,2p) data of \cite{LiverpoolCa40}.
+        Single-particle energy levels in \caForty\ for protons and neutrons.
+        In each panel, calculated energies are shown on the left and
+        experimental energies are shown on the right. References to all
+        experimental data used to estimate these energy levels are
+        listed in Appendix \ref{DOMDataSets}.
+    }
+    \label{Ca40SPLevels}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ca40_protonSpectralFunctions.png}
+    \caption[Proton spectral functions in \caForty]
+    {
+        Proton spectral functions by orbital angular momentum $L$ and total
+        angular momentum $J$ in \caForty, as generated by our DOM fit.
+        In deeply-bound shells,
+        spectral peak broadening is obvious, a consequence of increased
+        imaginary strength in the self-energy at energies far from the
+        Fermi energy. The shape and location of the \textit{neutron} spectral
+        functions in \caForty\ are similar except for a Coulomb shift. The
+        general shape and degree of occupation depletion associated with our spectral
+        functions agree with results of (p,2p) and (e,e'p) scattering
+        and former DOM treatments \cite{MahzoonPhDThesis}.
     }
     \label{Ca40SpectralFunctions}
 \end{figure}
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/s1Depletion.png}
-    \caption[Depletion of proton \sOne\ in \caForty essential to reproduce charge density
-    distribution]
-    {
-        The depletion of the proton \sOne\ in \caForty\ is essential
-        for reproducing the charge density
-        distribution as calculated from experimental elastic electron scattering \cite{DeVries1987}.
-    }
-    \label{s1Depletion}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/ca40_chargeDensity.png}
+        \caption[Proton single-particle density distributions in \caForty]
+        {
+            Charge density distribution of \caForty, as generated
+            by our DOM fit (in red) and as generated from experimental
+            elastic electron scattering \cite{DeVries1987}. No error bars are
+            reported in the compilated of \cite{DeVries1987}; we show an
+            arbitrary uncertainty range of 1\% (blue shaded region).
+        }
+        \label{Ca40ChargeDensity}
+    \end{subfigure}\vspace{16pt}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/ca40_protonLJDensityDist.png}
+        \caption[Proton single-particle density distributions in \caForty]
+        {
+            Proton single-particle density distributions in \caForty, as generated
+            by our DOM fit. Only the \sOne\ has density at the origin, which
+            means that to recover the correct charge density at the origin, the
+            occupation of the proton 0\sOne\ and 1\sOne\ in \caForty\ must be
+            deplying by 20-30\%. That the bound LJs are significantly
+            depleted indicates the importance of
+            accounting for short- and long-range correlations when extracting
+            structural information.
+        }
+        \label{s1Depletion}
+    \end{subfigure}
 \end{figure}
 
-From the hole spectral functions, the momentum-space distribution for protons and neutrons was
-calculated (shown in Fig. \ref{Ca40Momenta}). The amount of ``high-
-momentum content'' in these distributions is of great interest, as significant high-momentum content 
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/ca40_protonLJMomentumDistIntegral.png}
+        \caption[Proton momentum distribution in \caForty]
+        {
+            Integrated proton momentum distribution in \caForty, as generated
+            by our DOM fit. For the slightly-occupied proton \fSeven, \fFive, and
+            \gNine\ and higher shells (which are completely vacant in an
+            independent-particle model), a significant fraction of their
+            density lies above 270 $\mega\electronvolt/\text{c}$ (indicated by
+            the shaded gray region). The fraction of
+            proton high-momentum content is slightly lower than that of neutrons
+            (figure below), a consequence of Coulomb repulsion slightly reducing
+            proton density in the core. The fraction of proton density with
+            momentum above 270 $\mega\electronvolt/\text{c}$ is listed.
+        }
+        \label{Ca40ProtonMomentumDistInt}
+    \end{subfigure}\vspace{16pt}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/ca40_neutronLJMomentumDistIntegral.png}
+        \caption[Neutron momentum distributions in \caForty]
+        {
+            Integrated neutron momentum distribution in \caForty, as generated
+            by our DOM fit. The slightly-occupied neutron \fSeven, \fFive, and
+            \gNine\ shells make a significant contribution to the high-momentum
+            content above 270 $\mega\electronvolt/\text{c}$ (indicated by the
+            shaded gray region), as is true for the protons in the figure at top
+            of the page. The fraction of neutron density with
+            momentum above 270 $\mega\electronvolt/\text{c}$ is listed.
+        }
+        \label{Ca40NeutronMomentumDistInt}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ca40_protonVolumeIntegrals.png}
+    \caption[Volume integral of proton imaginary potential in \caForty]
+    {
+        Volume integral of proton imaginary potential in \caForty. Above the
+        Fermi energy, the surface-associated and volume-associated strength
+        are clearly identifiable around 40 MeV and above 100 MeV,
+        respectively. Near the Fermi energy, the potential is symmetric.
+        Below the Fermi energy, the reduction of phase space reduces the
+        magnitude of imaginary strength, but even at very negative energies,
+        there is some strength. The small -- but signficant -- occupation at
+        very negative energies make an outsized contribution to the total
+        binding energy.
+    }
+    \label{Ca40ProtonVolumeIntegral}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ca40_matterDensity.png}
+    \caption[Proton and neutron matter density distributions in \caForty]
+    {
+        Proton and neutron point density distributions in \caForty, as
+        generated by our DOM fit. The RMS radii of the distributions and their
+        difference (the neutron skin) are provided. In a symmetric system like
+        \caForty, the neutron skin is expected to be slightly negative as a
+        consequence of slight reduction of proton density in the core from
+        Coulomb repulsion. The neutron skin we extract is in good agreement with
+        the previous DOM fit of \cite{MahzoonPhDThesis}.
+    }
+    \label{Ca40MatterDistribution}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/ca40_EnergyDist.png}
+        \caption[Energy density distribution for protons in \caForty]
+        {
+            Energy density distribution for protons in \caForty, as generated
+            by our DOM fit. Valence nucleons (e.g., in the proton 1\sOne\ and
+            0\dThree\ subshells in \caForty) contribute only slightly to the binding
+            energy.
+        }
+        \label{Ca40EnergyDist}
+    \end{subfigure}\vspace{16pt}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/ca40_EnergyDistIntegral.png}
+        \caption[Total energy density integral in \caForty]
+        {
+            Total energy density integral in \caForty, as generated
+            by our DOM fit. The total binding energy and binding energy per
+            nucleon are given.
+        }
+        \label{Ca40EnergyDistIntegral}
+    \end{subfigure}
+\end{figure}
+
+From the spectral functions, the momentum-space distribution for protons and neutrons was
+calculated (shown in Figs. \ref{Ca40ProtonMomentumDistInt} and
+\ref{Ca40NeutronMomentumDistInt}). The amount of ``high-
+momentum content'' of these distributions is of great interest, as significant high-momentum content 
 indicates deviation from the mean-field picture due to short-range correlations (SRCs). SRCs arise 
-even in very light nuclear systems (e.g., $^{4}He$)
-and are associated with the so-called EMC Effect that altrs the quark distribution in nucleons 
+even in very light nuclear systems (e.g., \heFour)
+and are associated with an altered quark distribution in nucleons 
 \cite{Hen2012, Arrington2012, CLAS2019}.
 Tensor-force interactions in neutron-proton pairs are thought to be a dominant source of 
 SRCs \cite{Subedi2008}. Thus in symmetric nuclei like \cTwelve\ and \caForty, the
 high-momentum content is expected to be nearly the same for protons and neutrons, whereas in
 asymmetric nuclei like \pbEight, the minority nucleon species is expected to have a larger
 high-momentum tail in the momentum distribution. In \cite{Rohe2004}, the \cTwelve\ proton and
-neutron momentum distributions showed that ~10\% of the nucleon density
-has momentum above 270 \mega\electronvolt\per{c}.
+neutron momentum distributions showed that $\approx$10\% of the nucleon density
+has momentum above roughly 270 \mega\electronvolt\per{c}.
 From our DOM fits, we calculate values of [insert ca40 momentum for p/insert ca40 momentum for n]\%
 for protons and neutrons respectively, in line with the expectation that the high-momentum content
 should increase slightly as one moves to higher A.
 
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/Ca40Momenta.png}
-    \caption[The single-particle momentum distributions in \caForty]
-    {
-        The momentum distribution of nucleons in \caForty, partitioned
-        by orbital angular momentum $L$ and total angular momentum $J$.
-    }
-    \label{Ca40Momenta}
-\end{figure}
-
-The binding energy for \caForty\ is readily calculated using Eq.
-\ref{TotalEnergyEquation}. Its radial dependence is shown in Fig. \ref{Ca40Energies} and the
+The total binding energy for \caForty\ is readily calculated using Eq.
+\ref{TotalEnergyEquation}. Its radial dependence is shown in Fig.
+\ref{Ca40EnergyDistIntegral} and the
 contributions to the binding energy from each single-particle LJ are shown in
-\ref{Ca40EnergiesByLJ}. Per our fit, even though the 0\sOne\ nucleons consitute only [insert \%
+\ref{Ca40EnergyDist}. Per our fit, even though the 0\sOne\ nucleons consitute only [insert \%
 of 0\sOne occupation] of the forty nucleons in \caForty, they provide a significant
 share of the binding
 energy ([insert binding energy \% for protons and neutrons]). At the spectral
-functions (Fig. \ref{Ca40SpectralFunction}) reveal, 0\sOne\ nucleons spend a small but significant portion of their time 
-at very negative energies ($<$-100 \mega\electronvolt), pulling the weighted average binding energy toward
-8.5 \mega\electronvolt\per{A}, the experimental binding energy for \caForty. In this
+functions (Fig. \ref{Ca40SpectralFunctions}) reveal, 0\sOne\ nucleons spend a small but significant portion of their time 
+at very negative energies ($<$-100 \mega\electronvolt), pulling the weighted average binding energy 
+closer to 8.5 \mega\electronvolt\per{A}, the experimental binding energy for \caForty. In this
 picture, it is clear why mean-field models consistently underpredict the binding energy, as they
 cannot adequately represent the nucleon-nucleon correlations associated with the long
 negative-energy tail of the spectral functions.
 
 Lastly, from the proton and neutron point distributions generated by our fit, we calculate a
-\caForty\ neutron skin for of [insert neutron skin] fermi (see Fig. \ref{Ca40MatterDistributions}). 
+\caForty\ neutron skin for of [insert neutron skin] fermi (see Fig. \ref{Ca40MatterDistribution}). 
 This is in good agreement with the skin calculated in previous DOM treatments
 \cite{MahzoonPhDThesis} and with the expectation that the neutron skin should be slightly negative in
 symmetric nuclei, a consequence of Coulomb repulsion nudging proton density toward the surface.
@@ -175,8 +364,8 @@ symmetric nuclei, a consequence of Coulomb repulsion nudging proton density towa
 \subsection{Results for \caEight}
 The recent non-local DOM treatment of Mahzoon et al. \cite{Mahzoon2017} was able
 to reproduce a wide variety of
-experimental data on \caEight\ and recovered a \caEight
-\ neutron skin of 0.249 $\pm$ 0.023 \femto\meter.
+experimental data on \caEight\ and recovered a \caEight\ neutron
+skin of 0.249 $\pm$ 0.023 \femto\meter.
 This neutron skin value is significantly higher than the 0.132 \femto\meter calculated by
 the \textit{ab initio} treatment of \cite{Hagen2016}. Mahzoon et al. found that when the 
 smaller \textit{ab initio} was forcibly applied to their fit, it disturbed the fit's
@@ -215,7 +404,34 @@ separation energy) is sufficiently low that a smoothly-varying potential will be
 approximation of the resonance structure that dictates the strength of inelastic scattering. This
 deficiency is particularly acute in the doubly-closed-shell nuclei, where the level spacing is
 larger near the Fermi energy. We expect this to be a contributing factor to the slight
-overestimation of the RMS charge radius (see Fig. \ref{O16ChargeDensityDistribution}).
+overestimation of the RMS charge radius (see Fig. \ref{o16ChargeDensity}).
+
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/o16_chargeDensity.png}
+        \caption[Proton single-particle density distributions in \oSix]
+        {
+            Charge density distribution of \oSix, as generated
+            by our DOM fit (in red) and as generated from experimental
+            elastic electron scattering \cite{DeVries1987}. No error bars are
+            reported in the compilated of \cite{DeVries1987}; we show an
+            arbitrary uncertainty range of 1\% (blue shaded region).
+        }
+        \label{o16ChargeDensity}
+    \end{subfigure}\vspace{16pt}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/o16_protonLJDensityDist.png}
+        \caption[Proton single-particle density distributions in \oSix]
+        {
+            Proton single-particle density distributions in \oSix, as generated
+            by our DOM fit.
+        }
+        \label{o16LJDensityDist}
+    \end{subfigure}
+\end{figure}
 
 As with \caForty\ and \pbEight, (e,e'p) cross sections have been measured on \oSix. These data
 provide direct access to the momentum distribution of bound nucleons and are thus a critical test
@@ -228,16 +444,16 @@ the DOM potential can be used for prediction rather than just reproduction of ex
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/O16eep.png}
-    \caption[\oSix (e,e'p) cross sections calculated by the DOM]
+    \caption[\oSix\ (e,e'p) cross sections calculated by the DOM]
     {
-        \oSix (e,e'p) cross sections calculated by the DOM (solid line) and experimental data from
+        \oSix\ (e,e'p) cross sections calculated by the DOM (solid line) and experimental data from
         \cite{Leuschner1994}.
     }
     \label{O16eep}
 \end{figure}
 
-As with \caForty, we see that \oSix has a slightly negative neutron skin: [insert o16 neutron skin]
-\femto\meter as extracted from our optimized fit.
+As with \caForty, we see that \oSix\ has a slightly negative neutron skin: [insert o16 neutron skin]
+\femto\meter\ as extracted from our optimized fit.
 
 \subsection{Results for \oEight}
 No experimental \oEight\ charge density distribution was available, so we generated
@@ -304,22 +520,45 @@ test for the validity of the DOM treatment.
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/Pb208Momenta.png}
-    \caption[The single-particle momentum distributions in \pbEight]
-    {
-        The momentum distribution of nucleons in \pbEight, partitioned
-        by orbital angular momentum $L$ and total angular momentum $J$.
-    }
-    \label{Pb208Momenta}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/pb208_protonLJMomentumDistIntegral.png}
+        \caption[Proton momentum distribution in \pbEight]
+        {
+            Integrated proton momentum distribution in \pbEight, as generated
+            by our DOM fit. The fraction of proton high-momentum content is
+            slightly higher than that of neutrons
+            (figure below), a consequence of the enhancement in short-range
+            corerlations (SRCs) experienced by the minority nucleon in an
+            asymmetric system. The fraction of proton density with
+            momentum above 270 $\mega\electronvolt/\text{c}$ is listed.
+        }
+        \label{pb208ProtonMomentumDistInt}
+    \end{subfigure}\vspace{16pt}
+    \begin{subfigure}[c]{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/pb208_neutronLJMomentumDistIntegral.png}
+        \caption[Neutron momentum distributions in \pbEight]
+        {
+            Integrated neutron momentum distribution in \pbEight, as generated
+            by our DOM fit. The fraction of neutron density with
+            momentum above 270 $\mega\electronvolt/\text{c}$ is listed.
+        }
+        \label{pb208NeutronMomentumDistInt}
+    \end{subfigure}
+    \label{pb208Momenta}
 \end{figure}
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/Pb208MatterDistribution.png}
-    \caption[The proton and neutron point distributions in \pbEight]
+    \includegraphics[width=\textwidth]{figures/pb208_matterDensity.png}
+    \caption[Proton and neutron matter density distributions in \pbEight]
     {
-        DOM calculation of the matter distributions of protons and neutrons and in \pbEight,
-        partitioned by orbital angular momentum $L$ and total angular momentum $J$.
+        Proton and neutron point density distributions in \pbEight, as
+        generated by our DOM fit. The RMS radii of the distributions and their
+        difference (the neutron skin) are provided. The neutron skin of
+        neutron-rich systems like \pbEight are expected to be strongly correlated
+        with the size of the density-dependence of the symmetry energy, $L$.
     }
     \label{Pb208MatterDistribution}
 \end{figure}
@@ -330,26 +569,18 @@ Table \ref{NeutronSkins} presents the neutron skins we extracted from our
 optimized DOM fits on all nuclei under study. As anticipated both the total
 degree of asymmetry and the specific shell structure affect the
 calculated skins.
-\begin{table}[tb] \label{NeutronSkins}
-    \caption[Neutron skins extracted from DOM analysis]
-    {
-    Neutron skins extracted from DOM analysis. The skins are calculated as the difference between the
-    proton and neutron point distribution root-mean-square (RMS) radii and thus do not include the
-    nucleon-size form factor. The full calculated matter distributions for protons and
-    neutrons for each nucleus are available in Appendix \ref{DOMVisualization}. 
-    }
-    \label{NeutronSkins}
+\begin{table}[H]
     \centering
     \begin{tabular}{c c c c}
         \toprule
-        Isotope & Proton $r_{rms}$ & Neutron $r_{rms}$ & Neutron skin\\
+        Isotope & proton $r_{rms}$ & neutron $r_{rms}$ & $\Delta_{rms}$\\
         \midrule
         \oSix & & & \\
         \oEight & & & \\
 
         \caForty & & & \\
         \caEight & & & \\
-        
+
         \niEight & & & \\
         \niFour & & & \\
 
@@ -358,14 +589,32 @@ calculated skins.
 
         \pbEight & & & \\
         \bottomrule
+        \label{NeutronSkins}
     \end{tabular}
+    \caption[Neutron skins extracted from DOM analysis]
+    {
+        Neutron skins ($\Delta_{rms})$) extracted from DOM analysis. The skins are calculated as the difference between the
+        proton and neutron point distribution root-mean-square (RMS) radii and thus do not include the
+        nucleon-size form factor. The full calculated matter distributions for protons and
+        neutrons for each nucleus are available in Appendix \ref{DOMVisualization}. 
+    }
 \end{table}
 
-\subsection{Depletion essential for recovering high-momentum content}
+\subsection{High-momentum content and deep imaginary strength}
+When examined in momentum space, the proton and neutron particle density distributions
+are expected to show significant enhancement of nucleon density at higher momentum
+than would be expected in an independent-particle shell model
+\cite{RoheHabilitation}. The amount of this so-called
+"high-momentum content" has been investigated by knockout reactions
+\cite{Rohe2004, RoheHabilitation} and shown to be significant even for very
+light nuclei such as \cTwelve ($\approx10\% >
+270 \mega\electronvolt/\text{c}$). Table \ref{HighMomentumContent} shows the
+percentage of the proton and neutron densities above $270
+\mega\electronvolt/\text{c}$ extracted from our DOM fits.
 \begin{table}[tb]
-    \caption[High momentum content extracted from DOM analysis]
+    \caption[High-momentum content extracted from DOM analysis]
     {
-        High momentum content as extracted from DOM analysis. For protons and neutrons for each
+        High-momentum content as extracted from DOM analysis. For protons and neutrons for each
         nucleus under study, the nucleon density distribution in momentum-space is calculated and
         the fraction of the density distribution above 270 \mega\electronvolt/c is
         tabulated. For comparison, \cite{Rohe2004} reported $\approx10\%$ high momentum content for
@@ -376,7 +625,7 @@ calculated skins.
     \centering
     \begin{tabular}{c c c c}
         \toprule
-        Isotope & Proton $p_{>270}$ & Neutron $p_{>270}$ & p/n Ratio\\
+        Isotope & proton $p_{>270}$ & neutron $p_{>270}$ & p/n Ratio\\
         \midrule
         \oSix & & & \\
         \oEight & & & \\
@@ -394,24 +643,54 @@ calculated skins.
         \bottomrule
     \end{tabular}
 \end{table}
+Our results comport with the expectation that heavier nuclei should have a
+higher fraction of high-momentum nucleons, a consequence of their deeper central
+potentials. Because the particle density of the nuclear core saturates around
+0.16 $\femto\meter^{-3}$, it is sensible that the
+high-momentum content fraction would grow only slowly with increasing A once
+the core has reached this nucleon density (around \cTwelve-\oSix).
+For the symmetric nuclei \oSix\ and \caForty, it is expected that the proton
+high-momentum content should be slightly less than the neutron high-momentum
+content due to a slight reduction in proton particle density at the nuclear
+core, and that this effect should increase with increasing Z. For highly asymmetric
+nuclei (e.g., \snFour, \pbEight), it is expected that the \textit{minority
+nucleon species} should have a \textit{larger fraction of high-momentum
+content} \cite{Subedi2008, Hen2012}, a consequence of the enhanced
+short-range correlations for these nucleons. All of these expectations are borne
+out in the momentum distributions we extract, bolstering confidence in the
+quality of our fits.
+
+It should be noted that the high-momentum tail of the
+momentum-space distributions are very sensitive to the imaginary
+strength at very deep energies. This is perfectly sensible, as the most deeply-bound
+nucleons should have the highest-momentum. This deep
+negative-energy realm is perhaps the least well-characterized part of our fit,
+as our only direct constraint is the experimental binding energy. Because the
+binding energy does not differentiate between protons and neutrons, we have
+very limited sensitivity to the isovector-dependence of the potential in
+this area. As a result, the relative high-momentum content between protons and
+neutrons that we extract should only be taken qualitatively, though the absolute
+high-momentum content values from our fits agree well with results from
+\cite{Rohe2004, RoheHabilitation}.
 
 \subsection{Overestimation of RMS charge radius}
 All of the charge density distributions extracted from our fits showed a slight
 excess of charge density on the extreme tail of the distributions (e.g., [insert
 fermi] for \caForty). As the RMS charge radius is most sensitive to
 contributions from the tail, this excess led to chronic overestimation of the RMS
-charge radius of 0.05-0.10 \femto\meter across nuclei.
+charge radius of 0.05-0.10 \femto\meter\ across nuclei.
 We found that density in the extreme tail of the matter distributions was very
 sensitive to the amount of imaginary strength just below the Fermi energy
-($W_{sur}^{i}$); in fits with a high weight for the RMS charge radius,
-$W_{sur}^{i}$ would tend toward zero or even cross into negative territory, an
+($W_{sur}^{-}$); in fits with a high weight for the RMS charge radius,
+$W_{sur}^{-}$ would tend toward zero or even cross into negative territory, an
 unphysical result. Especially in the lighter systems we studied, our fits routinely
 moved all the negative-energy imaginary strength into $W_{vol}^{-}$.
 We had no difficulties fitting $W_{sur}^{+}$, largely due to the
 availability of proton \rxn\ and neutron \tot\ data from 20-50 MeV.
-Interestingly, the volume integral of the imaginary strength (an integration over the
-radial form factors) shows the imaginary potential to be largely symmetric
-about the Fermi energy within roughly 30 MeV (see Fig. \cite{CaVolumeIntegral}),
+Interestingly, the volume
+integral of the imaginary strength (an integration over the
+radial form factors) of our optimized fits shows the imaginary potential to be largely symmetric
+about the Fermi energy within roughly 30 MeV (see Fig. \ref{Ca40ProtonVolumeIntegral}),
 in keeping with the expectations of \cite{Mahaux1991} and many other theoretical
 treatments. Whether the partitioning
 of the negative-energy imaginary strength into $W_{vol}^{-}$ over $W_{sur}^{-}$
@@ -438,9 +717,6 @@ It should be noted that while we produce RMS charge radii that are a tad high
 compared to experimental measurements, we had good success recovering the shape
 of the full charge density distribution profiles. As the neutron skin is the
 \textit{difference} between proton and neutron matter radii, any systematic
-issues that affect both the neutron and proton matter distributions will not
+issues that affect both the neutron and proton matter distributions should not
 affect our neutron skin values.
-
-\subsection{Need for full covariance analysis}
-
 \afterpage{\clearpage}
