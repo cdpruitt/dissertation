@@ -326,9 +326,11 @@ test for the validity of the DOM treatment.
 
 \section{General trends}
 \subsection{Neutron skins sensitive to shell structure}
-- too little data fixing the imaginary surface below. Difficulty in separating the imaginary surface
-below and imaginary volume below, especially for lighter nuclei (Ni and lower).
-\begin{table}[tb]
+Table \ref{NeutronSkins} presents the neutron skins we extracted from our
+optimized DOM fits on all nuclei under study. As anticipated both the total
+degree of asymmetry and the specific shell structure affect the
+calculated skins.
+\begin{table}[tb] \label{NeutronSkins}
     \caption[Neutron skins extracted from DOM analysis]
     {
     Neutron skins extracted from DOM analysis. The skins are calculated as the difference between the
@@ -394,6 +396,51 @@ below and imaginary volume below, especially for lighter nuclei (Ni and lower).
 \end{table}
 
 \subsection{Overestimation of RMS charge radius}
+All of the charge density distributions extracted from our fits showed a slight
+excess of charge density on the extreme tail of the distributions (e.g., [insert
+fermi] for \caForty). As the RMS charge radius is most sensitive to
+contributions from the tail, this excess led to chronic overestimation of the RMS
+charge radius of 0.05-0.10 \femto\meter across nuclei.
+We found that density in the extreme tail of the matter distributions was very
+sensitive to the amount of imaginary strength just below the Fermi energy
+($W_{sur}^{i}$); in fits with a high weight for the RMS charge radius,
+$W_{sur}^{i}$ would tend toward zero or even cross into negative territory, an
+unphysical result. Especially in the lighter systems we studied, our fits routinely
+moved all the negative-energy imaginary strength into $W_{vol}^{-}$.
+We had no difficulties fitting $W_{sur}^{+}$, largely due to the
+availability of proton \rxn\ and neutron \tot\ data from 20-50 MeV.
+Interestingly, the volume integral of the imaginary strength (an integration over the
+radial form factors) shows the imaginary potential to be largely symmetric
+about the Fermi energy within roughly 30 MeV (see Fig. \cite{CaVolumeIntegral}),
+in keeping with the expectations of \cite{Mahaux1991} and many other theoretical
+treatments. Whether the partitioning
+of the negative-energy imaginary strength into $W_{vol}^{-}$ over $W_{sur}^{-}$
+has real significance is unclear, but it suggests that subsequent 
+analyses may need more specialized treatment in the negative-energy regime.
+
+Practically speaking, because the nuclear surface and volume overlap
+in light systems like \oSix, there is no unique best-fit for the
+negative-energy parameters. In addition, in real nuclei near the Fermi surface,
+imaginary strength should vary rapidly due to the discrete resonance structure of
+the nucleus. In this region, the optical potential corresponds quite poorly
+with reality as it can only represent a smooth average. With these
+considerations in mind, it is perhaps
+not surprising that we had trouble getting
+the negative-energy surface parameters under control. In the end, for the light systems
+discussed here (\oSixEight, \caAughtEight), we fixed $W_{sur}^{-}$ to zero for
+the final optimizations to avoid numerical problems and prevent any
+unphysical imaginary strength from arising. In our fits, the
+$W_{vol}^{-}$ term had no trouble providing imaginary strength where it was
+needed to recover correct particle numbers, charge density distributions, and,
+to some extent, binding energies.
+
+It should be noted that while we produce RMS charge radii that are a tad high
+compared to experimental measurements, we had good success recovering the shape
+of the full charge density distribution profiles. As the neutron skin is the
+\textit{difference} between proton and neutron matter radii, any systematic
+issues that affect both the neutron and proton matter distributions will not
+affect our neutron skin values.
+
 \subsection{Need for full covariance analysis}
 
 \afterpage{\clearpage}
