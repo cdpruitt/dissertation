@@ -50,10 +50,11 @@ propagates over time. Crudely speaking, the propagator can be interpreted as the
 probability that a given
 initial state will evolve into a final state according to the wave equation.
 
-To conduct practical scattering calculations, the energy-domain representation of the progapator
+To conduct practical scattering calculations, the energy-domain representation
+of the propagator
 may be more useful than the time-domain representation. Applying a Fourier transform to the propagator
-(and omitting the intermediate algebraic steps) gives us the energy-domain representation,
-and brings the mathematical structure of the propagator into focus:
+(and omitting the intermediate algebraic steps) moves us to the energy domain,
+bringing the mathematical structure of the propagator into focus:
 \begin{equation} \label{PropagatorFT}
     \begin{split}
         G(\bm{r},\bm{r'};E) & = \int_{-\infty}^{\infty}d(t-t')e^\frac{i}{\hbar}E(t-t')G(\bm{r},\bm{r'}; t-t')\\
@@ -77,13 +78,13 @@ non-interacting free particle of mass $m$ and momentum $\bm{k}$ reads:
     \delta(\bm{k}-\bm{k'})\frac{1}{E-\frac{\hbar^{2}k^{2}}{2m} + i\eta}.
 \end{equation}
 If the independent-particle model was exact and the mean-field potential could be perfectly known,
-calculating the propagation of nucleons through the nucleus would as simple as calculating
+calculating the propagation of nucleons through the nucleus would be as simple as calculating
 single-particle scattering off a potential well. Such a calculation involves little more than
 a matrix inversion of the Hamiltonian in the denominator of Eq. \ref{PropagatorFT}.
 Real nucleon-nucleus scattering involves the possibility of excitations in the nucleus from the 
 incident
 nucleon so that the wavefunction of the compound system may be
-very different from the that of the nuclear ground state.
+very different from that of the nuclear ground state.
 The single-particle propagator must include these possibilities as well.
 The propagator from the $\ket{\alpha}$ state at time $t$ to the state $\ket{\beta}$ at a later time
 $t'$ is:
@@ -148,7 +149,7 @@ creation and annihilation operators. Neither the ground-state wavefunction of th
 many-body system $\Psi^{N}_{0}$ or the full Hamiltonian $\hat{H}$ are known at this stage, but they
 are now amenable to a perturbation expansion, the subject of the next section.
 
-\subsection{Pertubation Expansion and The Dyson Equation}
+\subsection{Perturbation Expansion and The Dyson Equation}
 The full single-particle propagator $G$ can be calculated via perturbation
 expansion by starting with a non-interacting (unperturbed) propagator $G_{0}$
 and adding interaction 
@@ -617,7 +618,7 @@ a spin-orbit component (plus a local Coulomb term if the nucleon in question is 
     \caption[Radial dependence of the real part of the potential]
     {
         The local radial dependence of the real part of the neutron optical potential is shown
-        for \caForty at 50 MeV for $L=3\hbar$. The central Hartree-Fock term
+        for \caForty\ at 50 MeV for $L=3\hbar$. The central Hartree-Fock term
         is the dominant component of the real potential and has a small
         wine-bottle contribution at the nuclear core (see Eq.
         \ref{HFWBEquation}). Per Eq. \ref{RealSOEquation}, the Woods-Saxon form
@@ -762,8 +763,8 @@ the high-energy analyzing power data. Figure \ref{EnergyDependence} depicts the
 energy-dependence of the imaginary terms in the potential and the
 energy-dependence of the dispersive correction to the real part of the
 potential. For comparison to other models and to compare the potential between
-nuclei, the volume integral the potential is the most useful and an example 
-for neutrons in \caForty\ is shown in Fig. \ref{VolumeIntegral}.
+nuclei, the volume integral of the potential is the most useful. An example 
+for the neutron imaginary potential \caForty\ is shown in Fig. \ref{VolumeIntegral}.
 This completes the parameterization of the potential for symmetric nuclei.
 
 \subsection{Parameterization of asymmetry dependence}

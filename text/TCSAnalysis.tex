@@ -1,5 +1,5 @@
 \section{Timing Considerations}
-To assign correct neutron energies, the time resolution of the time-of-flight
+To assign correct neutron energies, the time resolution of the TOF
 detector is critical. Several tests and corrections were applied to improve
 timing resolution as much as possible.
 
@@ -21,7 +21,7 @@ the left-right time resolution dropped to 0.52 ns.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/LRCorrelation.png}
     \caption[Event times for left and right PMTs of time-of-flight detector]
-    {Fine times for left and right PMT events, taken separately, of the time-of-flight 
+    {Fine times for left and right PMT events, taken separately, of the TOF 
         detector as recovered by our software \gls{CFD} algorithm. The times plotted are referenced
         to the start of each event waveform, which varied by several ns event-to-event.
         Thus the spread from 35-
@@ -32,7 +32,7 @@ the left-right time resolution dropped to 0.52 ns.
 
 %\begin{figure*}
 %    \includegraphics[scale=0.3]{figures/Difference_Linear.png}
-%    \caption[Time difference between left and right PMTs of time-of-flight detector] {
+%    \caption[Time difference between left and right PMTs of TOF detector] {
 %        For all events in a diagnostic run, the time difference   
 %        between the left and right PMTs of the TOF detector is plotted.
 %        A Gaussian fit (in red) to these events reveals an 85-ps delay of the right PMT with 
@@ -72,18 +72,18 @@ the left-right time resolution dropped to 0.52 ns.
     \label{DifferenceThresholdsFit}
 \end{figure}
 
-To calculate the time-of-flight for each event, the ``starting gun'' of each
+To calculate the TOF for each event, the ``starting gun'' of each
 micropulse had to be precisely determined. All event times were first adjusted for cable and 
 electronics delay, so that each event was assigned to the correct macropulse.
 To reduce unnecessary data collection, we collected only the first \tZero, a
 logic signal, of each macropulse. 
 Using this time and the precisely-known micropulse frequency, we identified all $\gamma$ rays 
 for a given macropulse and tabulated
-the average $\gamma$ time-of-flight, as shown in Fig. \ref{GammaCorrection}.
+the average $\gamma$ TOF, as shown in Fig. \ref{GammaCorrection}.
 The uncertainty of our macropulse start time manifests as a spread in average gamma times-of-
 flight. Were the start time exactly known for each macropulse, and the
-micropulse period exactly known, the time-of-flight for each gammas should be
-exactly the same, excepting the detector time resolution. Thus, the difference between the 
+micropulse period exactly known, the TOF for each $\gamma$ ray would be
+exactly the same, ignoring the detector time resolution. Thus, the difference between the 
 average calculated gamma times-of-flight (using the imprecise macropulse start
 time) and the \textit{expected} TOF (given the TOF detector distance and speed of light)
 can be used to improve the macropulse start time. This $\gamma$-averaging
@@ -92,16 +92,16 @@ procedure was applied to all events in each macropulse (see Fig.
 period and found that its day-to-day variation had a negligible effect on the
 calculated times-of-flight (see Fig. \ref{RFTimeStudy}).
 
-After these corrections, the total time-of-flight
-resolution, taken as the FWHM of the $\gamma$-ray peak in the time-of-flight
+After these corrections, the total TOF
+resolution, taken as the FWHM of the $\gamma$-ray peak in the TOF
 spectrum, ranged from 0.60-0.90 ns over the series of \tot\ measurements. This is comparable 
 to the resolution from our digitizer-mediated Ca experiment from 2008 \cite{Shane2010},
 which used a similar $\gamma$-averaging technique. For a 100-\mega\electronvolt\
-neutron and a time-of-flight detector distance of 27 meters, an
+neutron and a TOF detector distance of 27 meters, an
 uncertainty of 0.80 ns translates to an energy resolution of $\approx$900 keV.
-For neutrons below $\approx$20 \mega\electronvolt, the time-of-flight time resolution worsens as the 
+For neutrons below $\approx$20 \mega\electronvolt, the TOF time resolution worsens as the 
 traversal time through the 1-inch thickness of the scintillator becomes non-negligible.
-However, because the time-of-flight of these neutrons is already several hundred ns or
+However, because the TOF of these neutrons is already several hundred ns or
 longer, the relative energy resolution ($\frac{\Delta E}{E}$) is
 superior at low energies. To wit, for a 5 \mega\electronvolt\ neutron with a 0.82 ns detector-traversal time and
 an inherent TOF resolution of 0.80 ns, $\Delta E$ is only 13 keV. These energy uncertainties
@@ -121,7 +121,7 @@ have been propagated through the subsequent analysis.
     \caption[Stability of the beam pick-off (\tZero) frequency during the experiment]
     {Results of a study of the micropulse frequency (\tZero) stability. The \tZero\ period used
         in the analysis was varied in 1-picosecond increments to change the
-        calculated arrival time-of-flight of events in each micropulse.
+        calculated arrival TOF of events in each micropulse.
         Within each micropulse, the FWHM of
         the time uncertainty in the $\gamma$-ray flash was tabulated. The
         variation of the $\gamma$-ray flash FWHM from varying the micropulse period was
@@ -153,10 +153,10 @@ have been propagated through the subsequent analysis.
 Precise determination of the TOF distance was done by comparing our measured \tot\ data
 for $^{\text{nat}}$C with the precisely known resonance structure from
 3-15 \mega\electronvolt\ (Fig. \ref{DistanceStudy}).
-The distance was determined as 2709$\pm$1 \centi\meter for the
-Ni and Rh run configuration and 2554 $\pm$1 \centi\meter 
-for the Sn and O run configuration. With all corrections applied, all events in the 
-time-of-flight detector channel were filtered against events in the veto detector to remove
+The distance was determined as 2709$\pm$1 \centi\meter\ for the
+Ni and Rh run configuration and 2554 $\pm$1 \centi\meter\ for
+the Sn and O run configuration. With all corrections applied, all events in the 
+TOF detector channel were filtered against events in the veto detector to remove
 events caused by charged-particles created along the flight path.
 
 \begin{figure}[tb]
@@ -184,13 +184,13 @@ The busy period following each event is referred to as the ``analytic'' or
 ``per-event'' deadtime and can be corrected for according to standard techniques \cite{Moore1980}.
 In an ideal experiment, the instantaneous flux at all times would be
 sufficiently low (and the amount of beam time available sufficiently high) that
-only very rarely would another event arrive at the time-of-flight detector while
+only very rarely would another event arrive at the TOF detector while
 a previous event was still being processed. In reality, given the low duty
 factor of the pulsed beam, the flux during each pulse must be high to achieve sufficient
 statistics over dozens or hundreds of energy bins within a few weeks of beam
 time. Given the extremely small areal density of our targets, this meant a rate
 of approximately one event per micropulse on average. Even with a flat
-time-of-flight spectrum, a sizable fraction of events would arrive in the shadow
+TOF spectrum, a sizable fraction of events would arrive in the shadow
 of the previous event's processing period, and thus be ignored by the pulse-processing firmware.
 In reality, the
 problem is far worse, as the instantaneous flux is much higher during the gamma
@@ -208,7 +208,7 @@ This logic is diagrammed in Fig. \ref{AnalogLogic}, reproduced from
 \cite{Abfalterer2001}. The fraction of T$_{0}$ signals that result in looking
 periods ($\frac{T_{0,live}}{T_{0}}$) is tabulated, as is the so-called ``analytic deadtime'', i.e. 
 the chance that the detector is busy for a given time \textit{within each looking period}.
-Time-of-flight histograms are then scaled by these
+TOF histograms are then scaled by these
 fractions to recover the true number of events per unit flux. This approach is useful if the
 analytic deadtime is commensurate with the micropulse period, as it means that
 only one event can be detected per micropulse anyway. For this approach to be successful, the
@@ -304,9 +304,9 @@ minimum time difference (the ``deadtime''), no events are recorded. A logistic
 fit (red) models the detector's deadtime response and is used to generate a
 deadtime correction. The underlying linearly-decreasing count rate (gray dashed
 line) in incorporated into the logistic model. From the fit, a mean deadtime of
-228.1 ns was extracted for the Sn and O run configurations (a similar
-procedure was used to recover a deadtime of 159.7 for the Ni and Rh
-run configurations).}
+228.1 \nano\second\ was extracted for the Sn and O run configuration (a similar
+procedure was used to recover a deadtime of 159.7 \nano\second\ for the Ni and Rh
+run configuration).}
     \label{TimeDifferenceBetweenEvents}
 \end{figure}
 
@@ -314,14 +314,15 @@ run configurations).}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/exampleDeadtimeSpectrum.png}
     \caption[Digitizer busy probability as a function of time within micropulse]
-    {Using TOF data from a typical run, the probability that a given 
-        TOF bin is ``dead'' is shown for the blank sample (dashed line) and the 
-        $^{\text{nat}}$C   
-        sample (solid line). The sharp rise at 90 ns is the response to the
-        $\gamma$-ray flash, the gradual increase from 90-245 ns is the response to
-        the arrival of high-energy neutrons, and the sharp fall at 245 ns
-        is the elapse of the $\gamma$-ray ``shadow''. Only high-energy neutrons
-        have a probability-dead exceeding 10\%.}
+    {
+        Using TOF data from a typical run, the fraction of time that a given 
+        TOF bin is ``dead'' is shown for the blank sample (red line) and the 
+        \cNat\ sample (blue line). The sharp rise at 90 \nano\second\ is the response to the
+        $\gamma$-ray flash, the gradual increase from 90-245 \nano\second\ is the response to
+        the arrival of high-energy neutrons, and the sharp fall at 245
+        \nano\second\ is the elapse of the $\gamma$-ray ``shadow''.
+        Only high-energy neutrons have a probability-dead exceeding 10\%.
+    }
     \label{ExampleDeadtimeSpectrum}
 \end{figure}
 
@@ -329,16 +330,20 @@ run configurations).}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/CorrectionEffectOnTOF.png}
     \caption[The effect of deadtime correction on a typical time-of-flight spectrum]
-    {A typical TOF spectrum from the Ni/Rh
+    {
+        A typical TOF spectrum from the Ni/Rh
         run configuration is shown, before (in blue) and after (in red) analytic
         deadtime correction. Relevant neutron energies are indicated above the spectra.
-        For this digitizer configuration, the mean deadtime was 155 ns (see Fig.
+        For this digitizer configuration, the mean deadtime was 155
+        \nano\second\ (see Fig.
         \ref{TimeDifferenceBetweenEvents} for details on mean deadtime determination).
-        Note that at 245 ns, there is an
-        obvious defect in the uncorrected spectrum is repaired in the corrected
+        Note that at 245 \nano\second, there is an
+        obvious defect in the uncorrected spectrum that is repaired in the corrected
         spectrum. The defect
-        corresponds to the elapse of the 155-ns-long deadtime ``shadow'' from the $\gamma$-ray
-        flash, which arrived at 90 ns (not shown).}
+        corresponds to the elapse of the 155-\nano\second-long deadtime
+        ``shadow'' from the $\gamma$-ray flash, which arrived at 90
+        \nano\second\ (not shown).
+    }
     \label{CorrectionEffectOnTOF}
 \end{figure}
 
@@ -351,7 +356,7 @@ any macropulse that had less than 50\% of the average event rate in either the
 flux monitor or TOF detector channel was ignored.
 
 After applying these corrections, the veto and integrated charge gates are applied to 
-all events and surviving events are populated into time-of-flight spectra (see Fig.
+all events and surviving events are populated into TOF spectra (see Fig.
 \ref{ExampleTOFSpectrum}). From these spectra, room background was subtracted
 (responsible for 0.1\% to 1\% of event rate, depending on energy)
 and events were mapped to the energy domain.
@@ -361,7 +366,7 @@ and events were mapped to the energy domain.
     \includegraphics[width=0.8\textwidth]{figures/exampleTOFSpectrum.png}
     \caption[Typical time-of-flight spectrum after timing and deadtime corrections]
     {
-        Typical time-of-flight spectra after analytic deadtime correction and
+        Typical TOF spectra after analytic deadtime correction and
         veto and integrated charge gating. A spectrum from the blank sample is shown in
         red and a spectrum for the $^{\text{nat}}$C sample is shown in blue, both from the Ni/Rh 
         experiment configuration.
@@ -380,7 +385,7 @@ It is worth mentioning two additional systematic differences between our configu
 those of previous LANSCE measurements \cite{Shane2010, Finlay1993, Abfalterer2001}, namely the
 flight path length and sample diameters. Flight path lengths of 37.70 meters, 38.14 meters, and 45
 meters were used in \cite{Finlay1993}, \cite{Abfalterer2001}, and \cite{Shane2010} respectively, 
-much longer than the 25-27 meters position of our time-of-flight detector.
+much longer than the 25-27 meters position of our TOF detector.
 Had these lengths been available for our experiment,
 it would have reduced the high-energy instantaneous neutron flux by 
 $\frac{1}{3}$, potentially affecting our results for the highest-energy neutrons. Future
