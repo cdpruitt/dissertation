@@ -1,5 +1,5 @@
-\documentclass[12pt,twoside]{book}
-%\documentclass[12pt,twoside,draft]{book}
+%\documentclass[12pt,twoside]{book}
+\documentclass[12pt,twoside,draft]{book}
 \usepackage{emptypage} % should remove blank page headers and footers
 \usepackage{titlesec}
 \usepackage{amsmath} % lots of math functions
@@ -54,6 +54,7 @@
 \usepackage{makecell}
 %\usepackage{etoolbox}
 \usepackage{subcaption}
+\usepackage{xcolor}
 
 % prevent hyphenation of uppercase words (acronyms)
 \uchyph=0
@@ -61,6 +62,13 @@
 \makeatletter
 \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3em}}
 \let\l@table\l@figure
+\makeatother
+
+\makeatletter
+\newcommand\nocaption{
+    \renewcommand\p@subfigure{}
+    \renewcommand\thesubfigure{\thefigure\alph{subfigure}}
+}
 \makeatother
 
 %\makeatletter
@@ -129,6 +137,7 @@
 \newcommand{\caEight}{\ensuremath{^{48}}C\lowercase{a}}
 \newcommand{\caAughtEight}{\ensuremath{^{40,48}}C\lowercase{a}}
 
+\newcommand{\niSix}{\ensuremath{^{56}}N\lowercase{i}}
 \newcommand{\niEight}{\ensuremath{^{58}}N\lowercase{i}}
 \newcommand{\niSixty}{\ensuremath{^{60}}N\lowercase{i}}
 \newcommand{\niOne}{\ensuremath{^{61}}N\lowercase{i}}
