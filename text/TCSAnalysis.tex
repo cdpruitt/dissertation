@@ -265,8 +265,8 @@ to by $(i-j)$ is non-negative and has physical meaning as a time bin from the pr
 micropulse.
 
 By optimizing trigger processing in digitizer firmware,
-we reduced the per-event deadtimes affecting our
-measurement ranged from 160-230 ns depending on the digitizer configuration.
+we were able to reduce the per-event deadtime to between 160-230 ns,
+depending on the digitizer configuration.
 For a 230 ns per-event deadtime, the dead-probability
 $F_{i}$ of our time bins is given in Fig.
 \ref{ExampleDeadtimeSpectrum}, showing that the probability-dead never exceeds
@@ -277,7 +277,7 @@ events detected in that bin, $N_{d}[i]$, was corrected to the \textit{true}
 number of events in that bin $N_{t}[i]$ that would have been detected in the
 absence of a per-event deadtime:
 \begin{equation} \label{DeadtimeEquation}
-    N_{t}[i] = -ln\left(\frac{1-\frac{N_{d}[i]}{M}}{(1-F_{i})\times M}\right)
+    N_{t}[i] = -ln\left[1-\frac{\frac{N_{d}[i]}{M}}{(1-F_{i})}\right]\times M
 \end{equation}
 
 \noindent
