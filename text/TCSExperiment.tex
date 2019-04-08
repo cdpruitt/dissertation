@@ -116,7 +116,7 @@ NeuLAND\cite{NeuLAND}.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/Scintillator_disassembled.jpg}
     \caption[TOF detector partially assembled]
-    {One of three TOF detectors, partially assembled, with pencil for scale.
+    {A TOF detector, partially assembled, with pencil for scale.
         The aluminum casing and Delrin phototube sleeves are at top, and the
         scintillator (beneath the beam direction arrow), lightguides, and phototubes, at
         bottom. The detector described in the text has a thinner scintillating plastic
@@ -199,9 +199,11 @@ than 1\% compared to the other samples of the same element.
             \\
             H$_{2}$$^{\text{nat}}$O & 20.00(1) & 8.92(1) & 1.2461 & 0.1107(3) & - &
             - \\
-            D$_{2}$$^{\text{nat}}$O & 20.00(1) & 8.92(1) & 1.3852 & 0.1107(3) & - &
-            - \\
-            H$_{2}$$^{18}$O & 20.00(1) & 8.92(1) & 1.3844 & 0.1107(3) & 0.20 & 99\\
+            D$_{2}$$^{\text{nat}}$O & 20.00(1) & 8.92(1) & 1.3852 & 0.1107(3) &
+            0.02 &
+            99.9 \\
+            H$_{2}$$^{18}$O & 20.00(1) & 8.92(1) & 1.3844 & 0.1107(3) & 0.20 &
+            99.9\\
             \\
             $^{58}$Ni & 7.97(3)& 8.18(2) &
             3.6438 & 0.1197(3)& 68.1 & 99.6 \\
@@ -461,7 +463,8 @@ left and right PMTs of the TOF detector were gain-matched and a
 time-matching between the left and right signals.
 
 \section{Data Acquisition} \label{DataAcquisition}
-Signals from all detectors and the sample changer were relayed to an 8-channel, 500-MHz CAEN 
+Signals from all detectors and the sample changer were relayed to an 8-channel,
+14-bit, 500-MHz CAEN 
 DT-5730
 waveform digitizer as shown in Fig. \ref{TCSLogicDiagram}. Custom software was used to run the 
 digitizer in two complementary modes, referred to as ``DPP mode'' and ``Waveform 
@@ -471,7 +474,8 @@ timestamp, two charge integrals over the detected peak with different
 integration ranges (32 \nano\second\ for the short integral, 100 \nano\second\ for
 the long integral),
 and a 96-ns portion of the raw digitized waveform, referred to as a ``wavelet''.
-The timestamp was stored as two components: a 48-bit timestamp with 2 \nano\second resolution,
+The timestamp was stored as two components: a 48-bit timestamp with 2
+\nano\second\ resolution,
 and 10-bit ``fine time'' within the 2 \nano\second\ coarse time bin period.
 DPP mode was used for the vast majority of the 
 experiment and accounts for $\approx$99\% of the total data volume. In waveform mode, 

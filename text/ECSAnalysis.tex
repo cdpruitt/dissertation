@@ -4,7 +4,7 @@ During production, runs were taken in batches of three, one each with \snTwelve,
 was already measured, the time-of-flight for elastically-scattered neutrons could
 be directly calculated and used to determine the delay from electronics and cabling.
 The timestamp of each event was thus adjusted by a fixed amount
-so that the first peak of the neutron spectrum aligned the expected
+so that the first peak of the neutron spectrum aligned with the expected
 time-of-flight. Next, background $\gamma$-ray events were separated from relevant
 neutron events by a pulse-shape discrimination analysis, shown in Fig. \ref{PHPSDPlot}.
 
@@ -62,14 +62,10 @@ normalized by the total neutron flux
 angle. Then, blank-run histograms
 were subtracted from the isotopic-run histograms to yield the neutron scattering
 events from the isotopic samples. Figure \ref{tiledAngleData} provides example 
-results. As in the previous figure, dark blue arrows mark the anticipated
-time-of-flight of the elastic scattering peak, green arrows mark elastic
-scattering from atmospheric nitrogen, and blue dashed lines mark the anticipated
-full-width-tenth-maximum (FWTM) of the elastic scattering peak.
-Inelastic scattering peaks from the first and
-second excited states are marked with light blue
-arrows. For the 4M detector and at forward angles for both detectors, the elastic and first 
-inelastic scattering peaks are closer in time and cannot be cleanly resolved. Measurements in this
+results for the 4M detector.
+For the 4M detector and at forward angles for both detectors, the elastic and first 
+inelastic scattering peaks are closer together in time and cannot be cleanly resolved.
+Measurements in this
 kinematic regime are the most challenging as the increased overlap between
 these peaks increases the uncertainty of the number of counts in the elastic
 peak. We fit the amplitudes of two Gaussian distributions to the elastic and
@@ -85,14 +81,21 @@ number of counts in the elastic peak.
     {
         Scaled event histograms showing neutron elastic scattering and first
         inelastic scattering peaks from the 4M detector for a few representative angles. The
-        histograms for isotopic-sample runs (dark gray),
-        blank-sample runs (light gray), and the difference (in red) are shown.
+        histograms for isotopic-sample runs (dark gray bottom layer),
+        blank-sample runs (light gray middle layer), and the difference (red
+        top layer) are shown.
         For each difference histogram, a double-Gaussian function
         was constructed with the centroid and width of each Gaussian fixed
         according to the expected time-of-flight for the elastic and first
         inelastic peaks and the detector resolution. The heights of each
-        Gaussian were fitted to the difference histogram and the results of the
-        fit are shown in dark blue (elastic peak) and light blue (first-inelastic peak).
+        Gaussian were fitted to the difference histogram and the fitted
+        Gaussians are shown in dark blue (elastic peak) and light blue
+        (first-inelastic peak). The blue dashed lines bracketing the
+        elastic-scattering peak depict the gates used to find the number of
+        elastic-scattering counts for the cross section calculation.
+        In the top two panels, a significant
+        contribution from neutron elastic scattering on atmospheric N$_{2}$ is
+        visible immediately after the Sn elastic scattering peak.
     }
     \label{tiledAngleData}
 \end{figure}
@@ -103,15 +106,17 @@ neutron flux (as measured by the monitor detector) to a known cross section.
 We took several reference runs using a graphite,
 a polyethylene, and a blank sample at both the beginning and end of the experiment.
 Figure \ref{ECSReferenceRuns} shows histograms for the 4M and 6M detectors for
-one set of these runs, taken at 30\textdegree in the lab frame.
-The same conventions from Fig.
+one set of these runs, taken at 30\textdegree\ in the lab frame.
+The same coloring conventions from Fig.
 \ref{tiledAngleData} are used, except that now the light blue arrows correspond to
-the elastic and first-excited states of \cTwelve. The dark gray histogram (back
+the elastic and first-excited states of \cTwelve. In addition, the anticipated
+location of the peak from neutron elastic scattering on atmospheric N$_{2}$ is
+indicated by a green arrow. The dark gray histogram (back
 histogram layer) shows the elastic and first-excited states
 of \cTwelve\ and also a broad peak from elastic scattering on H.
 After scaling for the number
 of moles in the graphite and polyethylene samples, stoichiometry, and neutron
-flux, the graphite spectrum (light gray, middle histogram later) was subtracted from the polyethylene
+flux, the graphite spectrum (light gray, middle histogram layer) was subtracted from the polyethylene
 spectrum, yielding neutron events only from elastic scattering on protons (area of
 the red histogram between the blue dashed lines). As the cross section for
 (n,p) scattering is extremely well-known, the number of counts in the
@@ -227,8 +232,9 @@ biggest effect is on the depth of the diffraction minima.
         angular uncertainty (AU) and multiple scattering (MS), shown by red
         triangles, and the other also included flux attenuation in the target
         (FA), shown as blue triangles. For our targets, the finite-size effects
-        were an order of magnitude smaller than those of
-        \ref{GussFiniteSizeEffect}, as anticipated given the size of our targets.
+        were an order of magnitude smaller
+        than those shown in Fig. \ref{GussFiniteSizeEffect},
+        as anticipated given the smaller size of our targets.
     }
     \label{finiteSizeCorrections}
 \end{figure}
@@ -281,7 +287,7 @@ our data were so small that only the first iteration was required.
 \section{Results}
 \subsection{\snTwelveFour\ \el\ at 11 \mega\electronvolt}
 Figure \ref{SnECS_11MeV} shows our final results for \snTwelveFour\
-\el\ at 11 \mega\electronvolt\ after applying the corrections above. Our data on \snFour\
+\el\ at 11 \mega\electronvolt\ after applying the corrections described above. Our data on \snFour\
 at 11 \mega\electronvolt\ are in reasonable agreement with those of Rapaport et al.
 \cite{Rapaport1980}, which were taken using a much larger enriched sample
 ($\approx\frac{1}{3}$ mol) at the University of Ohio neutron time-of-flight
