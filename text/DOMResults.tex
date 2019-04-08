@@ -4,8 +4,7 @@ this chapter are the culmination of the new \tot\ and \el\ experimental results
 (Chapters \ref{TCSAnalysis} and \ref{ECSAnalysis})
 and new computational improvements in our DOM code (Chapter \ref{DOMFormalism}).
 Previous DOM treatments have either used a
-local equivalent potential \cite{Charity2006, Mueller2011} that was unsuitable for extracting
-normalized bound-state wavefunctions or only provided results on one or
+local equivalent potential \cite{Charity2006, Mueller2011} or only provided results on one or
 two nuclei \cite{Mahzoon2017, Atkinson2018}. All nine fits detailed here use the
 same fully-non-local approach
 (outlined in chapter \ref{DOMFormalism}) and lay the groundwork for a comprehensive DOM treatment 
@@ -42,7 +41,7 @@ presented in greater detail than are the fit results on \oSixEight, \niEightFour
 \snTwelveFour, and \pbEight\ presented in later sections.
 
 \subsection{Results for \caForty}
-As with previous DOM treatments of \caForty\ \cite{MahzoonPhDThesis}, the present fit
+As with previous DOM treatments of \caForty\ \cite{MahzoonPhDThesis, Mahzoon2014}, the present fit
 quickly converged on proton and neutron elastic and inelastic scattering data from 10-200
 \mega\electronvolt\ (shown in Figs. \ref{CaProtonElasticReproduced} and
 \ref{CaNeutronElasticReproduced}). Because the \caForty\ proton \rxn\ 
@@ -278,7 +277,9 @@ to the mean-field expectation, in keeping with (e,e'p) and (p,2p) measurements
         \caForty, the neutron skin is expected to be slightly negative as a
         consequence of slight reduction of proton density in the core from
         Coulomb repulsion. The neutron skin we extract is in good agreement with
-        the previous DOM fit of \cite{MahzoonPhDThesis}.
+        the previous DOM fit of \cite{MahzoonPhDThesis}. A comparison to the
+        experimental \caForty\ charge density distribution is shown in Section
+        \ref{ca40DOMOutput} of Appendix \ref{DOMVisualization}.
     }
     \label{Ca40MatterDistribution}
 \end{figure}
@@ -322,8 +323,7 @@ high-momentum tail in the momentum distribution. In \cite{Rohe2004}, the \cTwelv
 neutron momentum distributions showed that $\approx$10\% of the nucleon density
 has momentum above roughly 270 $\mega\electronvolt/\text{c}$.
 We calculate high-momentum fractions of \textcolor{red}{15.8\% and 16.5\%}
-for protons and neutrons respectively, in line with the expectation that the high-momentum content
-should increase slightly as one moves to higher A.
+for protons and neutrons respectively.
 
 The total binding energy for \caForty\ is readily calculated using Eq.
 \ref{TotalEnergyEquation}. Its radial dependence is shown in Fig.
@@ -395,7 +395,9 @@ final optimization, we have a rather low value of $W_{vol}^{+}$ for \caEight\ co
         \caForty, the neutron skin is expected to be slightly negative as a
         consequence of slight reduction of proton density in the core from
         Coulomb repulsion. The neutron skin we extract is in good agreement with
-        the previous DOM fit of \cite{MahzoonPhDThesis}.
+        the previous DOM fit of \cite{MahzoonPhDThesis}. A comparison to the
+        experimental \caEight\ charge density distribution is shown in Section
+        \ref{ca48DOMOutput} of Appendix \ref{DOMVisualization}.
     }
     \label{Ca48MatterDist}
 \end{figure}
@@ -492,18 +494,26 @@ As with \caForty, we find that \oSix\ has a slightly negative neutron skin,
 \textcolor{red}{-0.022} \femto\meter.
 
 \subsection{Results for \oEight}
-No experimental \oEight\ charge density distribution was available, so we generated
-an approximate charge density distribution for \oEight\ by linearly scaling
-the radii and densities of the \oSix\ charge density distribution to reproduce the \oEight\ RMS charge
-radius and maintain a total charge of eight. The reported RMS charge radii of \oSix\ and \oEight\ differ by only
+For \oEight, a complete Fourier-Bessel-parameterized charge density distribution (used
+for \oSix, \caAughtEight, \niEightFour, \snTwelve, and \pbEight) was unavailable. To
+generate an approximate charge density distribution for \oEight\, we linearly
+scaled the \oSix\ charge density distribution to reproduce the \oEight-\oSix
+$\delta_{RMS}$ from \cite{DeVries1987} while maintaining a total charge of eight.
+The reported RMS charge radii of \oSix\ and \oEight\ differ by only
 0.07 fm ($\approx$2.5\%), so the \oEight\ charge density distribution
-we generated is barely distinguishable from the \oSix\ distribution. This same scaling procedure was also employed to
+we generated is barely distinguishable from the \oSix\ distribution.
+This same scaling procedure was also employed to
 generate a charge density distribution for \snTwelve, using the
-experimentally-derived \snFour\ charge density distribution. To initiate the fit, the \oSix\ best-fit parameter values
-were assigned to the \oEight\ parameter file and calculated observables were generated to compare
-with \oEight\ data. The \oSix\ optimized parameter values were moderately successful at reproducing
-the \oEight\ scattering data without further adjustment, though almost no neutron scattering data is
-available besides our newly-measured \tot. Using the raw \oSix\ parameters, the DOM predictions for
+experimentally-derived \snFour\ charge density distribution.
+
+To initiate the fit on \oEight, the \oSix\ best-fit parameter values
+were assigned to the \oEight\ parameter file and observables were calculated to compare
+with \oEight\ experimental data. The \oSix\ optimized parameter values
+were moderately successful at reproducing
+the \oEight\ scattering data without further adjustment, though almost no
+neutron scattering data was
+available for \oEight\ besides our newly-measured neutron \tot.
+Using the raw \oSix\ parameters, the DOM predictions for
 \oEight\ proton SP levels were underbound by several \mega\electronvolt\ per
 particle and the calculated particle number was too low, unsurprising
 given the insufficiency of the \oSix\ Hartree-Fock term in providing
@@ -513,7 +523,7 @@ reducing the chi-square contribution from the charge density, particle number, a
 sectors. Once a chi-square minimum had been reached with these two parameters, all other 
 parameters were allowed to vary. Our optimum fit achieved good agreement with all
 experimental \oEight\ scattering data except the 24 MeV neutron elastic scattering data
-of Grabmayr et al. \cite{Grabmayr1980}, where the DOM somewhat underestimates
+of Grabmayr et al. \cite{Grabmayr1980}, where our fit somewhat underestimates
 the differential cross section throughout its range.
 
 \begin{figure}[tb]
@@ -525,7 +535,9 @@ the differential cross section throughout its range.
         generated by our DOM fit. The RMS radii of the distributions and their
         difference (the neutron skin) are provided. Adding two neutrons to \oSix\ dramatically
         increases the neutron skin, as most of the added neutron density settles into
-        the $\nu$0\dFive\ shell, outside the \oSix\ core.
+        the $\nu$0\dFive\ shell, outside the \oSix\ core. A comparison to the
+        experimental \oEight\ charge density distribution is shown in Section
+        \ref{o18DOMOutput} of Appendix \ref{DOMVisualization}.
     }
     \label{O18MatterDistribution}
 \end{figure}
@@ -549,8 +561,11 @@ independent-particle-model picture. Accordingly, Ni isotopes have increased leve
 Fermi level and should possess significant imaginary strength in this region, impacting
 low-energy elastic and inelastic nucleon cross sections. Recently, A. Brown has outlined a
 program to constrain the density dependence of the symmetry energy using RMS charge radii in mirror
-nuclei in the Fe and Ni region, heightening interest in accurate
-matter density distributions for these isotopes.
+nuclei in the Fe and Ni region \cite{Brown2017}, heightening interest in accurate
+matter density distributions for these isotopes. While \niSixty\ and \niTwo\
+were not analyzed here, the charge density distributions of
+both are well-known \cite{DeVries1987}, making the even Ni isotopes an ideal target for a future
+DOM analysis along an isotope chain.
 
 \subsection{Results for \niEight}
 Like \caForty, \niEight\ enjoys abundant proton and neutron elastic scattering data.
@@ -569,6 +584,9 @@ makes it difficult to unambiguously identify the high-energy imaginary strength 
         difference, the neutron skin, are provided. The two valence neutrons (with respect to
         a \niSix\ core) do little to increase the neutron skin, as most of the added
         neutron density populates the $\nu$1\pThree\ shell close to the nuclear core.
+        A comparison to the
+        experimental \niEight\ charge density distribution is shown in Section
+        \ref{ni58DOMOutput} of Appendix \ref{DOMVisualization}.
     }
     \label{ni58MatterDistribution}
 \end{figure}
@@ -601,9 +619,11 @@ Because of the lack of data, our Sn fits are likely the least well-constrained o
 presented here, with the possible exception of \niFour.
 Still, the structural information exctracted from
 our fits on \snTwelveFour\ largely comports with the trends seen in the other isotopic systems and
-may be useful for extrapolating properties of the doubly-magic $^{100}$Sn and $^{132}$Sn. As
-mid-shell nuclei, the Sn isotopes exhibit deformation and help provide important information
+may be useful for extrapolating properties of the doubly-magic $^{100}$Sn and
+$^{132}$Sn. In addition, mid-shell Sn isotopes exhibit neutron superfluidity
+and help provide important information
 about deviations from the shell model outside shell closures. 
+
 \subsection{Results for \snTwelve}
 For \snTwelve, the only neutron scattering data available from 10-200 MeV were the new data sets
 presented earlier in this work. Given this situation, it is encouraging that the momentum
@@ -828,7 +848,7 @@ core, and that this effect should increase with increasing Z. For highly asymmet
 nuclei (e.g., \snFour, \pbEight), it is expected that the \textit{minority
 nucleon species} should have a \textit{larger fraction of high-momentum
 content} \cite{Subedi2008, Hen2012}, a consequence of the enhanced
-short-range correlations for these nucleons. All of these expectations are borne
+short-range correlations for these nucleons. [insert fix as necessary] All of these expectations are borne
 out in the momentum distributions we extract, bolstering confidence in the
 quality of our fits.
 

@@ -534,7 +534,11 @@ kinetic energy operator $\hat{T}$:
 and the discrete single-particle energy levels can be calculated by diagonalizing the
 Hamiltonian. It should be noted that while previous DOM treatments have
 calculated binding energies after fitting was complete, the present DOM treatment is the first to
-explicitly include the binding energy as part of the fitting process.
+explicitly include the binding energy as part of the fitting process. The PhD
+thesis of M. Atkinson \cite{AtkinsonPhDThesis}, published simultaneously with
+this work, includes an in-depth discussion of the energy density and presents
+fit results for \caAughtEight\ and \pbEight\ using an alternative DOM
+parameterization.
 
 \section{Parameterization of the Potential} \label{PotentialParameterization}
 As discussed earlier in this chapter, the irreducible \gls{self-energy} is composed of both real and
@@ -555,8 +559,10 @@ many-body problem and past experience with \gls{optical potential}s. Accordingly
 the self-energy should be, \textit{non-local}, \textit{complex}, and
 \textit{dispersively correct}.
 Before the full parameterization is provided,
-a few standard mathematical forms need to be introduced. In this section, the free parameters that
-are fitted to data during the DOM procedure are \textbf{denoted in bold}.
+a few standard mathematical forms need to be introduced. The free parameters that
+are fitted to data during the DOM procedure we \textbf{denote in bold}. Thus
+the bolded variables in this section do not denote vector quantities (which is a common
+notation in the literature).
 After the basic functional forms are introduced, all bolded
 free parameters are assigned numbers to facilitate comparison
 with the list of parameter values of Appendix \ref{DOMParameters}.
@@ -582,7 +588,8 @@ provides an attractive interaction.
 To approximate the non-locality, equivalent local potentials \cite{Mahaux1991}
 with an additional energy dependence may be used, but their additional energy-dependence
 violates the dispersion relation and thus makes local-equivalent potentials unsuitable
-for a comprehensive treatment at both positive and negative energies.
+for a comprehensive treatment at both positive and negative energies unless
+certain corrections are applied \cite{Mahaux1991}.
 The self-energy/optical potential used in our treatment is based on that of
 \cite{MahzoonPhDThesis}, which was the first to fully implement the non-locality in the potential
 forms alongside the dispersion relation. For simplicity, we use a Gaussian
