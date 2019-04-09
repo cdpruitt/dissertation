@@ -15,7 +15,7 @@ For each energy range, the FWHM of the distribution was calculated and a hyperbo
 performed, shown in Fig. \ref{DifferenceThresholdsFit}. The inherent left-right timing 
 resolution, independent of neutron energy, was identified as 0.34 ns FWHM.
 When folded over the actual beam energy profile (as during the experiment)
-the left-right time resolution dropped to 0.52 ns.
+the left-right time resolution degraded to 0.52 ns.
 
 \begin{figure}[tb]
     \centering
@@ -79,7 +79,7 @@ To reduce unnecessary data collection, we collected only the first \tZero, a
 logic signal, of each macropulse. 
 Using this time and the precisely-known micropulse frequency, we identified all $\gamma$ rays 
 for a given macropulse and tabulated
-the average $\gamma$ TOF, as shown in Fig. \ref{GammaCorrection}.
+the average $\gamma$-ray TOF, as shown in Fig. \ref{GammaCorrection}.
 The uncertainty of our macropulse start time manifests as a spread in average gamma times-of-
 flight. Were the start time exactly known for each macropulse, and the
 micropulse period exactly known, the TOF for each $\gamma$ ray would be
@@ -265,8 +265,8 @@ to by $(i-j)$ is non-negative and has physical meaning as a time bin from the pr
 micropulse.
 
 By optimizing trigger processing in digitizer firmware,
-we reduced the per-event deadtimes affecting our
-measurement ranged from 160-230 ns depending on the digitizer configuration.
+we were able to reduce the per-event deadtime to between 160-230 ns,
+depending on the digitizer configuration.
 For a 230 ns per-event deadtime, the dead-probability
 $F_{i}$ of our time bins is given in Fig.
 \ref{ExampleDeadtimeSpectrum}, showing that the probability-dead never exceeds
@@ -277,7 +277,7 @@ events detected in that bin, $N_{d}[i]$, was corrected to the \textit{true}
 number of events in that bin $N_{t}[i]$ that would have been detected in the
 absence of a per-event deadtime:
 \begin{equation} \label{DeadtimeEquation}
-    N_{t}[i] = -ln\left(\frac{1-\frac{N_{d}[i]}{M}}{(1-F_{i})\times M}\right)
+    N_{t}[i] = -ln\left[1-\frac{\frac{N_{d}[i]}{M}}{(1-F_{i})}\right]\times M
 \end{equation}
 
 \noindent
@@ -546,8 +546,8 @@ eliminated the energy-dependent systematic difference in our measurements.
         our two lengths of \cNat, (27.3 mm and 13.7 mm), shown from 3-400
         \mega\electronvolt. Total error
         (including statistical and systematic) is indicated by the blue
-        dotted region. Systematic error only (due to uncertainty in the areal
-        density) is shown by the red hatched region (very small and immediately adjacent to 
+        shaded region. Systematic error only (due to uncertainty in the areal
+        density) is shown by the red shaded region (very small and immediately adjacent to 
         the red line). Clearly, statistical error dominates for this relative
         difference.
         Despite the low statistics of this diagnostic run (only 1.5 hours
@@ -664,8 +664,8 @@ in good agreement with the previous results when their errors are included.
     {
         \niEightFour\ neutron \tot\ relative difference, from our newly-measured
         data sets (in red). Total error (including statistical and systematic)
-        is indicated by the red dotted region. Systematic error only (due to
-        uncertainty in the sample areal density) is shown by the blue dotted region.   
+        is indicated by the red shaded region. Systematic error only (due to
+        uncertainty in the sample areal density) is shown by the blue shaded region.   
         Assuming a simple A$^{\frac{1}{3}}$ size scaling for the
         nuclear radius of \niFour\ from \niEight, the simple
         strongly-absorbing-sphere model Eq. \ref{SASAbsolute} prediction
@@ -723,8 +723,8 @@ in excellent agreement, $\approx$1\% difference, with the previous results.
     {
         \snTwelveFour\ neutron \tot\ relative difference, from our newly-measured
         data sets (in red). Total error (including statistical and systematic)
-        is indicated by the red dotted region. Systematic error only (due to
-        uncertainty in the sample areal density) is shown by the blue dotted region.   
+        is indicated by the red shaded region. Systematic error only (due to
+        uncertainty in the sample areal density) is shown by the blue shaded region.   
         The predictions of the simple strongly-absorbing-sphere model of
         Eq. \ref{SASAbsolute} for the \snTwelveFour\ neutron \tot\ relative
         difference are shown for two nuclear radius size scalings: $r \alpha A^{\frac{1}{3}}$
