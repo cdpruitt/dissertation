@@ -758,14 +758,15 @@ a deeper analysis of the orthogonality of each model's parameters.
 \section{General trends}
 \subsection{Neutron skins sensitive to shell structure}
 Table \ref{NeutronSkinsTable} presents the neutron skins we extracted from our
-optimized DOM fits on all nuclei under study. As anticipated both the total
+optimized DOM fits on all nuclei under study. As anticipated, both the total
 degree of asymmetry and the specific shell structure affect the
 calculated skins.
+\\
 \begin{table}[H]
     \centering
     {\color{red}{\begin{tabular}{c c c c}
                 \toprule
-                Isotope & proton $r_{rms}$ [\femto\meter] & neutron $r_{rms}$
+                Isotope & $\pi$ $r_{rms}$ [\femto\meter] & $\nu$ $r_{rms}$
                 [\femto\meter] & $\Delta_{rms}$ [\femto\meter]\\
                 \midrule
                 \oSix & 2.676 & 2.653 & -0.022\\
@@ -784,20 +785,61 @@ calculated skins.
                 \bottomrule
         \end{tabular}}
     }
-    \caption[Neutron skins extracted from DOM analysis. All values are after
-        rounding, so the neutron skin reported in the last column may not 
-    exactly match the difference in proton and neutron rms radii listed.]
+    \caption[Neutron skins extracted from DOM analysis]
     {
         Neutron skins ($\Delta_{rms}$) extracted from DOM analysis. The skins are calculated as the difference between the
         proton and neutron point distribution root-mean-square (RMS) radii and thus do not include the
-        nucleon-size form factor. The full calculated matter distributions for protons and
+        nucleon-size form factor. All values are rounded, so the neutron skin reported
+        in the last column may not exactly match the difference of proton and neutron
+        rms radii listed. The full calculated matter distributions for protons and
         neutrons for each nucleus are available in Appendix \ref{DOMVisualization}. 
     }
     \label{NeutronSkinsTable}
 \end{table}
 
-\subsection{High-momentum content and deep imaginary strength}
-When examined in momentum space, the proton and neutron particle density distributions
+\subsection{Depletion, momentum content, and deep imaginary strength}
+For over fifty years, (e,e'p) and (p,2p) measurements have shown that in real
+nuclei, single-particle spectroscopic factors are significantly depleted both
+near the Fermi surface and for deeply-bound subshells. Table \ref{SFTable} shows
+the spectroscopic factors for highest-lying bound proton and neutron subshell
+for each nucleus modeled in this work.
+\begin{table}[H]
+    \centering
+    {\color{red}{\begin{tabular}{c c c c c}
+                \toprule
+                \multirow{2}{*}{Isotope} & \multicolumn{2}{c}{Protons} &
+                \multicolumn{2}{c}{Neutrons}\\
+                \cmidrule(l{0.5em}r{0.5em}){2-3}
+                \cmidrule(l{0.5em}r{0.5em}){4-5}
+                & Level & SF & Level & SF\\
+                \midrule
+                \oSix & 0\pOne & & 0\pOne & \\
+                \oEight & 0\pOne & & 0\dFive & \\
+
+                \caForty & 1\sOne & & 1\sOne & \\
+                \caEight & 1\sOne & & 0\fSeven & \\
+
+                \niEight & 0\fSeven & & [insert] & \\
+                \niFour & 0\fSeven & & [insert] & \\
+
+                \snTwelve & 0\gNine & & 0\gSeven & \\
+                \snFour & 0\gNine & & [insert] & \\
+
+                \pbEight & 2\sOne & & 1\fFive & \\
+                \bottomrule
+        \end{tabular}}
+    }
+    \caption[Valence Spectroscopic Factors extracted from DOM analysis]
+    {
+        Spectroscopic factors for protons and neutrons in the valence
+        subshell (e.g., $\pi$\pOne, $\nu$\dFive for \oEight) are listed for
+        all nuclei considered in the present treatment.
+    }
+    \label{NeutronSkinsTable}
+\end{table}
+
+When examined in momentum space,
+the proton and neutron particle density distributions
 are expected to show significant enhancement of nucleon density at higher momentum
 than would be expected in an independent-particle shell model
 \cite{RoheHabilitation}. The amount of this so-called
@@ -839,7 +881,7 @@ percentage of the proton and neutron densities with momentum above $270
                 \bottomrule
     \end{tabular}}}
 \end{table}
-The values we extract are similar from A=16 to A=208, with perhaps a slight
+The values we extract change little from A=16 to A=208, with perhaps a slight
 increase with increasing A.
 For the symmetric nuclei \oSix\ and \caForty, it is expected that the proton
 high-momentum content should be slightly less than the neutron high-momentum
@@ -848,7 +890,7 @@ core, and that this effect should increase with increasing Z. For highly asymmet
 nuclei (e.g., \snFour, \pbEight), it is expected that the \textit{minority
 nucleon species} should have a \textit{larger fraction of high-momentum
 content} \cite{Subedi2008, Hen2012}, a consequence of the enhanced
-short-range correlations for these nucleons. [insert fix as necessary] All of these expectations are borne
+short-range correlations experienced by these nucleons. [insert fix as necessary] All of these expectations are borne
 out in the momentum distributions we extract, bolstering confidence in the
 quality of our fits.
 
