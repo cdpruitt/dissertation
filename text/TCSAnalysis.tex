@@ -10,7 +10,7 @@ ns or more, an unacceptable increase in the per-event deadtime. Thus we chose
 to use the digitizer's faster LED option and to calculate precise event timing
 in software, after the experiment, by analyzing the digitized waveform for each event.
 Data taken from the left and right PMTs separately and gated by neutron energy 
-is shown in Figs. \ref{LRCorrelation} and \ref{LRTimeDifferenceByEnergy}. 
+are shown in Figs. \ref{LRCorrelation} and \ref{LRTimeDifferenceByEnergy}. 
 For each energy range, the FWHM of the distribution was calculated and a hyperbolic fit was
 performed, shown in Fig. \ref{DifferenceThresholdsFit}. The inherent left-right timing 
 resolution, independent of neutron energy, was identified as 0.34 ns FWHM.
@@ -145,8 +145,8 @@ have been propagated through the subsequent analysis.
         $\gamma$-averaging is 
         shown in pink. For this run, the final $\gamma$-ray peak 
         FWHM after both corrections is 0.866 ns, comparable to the precision we
-        achieved in our Ca study \cite{Shane2010}, which also employed $\gamma$-
-        averaging.}
+        achieved in our Ca study \cite{Shane2010}, which also employed
+        $\gamma$-averaging.}
     \label{TimingCorrectionStudy}
 \end{figure}
 
@@ -561,14 +561,14 @@ eliminated the energy-dependent systematic difference in our measurements.
 
 At neutron times-of-flight corresponding to energies $>$100 \mega\electronvolt, the number of
 counts in the spectrum rises sharply as one moves to higher energies. In this
-region, even a sub-nanosecond timing differences between the spectrum for the
-blank and for the sample of interest is amplified into large errors in the
+region, even a sub-nanosecond timing difference between the spectrum for the
+blank and for the sample of interest is amplified into a large error in the
 cross section calculation. Thus the event timing and data
 storage routines must be kept completely ignorant of which target is currently
 in-beam so as to avoid sample-dependent timing effects. In practice, this is
 difficult, as acquisition with the blank sample is naturally associated with
-a higher data rate as fewer neutrons are absorbed or scattered in-flight than during
-with samples in the beam path. By reducing the rate of data acquisition
+a higher data rate as fewer neutrons are absorbed or scattered in-flight than
+when samples are in the beam path. By reducing the rate of data acquisition
 by an order of magnitude or more, the analog-electronics approach reduces the
 absolute data rates of both the blank and the samples, mitigating this effect.
 However, because much larger samples are required with the overall reduced data
