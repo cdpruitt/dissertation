@@ -1,5 +1,5 @@
-\documentclass[12pt,twoside]{book}
-%\documentclass[12pt,twoside,draft]{book}
+%\documentclass[12pt,twoside]{book}
+\documentclass[letterpaper, 12pt,twoside,draft]{book}
 \usepackage{emptypage} % should remove blank page headers and footers
 \usepackage{titlesec}
 \usepackage{amsmath} % lots of math functions
@@ -8,7 +8,7 @@
 \usepackage[super]{nth} % pretty formatting of ordinal numerals
 \usepackage{graphicx} % putting in figures, if one might ask..
 \usepackage{braket} % Dirac notation
-\usepackage[margin=1truein, includefoot, includehead]{geometry}
+\usepackage[top=1truein, bottom=1.3truein, left=1truein, right=1truein, includefoot, includehead, footskip=0.25in, showframe]{geometry}
 \usepackage[font = small]{caption}
 \usepackage{verbatim}
 \usepackage{titletoc}
@@ -94,7 +94,7 @@
 \let\Oldsubsection\subsection
 \renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
 
-\interfootnotelinepenalty=1000 % To make sure footnotes don't get split on a separate page, 10000 is max
+\interfootnotelinepenalty=10000 % To make sure footnotes don't get split on a separate page, 10000 is max
 
 \setlength{\textfloatsep}{15pt} % set gap between floats and their captions
 \setlength{\parskip}{0pt}
@@ -281,7 +281,7 @@
 \fancyhead[LE]{\MakeUppercase{\leftmark}} %Left even header
 
 \begingroup
-%\let\cleardoublepage\clearpage
+\let\cleardoublepage\clearpage
 %\pagestyle{plain}
 \tableofcontents
 \endgroup
