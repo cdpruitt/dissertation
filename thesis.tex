@@ -1,5 +1,5 @@
-%\documentclass[12pt,twoside]{book}
-\documentclass[letterpaper, 12pt,twoside,draft]{book}
+\documentclass[12pt,twoside]{book}
+%\documentclass[letterpaper, 12pt,twoside,draft]{book}
 \usepackage{emptypage} % should remove blank page headers and footers
 \usepackage{titlesec}
 \usepackage{amsmath} % lots of math functions
@@ -8,7 +8,7 @@
 \usepackage[super]{nth} % pretty formatting of ordinal numerals
 \usepackage{graphicx} % putting in figures, if one might ask..
 \usepackage{braket} % Dirac notation
-\usepackage[top=1truein, bottom=1.3truein, left=1truein, right=1truein, includefoot, includehead, footskip=0.25in, showframe]{geometry}
+\usepackage[top=1truein, bottom=1.25truein, left=1truein, right=1truein, includefoot, includehead]{geometry}
 \usepackage[font = small]{caption}
 \usepackage{verbatim}
 \usepackage{titletoc}
@@ -307,8 +307,8 @@
 
 \clearpage
 \addcontentsline{toc}{chapter}{Acknowledgements}
-%\fancyhead{}
-%\fancyhead[LO]{\MakeUppercase{Acknowledgements}} %Left even header
+\fancyhead{}
+\fancyhead[LO]{\MakeUppercase{Acknowledgements}} %Left even header
 
 \begingroup
 \let\cleardoublepage\clearpage
@@ -440,8 +440,16 @@
     \chapter{Experimental Data Used to Constrain DOM Potentials} \label{DOMDataSets}
     \input{\textDirectory/dataSets}
 
+    \fancyhead{} %clears the header
+    \fancyhead[RO]{\MakeUppercase{Appendix \thechapter: \ \leftmark}} %Right odd header
+    \fancyhead[LE]{\MakeUppercase{Appendix \thechapter: \ \leftmark}} %Left even header
+
     \chapter{Parameter Values of DOM Potentials} \label{DOMParameters}
     \input{\textDirectory/parameters}
+
+    \fancyhead{} %clears the header
+    \fancyhead[RO]{\MakeUppercase{Appendix \thechapter: \ \leftmark}} %Right odd header
+    \fancyhead[LE]{\MakeUppercase{\rightmark}} %Left even header
 
     \chapter{Visualization of DOM Fit Results} \label{DOMVisualization}
     \input{\textDirectory/fits}

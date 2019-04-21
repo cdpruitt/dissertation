@@ -63,8 +63,9 @@ angle. Then, blank-run histograms
 were subtracted from the isotopic-run histograms to yield the neutron scattering
 events from the isotopic samples. Figure \ref{tiledAngleData} provides example 
 results for the 4M detector.
-For the 4M detector and at forward angles for both detectors, the elastic and first 
-inelastic scattering peaks are closer together in time and cannot be cleanly resolved.
+For the 4M detector and at forward angles for both detectors, the elastic
+and first-inelastic scattering peaks
+are closer together in time and cannot be cleanly resolved.
 Measurements in this
 kinematic regime are the most challenging as the increased overlap between
 these peaks increases the uncertainty of the number of counts in the elastic
@@ -79,8 +80,9 @@ number of counts in the elastic peak.
     \includegraphics[width = 1.0\textwidth]{figures/tiledAngleData.png}
     \caption[Scaled event histograms showing neutron elastic scattering peak]
     {
-        Scaled event histograms showing neutron elastic scattering and first
-        inelastic scattering peaks from the 4M detector for a few representative angles. The
+        Scaled event histograms showing neutron elastic scattering
+        and first-inelastic scattering peaks from the
+        4M detector for a few representative angles. The
         histograms for isotopic-sample runs (dark gray bottom layer),
         blank-sample runs (light gray middle layer), and the difference (red
         top layer) are shown.
@@ -103,7 +105,7 @@ number of counts in the elastic peak.
 To normalize the cross sections, a reference point is needed that connects the
 neutron flux (as measured by the monitor detector) to a known cross section.
 We took several reference runs using a graphite,
-a polyethylene, and a blank sample at both the beginning and end of the experiment.
+a polyethylene, and a blank sample at both the beginning and end of our experiments.
 Figure \ref{ECSReferenceRuns} shows histograms for the 4M and 6M detectors for
 one set of these runs, taken at 30\textdegree\ in the lab frame.
 The same coloring conventions from Fig.
@@ -163,7 +165,7 @@ sample, respectively.
 \section{Finite-Size Corrections}
 In an idealized differential cross section measurement, the sample and neutron
 detectors can be treated as point objects. In reality, the neutron beam,
-samples, and detectors occupy a finite size (as illustrated in \ref{GussFiniteSizeDiagram},
+samples, and detectors occupy a finite size (as illustrated in Fig. \ref{GussFiniteSizeDiagram}),
 leading to so-called finite-size effects that distort the measured cross sections.
 \begin{figure}[tb]
     \centering
@@ -184,11 +186,11 @@ The experimenter is responsible
 for applying appropriate corrections to make results size- and
 apparatus-independent. The finite-size analysis for
 a similar TUNL-based neutron \el\ measurement on $^{116,120}$Sn is described in detail
-in \cite{GussPhDThesis}. In their analysis, Monte Carlo simulations using the
+in \cite{GussPhDThesis}. In that analysis, Monte Carlo simulations using the
 EFFIGY code were
 prepared to generate a correction for geometric uncertainty of the neutron
 scattering track, the possibility of multiple scattering
-in the samples, and flux attenuation in the sample.
+in the samples, and flux attenuation in the samples.
 For the isotopic Ni and Sn samples they studied, they generated finite-size
 corrections of roughly 1-10\% depending on the scattering angle. As seen in
 Fig. \ref{GussFiniteSizeEffect}, the
@@ -203,7 +205,7 @@ biggest effect is on the depth of the diffraction minima.
         The raw data from this measurement on Ni isotopes are shown as data
         points. Using a Monte Carlo simulation, the authors of the previous
         study generated a correction accounting for multiple scattering in
-        their samples, the angular uncertainty stemming from the volume
+        their samples and the angular uncertainty due to the finite volume
         of their samples, resulting in the dashed curve. With beam
         attenuation also considered, the cross section is uniformly
         increased across the angular range, giving the solid curve, which
@@ -220,7 +222,8 @@ biggest effect is on the depth of the diffraction minima.
     \caption[Effect of finite-size corrections on our neutron \el\ measurement]
     {
         The extent of our finite-size corrections are shown, per the output
-        of a typical finite-size simulation. Our raw 11 \mega\electronvolt\ \snFour \el\ data
+        of a typical finite-size simulation. Our raw
+        11 \mega\electronvolt\ \snFour\ \el\ data
         are shown as black points (connected with lines to guide the eye) and
         were used as the input cross section for the finite-size simulation.
         The simulation scattered neutrons according to the input distribution
@@ -229,7 +232,7 @@ biggest effect is on the depth of the diffraction minima.
         the number of detector hits. The results of two simulations are shown:
         one including only the effects of
         angular uncertainty (AU) and multiple scattering (MS), shown by red
-        triangles, and the other also included flux attenuation in the target
+        triangles, and the other also including flux attenuation in the target
         (FA), shown as blue triangles. For our targets, the finite-size effects
         were an order of magnitude smaller
         than those shown in Fig. \ref{GussFiniteSizeEffect},
@@ -242,7 +245,7 @@ were an order of magnitude larger than our
 samples: 42.59 g and 44.73 g for their \snSixteen\ and \snTwenty\ samples,
 respectively, compared to 4.97 g and 5.55 g for our \snTwelve\ and \snFour\
 samples. Thus we anticipated a significantly smaller correction would be
-required.
+required for our measurement.
 \begin{figure}[tb]
     \centering
     \includegraphics[height=0.4\textheight]{figures/multipleScattering.png}
@@ -310,10 +313,10 @@ limited, leading to a large uncertainty in the \el\ relative difference between
     {
         Neutron \el\ on \snTwelveFour\ at 11 \mega\electronvolt: our results and data on
         \snFour\ from Rapaport et al. \cite{Rapaport1980}. The data collected
-        with the 4M detector are shown as stars, and the data collected
+        with the 4M detector are shown as circles, and the data collected
         with the 6M detector are shown as triangles. At 32.5\textdegree and
-        50\textdegree, data were taken with both 4M and 6M detectors at separate
-        times, and results from the two independent detectors are in reasonable agreement.
+        50\textdegree, data were taken with both 4M and 6M detectors independently
+        and results from the two detectors are in reasonable agreement.
     }
     \label{SnECS_11MeV}
 \end{figure}
@@ -355,7 +358,7 @@ potential is the subject of Chapter \ref{DOMResults}.
         Neutron \el\ cross sections on \snTwelveFour\ at 17
         \mega\electronvolt: our results and data on \snTwenty\ from Guss et al.
         \cite{Guss1989}. The data collected with the 4M detector
-        are shown as stars, and the data collected
+        are shown as circles, and the data collected
         with the 6M detector are shown as triangles. In addition to data on
         \snTwelveFour, we collected data on \snNat\ at 50\textdegree\ and
         60\textdegree, shown in pink. The data on \snNat\ lie halfway between our data on
